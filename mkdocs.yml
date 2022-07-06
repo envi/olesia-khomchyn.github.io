@@ -1,7 +1,10 @@
 site_name:  Envi OData Public API 1.0
 nav:
   - Introduction: index.md
+  - Testing with Postman: Testing with Postman.md 
   - Retrieving Data using cURL: Retrieving_Data.md
+  - Inventory: Inventory.md
+  - Addresses: Addresses.md
 
 theme:
   name: material
@@ -10,3 +13,13 @@ theme:
   logo: assets/logo.png
 
 use_directory_urls: false
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list

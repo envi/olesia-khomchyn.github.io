@@ -1,4 +1,5 @@
 site_name:  Envi OData Public API 1.0
+site_url: https://envi.github.io/olesia-khomchyn.github.io/
 nav:
   - Introduction: index.md
   - Retrieving Data using cURL: Retrieving_Data.md

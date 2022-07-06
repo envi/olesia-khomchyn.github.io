@@ -1,0 +1,12 @@
+site_name:  Envi OData Public API 1.0
+nav:
+  - Introduction: index.md
+  - Retrieving Data using cURL: Retrieving_Data.md
+
+theme:
+  name: material
+  palette: 
+    primary: black
+  logo: assets/logo.png
+
+use_directory_urls: false

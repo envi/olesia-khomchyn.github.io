@@ -1,16 +1,21 @@
 site_name:  Envi OData Public API 1.0
 nav:
-  - Introduction: index.md
-  - Testing with Postman: Testing with Postman.md 
-  - Retrieving Data using cURL: Retrieving_Data.md
-  - Inventory: Inventory.md
-  - Addresses: Addresses.md
+  - Topics:
+    - Introduction: index.md
+    - Testing with Postman: Testing with Postman.md 
+    - Retrieving Data using cURL: Retrieving_Data.md
+  - Operations:
+    - Inventory: Inventory.md
+    - Addresses: Addresses.md
 
 theme:
   name: material
   palette: 
     primary: black
   logo: assets/logo.png
+  favicon: img/favicon.png
+  features:
+    - navigation.tabs
 
 use_directory_urls: false
 

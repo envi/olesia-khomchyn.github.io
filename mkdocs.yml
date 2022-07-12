@@ -4,9 +4,11 @@ nav:
     - Introduction: index.md
     - Testing with Postman: Testing with Postman.md 
     - Retrieving Data using cURL: Retrieving_Data.md
+    - Options and Limitations: Options_and_Limitations.md
   - Operations:
     - Inventory: Inventory.md
     - Addresses: Addresses.md
+  
 
 theme:
   name: material
@@ -28,3 +30,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

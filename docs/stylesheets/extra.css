@@ -1,3 +1,7 @@
 :root > * {
-    --md-code-hl-string-color: #ff8833cc;
+  --md-code-hl-string-color: #F3FF33;
+  --md-code-hl-string-color: #0FF1CE;
+  --md-code-hl-variable-color: #33eeffcc;
+  --md-code-hl-generic-color: #FF3355;
   }
+

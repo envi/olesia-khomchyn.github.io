@@ -5,6 +5,9 @@ nav:
     - Testing with Postman: Testing with Postman.md 
     - Retrieving Data using cURL: Retrieving_Data.md
     - Options and Limitations: Options_and_Limitations.md
+    - Custom Options: Custom_Options.md
+    - Metadata: Metadata.md
+    - Metadata Controlling: Metadata_Controlling.md
   - Operations:
     - Inventory: Inventory.md
     - Addresses: Addresses.md

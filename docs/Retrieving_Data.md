@@ -5,8 +5,8 @@ Use **cURL** of Envi OData API to make the requests, as well as get, send, and r
 
 For example, if you want to use the cURL command line tool to retrieve entities list, use the GET method:
 
-!!! example
-    ``` 
-    curl -X GET --header 'Accept: application/json' --header 'api-
-    version: 1.0' --header 'Authorization: ' 'https:///odata/Inventory'
-    ``` 
+``` title="Example"
+curl -X GET --header 'Accept: application/json' --header 'api-
+version: 1.0' --header 'Authorization: ' 'https:///odata/Inventory'
+    
+```

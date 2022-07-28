@@ -1,8 +1,10 @@
 Envi API contains standard OData metadata endpoint. The metadata describes the types, sets, functions, and actions understood by the OData service. You can find the full list of Entity Data Module here:
 
-```https://<HOSTNAME>/odata/$metadata```
+``` 
+https://<HOSTNAME>/odata/$metadata
+```
 
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 You can use the metadata to understand how to query and interact with entities in the service. Most OData client libraries use this information to drive the generation of client-side classes to represent server types and aid programmability.
 

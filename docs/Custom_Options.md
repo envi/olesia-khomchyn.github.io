@@ -8,10 +8,13 @@ While pulling some valuable information, Envi OData API allows you to use custom
     - Inventory Items changed from specified date
     - Inventory Locations changed from specified date
 
-``` json title="Example"
+
+``` title="Request example"
 https://api-demo.envi.net/odata/inventoryVendors?includeInactiveInventory=true
     
 ```
+
+
 
  - **```includeInactiveInventoryLocations```**–gets all inactive inventory locations and works with the following endpoints:
     - Inventory Vendors changed from specified date
@@ -22,6 +25,8 @@ https://api-demo.envi.net/odata/inventoryVendors?includeInactiveInventory=true
 https://api-demo.envi.net/odata/inventoryLocations/GetAllFromDate?includeInactiveInventoryLocations=true
 
 ```
+
+
 
  - **```includeInactiveVendorFacilities```**–gets all inactive vendor facilities and works with the following endpoint:
     - Inventory Vendors changed from specified date

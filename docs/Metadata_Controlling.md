@@ -4,9 +4,10 @@ Taking into account your need of application, you can request the needed amount 
 
 If you want to specify the amount of included metadata information in the response, use ```format``` query option of an OData request as a part of URL with specified ```odata.metadata``` parameter. For example, to specify none level, which means no metadata at all, URL should look like the following:
 
-```https://<HOSTNAME>/<resource>?$format=application/json;odata.metadata=none```
+``` 
+https://<HOSTNAME>/<resource>?$format=application/json;odata.metadata=none
+```
 
-for example, ```<HOSTNAME> = api-demo.envi.net```
 
 The example shows that ```$format``` option should also include expected content type of the response (in this case ```application/json```).
 
@@ -19,7 +20,7 @@ If you do not need metadata information, use ```odata.metadata=none```. It means
 https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=none
     
 ```
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 
 ``` json title="Response example"
@@ -71,10 +72,9 @@ https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format
 **OR**
 
 ```
-https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)
-    
+https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)  
 ```
-(for example,```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 
 ``` json title="Response example"
@@ -123,9 +123,8 @@ If you need full metadata information, you should use odata.metadata=full. It di
 
 ```title="Request example"
 https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=full
-
 ```
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 ``` json title="Response example"
 {

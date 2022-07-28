@@ -8,9 +8,12 @@ nav:
     - Custom Options: Custom_Options.md
     - Metadata: Metadata.md
     - Metadata Controlling: Metadata_Controlling.md
+    - Rate Limiting: Rate_Limiting.md
+    - API Versioning: API_Versioning.md
   - Operations:
     - Inventory: Inventory.md
     - Addresses: Addresses.md
+   
   
 
 theme:
@@ -36,3 +39,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css

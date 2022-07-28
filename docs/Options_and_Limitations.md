@@ -22,7 +22,7 @@ The ``` $search ```  system query option allows searching through all available 
 https://<HOSTNAME>/odata/Inventory?$search="inv" 
     
 ```
-(for example, ```<HOSTNAME> = api-demo.envi.net ```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 
 
@@ -69,8 +69,7 @@ The ```$skip``` query option requests the number of items in the queried collect
 https://<HOSTNAME>/odata/Inventory 
     
 ```
-
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 Since neither ```$top``` nor ```$skip``` options are specified, the system uses default values, so a response contains first 20 records from the matched list, and ```@odata.nextLink``` is composed based on default values.
 
@@ -100,11 +99,9 @@ Since neither ```$top``` nor ```$skip``` options are specified, the system uses 
 https://<HOSTNAME>/odata/Inventory?$top=5
     
 ```
-
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 Since the ```$top``` option is specified, system returns first 5 records from the matched list, and ```@odata.nextLink``` is composed based on this value.
-
 
 ``` json title="Response example"
 
@@ -131,8 +128,7 @@ Since the ```$top``` option is specified, system returns first 5 records from th
 https://<HOSTNAME>/odata/Inventory?$skip=10
     
 ```
-
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 Since ```$skip``` option is specified, but ```$top``` is not, system skips first 10 records and uses default value for ```$top``` option, so next 20 records from the matched list (after 10 records that are skipped) are returned, and ```@odata.nextLink``` is composed based on the following value.
 
@@ -173,7 +169,7 @@ https://<HOSTNAME>/odata/Inventory?$filter=notes eq 'Capital Item'
     
 ```
 
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 This request example filters target records set based on value of notes property and in case it equals Capital Item, entity will be included in resulting set.
 
@@ -210,7 +206,7 @@ https://<HOSTNAME>/odata/Inventory?$filter=contains(notes, 'Capital')
     
 ```
 
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 This request example filters target records set based on value of notes property and in case it contains Capital in any part of the text, entity will be included in resulting set.
 
@@ -465,7 +461,7 @@ https://<HOSTNAME>/odata/Inventory?$orderby inventoryNo
     
 ```
 
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 This sample request sorts target records set by value of the inventoryNo property in ascending order.
 
@@ -508,7 +504,7 @@ https://<HOSTNAME>/odata/Inventory?$orderby inventoryNo desc
     
 ```
 
-(for example, ```<HOSTNAME> = api-demo.envi.net```)
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 This sample request sorts target records set by a value of the inventoryNo property in descending order.
 

@@ -10,6 +10,7 @@ nav:
     - Metadata Controlling: Metadata_Controlling.md
     - Rate Limiting: Rate_Limiting.md
     - API Versioning: API_Versioning.md
+    - Envi OData Examples: Envi_OData_Examples.md
   - Operations:
     - Inventory: Inventory.md
     - Addresses: Addresses.md
@@ -24,6 +25,7 @@ theme:
   favicon: img/favicon.png
   features:
     - navigation.tabs
+    - navigation.top
 
 use_directory_urls: false
 

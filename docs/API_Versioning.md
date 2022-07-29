@@ -16,7 +16,7 @@ https://<HOSTNAME>/odata/$metadata
 ```
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-``` json title="Response example"
+``` cs title="Response example"
 HTTP/1.1 200 OK
     Allow: GET,OPTIONS
     Content-Length: 0
@@ -28,7 +28,7 @@ HTTP/1.1 200 OK
 
 The following code shows how to specify the information on API in the request header using C# programming language with the HTTP Client standard class:
 
-``` title="Request example"
+``` cs title="Request example"
 var http = new HttpClient();
     http.DefaultRequestHeaders.Add("api-version", "1.0");
 

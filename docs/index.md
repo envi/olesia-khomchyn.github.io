@@ -17,25 +17,29 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.6.7</span>
+
+A new Requisition Item endpoint has been added. So, now you are able to add specified Requisition Line Items.
+
 <span style="color: #E0592A">V. 5.5.4</span>
 
-From now on, you can use the Requisition Items endpoints to get list of Requisition Items from all Requisitions within logged organization or get specified Requisioton Item by ID.
+From now on, you can use the Requisition Items endpoints to get a list of Requisition Items from all Requisitions within a logged organization or get specified Requisition Item by ID.
 
 <span style="color: #E0592A">V. 5.4.7</span>
 
-Requisitions endpoints are now avalable on **Envi OData API**.
+Requisitions endpoints are now available on **Envi OData API**.
 
 <span style="color: #E0592A">V. 5.4.5</span>
 
-We have added a new Inventory Vendor endpoint that enables you to create a new Inventory Vendor within logged organization and specified Inventory.
+We have added a new Inventory Vendor endpoint that enables you to create a new Inventory Vendor within a logged organization and specified Inventory.
 
 <span style="color: #E0592A">V. 5.4.4</span>
 
-You can now create a new Inventory Location specified by ID using Inventory Locations endpoint.
+You can now create a new Inventory Location specified by ID using the Inventory Locations endpoint.
 
 <span style="color: #E0592A">V. 5.4.0</span>
 
-Inventory Location Cost and Quantity endpoints has been added to the **Envi OData API**.
+Inventory Location Cost and Quantity endpoints have been added to the **Envi OData API**.
 
 <span style="color: #E0592A">V. 5.3.9</span>
 
@@ -51,7 +55,7 @@ Addresses endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **l
 
 <span style="color: #E0592A">V. 5.3.6</span>
 
-Inventory Vendors endpoints support the **in**, **gt**, **ge**, **lt**, **le** logical operators.
+Inventory Vendor endpoints support the **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
 <span style="color: #E0592A">V. 5.3.5</span>
 

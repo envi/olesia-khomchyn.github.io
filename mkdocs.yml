@@ -11,6 +11,7 @@ nav:
     - Rate Limiting: Rate_Limiting.md
     - API Versioning: API_Versioning.md
     - Envi OData Examples: Envi_OData_Examples.md
+    - Envi Use Cases: Envi_Use_Cases.md
   - Operations:
     - Inventory: Inventory.md
     - Addresses: Addresses.md

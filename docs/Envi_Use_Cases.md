@@ -500,7 +500,7 @@ td, th {
    border: none!important;
 }
 </style>
-| Parameter     |   Explanation     |                      
+| Properties     |   Explanation     |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* |Facility for the Usage <br> **If not provided**: 400 Bad Request|
 |**usageDate**: string <br> *in formData* |Usage date <br> **If not provided**: Date according to the user Time Zone|
@@ -749,7 +749,7 @@ td, th {
    border: none!important;
 }
 </style>
-| Parameter     |   Explanation     |                      
+| Properties     |   Explanation     |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | ID for the Usage to create Line Items <br> **If not provided**: 400 Bad Request |
 |**lineItemNo**: string <br> *in formData* |It is generated automatically and recalculated within active Usage Line Items <br> **If not provided**: Auto-populated |
@@ -833,7 +833,7 @@ td, th {
    border: none!important;
 }
 </style>
-| Parameter     |   Explanation     |                      
+| Properties     |   Explanation     |                      
 |-----:|:-------|
 |**usageID**: string <span style="color: #F05D30">**required**</span> <br> *in formData* |ID for the Usage to create Procedure <br> **If not provided**: 400 Bad Request |
 |**procedureNo**: string <span style="color: #F05D30">**required**</span> <br> *in formData* | Populated from ```procedureNo``` in case it is matched by Procedure No and Facility. You can add procedures only with unique values. <br> **If not provided**: 400 Bad Request |
@@ -881,9 +881,9 @@ td, th {
    border: none!important;
 }
 </style>
-| Parameter     |   Explanation     |                   |
-|-----:|:-------|:-------|
-|**usageID**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* |ID for the Usage to submit <br> **If not provided**: 400 Bad Request |         |
+| Property    |   Explanation     |        |       |   |
+|-----:|:-------|:-------|:-------| :-------|
+|**usageID**: string <span style="color: #F05D30">**required**</span> <br> *in formData* | ID for the Usage to submit <br> **If not provided**: 400 Bad Request |         |       |    |
 
 You'll receive the response with 200 HTTP Status, in case all data is correct. If there is at least one line item with invalid data, the request will be sent but the response code will contain 400 Bad Request.
 
@@ -926,7 +926,7 @@ To queue the batch and export it, you can use the following flow:
 
 ### <span style="color: #F05D30">Create AP Batch</span> 
 
-The ```/odata/Batches``` endpoint helps you to create new AP batch in the Pending status and use it for further exporting.
+The ```/odata/Batches``` endpoint helps you to create a new AP batch in the Pending status and use it for further exporting.
 
 !!! note 
 
@@ -1022,15 +1022,14 @@ As a result, response will contain AP Batch ID.
 ```
 
 ### <span style="color: #F05D30">Retrieve AP Batch List (by ID)</span> 
-The ```odata/Batches``` endpoint helps you to see the list of AP Batches. To retrieve the specified AP Batch, add its ID and use the ```odata/Batches(batchID)```. Use GET method for these endpoints.
+The ```odata/Batches``` endpoint helps you to see the list of AP Batches. To retrieve the specified AP Batch, add its ID and use the ```odata/Batches(batchID)```. Use the GET method for these endpoints.
 
-You can find the model and possible requests parameters in the **Operations** section.
+You can find the model and possible request parameters in the **Operations** section.
 
-RETRIEVE INVOICES OF AP BATCH
 ### <span style="color: #F05D30">Retrieve Invoices of AP Batch </span> 
-To retrieve the list of vouchered invoices that can be added to the AP Batch, use the ```odata/Batches(BatchId)/Invoices``` endpoint with the GET method. The model is same as the AP Matched invoice has.
+To retrieve the list of vouchered invoices that can be added to the AP Batch, use the ```odata/Batches(BatchId)/Invoices``` endpoint with the GET method. The model is the same as the AP Matched invoice.
 
-You can find the model and possible requests parameters in the **Operations** section.
+You can find the model and possible request parameters in the **Operations** section.
 
 ### <span style="color: #F05D30">Add Invoice to AP Batch </span> 
 The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps you to include vouchered invoices to the AP batch. For this, specify the required Matched Invoice ID.
@@ -1059,16 +1058,16 @@ The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps yo
 ```
 
 ### <span style="color: #F05D30">Export AP Batch </span> 
-The ```odata/Batches(BatchId)/Export``` endpoint with the POST method helps you to export AP Batch. For this, specify required AP Batch ID.
+The ```odata/Batches(BatchId)/Export``` endpoint with the POST method helps you to export AP Batch. For this, specify the required AP Batch ID.
 
 !!! note 
 
     AP Batch can be exported in case it contains at least one invoice.
 
-After sending the valid request, the response will contain successful result.
+After sending the valid request, the response will contain a successful result.
 
 
-``` json title="Example of request"
+``` json title="Example of response"
 {
       "@odata.context": "https://api-demo.envi.net/odata/$metadata#Edm.String",
       "value": "Batch is successfully exported"
@@ -1091,7 +1090,7 @@ After sending the valid request, the response will contain successful result.
 ```
 
 ### <span style="color: #F05D30">Submit to Queued</span> 
-The ```odata/Batches(batchId)/SubmitToQueued``` endpoint with the POST method helps you to submit AP batch to the Queued status. For this, specify the required AP Batch ID.
+The ```odata/Batches(batchId)/SubmitToQueued``` endpoint with the POST method helps you to submit the AP batch to the Queued status. For this, specify the required AP Batch ID.
 
 ``` cs title="Example from code"
 /// <summary>

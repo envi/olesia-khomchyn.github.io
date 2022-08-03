@@ -517,14 +517,6 @@ You can create several usages per one request using this example. For this, post
 
 You'll receive the following response.
 
-The **Usage Notes** will be populated with data which cannot be mapped in the following format:
-
-```
-Not mapped:
-Department:<departmentNo>
-Patient: <patientNo>
-Physician: <physicianNo>
-```
 ``` cs title="Example"
 /// <summary>
         /// Create usages.
@@ -540,6 +532,17 @@ Physician: <physicianNo>
         }
 
 ```
+
+
+The **Usage Notes** will be populated with data which cannot be mapped in the following format:
+
+```
+Not mapped:
+Department:<departmentNo>
+Patient: <patientNo>
+Physician: <physicianNo>
+```
+
 
 ### <span style="color: #F05D30">Create Usage Items</span> 
 
@@ -752,10 +755,10 @@ td, th {
 |**lineItemNo**: string <br> *in formData* |It is generated automatically and recalculated within active Usage Line Items <br> **If not provided**: Auto-populated |
 |**inventoryNo**: string <br> *in formData* | It is validated by Facility (Inventory Group) <br> **If not provided**: Empty |
 |**inventoryDescription**: string <br> *in formData* | It is populated from an existing Inventory in case it is mapped by Inventory No and Inventory Locations values <br> **If not provided**: Empty |
-|**locationNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | It is populated from ```locationNo``` in case a specified location exists within Usage Facility <br> **If not provided**: Usage Default Location |
+|**locationNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | It is populated from ```locationNo``` in case a specified location exists within the Usage Facility <br> **If not provided**: Usage Default Location |
 |**vendorItemNo**: string <br> *in formData* | Is matched with appropriate Inventory Vendor data <br> **If not provided**: Empty |
-|**manufacturerNo** : string <br> *in formData* | It is populated from Inventory Vendor in case item is matched by ```vendorItemNo``` <br> **If not provided**: ```none``` |
-|**manufacturerItemNo**: string <br> *in formData* | It is populated from Inventory Vendor in case item is matched by ```vendorItemNo``` <br> **If not provided**: Empty |
+|**manufacturerNo** : string <br> *in formData* | It is populated from Inventory Vendor in case the item is matched by ```vendorItemNo``` <br> **If not provided**: ```none``` |
+|**manufacturerItemNo**: string <br> *in formData* | It is populated from Inventory Vendor in case the item is matched by ```vendorItemNo``` <br> **If not provided**: Empty |
 |**lotNo**: string <br> *in formData* | It is populated from ```lotNo``` <br> **If not provided**: Empty |
 |**serialNo**: string <br> *in formData* |It is populated from ```serialNo``` <br> **If not provided**: Empty |
 |**expirationDate**: string <br> *in formData* | It is populated from ```expirationDate``` <br> **If not provided**: Empty |
@@ -766,15 +769,6 @@ td, th {
 
 You'll receive the following response.
 
-Usage Line Items Notes are populated with data which cannot be mapped in the following format:
-
-```
-Not mapped:
-Department:<departmentNo>
-Patient: <patientNo>
-Physician: <physicianNo>
-
-```
 ``` cs title="Example"
 /// <summary>
         /// Posts the usage items.
@@ -790,6 +784,17 @@ Physician: <physicianNo>
         }
 
 ```
+
+Usage Line Items Notes are populated with data which cannot be mapped in the following format:
+
+```
+Not mapped:
+Department:<departmentNo>
+Patient: <patientNo>
+Physician: <physicianNo>
+
+```
+
 ### <span style="color: #F05D30">Create Procedures</span> 
 You can create multiple Procedures per one request with /odata/UsageProcedures/BulkAdd endpoint. For this, use the following model.
 
@@ -822,6 +827,7 @@ To create Usage Procedure, Usage ID, and Procedure No are required. Usage Proced
 
 The following fields can be populated to add Usage Procedure:
 
+
 <style>
 td, th {
    border: none!important;
@@ -829,12 +835,10 @@ td, th {
 </style>
 | Parameter     |   Explanation     |                      
 |-----:|:-------|
-|**usageID**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* |ID for the Usage to create Procedure <br> **If not provided**: 400 Bad Request |
-|**procedureNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | Populated from ```procedureNo``` in case it is matched by Procedure No and Facility. You can add procedures only with unique values. <br> **If not provided**: 400 Bad Request |
+|**usageID**: string <span style="color: #F05D30">**required**</span> <br> *in formData* |ID for the Usage to create Procedure <br> **If not provided**: 400 Bad Request |
+|**procedureNo**: string <span style="color: #F05D30">**required**</span> <br> *in formData* | Populated from ```procedureNo``` in case it is matched by Procedure No and Facility. You can add procedures only with unique values. <br> **If not provided**: 400 Bad Request |
 
 You'll receive the following response.
-
-The **Usage Notes** field is populated with procedureNo, in case procedure with specified procedureNo doesn't exist or it exists within another Facility.
 
 ``` cs title="Example"
 /// <summary>
@@ -851,4 +855,255 @@ The **Usage Notes** field is populated with procedureNo, in case procedure with 
     }
 
 ```
-SUBMIT USAGES
+
+The **Usage Notes** field is populated with procedureNo, in case procedure with specified procedureNo doesn't exist or it exists within another Facility.
+
+### <span style="color: #F05D30">Submit Usages</span> 
+
+After appropriate items are inserted, you can submit the Usage with the ```/odata/Usages/BulkSubmit``` endpoint. For this, use the following model.
+
+``` cs title="Example"
+public class Usage
+      public class Usage
+      {
+        /// <summary>
+        /// Usage identidier
+        /// </summary>
+        public Guid? UsageId { get; set; }
+      }
+
+```
+
+The following fields can be populated to submit Usage:
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| Parameter     |   Explanation     |                   |
+|-----:|:-------|:-------|
+|**usageID**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* |ID for the Usage to submit <br> **If not provided**: 400 Bad Request |         |
+
+You'll receive the response with 200 HTTP Status, in case all data is correct. If there is at least one line item with invalid data, the request will be sent but the response code will contain 400 Bad Request.
+
+If the structure of the request is correct, you'll receive the 200 HTTP response and those usages that can be submitted will be submitted.
+
+There can be the following main reasons for invalid data:
+
+ - Incomplete line item
+ - The line item with quantity 0
+ - The line item with negative quantity and required tracking
+ - Usage has been already submitted by another user.
+
+``` cs title="Example"
+/// <summary>
+        /// Submits the usages.
+        /// </summary>
+        /// <param name="usageIds">List of usages.</param>
+        /// <returns>Result of usages submittions.</returns>
+        public static async Task<Dictionary<Guid, string>> SubmitUsages(List<Usage> usageIds)
+        {
+          await SetAuthHeader();
+          var content = new StringContent(Serialize(new { usageIds }), Encoding.UTF8, "application/json");
+          var response = await Client.PostAsync("/odata/Usages/BulkSubmit", content);
+          return JsonConvert.DeserializeObject<Dictionary<Guid, string>>(
+            JsonConvert.DeserializeObject<ODataErrorResponse>(await response.Content.ReadAsStringAsync())
+              .Description
+              .Message);
+        }
+
+```
+## <span style="color: #F05D30">AP Batch and Export Invoices</span> 
+To queue the batch and export it, you can use the following flow:
+
+ - Create AP Batch
+ - Retrieve AP Batch list (by ID)
+ - Retrieve Invoices of AP Batch
+ - Add Invoice to AP Batch
+ - Export AP Batch
+ - Submit to Queued
+
+### <span style="color: #F05D30">Create AP Batch</span> 
+
+The ```/odata/Batches``` endpoint helps you to create new AP batch in the Pending status and use it for further exporting.
+
+!!! note 
+
+    You can use the following model for the request. But for successful AP batch creating, you can enter only the required batchNo and, if needed, add a reference.
+
+``` json title="Model"
+{
+      "apBatchId": "00000000-0000-0000-0000-000000000000",
+      "batchNo": "string",
+      "reference": "string",
+      "batchStatusId": "integer (int32)",
+      "batchStatus": "string",
+      "batchTotal": "number (double)",
+      "invoiceCount": "integer (int32)",
+      "isScheduledExporting": "boolean",
+      "lastExportDate": "string (date-time)",
+      "dateCreated": "string (date-time)",
+      "createdBy": "00000000-0000-0000-0000-000000000000",
+      "createdByUserName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByUserName": "string",
+    }
+
+```
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| Properties     |  Explanation |  |
+|-----:|:-------|:-------|
+|**apBatchedInvoiceId**:<br> string *(uuid)* | Unique Identifier of the AP Batched Invoice |  |
+|**batchNo**: string | Identification Number of the Batch | |
+|**reference**: string | Information concerning the Transaction | |
+|**batchStatusId**: <br> integer *(int32)* | Unique Identifier of the AP Batch Status | |
+|**batchStatus**: <br> string | Status of the AP Batch | |
+|**batchTotal**: <br> number *(double)* | Total of the Batch | |
+|**invoiceCount**: <br> integer *(int32)* | Count of the Invoices |  |
+|**isScheduledExporting**: <br> boolean |Is Exporting of the AP Batch scheduled or not? |  |
+|**lastExportDate**: <br> string *(date-time)* |Last Date when the AP Batch was exported |  |
+|**dateCreated**: <br> string *(date-time)* | Date when the AP Batch was created |  |
+|**createdBy**: <br> string *(uuid)* | Unique Identifier of the user who created the AP Batched Invoice |  |
+|**createdByUserName**: <br> string | Name of the user who created the AP Batched Invoice |  |
+|**lastUpdated**: string <br> *(date-time)* | Last Date when the AP Batched Invoice was updated |  |
+|**lastUpdatedBy**: <br> string *(uuid)* | Unique Identifier of the last user who updated the AP Batched Invoice |  |
+|**lastUpdatedByUserName**: <br> string | Name of the last user who updated the AP Batched Invoice |  |
+
+As a result, response will contain AP Batch ID.
+
+``` json title="Example of request"
+{
+      "batchNo": "123"
+    }
+
+```
+``` json title="Example of response"
+{
+      "@odata.context": "https://api-demo.envi.net/odata/$metadata#Edm.Guid"
+      "value;: "453bf1fe-7f48-4fd1-8ce5-be74f1002e84"
+    }
+
+```
+
+``` cs title="Example from code"
+/// <summary>
+    /// Create batch.
+    /// </summary>
+    /// <returns>Task.</returns>
+    private static async Task Batch()
+    {
+      // POST Request
+      // Create Batch Model, only BatchNo is required
+      var newBatch = new APBatch { BatchNo = "Batch No" };
+      // Send request
+      var batchPK = (await PostBatch(newBatch)).Value;
+    }
+
+    /// <summary>
+    /// Create batch.
+    /// </summary>
+    /// <param name="batch">List of usages.</param>
+    /// <returns>Id of new created batch - Guid.</returns>
+    public static async Task<ODataSingleValueResponse<Guid>> PostBatch(APBatch batch)
+    {
+      await SetAuthHeader();
+      var content = new StringContent(Serialize(batch), Encoding.UTF8, "application/json");
+      var response = await Client.PostAsync($"/odata/Batches", content);
+      return JsonConvert.DeserializeObject<ODataSingleValueResponse<Guid>>(await response.Content.ReadAsStringAsync());
+    }
+
+```
+
+### <span style="color: #F05D30">Retrieve AP Batch List (by ID)</span> 
+The ```odata/Batches``` endpoint helps you to see the list of AP Batches. To retrieve the specified AP Batch, add its ID and use the ```odata/Batches(batchID)```. Use GET method for these endpoints.
+
+You can find the model and possible requests parameters in the **Operations** section.
+
+RETRIEVE INVOICES OF AP BATCH
+### <span style="color: #F05D30">Retrieve Invoices of AP Batch </span> 
+To retrieve the list of vouchered invoices that can be added to the AP Batch, use the ```odata/Batches(BatchId)/Invoices``` endpoint with the GET method. The model is same as the AP Matched invoice has.
+
+You can find the model and possible requests parameters in the **Operations** section.
+
+### <span style="color: #F05D30">Add Invoice to AP Batch </span> 
+The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps you to include vouchered invoices to the AP batch. For this, specify the required Matched Invoice ID.
+
+``` json title="Example of request"
+{
+      "apMatchedInvoiceId": "5a654132-c718-4da8-b5cb-9667566f4712"
+    }
+
+```
+``` cs title="Example from code"
+/// <summary>
+    /// Add Invoices to Batch
+    /// </summary>
+    /// <param name="batchId">The batch id</param>
+    /// <param name="invoices">List of Invoice id</param>
+    /// <returns>Result of insertion</returns>
+    private static async Task<bool> AddBatchInvoice(Guid batchId, List<Guid> invoices)
+    {
+      await SetAuthHeader();
+      var content = new StringContent(Serialize(invoices), Encoding.UTF8, "application/json");
+      var response = await Client.PostAsync($"odata/Batches({batchId})/Invoices", content);
+      return response.IsSuccessStatusCode;
+    }
+
+```
+
+### <span style="color: #F05D30">Export AP Batch </span> 
+The ```odata/Batches(BatchId)/Export``` endpoint with the POST method helps you to export AP Batch. For this, specify required AP Batch ID.
+
+!!! note 
+
+    AP Batch can be exported in case it contains at least one invoice.
+
+After sending the valid request, the response will contain successful result.
+
+
+``` json title="Example of request"
+{
+      "@odata.context": "https://api-demo.envi.net/odata/$metadata#Edm.String",
+      "value": "Batch is successfully exported"
+    }
+
+```
+``` cs title="Example from code"
+/// <summary>
+    /// Submit Batch to Export
+    /// </summary>
+    /// <param name="batchId">The batch id</param>
+    /// <returns>Result of submitting</returns>
+    private static async Task<bool> Export(Guid batchId)
+    {
+      await SetAuthHeader();
+      var response = await Client.PostAsync($"odata/Batches({batchId})/Export", null);
+      return response.IsSuccessStatusCode;
+    }
+
+```
+
+### <span style="color: #F05D30">Submit to Queued</span> 
+The ```odata/Batches(batchId)/SubmitToQueued``` endpoint with the POST method helps you to submit AP batch to the Queued status. For this, specify the required AP Batch ID.
+
+``` cs title="Example from code"
+/// <summary>
+    /// Submit Batch to Queue
+    /// </summary>
+    /// <param name="batchId">The batch id</param>
+    /// <returns>Result of submitting</returns>
+    private static async Task<bool> SubmitToQueue(Guid batchId)
+    {
+      await SetAuthHeader();
+      var response = await Client.PostAsync($"odata/Batches({batchId})/SubmitToQueued", null);
+      return response.IsSuccessStatusCode;
+    }
+
+```

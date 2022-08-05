@@ -1,7 +1,7 @@
 # BI Tool Use Cases
 Business intelligence tools help you to improve decision making and social collaboration. Tools provide the means for efficient reporting, thorough analysis of data, statistics, and analytics.
 
-[Power BI](#power-bi), [Excel](#ms-exel), Tableau, and Klipfolio are data visualization and business intelligence tools that convert data from different data sources to interactive dashboards and BI reports.
+[Power BI](#power-bi), [Excel](#ms-exel), [Tableau](#tableau), and [Klipfolio](#klipfolio) are data visualization and business intelligence tools that convert data from different data sources to interactive dashboards and BI reports.
 
 Security is a priority for Envi, therefore we support tools that adhere to the latest standards in secure authentication.
 
@@ -165,3 +165,191 @@ To resolve this issue, do the following:
 2. Select the **Anonymous** access, and then click the **Connect** button.
 
 Your choice will be saved for the given external data source (for example, api-demo.envi.net).
+
+### <span style="color: #F05D30">Integration with ODBC Driver</span> 
+
+You can connect **MS Excel** with the **ODBC driver** and retrieve the needed data. For this, do the following:
+
+1. Open a new **Microsoft Excel** sheet, go to the **Data** tab, select **From Other Sources**, and select **From Microsoft Query**. ![image](img/MS_Exel_10.png) 
+2. Select **ZappySys JSON Driver**, and then select **OK**. ![image](img/MS_Exel_11.png) 
+3. When the **Data Source** is successfully connected, select **value** from **Available tables and columns**, move it to **Columns in your query**, and select **Next**.![image](img/MS_Exel_12.png) 
+4. Skip the **Filter Data** and **Sort Order** steps. On the **Finish** dialog box, select the **View data or edit query** option, and then click **Finish**. ![image](img/MS_Exel_13.png) 
+5. In the **Microsoft Query** editor, select the **SQL** icon. ![image](img/MS_Exel_14.png) 
+6. In the **SQL statement** dialog box, if needed modify the query, and select **OK**. ![image](img/MS_Exel_15.png) 
+
+    !!! note
+
+            Also, you can use the query example copied on the last step of driver configuration. With this sample query, you can specify additional parameters that are different from the default driver configuration, such as modify the endpoint address and use the same driver instance for different entities. The following options are available:
+            ``` title="Example"
+            WITH(
+                    Src='https://api-demo.envi.net/odata/Inventory'
+                    ,DataConnectionType='OAuth'
+                    ,TokenUrl='https://api-demo.envi.net/oauth2/token'
+                    ,ScopeSeparator='{space}'
+                    ,OAuthVersion='OAuth2'
+                    ,GrantType='Password'
+                    ,UserName=email@domain.com'
+                    ,ClientId='099153c2625149bc8ecb3e85e03f0022'
+                    ,UseCustomApp='True'
+                    ,Filter='$.value[*]'
+                    ,NextUrlAttributeOrExpr='$.[''@odata.nextLink'']'
+                )
+
+            ```
+
+            Populate only the option(s) you would like to change. For example, to retrieve Vendors data with driver, which is configured to use the Inventory endpoint, specify the Src option with new URL https://api-demo.envi.net/odata/Vendors. Here is the full query with all available columns:
+
+            ``` title="Example"
+            SELECT * FROM $
+                WITH(
+                    Src='https://api-demo.envi.net/odata/Inventory'
+                )
+
+            ```
+      
+7. Once you close the **Microsoft Query** editor, the **Import Data** dialog box will be shown. At this point, you have a few options on how to use the retrieved data. For example, select **Table**, and then click **OK**.  
+![image](img/MS_Exel_16.png) 
+8. **MS Excel** will execute your query and populate the sheet with the retrieved data. ![image](img/MS_Exel_17.png) 
+9. To refresh data, go to the **Data** tab and  select the **Refresh All** icon. ![image](img/MS_Exel_18.png) 
+
+The integration with **Microsoft Excel** is complete. You can use the retrieved data easily for your further needs.
+
+
+## <span style="color: #F05D30">Tableau</span> 
+
+ - Integration with ODBC
+ - Integration with Microsoft SQL Server
+
+### <span style="color: #F05D30">Integration with ODBC</span> 
+
+You can connect **Tableau** with the **ODBC driver** and retrieve the needed data. For this, do the following:
+
+ 1. In the **Tableau** app, create a **New book**. <br> ![image](img/MS_Exel_19.png) 
+ 2. On the **Data** tab, select the **Connect to Data** link. ![image](img/MS_Exel_20.png) 
+ 3. Select Other **Databases (ODBC)**. ![image](img/MS_Exel_21.png) 
+ 4. Select **ZappySys JSON Driver** as the **DNS**, and then select **Connect**. ![image](img/MS_Exel_22.png) 
+ 5. After the connection is established, select **Sign In**. ![image](img/MS_Exel_23.png) 
+ 6. The driver is added to **Connections**. In the **Table** section, select the **Search** icon, and then double-click the **value**.![image](img/MS_Exel_24.png) <br> The data is populated successfully. <br> ![image](img/MS_Exel_25.png) 
+ 7. Navigate to a sheet and continue working with the data according to your needs.![image](img/MS_Exel_26.png) 
+ 8. To refresh the data, select **Data** > **value** > **Refresh**. ![image](img/MS_Exel_27.png) 
+
+### <span style="color: #F05D30">Integration with Microsoft SQL Server </span> 
+Except for the direct **ODBC driver** connection, you can also connect **Tableau** using **Linked Server** that is already connected to the **ODBC driver**. For this, do the following:
+
+ 1. In the **Tableau** app, create a **New book**. <br> ![image](img/MS_Exel_19.png) 
+ 2. On the **Data** tab, select the **Connect to Data** link. ![image](img/MS_Exel_20.png) 
+ 3. Select **Microsoft SQL Server**. ![image](img/MS_Exel_28.png) 
+ 4. Provide the SQL Server connection information and click **Sign In**.![image](img/MS_Exel_29.png) 
+ 5. The SQL Server is added to **Connections**. Click **New Custom SQL**, then specify a query using the **OPENQUERY** syntax and click **OK**. ![image](img/MS_Exel_30.png <br>SQL query is created, and data is populated successfully. <br> ![image](img/MS_Exel_31.png) 
+6. Go to a sheet and continue working with the data according to your needs. ![image](img/MS_Exel_32.png) 
+
+Integration with **Tableau** is finished. You can use retrieved data easily for your further needs.
+
+## <span style="color: #F05D30">Klipfolio</span> 
+
+The **Klipfolio Dashboard** allows you to bring together all of your marketing data in one place to create powerful and compelling data dashboards.
+
+This guide describes how to configure pie chart components with Purchase Order’s vendors and statuses as a sample.
+
+Creating the dashboard with the needed data using the Klipfolio service consists of two stages:
+
+ - Connecting to the needed data source
+ - Visualizing your data with Klips elements
+
+### <span style="color: #F05D30">New Data Source</span> 
+
+To create a new data source and connect it to the dashboard, do the following:
+
+1. Go to the **Data Sources** menu item. Then, select **Create a New Data Source**. ![image](img/Klipfolio_1.png)  
+2. Select the **REST/URL** Data Source type. ![image](img/Klipfolio_2.png)  
+3. To configure Data Source:<br>
+    1. Type the needed URL.
+
+        !!! note
+
+                For example, ```https://<HostName>/odata/PurchaseOrders``` (in case, <HOSTNAME> = api-demo.envi.net).
+
+    2. Select the **JSON** Data Format and the **GET** HTTP method.
+
+    
+        !!! note
+
+                Leave the **UTF-8** value in the **Encoding** field.
+
+    3. Type the following Query Parameters: <br>
+        - **Name**: Authorization <br>
+        - **Value**: Bearer [auth_token] <br>
+        - **Type**: Header <br> ![image](img/Klipfolio_3.png)  
+            
+4. Open the **Authentication** (OAuth, 2-Step, X-WSSE, or Basic) section, then do the following:
+    1. Select the **2-Step Authentication** type.
+    2. Type your login and password.
+    3. Select the **TEXT** response and the **POST** method.
+    4. In the **Body** field, type the value using the following template: 
+    ```
+    grant_type=password&username=[username]&password=[password]&client_id=099153c2625149bc8ecb3e85e03f0022
+    ```
+
+        !!! note
+
+                The **099153c2625149bc8ecb3e85e03f0022** client_id is the same for all clients.
+
+    4. Specify the following parameters:
+        - **Name**: Content-Type <br>
+        - **Value**: application/x-www-form-urlencoded <br>
+        - **Type**: Header <br> ![image](img/Klipfolio_3.png)  
+
+    5. In the **Auth URL** field, type the following URL:
+    ```
+    https://<HOSTNAME>/oauth2/token
+    ```
+    (in case, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
+    6. In the **Token Path** field, type the following value: **"access_token":"(.*?)"**
+    7. Select the **GET** Logout Method and leave the **Logout URL** field empty. ![image](img/Klipfolio_4.png)  
+
+4. **Submit** the configuration.
+6. Verify the entered data and select **Continue**. ![image](img/Klipfolio_5.png)  
+7. Save the data source with the following steps:
+    1. Type the **Name** and **Description**.
+    2. Specify **Queue for Refresh**.
+    3. Set your **Sharing** preferences. ![image](img/Klipfolio_6.png) 
+
+After all entered data is saved, you will see your newly created Data Source. ![image](img/Klipfolio_7.png)  
+
+### <span style="color: #F05D30">New Dashboard</span> 
+To create a new dashboard with the needed data:
+
+1. On the **Dashboards** section of the **Klipfolio** menu, select **+** to create a new dashboard.
+2. Select **Add a Klip**, then **Build a Custom Klip**. ![image](img/Klipfolio_8.png)  
+3. To use an existing data source from the library, at the bottom of the page, in the **Data** tab, click the **+ Add Data Source**.
+4. In the **Add a Data Source** pop-up dialog box, select the data source you have already created.![image](img/Klipfolio_9.png)  
+5. As a sample, select the **Pie Chart** component. ![image](img/Klipfolio_10.png)  
+6. From the **Values** menu, select values you want to add to the pie chart. For example, Purchase Orders. ![image](img/Klipfolio_11.png)  
+7. To group all Purchase Orders by Label, on the **Properties** tab, select the **Group Repeating** labels checkbox. ![image](img/Klipfolio_12.png)  
+8. From the **Labels** menu, select the label you want to add to the pie chart. For example:
+    1. **Purchase Order’s vendors** pie chart ![image](img/Klipfolio_13.png) <br> 
+    or <br>
+    2. **Purchase Order’s statuses** pie chart ![image](img/Klipfolio_14.png)  
+
+9. Go to the **Pie Chart Properties** tab, and then select the appropriate number of pie chart slices.
+
+    !!! note
+
+            Make the pie chart large so that it doesn’t have the pagination showing. ![image](img/Klipfolio_16.png)  
+
+
+10. By default, there are only nine colors for pie slices, so you can see a few slices with the same colors. To add more colors to your chart, do the following:
+    1. Select the **Override the default colors** checkbox.
+    2. Click the **+** icon to add a new color and select the appropriate one.
+11. Go to the **Klip Properties** tab, and then add the **Klip** title. ![image](img/Klipfolio_15.png)  
+12. Add **Description**.
+13. Select the **Sharing** options if needed.
+14. Save your newly created **Klip**.
+
+Pie Chart for Purchase Order is configured and ready for use. ![image](img/Klipfolio_17.png)  
+
+
+
+
+
+

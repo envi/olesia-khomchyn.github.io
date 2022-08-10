@@ -1,40 +1,41 @@
 # BI Tool Use Cases
 Business intelligence tools help you to improve decision making and social collaboration. Tools provide the means for efficient reporting, thorough analysis of data, statistics, and analytics.
 
-[Power BI](#power-bi), [Excel](#ms-exel), [Tableau](#tableau), and [Klipfolio](#klipfolio) are data visualization and business intelligence tools that convert data from different data sources to interactive dashboards and BI reports.
+[Power BI](#power-bi), [Excel](#ms-excel), [Tableau](#tableau), and [Klipfolio](#klipfolio) are data visualization and business intelligence tools that convert data from different data sources to interactive dashboards and BI reports.
 
 Security is a priority for Envi, therefore we support tools that adhere to the latest standards in secure authentication.
 
-To easily visualize data you want in Power BI and MS Excel, create a custom query. Custom query retrieves JWT token, and then uses it in subsequent requests to the server.
+To easily visualize data you want in **Power BI** and **MS Excel**, create a custom query. Custom query retrieves JWT token, and then uses it in subsequent requests to the server.
 
 ## <span style="color: #F05D30">Power BI</span> 
 
-To work with Envi data easily in Power BI, you can use the following methods:
+To work easily with the Envi data in **Power BI**, you can use the following methods:
 
- - [Building Custom Query](#building-custom-query)
- - [Integration with ODBC driver](#integration-with-odbc-driver)
+ - [Building Custom Query](#building-custom-query-with-power-bi)
+ - [Integration with ODBC driver](#integration-with-odbc-driver-with-power-bi)
 
 
-### <span style="color: #F05D30">Building Custom Query</span> 
+### <span style="color: #F05D30">Building Custom Query with Power BI</span> 
 
-To create the query and use it for the data retrieving in Power BI, do the following:
+To create the query and use it for the data retrieving in **Power BI**, do the following:
 
  1. Select **Get Data** > **Blank Query**. ![image](img/Building_Custom Query_1.png)
  2. In **Power Query Editor**, select **Advanced Editor** from the **Home** tab or the **View** tab. ![image](img/Building_Custom Query_2.png)
- 3. Use the following template to populate data from the needed endpoint. <br> Where you should populate the following data:
-    - ```BASE_URL```–API URL (for example, api-demo.envi.net)
-    - ```RESOURCE_RELATIVE_URL```–URL to a specific resource (for example, Inventory, Vendors, Manufacturers)
-    - ```USER_NAME```, ```PASSWORD```–your credentials
-    - ```DATASOURCE_NAME```–arbitrary data-source name
+ 3. Use the following template to populate data from the needed endpoint. <br>
+    Here, you should populate the following data:
+    - ```BASE_URL```–API URL (for example, api-demo.envi.net.
+    - ```RESOURCE_RELATIVE_URL```–URL to a specific resource (for example, Inventory, Vendors, Manufacturers).
+    - ```USER_NAME```, ```PASSWORD```–your credentials.
+    - ```DATASOURCE_NAME```–arbitrary data-source name.
     - ```//Query=[ #"$filter"="", #"$orderBy"=""]```–additional query options such as ```$filter```, ```$orderBy```, ```$top```, ```$skip```, ```$search```.
 
+        !!! note
+
+            If you need to use any query option, specify this line in custom query ```(Query=[ #"$filter"="", #"$orderBy"=""])```.
+
     !!! note
 
-        In case you need to use any query option, specify this line in custom query (Query=[ #"$filter"="", #"$orderBy"=""]).
-
-    !!! note
-
-        The 099153c2625149bc8ecb3e85e03f0022 client_id is the same for all clients.
+        The **099153c2625149bc8ecb3e85e03f0022** client_id is the same for all clients.
 
     ``` cs title="Example"
     let
@@ -48,10 +49,10 @@ To create the query and use it for the data retrieving in Power BI, do the follo
                             #"Content-Type"="application/x-www-form-urlencoded;charset=UTF-8"],
                 Content = Text.ToBinary("username="&user_name&"&password="&password&""&"&grant_type=password&client_id=099153c2625149bc8ecb3e85e03f0022")
             ])),
-                access_token = GetJson[access_token],
-                AccessTokenHeader = "Bearer " & access_token,
-                JsonTable =  Json.Document(Web.Contents(
-                api_base_url & resource_relative_url,
+            access_token = GetJson[access_token],
+            AccessTokenHeader = "Bearer " & access_token,
+        JsonTable =  Json.Document(Web.Contents(
+        api_base_url & resource_relative_url,
         [
         //Query=[ #"$filter"="", #"$orderBy"=""],
         Headers=[#"Authorization" = AccessTokenHeader ]
@@ -62,19 +63,19 @@ To create the query and use it for the data retrieving in Power BI, do the follo
 
     ```
 
- 4. As the sample, for data retrieving, use Inventory resource and demo environment (api-demo.envi.net). ![image](img/Building_Custom Query_3.png)
- 5. Select the **Done** button. As the result, Excel has executed the query and the needed data is shown. ![image](img/Building_Custom Query_4.png)
- 6. Select the **Close & Apply** icon to populate data to the Excel spreadsheet. ![image](img/Building_Custom Query_5.png)
+ 4. As the sample, for data retrieving, use the Inventory resource and demo environment (api-demo.envi.net). ![image](img/Building_Custom Query_3.png)
+ 5. Select the **Done** button. As the result, **Excel** has executed the query and the needed data is shown. ![image](img/Building_Custom Query_4.png)
+ 6. Select the **Close & Apply** icon to populate data to the **Excel** spreadsheet. ![image](img/Building_Custom Query_5.png)
 
 Custom Query is ready for the data retrieving. To refresh data, call the context menu of the needed query with right-click, and then select **Refresh**. To modify the data, select **Edit**.
 
 !!! note
 
-    During the first query execution, you’ll see the warning message about data privacy and storage of the sensitive information. It is recommended to set privacy credentials to Organizational.
+    During the first query execution, you’ll see the warning message about data privacy and storage of sensitive information. It is recommended to set privacy credentials to **Organizational**.
 
-### <span style="color: #F05D30">Integration with ODBC Driver</span> 
+### <span style="color: #F05D30">Integration with ODBC Driver with Power BI</span> 
 
-You can connect Power BI with the **ODBC driver** and retrieve the needed data. For this, do the following:
+You can connect **Power BI** with the **ODBC driver** and retrieve the needed data. For this, do the following:
 
  1. Open the **Power BI** sheet, then go to the **Home** tab. On **Get Data**, select **More**. ![image](img/ODBC_Driver_1.png)
  2. In the **Get Data** dialog box, on the **Other** tab select **ODBC**, and then select **Connect**. ![image](img/ODBC_Driver_2.png)
@@ -88,34 +89,37 @@ You can connect Power BI with the **ODBC driver** and retrieve the needed data. 
 The **Load** dialog box with uploading progress appears. ![image](img/ODBC_Driver_6.png)
 5. Once the data is uploaded, a dataset along with a list of all available columns is shown. ![image](img/ODBC_Driver_7.png)
 6. To refresh the date, select the **Refresh** icon. ![image](img/ODBC_Driver_7.png)
-The integration with Power BI is finished. You can use retrieved data easily for your further needs.
 
-## <span style="color: #F05D30">MS Exel</span> 
+The integration with **Power BI** is finished. You can use retrieved data easily for your further needs.
+
+## <span style="color: #F05D30">MS Excel</span> 
 To work with Envi data easily in **MS Excel**, you can use the following methods:
 
- - Building Custom Query
- - Integration with ODBC driver
+ - [Building Custom Query](#building-custom-query-with-ms-excel)
+ - [Integration with ODBC driver](#integration-with-odbc-driver-with-ms-excel)
 
-### <span style="color: #F05D30">Building Custom Query</span> 
-To create the query and use it for data retrieving in **Excel**, do the following:
+### <span style="color: #F05D30">Building Custom Query with MS Excel</span> 
+
+To work easily with the Envi data in **Excel**, do the following:
 
 1. Go to the **Data** tab, then select **Get Data** > **From Other Sources** > **Blank Query**. ![image](img/MS_Exel_1.png) 
 2. In **Power Query Editor**, select **Advanced Editor** from the **Home** tab or the **View** tab. ![image](img/MS_Exel_2.png) 
-3. Use the following template to populate data from the needed endpoint. <br> Where you should populate the following data:
+3. Use the following template to populate data from the needed endpoint. <br> 
+    Here, you should populate the following data:
 
-    - ```BASE_URL```–API URL (for example, api-demo.envi.net)
-    - ```RESOURCE_RELATIVE_URL```–URL to a specific resource (for example, Inventory, Vendors, Manufacturers)
-    - ```USER_NAME```, ```PASSWORD```–your credentials
-    - ```DATASOURCE_NAME```–arbitrary data-source name
+    - ```BASE_URL```–API URL (for example, api-demo.envi.net).
+    - ```RESOURCE_RELATIVE_URL```–URL to a specific resource (for example, Inventory, Vendors, Manufacturers).
+    - ```USER_NAME```, ```PASSWORD```–your credentials.
+    - ```DATASOURCE_NAME```–arbitrary data-source name.
     - ```//Query=[ #"$filter"="", #"$orderBy"=""]```–additional query options such as ```$filter```, ```$orderBy```, ```$top```, ```$skip```, ```$search```.
 
     !!! note
 
-        In case you need to use any query option, specify this line in custom query (Query=[ #"$filter"="", #"$orderBy"=""]).
+        If you need to use any query option, specify this line in custom query (```Query=[ #"$filter"="", #"$orderBy"=""]```).
 
     !!! note
 
-        The 099153c2625149bc8ecb3e85e03f0022 client_id is the same for all clients.
+        The **099153c2625149bc8ecb3e85e03f0022** client_id is the same for all clients.
 
     ``` cs title="Example"
     let
@@ -151,7 +155,7 @@ Custom Query is ready for the data retrieving. To refresh data, call the context
 
 !!! note
     
-    During the first query execution, you’ll see the warning message about data privacy and storage of the sensitive information.![image](img/MS_Exel_6.png) 
+    During the first query execution, you’ll see the warning message about data privacy and storage of sensitive information.![image](img/MS_Exel_6.png) 
 
 To resolve this issue, do the following:
 
@@ -166,47 +170,46 @@ To resolve this issue, do the following:
 
 Your choice will be saved for the given external data source (for example, api-demo.envi.net).
 
-### <span style="color: #F05D30">Integration with ODBC Driver</span> 
+### <span style="color: #F05D30">Integration with ODBC Driver with MS Excel</span> 
 
 You can connect **MS Excel** with the **ODBC driver** and retrieve the needed data. For this, do the following:
 
 1. Open a new **Microsoft Excel** sheet, go to the **Data** tab, select **From Other Sources**, and select **From Microsoft Query**. ![image](img/MS_Exel_10.png) 
-2. Select **ZappySys JSON Driver**, and then select **OK**. ![image](img/MS_Exel_11.png) 
+2. Select **ZappySys JSON Driver**, then select **OK**. ![image](img/MS_Exel_11.png) 
 3. When the **Data Source** is successfully connected, select **value** from **Available tables and columns**, move it to **Columns in your query**, and select **Next**.![image](img/MS_Exel_12.png) 
 4. Skip the **Filter Data** and **Sort Order** steps. On the **Finish** dialog box, select the **View data or edit query** option, and then click **Finish**. ![image](img/MS_Exel_13.png) 
 5. In the **Microsoft Query** editor, select the **SQL** icon. ![image](img/MS_Exel_14.png) 
 6. In the **SQL statement** dialog box, if needed modify the query, and select **OK**. ![image](img/MS_Exel_15.png) 
 
-    !!! note
+    Also, you can use the query example copied on the last step of driver configuration. With this sample query, you can specify additional parameters that are different from the default driver configuration, such as modifying the endpoint address and using the same driver instance for different entities. The following options are available:
 
-            Also, you can use the query example copied on the last step of driver configuration. With this sample query, you can specify additional parameters that are different from the default driver configuration, such as modify the endpoint address and use the same driver instance for different entities. The following options are available:
-            ``` title="Example"
-            WITH(
-                    Src='https://api-demo.envi.net/odata/Inventory'
-                    ,DataConnectionType='OAuth'
-                    ,TokenUrl='https://api-demo.envi.net/oauth2/token'
-                    ,ScopeSeparator='{space}'
-                    ,OAuthVersion='OAuth2'
-                    ,GrantType='Password'
-                    ,UserName=email@domain.com'
-                    ,ClientId='099153c2625149bc8ecb3e85e03f0022'
-                    ,UseCustomApp='True'
-                    ,Filter='$.value[*]'
-                    ,NextUrlAttributeOrExpr='$.[''@odata.nextLink'']'
-                )
+    ``` 
+    WITH(
+            Src='https://api-demo.envi.net/odata/Inventory'
+            ,DataConnectionType='OAuth'
+            ,TokenUrl='https://api-demo.envi.net/oauth2/token'
+            ,ScopeSeparator='{space}'
+            ,OAuthVersion='OAuth2'
+            ,GrantType='Password'
+            ,UserName=email@domain.com'
+            ,ClientId='099153c2625149bc8ecb3e85e03f0022'
+            ,UseCustomApp='True'
+            ,Filter='$.value[*]'
+            ,NextUrlAttributeOrExpr='$.[''@odata.nextLink'']'
+        )
+        
+    ```
 
-            ```
+    Populate only the option(s) you would like to change. For example, to retrieve Vendors data with the driver, which is configured to use the Inventory endpoint, specify the Src option with a new URL https://api-demo.envi.net/odata/Vendors. Here is the full query with all available columns:
 
-            Populate only the option(s) you would like to change. For example, to retrieve Vendors data with driver, which is configured to use the Inventory endpoint, specify the Src option with new URL https://api-demo.envi.net/odata/Vendors. Here is the full query with all available columns:
+    ``` 
+    SELECT * FROM $
+      WITH(
+         Src='https://api-demo.envi.net/odata/Inventory'
+      )
+        
+    ```
 
-            ``` title="Example"
-            SELECT * FROM $
-                WITH(
-                    Src='https://api-demo.envi.net/odata/Inventory'
-                )
-
-            ```
-      
 7. Once you close the **Microsoft Query** editor, the **Import Data** dialog box will be shown. At this point, you have a few options on how to use the retrieved data. For example, select **Table**, and then click **OK**.  
 ![image](img/MS_Exel_16.png) 
 8. **MS Excel** will execute your query and populate the sheet with the retrieved data. ![image](img/MS_Exel_17.png) 
@@ -217,10 +220,10 @@ The integration with **Microsoft Excel** is complete. You can use the retrieved 
 
 ## <span style="color: #F05D30">Tableau</span> 
 
- - Integration with ODBC
- - Integration with Microsoft SQL Server
+ - [Integration with ODBC](#integration-with-odbc-with-tableau)
+ - [Integration with Microsoft SQL Server](#integration-with-microsoft-sql-server-with-tableau)
 
-### <span style="color: #F05D30">Integration with ODBC</span> 
+### <span style="color: #F05D30">Integration with ODBC with Tableau</span> 
 
 You can connect **Tableau** with the **ODBC driver** and retrieve the needed data. For this, do the following:
 
@@ -233,14 +236,15 @@ You can connect **Tableau** with the **ODBC driver** and retrieve the needed dat
  7. Navigate to a sheet and continue working with the data according to your needs.![image](img/MS_Exel_26.png) 
  8. To refresh the data, select **Data** > **value** > **Refresh**. ![image](img/MS_Exel_27.png) 
 
-### <span style="color: #F05D30">Integration with Microsoft SQL Server </span> 
+### <span style="color: #F05D30">Integration with Microsoft SQL Server with Tableau</span> 
 Except for the direct **ODBC driver** connection, you can also connect **Tableau** using **Linked Server** that is already connected to the **ODBC driver**. For this, do the following:
 
  1. In the **Tableau** app, create a **New book**. <br> ![image](img/MS_Exel_19.png) 
  2. On the **Data** tab, select the **Connect to Data** link. ![image](img/MS_Exel_20.png) 
  3. Select **Microsoft SQL Server**. ![image](img/MS_Exel_28.png) 
  4. Provide the SQL Server connection information and click **Sign In**.![image](img/MS_Exel_29.png) 
- 5. The SQL Server is added to **Connections**. Click **New Custom SQL**, then specify a query using the **OPENQUERY** syntax and click **OK**. ![image](img/MS_Exel_30.png <br>SQL query is created, and data is populated successfully. <br> ![image](img/MS_Exel_31.png) 
+ 5. The SQL Server is added to **Connections**. Click **New Custom SQL**, then specify a query using the **OPENQUERY** syntax and click **OK**. 
+ ![image](img/MS_Exel_30.png) <br> The SQL query is created and data is populated successfully. <br> ![image](img/MS_Exel_31.png) 
 6. Go to a sheet and continue working with the data according to your needs. ![image](img/MS_Exel_32.png) 
 
 Integration with **Tableau** is finished. You can use retrieved data easily for your further needs.
@@ -253,10 +257,10 @@ This guide describes how to configure pie chart components with Purchase Order�
 
 Creating the dashboard with the needed data using the Klipfolio service consists of two stages:
 
- - Connecting to the needed data source
- - Visualizing your data with Klips elements
+ - [Connecting to the needed data source](#new-data-source-with-klipfolio)
+ - [Visualizing your data with Klips elements](#new-dashboard-with-klipfolio)
 
-### <span style="color: #F05D30">New Data Source</span> 
+### <span style="color: #F05D30">New Data Source with Klipfolio </span> 
 
 To create a new data source and connect it to the dashboard, do the following:
 
@@ -265,9 +269,11 @@ To create a new data source and connect it to the dashboard, do the following:
 3. To configure Data Source:<br>
     1. Type the needed URL.
 
-        !!! note
-
-                For example, ```https://<HostName>/odata/PurchaseOrders``` (in case, <HOSTNAME> = api-demo.envi.net).
+        For example, 
+        ```
+        https://<HostName>/odata/PurchaseOrders
+        ``` 
+        (in case, **&lt;HOSTNAME&gt;** = api-demo.envi.net).
 
     2. Select the **JSON** Data Format and the **GET** HTTP method.
 
@@ -316,7 +322,7 @@ To create a new data source and connect it to the dashboard, do the following:
 
 After all entered data is saved, you will see your newly created Data Source. ![image](img/Klipfolio_7.png)  
 
-### <span style="color: #F05D30">New Dashboard</span> 
+### <span style="color: #F05D30">New Dashboard with Klipfolio</span> 
 To create a new dashboard with the needed data:
 
 1. On the **Dashboards** section of the **Klipfolio** menu, select **+** to create a new dashboard.
@@ -324,12 +330,12 @@ To create a new dashboard with the needed data:
 3. To use an existing data source from the library, at the bottom of the page, in the **Data** tab, click the **+ Add Data Source**.
 4. In the **Add a Data Source** pop-up dialog box, select the data source you have already created.![image](img/Klipfolio_9.png)  
 5. As a sample, select the **Pie Chart** component. ![image](img/Klipfolio_10.png)  
-6. From the **Values** menu, select values you want to add to the pie chart. For example, Purchase Orders. ![image](img/Klipfolio_11.png)  
+6. From the **Values** menu, select the values you want to add to the pie chart. For example, Purchase Orders. ![image](img/Klipfolio_11.png)  
 7. To group all Purchase Orders by Label, on the **Properties** tab, select the **Group Repeating** labels checkbox. ![image](img/Klipfolio_12.png)  
 8. From the **Labels** menu, select the label you want to add to the pie chart. For example:
-    1. **Purchase Order’s vendors** pie chart ![image](img/Klipfolio_13.png) <br> 
+    1. **Purchase Order’s Vendors** pie chart ![image](img/Klipfolio_13.png) <br> 
     or <br>
-    2. **Purchase Order’s statuses** pie chart ![image](img/Klipfolio_14.png)  
+    2. **Purchase Order’s Statuses** pie chart ![image](img/Klipfolio_14.png)  
 
 9. Go to the **Pie Chart Properties** tab, and then select the appropriate number of pie chart slices.
 

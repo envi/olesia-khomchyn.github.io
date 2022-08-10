@@ -13,6 +13,7 @@ nav:
     - Envi OData Examples: Envi_OData_Examples.md
     - Envi Use Cases: Envi_Use_Cases.md
     - Bi Tool Use Cases: BI_Tool_Use_Cases.md
+    - Integrators: Integrators.md
   - Operations:
     - Inventory: Inventory.md
     - Addresses: Addresses.md
@@ -43,6 +44,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
 
 extra_css:
   - stylesheets/extra.css

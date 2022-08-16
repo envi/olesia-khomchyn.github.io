@@ -21,7 +21,7 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
 
  - [Create JSON Source](#create-json-source)
  - [Build Database schema in MS SQL Server](#build-database-schema-in-ms-sql-server)
- - Test SSIS Package
+ - [Test SSIS Package](#test-ssis-package)
 
 ### <span style="color: #F05D30">Create JSON Source</span> 
 1. Download and install [SSIS ZappySys PowerPack](https://zappysys.com/products/ssis-powerpack/).
@@ -376,6 +376,253 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
 7. Select **OLE DB connection manager**, then select the table from the dropdown list and click **OK**.  ![image](img/Integrators_27.png) 
 8. Connect items using arrow. For this, click **Json Source (REST API or File)** and select the **arrow**. <br> ![image](img/Integrators_28.png) 
 9. Double-click **OLE DB Destination**. On **OLE DB Destination Editor**, go to the **Mapping** section to verify connections, and then click **OK**. ![image](img/Integrators_29.png) 
+
+
+### <span style="color: #F05D30">Test SSIS Package</span> 
+1. To test the **SSIS Package**, click **Start**. ![image](img/Integrators_30.png) 
+2. After processing, you’ll see a successful solution result.<br>
+![image](img/Integrators_31.png) 
+3. Go to the **MS SQL Server**. <br> 
+
+You’ll see the successful test record. ![image](img/Integrators_32.png) 
+
+## <span style="color: #F05D30">ODBC Powerpack</span> 
+
+ - [ODBC Powerpack Configuration](#odbc-powerpack-configuration)
+ - [CData ODBC Driver for OData](#ocdata-odbc-driver-for-odata)
+
+### <span style="color: #F05D30">ODBC Powerpack Configuration</span> 
+With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi OData API and insert it to the MSSQL database. To do it:
+
+1. Download and install [ODBC PowerPack](#https://zappysys.com/products/odbc-powerpack/).
+2. After installation, open the **ZappySys** data gateway configuration manager. Go to the **Users** tab, and then click **Add** to add a new user. ![image](img/Integrators_33.png) 
+3. Enter credentials, then select the **Is Administrator** checkbox, and click **OK**. ![image](img/Integrators_34.png) 
+4. In the **Administrative Tools** folder, select **ODBC Data Source Administrator (64-bit)**. Go to the **System DNS** tab and **Add** a new data source. ![image](img/Integrators_35.png) 
+5. Select the **ZappySys JSON Driver** value, then click **Finish**. In the **ODBC Data Source Administrator (64-bit)** dialog box, click **OK**. ![image](img/Integrators_36.png) 
+6. In **Zappysys Data Gateway Configuration Manager**, click **Add** to add a new data source. ![image](img/Integrators_37.png) 
+7. Create **Datasource Name** and **Connector Type**, then click **OK**. ![image](img/Integrators_38.png) 
+8. In the **Settings** column, select **Edit**. ![image](img/Integrators_39.png) 
+9. Insert the needed URL with query parameter, select **OAuth Connection Type** and **GET HTTP Request Method**. Then, **Click to Configure** OAuth Connection Type.
+![image](img/Integrators_40.png) 
+10. In the **OAuth settings** dialog box, perform the following steps: 
+    1. From the **OAuth Provider** dropdown menu, select the **Custom** option.
+    2. From the **OAuth Version** dropdown menu, select the **OAuth2** option.
+    3. From the **OAuth Grant Type** dropdown menu, select the **Password Grant** option.
+    4. Enter **Client ID**, **User Name**, and **Password**.
+    5. Enter **Access Token URL** (for example, ```api-demo.envi.net/oauth2/token```).
+    6. Click **OK**. ![image](img/Integrators_41.png) 
+    
+        !!! note
+
+            If you want to sign in organization that is not your default one, go to the **Advanced** tab of **OAuth settings**, and then in the **Extra Attributes for /token Request** field, specify ID of the needed organization as an additional parameter with the **organizationId** value:![image](img/Integrators_42.png) 
+
+11. If you need to modify pagination, go to the **Pagination** tab. ![image](img/Integrators_43.png) 
+12. Click the **Select Filter** button, then select the **value** filter path. ![image](img/Integrators_44.png) 
+13. Test the Connection.
+14. Go to the **Preview** tab, then select **value** from the dropdown list. 
+    
+    !!! note
+
+        Copy the query if you need need it for setting up the the **MS Excel** and **Power BI** tools.
+
+    ![image](img/Integrators_45.png) 
+
+15. Correct fields if needed and click **Preview Data**. ![image](img/Integrators_46.png) 
+16. Go to the **Code Generator** tab, then copy query to **MS SQL Management Studio**, and click **OK**. ![image](img/Integrators_47.png) 
+17. On the **Users** column, select **Edit**. ![image](img/Integrators_48.png) 
+18. Add previously created user to the data source, and then select **Full access**. ![image](img/Integrators_49.png) 
+19. Go to the **General** tab, edit **Port** if needed or use a default value. Click **Save**. ![image](img/Integrators_50.png) 
+20. Go to **MS SQL Management Studio**. Here, create a new **Linked Server**. ![image](img/Integrators_51.png) 
+21. Edit parameters.![image](img/Integrators_52.png) 
+22. Go to the **Security** tab, enter credentials, and click **OK**. ![image](img/Integrators_53.png) 
+23. Write the query. ![image](img/Integrators_54.png) 
+
+    Use the following fields for Inventory items data:
+
+    ??? example "Inventory Item Fields" 
+        
+        ```
+        USE [Database]
+        GO
+
+        -- SELECT * INTO inventory_odbc FROM OPENQUERY([INVENTORY]
+        INSERT INTO [TSQL2012].[dbo].[Inventory]
+        SELECT * FROM OPENQUERY([INVENTORY], 'SELECT
+        "inventoryId",
+        "organizationId",
+        "organizationName",
+        "inventoryGroupId",
+        "inventoryNo",
+        "inventoryGroupName",
+        "inventoryDescription",
+        "inventoryDescription2",
+        "stockUOM",
+        "arBillingCode",
+        "hcpcsCode",
+        "notes",
+        "dateAdded",
+        "addedId",
+        "addedByName",
+        "lastUpdated",
+        "lastUpdatedBy",
+        "lastUpdatedByName",
+        "activeStatus",
+        "unspscCode",
+        "isLatex",
+        "classificationId",
+        "classificationName",
+        "classification2Id",
+        "classification2Name",
+        "defaultExpenseLedgerNo",
+        "defaultAssetLedgerNo",
+        "periopCategoryId",
+        "periopItemCategory",
+        "systemTypeId",
+        "systemType",
+        "defaultIsBillable"
+        FROM "value"
+        ')
+            
+        ```
+
+24. Load data into the table. <br> ![image](img/Integrators_55.png) 
+    
+    !!! note
+
+        You can write the query in the following way: ![image](img/Integrators_56.png) 
+
+25. You’ll see the following notification on the **Messages** tab. <br> ![image](img/Integrators_57.png) 
+26. The **Results** tab will be the following: ![image](img/Integrators_58.png) 
+
+    For each new endpoint, add new data source. The configuration flow is the same for every endpoint. <br> ![image](img/Integrators_59.png) 
+
+    You can use the following examples of URLs for the **Settings** of the data source:
+
+    ``` json title="Example"
+    Facilities URL: https://api-demo.envi.net/odata/Facilities
+    Vendors URL: https:// api-demo.envi.net/odata/Vendors
+    Disputed Matched Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq 'Disputed'
+    Pending Batched Invoices URL: https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
+
+    ```
+
+    For example, you can use the following fields to retrieve Matched Invoice data:
+
+    ??? example "Matched Invoice Fields" 
+        
+        ```
+        USE [Database]
+        GO
+
+        SELECT * FROM OPENQUERY([MATCHEDINVOICES]
+        , 'SELECT
+        "apMatchedInvoiceId",
+        "purchaseOrderId",
+        "purchaseOrderNo",
+        "sequenceNo",
+        "poType",
+        "facilityId",
+        "facilityNo",
+        "facilityName",
+        "locationId",
+        "locationNo",
+        "locationName",
+        "vendorId",
+        "vendorNo",
+        "vendorName",
+        "invoiceNo",
+        "matchedInvoiceStatusId",
+        "matchedInvoiceStatus",
+        "vendorRemitToId",
+        "remitToNo",
+        "remitToDescription",
+        "remitToVendorNo",
+        "creditCardIDId",
+        "creditCardID",
+        "creditCardIDDescription",
+        "reference",
+        "notes",
+        "invoiceDate",
+        "invoiceDueDate",
+        "trackingCode",
+        "invoiceValidationTotal",
+        "cerNoId",
+        "cerNo",
+        "cerNoDescription",
+        "discountAmount",
+        "taxAmount",
+        "shippingAmount",
+        "taxExpenseGLCode",
+        "taxAccrualGLCode",
+        "discountGLCode",
+        "taxExpenseAmount",
+        "apBatchId",
+        "apBatchNo",
+        "taxCode",
+        "receivedInvoiceId",
+        "offset",
+        "offsetGLCode",
+        "createdBy",
+        "createdByUserName",
+        "dateCreated",
+        "lastUpdated",
+        "lastUpdatedBy",
+        "lastUpdatedByUserName",
+        "submittedBy",
+        "submittedByUserName"
+        FROM "value"')
+
+        -- with filter
+        SELECT * FROM OPENQUERY([MATCHEDINVOICES]
+        , 'SELECT *
+        FROM "value"
+        WHERE "facilityNo" = "08"')
+                
+        ```
+
+    As the result, you’ll see the following page: ![image](img/Integrators_60.png) 
+
+### <span style="color: #F05D30">OCData ODBC Driver for OData</span> 
+
+With the **CData ODBC Driver**, you can easily retrieve the data from Envi OData API and insert it to the MSSQL database. To do it:
+
+1. Download [OData ODBC Driver](https://www.cdata.com/drivers/odata/download/).
+2. Install and run **ODataODBCDriver.exe**.
+3. On the **Choose Components** page, make sure the **SQL Gateway** checkbox is selected, and then select **Next**. <br> ![image](img/Integrators_61.png) 
+4. Go to **Control Panel** > **All Control Panel Items** > **Administrative Tools** > **ODBC Data Source Administrator (64 bit)**, and then select **Add**. ![image](img/Integrators_62.png) 
+5. Select the **CData ODBC Driver for OData** driver, then select **Finish**. ![image](img/Integrators_63.png) 
+6. In the **DSN Configuration** dialog box, enter the **Data Source Name** and the following connection properties: **URL**, **User**, **Password**, **OAuth Version**, **OAuth Access Token URL**, **OAuth Refresh Token URL**, **OAuth Grand Type**, **Initiate OAuth**, and **OAuth Client ID**. ![image](img/Integrators_64.png) 
+7. Select **Test Connection**. Then, you will see the notification about the successful connection.
+8. Run **CDATA SQL Gateway**. <br>![image](img/Integrators_65.png) 
+9. Go to the **Services** tab, and then select **Add**. ![image](img/Integrators_66.png) 
+10. Specify the following settings, and then select OK:
+    1. Enter **Service Name**.
+    2. Select **Data Source**.
+    3. Enter the **Port** value. <br> ![image](img/Integrators_67.png) 
+11. Go to the **Users** tab, then select **Add**. ![image](img/Integrators_68.png) 
+12. In the **Edit User** window, specify the following settings, and select **OK**:
+    1. **User**: type your username.
+    2. **Password**: type your password.
+    3. **Privilege Settings**: next to CDATA, select **Full**. ![image](img/Integrators_69.png) 
+13. Select **Save Changes**, then **Star**t. ![image](img/Integrators_70.png) 
+14. After the **Service CDATA** process has started, run it as a **Window Service**. ![image](img/Integrators_71.png) 
+15. Go to **Microsoft SQL Server Management Studio**. Here, right-click the **Linked Servers** folder, and select **New Linked Server**. ![image](img/Integrators_72.png) 
+16. Specify the following settings:
+    1. **Linked Server**: name of the server
+    2. **Provider**: SQL Server Native Client 11.0
+    3. **Data Source**: localhost.1450
+    4. **Catalog**: CDATA for Linked Server <br> ![image](img/Integrators_73.png) 
+17. Go to the **Security** tab. Here, do the following:
+    1. Select **Be made using this security**.
+    2. Fill in the **Remote login** and **With password** fields.
+    2. Select **OK**. <br> ![image](img/Integrators_74.png) 
+18. Then, you will see all tables from the endpoint. ![image](img/Integrators_75.png) 
+19. Right-click a needed table, then select **Script Table as** > **Select To** > **New Query Editor Window**. ![image](img/Integrators_76.png) 
+    As a result, you’ll see the following table: ![image](img/Integrators_77.png) 
+
+
+
+
 
 
 

@@ -1,10 +1,10 @@
 Refine the results of your query by using query options.
 
-- $search
-- $top and $skip
-- $filter
-- $orderby
-- $format
+- [$search](#search)
+- [$top and $skip](#top-and-skip)
+- [$filter](#filter)
+- [$orderby](#orderby)
+- [$format](#format)
 
 This section will help you go through query options supported by Envi OData API and common scenarios for using them. Envi OData API is based on OData protocol v4.0 but has its own custom implementation, so currently not all query options are supported. Envi API allows using query options for all resources that return lists of entities, except those which actions or functions are applied to OData.
 

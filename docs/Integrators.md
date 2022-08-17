@@ -1,7 +1,8 @@
 If you want to integrate Envi API into your SQL Server Data Tools and retrieve the needed data easily, you can use the following applications:
 
  - [SSIS Powerpack](#ssis-powerpack)
- - ODBC Powerpack
+ - [ODBC Powerpack](#odbc-powerpack)
+
 Before working with integrators, please see the following requirements and installation:
 
 **For SSIS Powerpack**
@@ -17,42 +18,41 @@ Before working with integrators, please see the following requirements and insta
 
 ## <span style="color: #F05D30">SSIS Powerpack</span> 
 
-With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData API and insert it to the MSSQL database. To do it:
+With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData API and insert into the MSSQL database. To do it:
 
  - [Create JSON Source](#create-json-source)
- - [Build Database schema in MS SQL Server](#build-database-schema-in-ms-sql-server)
+ - [Build Database Schema in MS SQL Server](#build-database-schema-in-ms-sql-server)
  - [Test SSIS Package](#test-ssis-package)
 
 ### <span style="color: #F05D30">Create JSON Source</span> 
 1. Download and install [SSIS ZappySys PowerPack](https://zappysys.com/products/ssis-powerpack/).
-2. After installation, open [Microsoft SQL Server Data Tool for Visual Studio (SSDT)](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017), and then create a new **Integration Services Project**. For this, on the **File** tab, select **New Project**.
+2. After installation, open [Microsoft SQL Server Data Tool for Visual Studio (SSDT)](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017) and  create a new **Integration Services Project**. For this, on the **File** tab, select **New Project**.
 
     !!! note
 
-        Select location where to save the project and name it. ![image](img/Integrators_1.png)
+        Select a location where to save the project and name it. ![image](img/Integrators_1.png)
 
-3. Add **Data Flow Task**. For this, drag the **ZS JSON Source** (REST API or File) to the board. ![image](img/Integrators_2.png)
+3. Add **Data Flow Task**. For this, drag the **ZS JSON Source (REST API or File)** to the board. ![image](img/Integrators_2.png)
 
     !!! note
 
-        You can rename the task easily (for example, **API to MSSQL**). For this, just click the record.
+        You can rename the task easily (for example, **API to MSSQL**). For this, just select the record.
 
 4. Double-click the **Data Flow Task** to see the **DataFlow Design** dashboard.
 
     !!! note
 
-        Also, you can select the Data Flow tab for this.
+        Also, you can select the **Data Flow** tab for this.
 
 5. Drag the **ZS JSON Source (REST API or File)** to the board from the **SSIS** toolbox. ![image](img/Integrators_3.png)
 6. Double-click **JSON Source (REST API or File)** for the following configuration:
-    1. Enter the needed **Path** or **Web URL** you need, and then add the appropriate query parameters:
+    1. Enter the needed **Path** or **Web URL**, then add the appropriate query parameters:
 
-        For example, 
         ```
         https://<HOSTNAME>/odata/<ENDPOINT>$<QUERY>
         
         ``` 
-        (in case, **&lt;HOSTNAME&gt;** = api-demo.envi.net). 
+        (for eaxample, **&lt;HOSTNAME&gt;** = api-demo.envi.net). 
 
         ![image](img/Integrators_4.png)
 
@@ -60,16 +60,16 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
 
                 You can use the following examples to retrieve the needed data:
 
-            ```title="Example"
+            ``` title="Example"
             Inventory items URL: https://api-demo.envi.net/odata/Inventory?$filter=classification2Name eq '1'
             Facilities URL: https://api-demo.envi.net/odata/Facilities
             Vendors URL: https:// api-demo.envi.net/odata/Vendors
             Disputed Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq 'Disputed'
             Pending Batched Invoices URL:  https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
             ```
-                Before adding new data flows to the existing one, disable previous items. For this, right-click the Data Flow Task and select Disable. After that, you’ll see the following result: ![image](img/Integrators_5.png)
+                Before adding new data flows to the existing one, disable previous items. For this, right-click the **Data Flow Task** and select **Disable**. After that, you’ll see the following result: ![image](img/Integrators_5.png)
 
-    2. Select the **Use Credentials** checkbox. From the dropdown menu, select the **New ZS-OAuth Connection** option. ![image](img/Integrators_6.png)
+    2. Select the **Use Credentials** checkbox. Then, from the dropdown menu, select the **New ZS-OAuth Connection** option. ![image](img/Integrators_6.png)
 
 7. After selecting the **New ZS-OAuth** option, the **OAuth** dialog box is shown. Perform the following settings:
     1. From the **OAuth Provider** dropdown menu, select the **Custom** option.
@@ -77,24 +77,23 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
     3. From the **OAuth Grant Type** dropdown menu, select the **Password Grant** option.
     4. Enter **Client ID**, **User Name**, and **Password**.
     5. Enter **Access Token URL**. (for example, ```api-demo.envi.net/oauth2/token```) <br> ![image](img/Integrators_8.png)
+    6. Go to the **OAuth2 Grand Options** tab, select the ellipsis **(…)** button, and provide a refresh token file path.
 
-8. Go to the **OAuth2 Grand Options** tab, select the ellipsis **(…)** button, and provide a refresh token file path.
+        !!! note
 
-    !!! note
+            The file name extension should be **.txt**. The file should be empty.
 
-        The file name extension should be **.txt**. The file should be empty.
+        !!! note
+        
+            Place the file in a separate and non-shared folder.
 
-    !!! note
-    
-        Place the file in a separate and non-shared folder.
+    7. Select **Test Connection**, then **OK**. ![image](img/Integrators_7.png)
 
-9. Select **Test Connection** and click **OK**. ![image](img/Integrators_7.png)
+        !!! note
+        
+            If you want to sign in to an organization that is not your default one, go to the **Advanced** tab of the **OAuth settings**, then in the **Extra Attributes for /token Request** field, specify the **ID** of the needed organization as an additional parameter with the **organizationId** value: ![image](img/Integrators_9.png)
 
-    !!! note
-    
-        If you want to sign in organization that is not your default one, go to the **Advanced** tab of **OAuth** settings, and then in the **Extra Attributes for /token Request** field, specify the **ID** of the needed organization as an additional parameter with the **organizationId** value: ![image](img/Integrators_9.png)
-
-10. On the **Filter Options** tab, click the **Select Filter** button.
+8. On the **Filter Options** tab, select the **Select Filter** button.
 
     !!! note
     
@@ -102,41 +101,41 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
     
     ![image](img/Integrators_10.png)
 
-11. Select the **value** filter path, then click **OK**. ![image](img/Integrators_11.png)
-10. In the **Metadata Scan Options** dialog box, click **OK**. ![image](img/Integrators_12.png)
+9. Select the **value** filter path, then select **OK**. ![image](img/Integrators_11.png)
+10. Then, you will see the **Metadata Scan Options** dialog box. There, select **OK**. ![image](img/Integrators_12.png)
 11. In the **JSON Source (REST API or File)** dialog box, select the **Pagination** tab.
 12. From the **Next Link/Cursor Expression** field, select the ellipsis **(…)** button. ![image](img/Integrators_13.png)
-13. Select **@odata.nextLink**, and then click **OK**. ![image](img/Integrators_14.png)
-14. In the **JSON Source (REST API or File)** dialog box, go to the **Columns** section, and then select the needed fields. Click **OK**. ![image](img/Integrators_15.png) <br> 
+13. Select **@odata.nextLink**, then select **OK**. ![image](img/Integrators_14.png)
+14. In the **JSON Source (REST API or File)** dialog box, go to the **Columns** section, and then select the needed fields. Select **OK**. ![image](img/Integrators_15.png) <br> 
 
 
-    ??? example "Facility columns" 
+    ??? example "Facility Columns" 
     
         ![image](img/Integrators_18.png)
 
-    ??? example "Vendor columns" 
+    ??? example "Vendor Columns" 
 
         ![image](img/Integrators_19.png)
 
-    ??? example "Disputed Matched Invoice columns"
+    ??? example "Disputed Matched Invoice Columns"
 
         ![image](img/Integrators_21.png)
 
-    ??? example "Pending Batched Invoice columns"
+    ??? example "Pending Batched Invoice Columns"
 
         ![image](img/Integrators_20.png)
 
 
-    The **JSON Source** setup is complete. Go to the **JSON Source (REST API or File)** dialog box, and then in the **Settings** section, select **Preview** to view the retrieved data. ![image](img/Integrators_16.png)
+The **JSON Source** setup is completed. Go to the **JSON Source (REST API or File)** dialog box, then in the **Settings** section, select **Preview** to view the retrieved data. ![image](img/Integrators_16.png)
 
 The data is retrieved successfully. ![image](img/Integrators_17.png)
 
-### <span style="color: #F05D30">Build Database schema in MS SQL Server</span> 
+### <span style="color: #F05D30">Build Database Schema in MS SQL Server</span> 
 1. In **MS SQL Studio**, create a needed table.
 
     !!! note
     
-        For this, create new database or add the table to the existing one. [Column data types](https://wiki.melissadata.com/?title=FAQ%3ASSIS%3AData_Type_Conversions) should be taken from the 16th step of the previous section.
+        For this, create a new database or add the table to the existing one. [Column data types](https://wiki.melissadata.com/?title=FAQ%3ASSIS%3AData_Type_Conversions) should be taken from the 14th step of the previous section.
 
     ??? example "Inventory Table" 
     
@@ -276,7 +275,7 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         GO
         ```
 
-    ??? example "Disputed Matched Ivoice Table" 
+    ??? example "Disputed Matched Invoice Table" 
         
         ```
         CREATE TABLE [dbo].[MatchedInvoices](
@@ -338,7 +337,7 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         GO  
         ```
     
-    ??? example "Pending Batched Ivoice Table" 
+    ??? example "Pending Batched Invoice Table" 
         
         ```
         CREATE TABLE [dbo].[BatchedInvoices](
@@ -363,28 +362,27 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         ```
 
 2. Add **OLE DB Destination** to the **Data Flow Task**. For this, drag **Ole DB Destination** to the board.![image](img/Integrators_22.png)  
-3. Double-click **Ole DB Destination** for further configuration, and then select the **New** button. ![image](img/Integrators_23.png)  
-4. Once you see the following message, click **Yes**.  ![image](img/Integrators_24.png)  
-5. In **Configure OLE DB Connection Manager**, click **New**.  ![image](img/Integrators_25.png)  
+3. Double-click **Ole DB Destination** for further configuration and select the **New** button. ![image](img/Integrators_23.png)  
+4. Once you see the following message, select **Yes**.  ![image](img/Integrators_24.png)  
+5. In **Configure OLE DB Connection Manager**, select **New**.  ![image](img/Integrators_25.png)  
 6. In the **Connection Manager** dialog box, perform the following steps:
     1. Add **Server Name**.
-    2. Specify type of **Authentication**.
+    2. Specify the type of **Authentication**.
     3. Enter credentials.
     4. Select or enter a database name.
-    5. Select **Test Connection** and click **OK**. ![image](img/Integrators_26.png)  
+    5. Select **Test Connection**.
+    6. Select **OK**. ![image](img/Integrators_26.png)  
 
-7. Select **OLE DB connection manager**, then select the table from the dropdown list and click **OK**.  ![image](img/Integrators_27.png) 
-8. Connect items using arrow. For this, click **Json Source (REST API or File)** and select the **arrow**. <br> ![image](img/Integrators_28.png) 
-9. Double-click **OLE DB Destination**. On **OLE DB Destination Editor**, go to the **Mapping** section to verify connections, and then click **OK**. ![image](img/Integrators_29.png) 
+7. Select **OLE DB connection manager**, then select the table from the dropdown list and select **OK**.  ![image](img/Integrators_27.png) 
+8. Connect items using the arrow. For this, select **Json Source (REST API or File)** and select the **arrow**. <br> ![image](img/Integrators_28.png) 
+9. Double-click **OLE DB Destination**. In **OLE DB Destination Editor**, go to the **Mapping** section to verify connections, and select **OK**. ![image](img/Integrators_29.png) 
 
 
 ### <span style="color: #F05D30">Test SSIS Package</span> 
-1. To test the **SSIS Package**, click **Start**. ![image](img/Integrators_30.png) 
-2. After processing, you’ll see a successful solution result.<br>
+1. To test the **SSIS Package**, select **Start**. ![image](img/Integrators_30.png) 
+2. After processing, you’ll see the successful solution result.<br>
 ![image](img/Integrators_31.png) 
-3. Go to the **MS SQL Server**. <br> 
-
-You’ll see the successful test record. ![image](img/Integrators_32.png) 
+3. Go to the **MS SQL Server**. Here, the successful test record will be shown. ![image](img/Integrators_32.png) 
 
 ## <span style="color: #F05D30">ODBC Powerpack</span> 
 
@@ -392,17 +390,17 @@ You’ll see the successful test record. ![image](img/Integrators_32.png)
  - [CData ODBC Driver for OData](#ocdata-odbc-driver-for-odata)
 
 ### <span style="color: #F05D30">ODBC Powerpack Configuration</span> 
-With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi OData API and insert it to the MSSQL database. To do it:
+With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi OData API and insert it into the MSSQL database. To do it:
 
-1. Download and install [ODBC PowerPack](#https://zappysys.com/products/odbc-powerpack/).
-2. After installation, open the **ZappySys** data gateway configuration manager. Go to the **Users** tab, and then click **Add** to add a new user. ![image](img/Integrators_33.png) 
-3. Enter credentials, then select the **Is Administrator** checkbox, and click **OK**. ![image](img/Integrators_34.png) 
-4. In the **Administrative Tools** folder, select **ODBC Data Source Administrator (64-bit)**. Go to the **System DNS** tab and **Add** a new data source. ![image](img/Integrators_35.png) 
-5. Select the **ZappySys JSON Driver** value, then click **Finish**. In the **ODBC Data Source Administrator (64-bit)** dialog box, click **OK**. ![image](img/Integrators_36.png) 
-6. In **Zappysys Data Gateway Configuration Manager**, click **Add** to add a new data source. ![image](img/Integrators_37.png) 
-7. Create **Datasource Name** and **Connector Type**, then click **OK**. ![image](img/Integrators_38.png) 
+1. Download and install [ODBC PowerPack](https://zappysys.com/products/odbc-powerpack/).
+2. After installation, open the **ZappySys** data gateway configuration manager. Go to the **Users** tab and select **Add** to add a new user. ![image](img/Integrators_33.png) 
+3. Enter credentials, then select the **Is Administrator** checkbox and select **OK**. ![image](img/Integrators_34.png) 
+4. In the **Administrative Tools** folder, select **ODBC Data Source Administrator (64-bit)**. Then, go to the **System DNS** tab and **Add** a new data source. ![image](img/Integrators_35.png) 
+5. Select the **ZappySys JSON Driver** value, then select **Finish**. In the **ODBC Data Source Administrator (64-bit)** dialog box, select **OK**. ![image](img/Integrators_36.png) 
+6. In **Zappysys Data Gateway Configuration Manager**, select **Add** to add a new data source. ![image](img/Integrators_37.png) 
+7. Create **Datasource Name** and **Connector Type**, then select **OK**. ![image](img/Integrators_38.png) 
 8. In the **Settings** column, select **Edit**. ![image](img/Integrators_39.png) 
-9. Insert the needed URL with query parameter, select **OAuth Connection Type** and **GET HTTP Request Method**. Then, **Click to Configure** OAuth Connection Type.
+9. Insert the needed URL with a query parameter, select **OAuth Connection Type** and **GET HTTP Request Method**. Then, **Click to Configure** OAuth Connection Type.
 ![image](img/Integrators_40.png) 
 10. In the **OAuth settings** dialog box, perform the following steps: 
     1. From the **OAuth Provider** dropdown menu, select the **Custom** option.
@@ -410,31 +408,31 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
     3. From the **OAuth Grant Type** dropdown menu, select the **Password Grant** option.
     4. Enter **Client ID**, **User Name**, and **Password**.
     5. Enter **Access Token URL** (for example, ```api-demo.envi.net/oauth2/token```).
-    6. Click **OK**. ![image](img/Integrators_41.png) 
+    6. Select **OK**. ![image](img/Integrators_41.png) 
     
         !!! note
 
-            If you want to sign in organization that is not your default one, go to the **Advanced** tab of **OAuth settings**, and then in the **Extra Attributes for /token Request** field, specify ID of the needed organization as an additional parameter with the **organizationId** value:![image](img/Integrators_42.png) 
+            If you want to sign in to an organization that is not your default one, go to the **Advanced** tab of **OAuth settings**, and then in the **Extra Attributes for /token Request** field, specify the **ID** of the needed organization as an additional parameter with the **organizationId** value:![image](img/Integrators_42.png) 
 
 11. If you need to modify pagination, go to the **Pagination** tab. ![image](img/Integrators_43.png) 
-12. Click the **Select Filter** button, then select the **value** filter path. ![image](img/Integrators_44.png) 
-13. Test the Connection.
-14. Go to the **Preview** tab, then select **value** from the dropdown list. 
+12. Select the **Select Filter** button, then select the **value** filter path. ![image](img/Integrators_44.png) 
+13. Test the **Connection**.
+14. Go to the **Preview** tab, then select the **value** from the dropdown list. 
     
     !!! note
 
-        Copy the query if you need need it for setting up the the **MS Excel** and **Power BI** tools.
+        Copy the query if you need it for setting up the **MS Excel** and **Power BI** tools.
 
     ![image](img/Integrators_45.png) 
 
 15. Correct fields if needed and click **Preview Data**. ![image](img/Integrators_46.png) 
-16. Go to the **Code Generator** tab, then copy query to **MS SQL Management Studio**, and click **OK**. ![image](img/Integrators_47.png) 
-17. On the **Users** column, select **Edit**. ![image](img/Integrators_48.png) 
-18. Add previously created user to the data source, and then select **Full access**. ![image](img/Integrators_49.png) 
-19. Go to the **General** tab, edit **Port** if needed or use a default value. Click **Save**. ![image](img/Integrators_50.png) 
+16. Go to the **Code Generator** tab, then copy the query to **MS SQL Management Studio** and select **OK**. ![image](img/Integrators_47.png) 
+17. In the **Users** column, select **Edit**. ![image](img/Integrators_48.png) 
+18. Add a previously created user to the data source, and then select **Full access**. ![image](img/Integrators_49.png) 
+19. Go to the **General** tab, edit **Port** if needed or use a default value. Select **Save**. ![image](img/Integrators_50.png) 
 20. Go to **MS SQL Management Studio**. Here, create a new **Linked Server**. ![image](img/Integrators_51.png) 
 21. Edit parameters.![image](img/Integrators_52.png) 
-22. Go to the **Security** tab, enter credentials, and click **OK**. ![image](img/Integrators_53.png) 
+22. Go to the **Security** tab, enter credentials and select **OK**. ![image](img/Integrators_53.png) 
 23. Write the query. ![image](img/Integrators_54.png) 
 
     Use the following fields for Inventory items data:
@@ -494,7 +492,7 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
 25. You’ll see the following notification on the **Messages** tab. <br> ![image](img/Integrators_57.png) 
 26. The **Results** tab will be the following: ![image](img/Integrators_58.png) 
 
-    For each new endpoint, add new data source. The configuration flow is the same for every endpoint. <br> ![image](img/Integrators_59.png) 
+    For each new endpoint, add a new data source. The configuration flow is the same for every endpoint. <br> ![image](img/Integrators_59.png) 
 
     You can use the following examples of URLs for the **Settings** of the data source:
 
@@ -580,11 +578,11 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
                 
         ```
 
-    As the result, you’ll see the following page: ![image](img/Integrators_60.png) 
+As the result, you’ll see the following page: ![image](img/Integrators_60.png) 
 
 ### <span style="color: #F05D30">OCData ODBC Driver for OData</span> 
 
-With the **CData ODBC Driver**, you can easily retrieve the data from Envi OData API and insert it to the MSSQL database. To do it:
+With the **CData ODBC Driver**, you can easily retrieve the data from Envi OData API and insert it into the MSSQL database. To do it:
 
 1. Download [OData ODBC Driver](https://www.cdata.com/drivers/odata/download/).
 2. Install and run **ODataODBCDriver.exe**.
@@ -606,7 +604,7 @@ With the **CData ODBC Driver**, you can easily retrieve the data from Envi OData
     3. **Privilege Settings**: next to CDATA, select **Full**. ![image](img/Integrators_69.png) 
 13. Select **Save Changes**, then **Star**t. ![image](img/Integrators_70.png) 
 14. After the **Service CDATA** process has started, run it as a **Window Service**. ![image](img/Integrators_71.png) 
-15. Go to **Microsoft SQL Server Management Studio**. Here, right-click the **Linked Servers** folder, and select **New Linked Server**. ![image](img/Integrators_72.png) 
+15. Go to **Microsoft SQL Server Management Studio**. Here, right-click the **Linked Servers** folder and select **New Linked Server**. ![image](img/Integrators_72.png) 
 16. Specify the following settings:
     1. **Linked Server**: name of the server
     2. **Provider**: SQL Server Native Client 11.0

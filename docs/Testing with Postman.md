@@ -5,7 +5,7 @@ To run the collection in Postman, using our Github repository, perform the follo
 1. Install **Postman** packaged app.
 2. Sign in or register in Postman, and then open the app.
 3. Go the [Download from Github](https://github.com/envi/Envi.SDK/tree/master/Envi.SDK/PostmanCollection). Import the **Envi.SDK.Examples.json** file from the Github repository.
-4. Each endpoint requires its URL to the environment and an access token. Use your token for each request. For more information about access token, go to the Authentication article.
+4. Each endpoint requires its URL to the environment and an access token. Use your token for each request. For more information about access token, go to the [Authentication](Authentication_POST.md#post-oauth2token) article.
 
 Once you have successfully imported the collection, you obtain a collection of requests for the most common operations, supported by the **Envi OData API**.
 

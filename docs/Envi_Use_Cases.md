@@ -500,7 +500,7 @@ td, th {
    border: none!important;
 }
 </style>
-| Properties     |   Explanation     |                      
+|<div style="width:200px">Property </div> | <div style="width:380px">Explanation</div> |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* |Facility for the Usage <br> **If not provided**: 400 Bad Request|
 |**usageDate**: string <br> *in formData* |Usage date <br> **If not provided**: Date according to the user Time Zone|
@@ -749,7 +749,7 @@ td, th {
    border: none!important;
 }
 </style>
-| Properties     |   Explanation     |                      
+| <div style="width:200px">Property</div>   |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | ID for the Usage to create Line Items <br> **If not provided**: 400 Bad Request |
 |**lineItemNo**: string <br> *in formData* |It is generated automatically and recalculated within active Usage Line Items <br> **If not provided**: Auto-populated |
@@ -826,14 +826,14 @@ You can create multiple Procedures per one request with /odata/UsageProcedures/B
 To create Usage Procedure, Usage ID, and Procedure No are required. Usage Procedures are populated from procedureNo in case it matches Procedure No and Facility. The status of the procedure is not taken into account. You can add procedures only with unique values. The order of procedures is the same as it was provided in the request.
 
 The following fields can be populated to add Usage Procedure:
-
+     
 
 <style>
 td, th {
    border: none!important;
 }
 </style>
-| Properties     |   Explanation     |                      
+| <div style="width:200px">Property</div>     |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageID**: string <span style="color: #F05D30">**required**</span> <br> *in formData* |ID for the Usage to create Procedure <br> **If not provided**: 400 Bad Request |
 |**procedureNo**: string <span style="color: #F05D30">**required**</span> <br> *in formData* | Populated from ```procedureNo``` in case it is matched by Procedure No and Facility. You can add procedures only with unique values. <br> **If not provided**: 400 Bad Request |
@@ -874,16 +874,20 @@ public class Usage
 
 ```
 
+
+
 The following fields can be populated to submit Usage:
+
+| <div style="width:200px">Property</div>   |  <div style="width:380px">Explanation</div>  | 
 
 <style>
 td, th {
    border: none!important;
 }
 </style>
-| Property    |   Explanation     |        |       |   |
-|-----:|:-------|:-------|:-------| :-------|
-|**usageID**: string <span style="color: #F05D30">**required**</span> <br> *in formData* | ID for the Usage to submit <br> **If not provided**: 400 Bad Request |         |       |    |
+| <div style="width:200px">Property</div>    |   <div style="width:380px">Explanation</div>     | 
+|-----:|:-------|
+|**usageID**: string <span style="color: #F05D30">**required**</span> <br> *in formData* | ID for the Usage to submit <br> **If not provided**: 400 Bad Request |    
 
 You'll receive the response with 200 HTTP Status, in case all data is correct. If there is at least one line item with invalid data, the request will be sent but the response code will contain 400 Bad Request.
 

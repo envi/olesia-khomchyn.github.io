@@ -17,8 +17,8 @@ nav:
     - GitHub Repositry: GitHub_Repository.md
   - Operations:
     - Authentication: Authentication_POST.md
-    - Inventory: Inventory.md
     - Addresses: Addresses.md
+    - Inventory: Inventory.md
    
   
 

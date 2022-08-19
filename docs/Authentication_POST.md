@@ -99,7 +99,7 @@ td, th {
 |**400 (locked)** | This account has been locked. Check your email or contact your administrator to unlock it. |
 |**400 (no active role)** | This account does not have any active role. Contact your application administrator. |
 
-``` json title="Response Example(200 OK)"
+``` json title="Response Example (200 OK)"
 {
         "access_token": "string",
         "token_type": "string",
@@ -108,7 +108,7 @@ td, th {
       }
 ```
 
-``` json title="Response Example(400 Bad Request)"
+``` json title="Response Example (400 Bad Request)"
 {
         "error": "string",
         "error_description": "string"

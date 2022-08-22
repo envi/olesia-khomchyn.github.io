@@ -16,14 +16,14 @@ The example shows that ```$format``` option should also include expected content
 If you do not need metadata information, use ```odata.metadata=none```. It means that the service omits metadata information other than ```odata.nextLink``` and ```odata.count```. The following example shows the request/response for the case based on the Inventory module:
 
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=none
     
 ```
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 
-``` json title="Response example"
+``` json title="Response Example"
 {
        "inventoryId": "4311192f-c46f-4655-8d51-fc2f49aabf78",
        "organizationId": "05e36af1-0676-4216-aa3f-aa1ba787aaec",
@@ -65,7 +65,7 @@ https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format
 If you want to save on network bandwith size but still need some metadata for correct response processing, the format query option should contain odata.metadata=minimal. It means that the service removes metadata information from the payload wherever possible. This is a default value for the odata.metadata parameter and will be assumed if no other values are specified. The response contains the following common annotation:
 
 
-```title="Request example"
+```title="Request Example"
 https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=minimal
     
 ```
@@ -77,7 +77,7 @@ https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
 
-``` json title="Response example"
+``` json title="Response Example"
 {
        "@odata.context": "https:///odata/$metadata#Inventory/$entity",
        "inventoryId": "4311192f-c46f-4655-8d51-fc2f49aabf78",
@@ -121,12 +121,12 @@ https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)
 
 If you need full metadata information, you should use odata.metadata=full. It directs the service to inline the metadata information that normally would be computed from metadata expressions in the payload. The response contains a lot of additional annotation, including information about fields type and related navigation links:
 
-```title="Request example"
+```title="Request Example"
 https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=full
 ```
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-``` json title="Response example"
+``` json title="Response Example"
 {
        "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory/$entity",
        "@odata.type": "#Api.Common.Entities.Inventory.DTO.Inventory",

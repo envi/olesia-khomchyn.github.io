@@ -18,7 +18,7 @@ The ``` $search ```  system query option allows searching through all available 
 - The expression of resources evaluates to false or to null for all searchable fields omitted in the response.
 
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$search="inv" 
     
 ```
@@ -65,7 +65,7 @@ The ```$top``` system query option requests the number of items in the queried c
 The ```$skip``` query option requests the number of items in the queried collection that should be skipped and not included in the response. In case ```$top``` option is not provided, Envi API automatically adds ```$top=20``` to the initial query. Thus, a response contains 20 first records only, and the ```@odata.next``` link includes ```$top``` and ```$skip``` query options based on that value.
 
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory 
     
 ```
@@ -74,7 +74,7 @@ https://<HOSTNAME>/odata/Inventory
 Since neither ```$top``` nor ```$skip``` options are specified, the system uses default values, so a response contains first 20 records from the matched list, and ```@odata.nextLink``` is composed based on default values.
 
 
-``` json title="Response example"
+``` json title="Response Example"
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
     "@odata.count": 17521,
@@ -95,7 +95,7 @@ Since neither ```$top``` nor ```$skip``` options are specified, the system uses 
 
 <br>
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$top=5
     
 ```
@@ -103,7 +103,7 @@ https://<HOSTNAME>/odata/Inventory?$top=5
 
 Since the ```$top``` option is specified, system returns first 5 records from the matched list, and ```@odata.nextLink``` is composed based on this value.
 
-``` json title="Response example"
+``` json title="Response Example"
 
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
@@ -124,7 +124,7 @@ Since the ```$top``` option is specified, system returns first 5 records from th
 
 <br>
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$skip=10
     
 ```
@@ -132,7 +132,7 @@ https://<HOSTNAME>/odata/Inventory?$skip=10
 
 Since ```$skip``` option is specified, but ```$top``` is not, system skips first 10 records and uses default value for ```$top``` option, so next 20 records from the matched list (after 10 records that are skipped) are returned, and ```@odata.nextLink``` is composed based on the following value.
 
-``` json title="Response example"
+``` json title="Response Example"
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
     "@odata.count": 17521,
@@ -164,7 +164,7 @@ Also, Envi API supports the following logical operations:
  - **```Equals```**—treated as the Strict match expression. It means that specified property should exactly be matched with provided value.
 
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$filter=notes eq 'Capital Item'
     
 ```
@@ -175,7 +175,7 @@ This request example filters target records set based on value of notes property
 
 Since no ```$top``` option is specified, only first 20 records will be included. Except of ```$top``` and ```$skip``` options, ```@odata.nextLink``` in the response will include ```$filter``` option.
 
-``` json title="Response example"
+``` json title="Response Example"
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
     "@odata.count": 52,
@@ -201,7 +201,7 @@ Since no ```$top``` option is specified, only first 20 records will be included.
 ```
 
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$filter=contains(notes, 'Capital')
     
 ```
@@ -212,7 +212,7 @@ This request example filters target records set based on value of notes property
 
 Since no ```$top``` option is specified, only first 20 records will be included. Except of ```$top``` and ```$skip``` options, ```@odata.nextLink``` in the response will include ```$filter``` option.
 
-``` json title="Response example"
+``` json title="Response Example"
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
     "@odata.count": 92,
@@ -456,7 +456,7 @@ Property name should be specified in lower camel case.
 
 Now, Envi API supports sorting by only one field at a time.
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$orderby inventoryNo
     
 ```
@@ -467,7 +467,7 @@ This sample request sorts target records set by value of the inventoryNo propert
 
 Since the ```$top``` option is not specified, only first 20 records are included. Except ```$top``` and ```$skip``` options, ```@odata.nextLink``` also includes ```$orderby``` in the response.
 
-``` json title="Response example"
+``` json title="Response Example"
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
     "@odata.count": 92,
@@ -499,7 +499,7 @@ Since the ```$top``` option is not specified, only first 20 records are included
 ```
 <br>
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/Inventory?$orderby inventoryNo desc
     
 ```
@@ -510,7 +510,7 @@ This sample request sorts target records set by a value of the inventoryNo prope
 
 Since the ```$top``` option is not specified, only first 20 records are included. Except ```$top``` and ```$skip``` options, ```@odata.nextLink``` also includes ```$orderby``` in the response.
 
-``` json title="Response example"
+``` json title="Response Example"
 {
     "@odata.context": "https://api-demo.envi.net/odata/$metadata#Inventory",
     "@odata.count": 92,

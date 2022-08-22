@@ -982,13 +982,13 @@ td, th {
 
 As a result, response will contain AP Batch ID.
 
-``` json title="Example of request"
+``` json title="Request Example"
 {
       "batchNo": "123"
     }
 
 ```
-``` json title="Example of response"
+``` json title="Response Example"
 {
       "@odata.context": "https://api-demo.envi.net/odata/$metadata#Edm.Guid"
       "value;: "453bf1fe-7f48-4fd1-8ce5-be74f1002e84"
@@ -996,7 +996,7 @@ As a result, response will contain AP Batch ID.
 
 ```
 
-``` cs title="Example from code"
+``` cs title="Code Example"
 /// <summary>
     /// Create batch.
     /// </summary>
@@ -1038,13 +1038,13 @@ You can find the model and possible request parameters in the **Operations** sec
 ### <span style="color: #F05D30">Add Invoice to AP Batch </span> 
 The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps you to include vouchered invoices to the AP batch. For this, specify the required Matched Invoice ID.
 
-``` json title="Example of request"
+``` json title="Request Example"
 {
       "apMatchedInvoiceId": "5a654132-c718-4da8-b5cb-9667566f4712"
     }
 
 ```
-``` cs title="Example from code"
+``` cs title="Code Example"
 /// <summary>
     /// Add Invoices to Batch
     /// </summary>
@@ -1071,14 +1071,14 @@ The ```odata/Batches(BatchId)/Export``` endpoint with the POST method helps you 
 After sending the valid request, the response will contain a successful result.
 
 
-``` json title="Example of response"
+``` json title="Response Example"
 {
       "@odata.context": "https://api-demo.envi.net/odata/$metadata#Edm.String",
       "value": "Batch is successfully exported"
     }
 
 ```
-``` cs title="Example from code"
+``` cs title="Code Example"
 /// <summary>
     /// Submit Batch to Export
     /// </summary>
@@ -1096,7 +1096,7 @@ After sending the valid request, the response will contain a successful result.
 ### <span style="color: #F05D30">Submit to Queued</span> 
 The ```odata/Batches(batchId)/SubmitToQueued``` endpoint with the POST method helps you to submit the AP batch to the Queued status. For this, specify the required AP Batch ID.
 
-``` cs title="Example from code"
+``` cs title="Code Example"
 /// <summary>
     /// Submit Batch to Queue
     /// </summary>

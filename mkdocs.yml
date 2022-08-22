@@ -18,6 +18,8 @@ nav:
   - Operations:
     - Authentication: Authentication_POST.md
     - Addresses: Addresses.md
+    - AdjustmentItems: AdjustmentItems.md
+    - AP Batch: AP_Batch.md
     - Inventory: Inventory.md
    
   

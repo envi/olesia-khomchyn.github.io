@@ -10,13 +10,13 @@ Envi API supports advertising of versions – information about which service ve
 Client implementations can use the OPTIONS type of a request against ```$metadata``` endpoint to find out a list of supported and deprecated versions. Now, Envi OData API supports only one version (1.0), but it will change soon. To check available versions, send the following request:
 
 
-``` title="Request example"
+``` title="Request Example"
 https://<HOSTNAME>/odata/$metadata
     
 ```
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-``` cs title="Response example"
+``` cs title="Response Example"
 HTTP/1.1 200 OK
     Allow: GET,OPTIONS
     Content-Length: 0
@@ -28,7 +28,7 @@ HTTP/1.1 200 OK
 
 The following code shows how to specify the information on API in the request header using C# programming language with the HTTP Client standard class:
 
-``` cs title="Request example"
+``` cs title="Request Example"
 var http = new HttpClient();
     http.DefaultRequestHeaders.Add("api-version", "1.0");
 
@@ -36,7 +36,7 @@ var http = new HttpClient();
 
 If you specify a non-existing version, Envi API returns a response with the 400 status code.
 
-``` json title="Response example"
+``` json title="Response Example"
 HTTP/1.1 400 Bad Request
     api-supported-versions: 1.0
     {

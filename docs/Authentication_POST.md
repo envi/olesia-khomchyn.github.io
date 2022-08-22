@@ -1,6 +1,6 @@
 # Authentication
 
-## <span style="color: #F05D30">POST /oauth2/token</span>
+## POST /oauth2/token
 
 ### <span style="color: #F05D30">Description</span>
 The OData API provides authentication using OAuth 2.0 JWT. Before using Envi API, you should authenticate to obtain the JWT token. It is a simple and secure authentication mechanism that allows applications to acquire an access token for OData via a quick call to the Envi site.

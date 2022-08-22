@@ -9,7 +9,7 @@ While pulling some valuable information, Envi OData API allows you to use custom
     - Inventory Locations changed from a specified date
 
 
-``` title="Request example"
+``` title="Request Example"
 https://api-demo.envi.net/odata/inventoryVendors?includeInactiveInventory=true
     
 ```

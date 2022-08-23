@@ -1,11 +1,11 @@
 # Addresses
-## Get list of addresses
+## Get the list of addresses
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Addresses
 
 ### <span style="color: #F05D30">Description</span>
-Returns paged list of the existing addresses within logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns paged list of the existing addresses within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
 <style>
@@ -15,13 +15,13 @@ td, th {
 </style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**api-version**: string default 1.0 <br> *in header*|The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on the Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 
 ### <span style="color: #F05D30">Responses</span>
@@ -138,8 +138,8 @@ td, th {
 | <div style="width:200px"> Parameter </div> |<div style="width:380px">Explanation</div> |                      
 |-----:|:-------|
 |**addressId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*| Enter the ID of the address here.|
-|**api-version**: string default 1.0 <br> *in header*|The requested API version.|      
-|**Authorization**: string <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
+|**Authorization**: string dafault: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
 <style>

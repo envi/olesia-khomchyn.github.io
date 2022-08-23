@@ -108,7 +108,7 @@ td, th {
       }      
 ```
 
-## Get list of adjustment items
+## Get the list of adjustment items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/AdjustmentItems
@@ -128,16 +128,15 @@ td, th {
 </style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
-|**api-version**: string default 1.0 <br> *in header*|The requested API version.|      
 |**from**: string *(date-time)* <br> *in query* | Enter the start date here. |
 |**to**: string *(date-time)* <br> *in query* | Enter the end date here. |
-|**api-version**: string default 1.0 <br> *in header*|The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*|The requested API version.|         
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on the Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
 <style>

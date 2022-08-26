@@ -6,7 +6,8 @@ We are using rate limiting solution to protect our API from malicious overuse. I
 
 !!! note ""
 
-    API calls quota exceeded! Maximum admitted <Requests_Amount> per <Period_Of_Time>
+    API calls quota exceeded! Maximum admitted &lt;Requests_Amount&gt; per &lt;Period_Of_Time&gt;.
+
 
 
 In case you have the limit set to 1000 requests per hour and request limit is reached, you will receive HTTP Status Code 429 with the following reason:
@@ -14,7 +15,7 @@ In case you have the limit set to 1000 requests per hour and request limit is re
 
 !!! note ""
 
-    429 API calls quota exceeded! Maximum admitted 1000 per Hour
+    429 API calls quota exceeded! Maximum admitted 1000 per Hour.
 
 
 

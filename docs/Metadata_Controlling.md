@@ -1,15 +1,15 @@
-In general, there are three levels of metadata specification: ```none```, ```minimal```, and ```full```. ```Default``` metadata level is minimal, so the service removes metadata information from the payload wherever possible.
+In general, there are three levels of metadata specification: ```none```, ```minimal```, and ```full```. The ```default``` metadata level is minimal, so the service removes metadata information from the payload wherever possible.
 
-Taking into account your need of application, you can request the needed amount of metadata information included in the payload.
+Taking into account your need for the application, you can request the needed amount of metadata information included in the payload.
 
-If you want to specify the amount of included metadata information in the response, use ```format``` query option of an OData request as a part of URL with specified ```odata.metadata``` parameter. For example, to specify none level, which means no metadata at all, URL should look like the following:
+If you want to specify the amount of included metadata information in the response, use the```format``` query option of an OData request as a part of the URL with the specified ```odata.metadata``` parameter. For example, to specify the ```none``` level, which means no metadata at all, the URL should look like the following:
 
 ``` 
 https://<HOSTNAME>/<resource>?$format=application/json;odata.metadata=none
 ```
+(for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-
-The example shows that ```$format``` option should also include expected content type of the response (in this case ```application/json```).
+The example shows that the ```$format``` option should also include the expected content type of the response (in this case ```application/json```).
 
 ## <span style="color: #F05D30">none</span> 
 
@@ -62,7 +62,7 @@ https://<HOSTNAME>/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format
 ```
 ## <span style="color: #F05D30">minimal</span> 
 
-If you want to save on network bandwith size but still need some metadata for correct response processing, the format query option should contain odata.metadata=minimal. It means that the service removes metadata information from the payload wherever possible. This is a default value for the odata.metadata parameter and will be assumed if no other values are specified. The response contains the following common annotation:
+If you want to save on network bandwidth size but still need some metadata for correct response processing, the format query option should contain odata.metadata=minimal. It means that the service removes metadata information from the payload wherever possible. This is a default value for the odata.metadata parameter and will be assumed if no other values are specified. The response contains the following common annotation:
 
 
 ```title="Request Example"

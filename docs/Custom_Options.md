@@ -4,9 +4,9 @@ While pulling some valuable information, Envi OData API allows you to use custom
     - Inventory Vendors for a specified Inventory
     - Inventory Vendors
     - Specified Inventory Vendor
-    - Inventory Vendors changed from a specified date
-    - Inventory Items changed from a specified date
-    - Inventory Locations changed from a specified date
+    - Inventory Vendors changed from the specified date
+    - Inventory Items changed from the specified date
+    - Inventory Locations changed from the specified date
 
 
 ``` title="Request Example"
@@ -17,9 +17,9 @@ https://api-demo.envi.net/odata/inventoryVendors?includeInactiveInventory=true
 
 
  - **```includeInactiveInventoryLocations```**–gets all inactive inventory locations and works with the following endpoints:
-    - Inventory Vendors changed from a specified date
-    - Inventory Items changed from a specified date
-    - Inventory Locations changed from a specified date
+    - Inventory Vendors changed from the specified date
+    - Inventory Items changed from the specified date
+    - Inventory Locations changed from the specified date
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/inventoryLocations/GetAllFromDate?includeInactiveInventoryLocations=true
@@ -29,7 +29,7 @@ https://api-demo.envi.net/odata/inventoryLocations/GetAllFromDate?includeInactiv
 
 
  - **```includeInactiveVendorFacilities```**–gets all inactive vendor facilities and works with the following endpoint:
-    - Inventory Vendors changed from a specified date
+    - Inventory Vendors changed from the specified date
     - Vendor(s) within the Facility
 
 ``` json title="Example"
@@ -38,7 +38,7 @@ https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendorFaci
 ```
 
  - **```includeInactiveInventoryVendors```**–gets all inactive inventory vendors and works with the following endpoint:
-    - Inventory Vendors changed from a specified date
+    - Inventory Vendors changed from the specified date
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/inventoryVendors/GetAllFromDate?includeInactiveInventoryVendors=true
@@ -46,9 +46,9 @@ https://api-demo.envi.net/odata/inventoryVendors/GetAllFromDate?includeInactiveI
 ```
 
  - **```includeInactiveLocations```**–gets all inactive locations and works with the following endpoints:
-    - Inventory Vendors changed from a specified date
-    - Inventory Items changed from a specified date
-    - Inventory Locations changed from a specified date
+    - Inventory Vendors changed from the specified date
+    - Inventory Items changed from the specified date
+    - Inventory Locations changed from the specified date
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/inventory/GetAllFromDate?includeInactiveLocations=true

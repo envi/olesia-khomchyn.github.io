@@ -3,7 +3,7 @@ nav:
   - Topics:
     - Introduction: index.md
     - Testing with Postman: Testing with Postman.md 
-    - Retrieving Data using cURL: Retrieving_Data.md
+    - Retrieving Data Using cURL: Retrieving_Data.md
     - Options and Limitations: Options_and_Limitations.md
     - Custom Options: Custom_Options.md
     - Metadata: Metadata.md

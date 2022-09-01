@@ -36,7 +36,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -139,7 +139,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content** | No Content |    
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -180,7 +180,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK** | OK |    
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -268,7 +268,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -495,7 +495,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content**| No Content |      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -580,7 +580,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content**| No Content |      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|

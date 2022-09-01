@@ -3,7 +3,7 @@ In this section, you can find some simple examples of the request preparation an
 To communicate with Envi API, do the following:
 
 1. Obtain a JWT access token.
-2. Send a HTTP request to a resource URL:
+2. Send an HTTP request to a resource URL:
     1. Specify the ```Authorization``` header with a valid ```access_token```.
     2. Specify other request headers, such as ```Content-Type``` or ```API-version```.
     3. Prepare request payload (body) for the POST, PUT, or PATCH request.
@@ -15,53 +15,6 @@ To communicate with Envi API, do the following:
     OData protocol has additional metadata information included in a response.
 
 
-## <span style="color: #F05D30">Sending HTTP Request to a Resource URL</span> 
-
-The examples are based on the Inventory module, so let’s introduce the .net class, which represents the Inventory entity and two additional classes, which will be helpful for response de-serialization.
-
-The Inventory entity is generated based on Inventory description from the metadata endpoint.
-
-The following classes are provided for the default metadata level ``` minimal```.
-
-``` cs title="Example"
-public class Inventory
-      {
-      public Guid? InventoryId { get; set; }
-      public Guid? OrganizationId { get; set; }
-      public string OrganizationName { get; set; }
-      public Guid? InventoryGroupId { get; set; }
-      public string InventoryNo { get; set; }
-      public string InventoryGroupName { get; set; }
-      public string InventoryDescription { get; set; }
-      public string InventoryDescription2 { get; set; }
-      public string StockUOM { get; set; }
-      public string ARBillingCode { get; set; }
-      public string HCPCSCode { get; set; }
-      public string Notes { get; set; }
-      public DateTime? DateAdded { get; set; }
-      public Guid? AddedId { get; set; }
-      public string AddedByName { get; set; }
-      public DateTime? LastUpdated { get; set; }
-      public Guid? LastUpdatedBy { get; set; }
-      public string LastUpdatedByName { get; set; }
-      public bool? ActiveStatus { get; set; }
-      public string UNSPSC { get; set; }
-      public bool? IsLatex { get; set; }
-      public Guid? ClassificationId { get; set; }
-      public string ClassificationName { get; set; }
-      public Guid? Classification2Id { get; set; }
-      public string Classification2Name { get; set; }
-      public string DefaultExpenseLedgerNo { get; set; }
-      public string DefaultAssetLedgerNo { get; set; }
-      public Guid? PeriopCategoryId { get; set; }
-      public string PeriopCategory { get; set; }
-      public string ItemType { get; set; }
-      public bool Billable { get; set; }
-      public byte? SystemTypeId { get; set; }
-      public string SystemType { get; set; }
-      }
-
-```
 ## <span style="color: #F05D30">Obtaining a JWT Access Token</span> 
 
 The following example, written in the C# programming language, shows how to obtain a JWT token and how to use ```refresh_token``` in case ```access_token``` gets expired. For your convenience, introduce a class for representation of the authentication response. In JSON format, the authentication response looks like this.
@@ -108,7 +61,7 @@ public class JWT
 In the original JSON, there are two additions except for properties:
 
  - ```IssuedAt``` property – holds the date and time information when the token is received. The value of the property is populated in the constructor, so each time you de-serialize an authentication request, this property will be populated with the current date and time.
- - ```IsValid``` property – holds some simple logic to indicate whether access_token is still valid based on IssuedAt value.
+ - ```IsValid``` property – holds some simple logic to indicate whether ```access_token``` is still valid based on the IssuedAt value.
 
 The example uses ```Newtonsoft.Json``` nugget package to perform serialization or deserialization. To preserve correct behavior, additional properties are marked with the ```JsonIgnore``` attribute and all others – with the ```JsonProperty``` attribute.
 
@@ -188,13 +141,62 @@ private static async Task<JWT> RequestToken(List<KeyValuePair<string, string>> r
 
 ```
 
+## <span style="color: #F05D30">Sending HTTP Request to a Resource URL</span> 
+
+The examples are based on the Inventory module, so let’s introduce the .net class, which represents the Inventory entity and two additional classes, which will be helpful for response de-serialization.
+
+The Inventory entity is generated based on the Inventory description from the metadata endpoint.
+
+The following classes are provided for the default metadata level ``` minimal```.
+
+``` cs title="Example"
+public class Inventory
+      {
+      public Guid? InventoryId { get; set; }
+      public Guid? OrganizationId { get; set; }
+      public string OrganizationName { get; set; }
+      public Guid? InventoryGroupId { get; set; }
+      public string InventoryNo { get; set; }
+      public string InventoryGroupName { get; set; }
+      public string InventoryDescription { get; set; }
+      public string InventoryDescription2 { get; set; }
+      public string StockUOM { get; set; }
+      public string ARBillingCode { get; set; }
+      public string HCPCSCode { get; set; }
+      public string Notes { get; set; }
+      public DateTime? DateAdded { get; set; }
+      public Guid? AddedId { get; set; }
+      public string AddedByName { get; set; }
+      public DateTime? LastUpdated { get; set; }
+      public Guid? LastUpdatedBy { get; set; }
+      public string LastUpdatedByName { get; set; }
+      public bool? ActiveStatus { get; set; }
+      public string UNSPSC { get; set; }
+      public bool? IsLatex { get; set; }
+      public Guid? ClassificationId { get; set; }
+      public string ClassificationName { get; set; }
+      public Guid? Classification2Id { get; set; }
+      public string Classification2Name { get; set; }
+      public string DefaultExpenseLedgerNo { get; set; }
+      public string DefaultAssetLedgerNo { get; set; }
+      public Guid? PeriopCategoryId { get; set; }
+      public string PeriopCategory { get; set; }
+      public string ItemType { get; set; }
+      public bool Billable { get; set; }
+      public byte? SystemTypeId { get; set; }
+      public string SystemType { get; set; }
+      }
+
+```
+
+
 ## <span style="color: #F05D30">Retrieving Entities List</span> 
 
 The following generic class represents the response for the endpoint, which returns a paged list of entities.
 
 Envi API response returns an object that contains a list with entities of the requested type, link to metadata endpoint with entity type description (```odata.context```), the number of entities in the database that conform to specified criteria (```odata.count```), and URL for the next page of data retrieving (```odata.nextLink```).
 
-Before performing the request, set the authorization information to the request header. It is recommended to do verification of ```access_token``` validity each time before request sending since its guarantees that the request will not return a 401 error code.
+Before performing the request, set the authorization information in the request header. It is recommended to do verification of ```access_token``` validity each time before request sending since its guarantees that the request will not return a 401 error code.
 
 ``` cs title="Example"
 public class ODataListResponse<T>
@@ -263,7 +265,7 @@ private static async Task<Inventory> GetInventoryById(Guid inventoryId)
 ## <span style="color: #F05D30">New Entity Creation</span> 
 To add a new entity using Envi API, do the following:
 
-1. Send the POST request to an ppropriate resource, and then provide new entity details with filled-in all required fields in JSON format.
+1. Send the POST request to an appropriate resource, then provide new entity details with filled-in all required fields in JSON format.
 2. If it's an Inventory item, populate the Inventory entity.
 3. Serialize entity to JSON format and POST it to the Inventory endpoint.
 4. Create a new Inventory item with all required fields.
@@ -348,7 +350,7 @@ private static async Task<bool> PutInventory(Inventory inventory)
 ```
 ## <span style="color: #F05D30">Partially Update Existing Entity </span> 
 
-In addition to full entity update, Envi API supports partial update based on provided delta with a help of the PATCH HTTP method. In case of entity patching, only changed fields should be sent to API. For example, if you want to update only Inventory No filed, do the following:
+In addition to full entity update, Envi API supports partial update based on the provided data with a help of the PATCH HTTP method. In case of entity patching, only changed fields should be sent to API. For example, if you want to update only Inventory No filed, do the following:
 
 1. Create a new Inventory entity.
 
@@ -361,7 +363,7 @@ Inventory patch = new Inventory
     };
     var updateSuccessfull = await PatchInventory(new Guid("88212fc1-7698-40b3-8642-edd4ff793fcd"), patch);
 ```
-The following method patches existing Inventory item.
+The following method patches an existing Inventory item.
 
 ``` cs title="Example"
 private static async Task<bool> PatchInventory(Guid entityId, Inventory patch)
@@ -373,7 +375,7 @@ private static async Task<bool> PatchInventory(Guid entityId, Inventory patch)
     }
 ```
 
-Since .net class HttpClient does not contain implementation of ``` PatchAsync``` , for this purpose, use the following extension method.
+Since .net class HttpClient does not contain implementation of ``` PatchAsync```, for this purpose, use the following extension method.
 
 ``` cs title="Example"
 public static Task<HttpResponseMessage> PatchAsync(this HttpClient client, string requestUri, HttpContent content)

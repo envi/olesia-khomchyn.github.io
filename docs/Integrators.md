@@ -614,8 +614,7 @@ With the **CData ODBC Driver**, you can easily retrieve the data from Envi OData
     1. Select **Be made using this security**.
     2. Fill in the **Remote login** and **With password** fields.
     2. Select **OK**. <br> ![image](img/Integrators_74.png) 
-18. Then, you will see all tables from the endpoint. ![image](img/Integrators_75.png) 
-19. Right-click a needed table, then select **Script Table as** > **Select To** > **New Query Editor Window**. ![image](img/Integrators_76.png) 
+18. Right-click a needed table, then select **Script Table as** > **Select To** > **New Query Editor Window**. ![image](img/Integrators_76.png) 
     As a result, you’ll see the following table: ![image](img/Integrators_77.png) 
 
 

@@ -1538,7 +1538,7 @@ td, th {
 [
       {
         "itemType": "string",
-        "billable": "boolean;,
+        "billable": "boolean",
         "inventoryId": "00000000-0000-0000-0000-000000000000",
         "organizationId": "00000000-0000-0000-0000-000000000000",
         "organizationName": "string",

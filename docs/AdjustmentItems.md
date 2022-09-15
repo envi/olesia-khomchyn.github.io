@@ -29,7 +29,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -48,8 +48,8 @@ td, th {
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
 |**notes**: string |Comments about the Adjustment Item |
 |**lotNo**: string |Identification number assigned to a particular quantity or lot of material from a single manufacturer |
-|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an item, to identify it |
-|**expDate**: string *(date-time)* | Previously determined date after which item should no longer be used |
+|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item, to identify it |
+|**expDate**: string *(date-time)* | Previously determined date after which Item should no longer be used |
 |**dateCreated**: string *(date-time)* | Date when the Adjustment Item was created |
 |**createdBy**: string *(uuid)* | Unique Identifier of the user who created the Adjustment Item |
 |**createdByName**: string | Name of the user who created the Adjustment Item |
@@ -60,11 +60,11 @@ td, th {
 |**facilityName**: string | Name of the Facility |
 |**locationName**: string | Name of the Location |
 |**dateSubmitted**: string *(date-time)* | Date when the Adjustment Item was submitted |
-|**inventoryNo**: string | Identification code of the Inventory item |
-|**inventoryDescription**: string | Description of the Inventory item |
-|**classificationName**: string | Name of the Category of the item defined on the Organization level |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**inventoryDescription**: string | Description of the Inventory Item |
+|**classificationName**: string | Name of the Category of the Item defined on the Organization level |
 |**vendorName**: string | Name of the Vendor |
-|**vendorItemNo**: string | Code that is used by vendor for the item identification |
+|**vendorItemNo**: string | Code that is used by the vendor for the Item identification |
 |**quantity**: integer *(int32)* | Quantity specified in the Line Items |
 |**impactQuantity**: integer *(int32)* | Unit that is used for differentiation of the quantity change |
 |**uom**: string | Unit of Measure |
@@ -147,7 +147,7 @@ td, th {
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with organization ID user is logged in.|
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -165,8 +165,8 @@ td, th {
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
 |**notes**: string |Comments about the Adjustment Item |
 |**lotNo**: string |Identification number assigned to a particular quantity or lot of material from a single manufacturer |
-|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an item, to identify it |
-|**expDate**: string *(date-time)* | Previously determined date after which item should no longer be used |
+|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item, to identify it |
+|**expDate**: string *(date-time)* | Previously determined date after which Item should no longer be used |
 |**dateCreated**: string *(date-time)* | Date when the Adjustment Item was created |
 |**createdBy**: string *(uuid)* | Unique Identifier of the user who created the Adjustment Item |
 |**createdByName**: string | Name of the user who created the Adjustment Item |
@@ -177,11 +177,11 @@ td, th {
 |**facilityName**: string | Name of the Facility |
 |**locationName**: string | Name of the Location |
 |**dateSubmitted**: string *(date-time)* | Date when the Adjustment Item was submitted |
-|**inventoryNo**: string | Identification code of the Inventory item |
-|**inventoryDescription**: string | Description of the Inventory item |
-|**classificationName**: string | Name of the Category of the item defined on the Organization level |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**inventoryDescription**: string | Description of the Inventory Item |
+|**classificationName**: string | Name of the Category of the Item defined on the Organization level |
 |**vendorName**: string | Name of the Vendor |
-|**vendorItemNo**: string | Code that is used by vendor for the item identification |
+|**vendorItemNo**: string | Code that is used by the vendor for the Item identification |
 |**quantity**: integer *(int32)* | Quantity specified in the Line Items |
 |**impactQuantity**: integer *(int32)* | Unit that is used for differentiation of the quantity change |
 |**uom**: string | Unit of Measure |

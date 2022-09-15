@@ -16,13 +16,13 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
 <style>
@@ -50,7 +50,7 @@ td, th {
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
-|**inventoryGroupId**: string| Unique Identifier of the Group that contains related Inventory Items |
+|**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
 |**inventoryNo**: string| Identification code of the Inventory Item |
 |**inventoryGroupName**: string | Name of the Group that contains related Inventory Items|
 |**inventoryDescription**: string |Description of the Inventory Item |
@@ -141,7 +141,7 @@ td, th {
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Inventory Item|
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
-|**inventoryGroupId**: string| Unique Identifier of the Group that contains related Inventory Items |
+|**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
 |**inventoryNo**: string| Identification code of the Inventory Item |
 |**inventoryGroupName**: string | Name of the Group that contains related Inventory Items|
 |**inventoryDescription**: string |Description of the Inventory Item |
@@ -258,8 +258,8 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 
 ### <span style="color: #F05D30">Responses</span>
@@ -287,7 +287,7 @@ td, th {
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
-|**inventoryGroupId**: string| Unique Identifier of the Group that contains related Inventory Items |
+|**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
 |**inventoryNo**: string| Identification code of the Inventory Item |
 |**inventoryGroupName**: string | Name of the Group that contains related Inventory Items|
 |**inventoryDescription**: string |Description of the Inventory Item |
@@ -373,7 +373,7 @@ td, th {
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
-|**inventoryGroupId**: string| Unique Identifier of the Group that contains related Inventory Items |
+|**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
 |**inventoryNo**: string| Identification code of the Inventory Item |
 |**inventoryGroupName**: string | Name of the Group that contains related Inventory Items|
 |**inventoryDescription**: string |Description of the Inventory Item |
@@ -449,8 +449,8 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
 <style>
@@ -485,7 +485,7 @@ td, th {
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item|
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
-|**inventoryGroupId**: string| Unique Identifier of the Group that contains related Inventory Items |
+|**inventoryGroupId**: string *(uuid)*| Unique Identifier of the Group that contains related Inventory Items |
 |**inventoryNo**: string| Identification code of the Inventory Item |
 |**inventoryGroupName**: string | Name of the Group that contains related Inventory Items|
 |**inventoryDescription**: string |Description of the Inventory Item |
@@ -560,8 +560,8 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 
 ### <span style="color: #F05D30">Responses</span>
@@ -600,13 +600,13 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
 <style>
@@ -719,13 +719,13 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 
 ### <span style="color: #F05D30">Responses</span>
@@ -760,6 +760,27 @@ td, th {
 |**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item Unit of Measure was updated |
 |**lastUpdatedId**: string *(uuid)* | Unique Identifier of the last user who updated the Inventory Item Unit of Measure |
 
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+{
+      "items": [
+        {
+          "inventoryUOMId": "00000000-0000-0000-0000-000000000000",
+          "inventoryId": "00000000-0000-0000-0000-000000000000",
+          "inventoryNo": "string",
+          "uom": "string",
+          "conversionFactor": "integer (int32)",
+          "dateAdded": "string (date-time)",
+          "addedId": "00000000-0000-0000-0000-000000000000",
+          "lastUpdated": "string (date-time)",
+          "lastUpdatedId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "nextPageLink": "string",
+      "count": "integer (int64)"
+    }
+    
+```
+
 ## Get the list of inventory locations for the specified inventory
 
 ### <span style="color: #F05D30">Path</span>
@@ -777,13 +798,13 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 
 ### <span style="color: #F05D30">Responses</span>
@@ -927,7 +948,7 @@ td, th {
     
 ```
 
-## Get the list of tracking settings for specified inventory
+## Get the list of tracking settings for the specified inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/inventoryTrackings
@@ -950,13 +971,13 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
-|**api-version**: string defaul:t 1.0 <br> *in header*| The requested API version.|      
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
 |**$orderby**: string <br> *in query* | Sorts the results.|
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
-|**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
 <style>
@@ -1024,3 +1045,668 @@ td, th {
       "count": "integer (int64)"
     }   
 ```
+
+## Get PO history for the specified inventory
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/Inventory({inventoryId})/poHistoryItems
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the existing Purchase Order history within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+
+!!! note 
+
+    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**facility**: string <br> *in query* | Enter the name of the facility here |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
+|**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
+|**$orderby**: string <br> *in query* | Sorts the results.|
+|**$top**: string  <br> *in query* | Returns only the first n results.|
+|**$skip**: string <br> *in query*| Skips the first n results.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------| 
+|**id**: string | Unique Identifier of the Inventory Item |
+|**monthName**: string | Name of the Month when Purchase Order was made |
+|**monthNumber**: integer *(int32)* | Number of the Month when Purchase Order was made |
+|**quantityOrdered**: integer *(int64)* | Quantity of the ordered Inventory Items |
+|**numberOfPOs**: integer *(int32)* | Number of the Purchase Orders |
+|**totalCost**: number *(double)* | Total Cost of the Purchase Orders |
+|**facilityName**: string | Name of the Facility |
+|**year**: integer *(int32)* | Year when Purchase Order was made |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+{
+      "items": [
+        {
+          "id": "string",
+          "monthName": "string",
+          "monthNumber": "integer (int32)",
+          "quantityOrdered": "integer (int64)",
+          "numberOfPOs": "integer (int32)",
+          "totalCost": "number (double)",
+          "facilityName": "string",
+          "year": "integer (int32)"
+        }
+      ],
+      "nextPageLink": "string",
+      "count": "integer (int64)"
+    }
+    
+```
+## Get the list of inventory vendors for the specified inventory
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/Inventory({inventoryId})/inventoryVendors
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the existing inventory vendors within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
+|**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
+|**$orderby**: string <br> *in query* | Sorts the results.|
+|**$top**: string  <br> *in query* | Returns only the first n results.|
+|**$skip**: string <br> *in query*| Skips the first n results.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------| 
+|**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**vendorNo**: string | Code of the Supplier who sells products |
+|**vendorName**: string | Name of the Vendor |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Name of the Facility |
+|**vendorItemNo**: string | Code that is used by the vendor for the Item identification |
+|**vendorUOM**: string | Vendor's Unit of Measure |
+|**vendorConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Vendor's Unit of Measure |
+|**vendorCost**: number *(double)* | Item Cost of the Vendor |
+|**vendorPriority**: integer *(int32)* | Priority of the Vendor |
+|**contractNo**: string | Number of the Contract |
+|**contractExpDate**: string <br> *(date-time)* | Expiration Date of the Contract |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerNo**: string | Number of the Manufacturer |
+|**manufacturerName**: string | Name of the Manufacturer |
+|**gtin**: string | Global Trade Item Number |
+|**costLastUpdated**: string <br> *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: string <br> *(uuid)* | Unique Identifier of the last user who updated the Cost |
+|**dateAdded**: string *(date-time)* | Date when the Vendor of Inventory Item was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Vendor |
+|**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item Vendor was updated
+|**lastUpdatedBy**: string (uuid) | Unique Identifier of the user who updated Inventory Item Vendor |
+|**activeStatus**: boolean | Is the Status of the Inventory Item Vendor active or not? |
+|**ndcNumber**: string | National Drug Code number |
+|**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
+|**costLastUpdatedByUserName**: <br> string | Name of the last user who updated the Cost |
+|**addedByUserName**: string | Name of the user who added the Inventory Item Vendor |
+|**lastUpdatedByUserName**: string | Name of the last user who updated Inventory Item Vendor |
+|**pimKey**: string | Product Information Management Key |
+|**altItemNo**: string | Alternative Item Number |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+{
+              "items": [
+              {
+              "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+              "inventoryId": "00000000-0000-0000-0000-000000000000",
+              "inventoryNo": "string",
+              "vendorId": "00000000-0000-0000-0000-000000000000",
+              "vendorNo": "string",
+              "vendorName": "string",
+              "facilityId": "00000000-0000-0000-0000-000000000000",
+              "facilityNo": "string",
+              "facilityName": "string",
+              "vendorItemNo": "string",
+              "vendorUOM": "string",
+              "vendorConversionFactor": "integer (int32)",
+              "vendorCost": "number (double)",
+              "vendorPriority": "integer (int32)",
+              "contractNo": "string",
+              "contractExpDate": "string (date-time)",
+              "manufacturerItemNo": "string",
+              "manufacturerId": "00000000-0000-0000-0000-000000000000",
+              "manufacturerNo": "string",
+              "manufacturerName": "string",
+              "gtin": "string",
+              "costLastUpdated": "string (date-time)",
+              "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+              "dateAdded": "string (date-time)",
+              "addedBy": "00000000-0000-0000-0000-000000000000",
+              "lastUpdated": "string (date-time)",
+              "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+              "activeStatus": "boolean",
+              "ndcNumber": "string",
+              "lockCost": "boolean",
+              "costLastUpdatedByUserName": "string",
+              "addedByUserName": "string",
+              "lastUpdatedByUserName": "string",
+              "pimKey": "string"
+              "altItemNo": "string"
+              }
+              ],
+              "nextPageLink": "string",
+              "count": "integer (int64)"
+              }
+    
+```
+## Get the list of tracking data
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/Inventory({inventoryId})/inventoryTrackingValues
+
+### <span style="color: #F05D30">Description</span>
+Returns the details of the inventory tracking values within inventory, facility, and tracking type specified by ID.
+
+!!! note 
+
+    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in query* | Enter the ID of the Facility here. |
+|**trackingType**: string <br> <span style="color: #F05D30">**required**</span> <br> *in query*  | Specify the type of the Tracking here (Lot/Serial/Expiration). |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
+|**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
+|**$orderby**: string <br> *in query* | Sorts the results.|
+|**$top**: string  <br> *in query* | Returns only the first n results.|
+|**$skip**: string <br> *in query*| Skips the first n results.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------| 
+|**inventoryTrackingItemId**: string <br> *(uuid)* | Unique Identifier of the Inventory Item Tracking |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**stockUOM**: string | Unit of Measure to track Inventory Balance |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Name of the Facility |
+|**inventoryLocationId**: string <br> *(uuid)* | Unique Identifier of the Inventory Location |
+|**locationNo**: string | Identification Number of the Location |
+|**locationName**: string | Name of the Location |
+|**lot**: string | Identification number assigned to a particular quantity or lot of material from a single Manufacturer |
+|**expirationDate**: string <br> *(date-time)* | Previously determined date after which Item should no longer be used |
+|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item to uniquely identify it |
+|**quantity**: integer *(int32)* | Quantity specified in the Line Items |
+|**dateAdded**: string <br> *(date-time)* | Date when the Inventory Item Tracking was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Tracking |
+|**addedByName**: string | Name of the user who added Inventory Item Tracking |
+|**lastUpdated**: string <br> *(date-time)* | Last Date when the Inventory Item Tracking was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Inventory Item Tracking |
+|**lastUpdatedByName**: string | Name of the last user who updated the Inventory Item Tracking |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+{
+      "items": [
+        {
+          "inventoryTrackingItemId": "00000000-0000-0000-0000-000000000000",
+          "inventoryId": "00000000-0000-0000-0000-000000000000",
+          "inventoryNo": "string",
+          "stockUOM": "string",
+          "facilityId": "00000000-0000-0000-0000-000000000000",
+          "facilityNo": "string",
+          "facilityName": "string",
+          "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+          "locationNo": "string",
+          "locationName": "string",
+          "lot": "string",
+          "expirationDate": "string (date-time)",
+          "serialNo": "string",
+          "quantity": "integer (int32)",
+          "dateAdded": "string (date-time)",
+          "addedBy": "00000000-0000-0000-0000-000000000000",
+          "addedByName": "string",
+          "lastUpdated": "string (date-time)",
+          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+          "lastUpdatedByName": "string"
+        }
+      ],
+      "nextPageLink": "string",
+      "count": "integer (int64)"
+    }
+    
+```
+
+
+## Get the list of inventory locations cost and quantity for the specified inventory
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/Inventory({inventoryId})/inventoryLocationsCostAndQuantity
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the existing inventory locations cost and quantity within inventory specified by Id. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Id of the Inventory here.|
+|**includeInactiveInventory**: boolean <br> dafult: false <br> *in query* | Include Inactive Inventory Items. |
+|**includeInactiveLocations**: boolean <br> dafult: false <br> *in query* | Include Inactive Locations. |
+|**includeInactiveInventoryLocations**: boolean <br> dafult: false <br> *in query* | Include Inactive Inventory Locations. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 
+|**$filter**: string <br> *in query* | Restricts the set of items returned. The maximum number of expressions is 100.|
+|**$orderby**: string <br> *in query* | Specifies the order in which items are returned. The maximum number of expressions is 5.|
+|**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
+|**$top**: string  <br> *in query* | Returns only the first n results.|
+|**$skip**: string <br> *in query*| Skips the first n results.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------| 
+|**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Location |
+|**inventoryNo**: string | Identification code of the Location |
+|**locationNo**: string | Identification Number of the Location |
+|**cost**: number *(double)* | Cost for the Location |
+|**quantityOnHand**: integer *(int32)* | The total number of stock-keeping Inventory Items that are physically located in the Location |
+|**activeStatus**: boolean | Is the Status of the Location active or not? |
+|**dateAdded**: string *(date-time)* | Date when the Location was added |
+|**addedBy**: string *(uuid)* | Name of the user who added the Location |
+|**lastUpdated**: string *(date-time)* | Last Date when the Location was updated |
+|**lastUpdatedBy**: string *(uuid)* | Name of the last user who updated the Location |
+|**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: string *(uuid)* | Name of the last user who updated the Cost |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+{
+"items": [
+  {
+    "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+    "inventoryId": "00000000-0000-0000-0000-000000000000",
+    "inventoryNo": "string",
+    "locationNo": "string",
+    "cost": "number (double)",
+    "quantityOnHand": "integer (int32)",
+    "activeStatus": "boolean",
+    "dateAdded": "string (date-time)",
+    "addedBy": "00000000-0000-0000-0000-000000000000",
+    "lastUpdated": "string (date-time)",
+    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+    "costLastUpdated": "string (date-time)",
+    "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
+  }
+],
+"nextPageLink": "string",
+"count": "integer (int64)"
+}
+```
+
+## Get the list of inventory items changed from the specified date
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/Inventory/GetAllFromDate(from={from},facilityId={facilityId},syncFlag={syncFlag})
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the inventory items changed from the specified date within a facility specified by ID.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Facility here. |
+|**syncFlag**: boolean <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Indicates whether only Items flagged with syncFlag should be returned. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------| 
+|**itemType**: string | Type of the Item |
+|**billable**: boolean | Is the item billable or not? |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**organizationId**: string *(uuid)* | Unique Identifier of the Organization |
+|**organizationName**: string | Name of the Organization |
+|**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**inventoryGroupName**: string | Name of the Group that contains related Inventory Items |
+|**inventoryDescription**: string | Description of the Inventory Item |
+|**inventoryDescription2**: string | Additional Description of the Inventory Item |
+|**stockUOM**: string | Unit of Measure to track inventory Item Balance |
+|**arBillingCode**: string | Code for interfacing billing codes in a patient billing system |
+|**hcpcsCode**: string | Code for interfacing billing codes in a patient billing system |
+|**notes**: string | Comments about the Inventory Item |
+|**dateAdded**: string *(date-time)* | Date when the Inventory Item was added |
+|**addedId**: string *(uuid)* | Unique Identifier of the user who added the Inventory Item |
+|**addedByName**: string | Name of the user who added Inventory Item |
+|**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Inventory Item |
+|**lastUpdatedByName**: string | Name of the last user who updated the Inventory Item |
+|**activeStatus**: boolean | Is the Status of the Inventory Item active or not |
+|**unspscCode**: string | Code for categorizing Inventory Items |
+|**isLatex**: boolean | Is the Inventory Item latex or not? |
+|**classificationId**: string *(uuid)* | Unique Identifier of the Inventory Category defined on the Organization level |
+|**classificationName**: string | Name of the Category of the Inventory defined on the Organization level |
+|**classification2Id**: string *(uuid)* | Unique Identifier of the second Inventory Category defined on the Organization level |
+|**classification2Name**: string | Name of the second Inventory Category defined on the Organization level |
+|**defaultExpenseLedgerNo**: string | Default General Ledger Account Code for the Inventory Item at specific locations |
+|**defaultAssetLedgerNo**: string | Default General Ledger Account Code for the Inventory Item at specific locations |
+|**periopCategoryId**: string *(uuid)* | Unique Identifier of the Perioperative Category |
+|**periopItemCategory**: string | Category of the Perioperative Item |
+|**itemType**: string | Type of the Item |
+|**systemTypeId**: integer *(int32)* | Unique Identifier of the System Type |
+|**systemType**: string | Type of the Inventory Item in the scope of the system (Standard or Implant) |
+|**defaultIsBillable**: boolean | Is Inventory billable by default or not? |
+
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+[
+      {
+        "itemType": "string",
+        "billable": "boolean;,
+        "inventoryId": "00000000-0000-0000-0000-000000000000",
+        "organizationId": "00000000-0000-0000-0000-000000000000",
+        "organizationName": "string",
+        "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+        "inventoryNo": "string",
+        "inventoryGroupName": "string",
+        "inventoryDescription": "string",
+        "inventoryDescription2": "string",
+        "stockUOM": "string",
+        "arBillingCode": "string",
+        "hcpcsCode": "string",
+        "notes": "string",
+        "dateAdded": "string (date-time)",
+        "addedId": "00000000-0000-0000-0000-000000000000",
+        "addedByName": "string",
+        "lastUpdated": "string (date-time)",
+        "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+        "lastUpdatedByName": "string",
+        "activeStatus": "boolean",
+        "unspscCode": "string",
+        "isLatex": "boolean",
+        "classificationId": "00000000-0000-0000-0000-000000000000",
+        "classificationName": "string",
+        "classification2Id": "00000000-0000-0000-0000-000000000000",
+        "classification2Name": "string",
+        "defaultExpenseLedgerNo": "string",
+        "defaultAssetLedgerNo": "string",
+        "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+        "periopItemCategory": "string",
+        "itemType": "string",
+        "systemTypeId": "integer (int32)",
+        "systemType": "string"
+      "defaultIsBillable": "boolean"
+      }
+    ]
+```
+
+## Save the specified inventory vendor
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Inventory({inventoryId})/InventoryVendor
+
+### <span style="color: #F05D30">Description</span>
+Creates a new Inventory Vendor within a logged organization and specified Inventory.
+
+### <span style="color: #F05D30">Request Body</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
+|**facilityId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
+|**vendorItemNo**: string <br> <span style="color: #F05D30">**required**</span> | Code that is used by vendor for the Item identification |
+|**vendorUOM**: string <br> <span style="color: #F05D30">**required**</span> | Vendor's Unit of Measure |
+|**vendorConversionFactor**: integer <br> *(int32)* <br> <span style="color: #F05D30">**required**</span> | Number of Stock Keeping Units in another Vendor's Unit of Measure |
+|**vendorCost**: number *(double)* <br> <span style="color: #F05D30">**required**</span> | Item Cost of the Vendor |
+|**contractNo**: string | Number of Contract |
+|**contractExpDate**: string <br> *(date-time)* | Expiration Date of the Contract |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**manufacturerNo**: string | Number of the Manufacturer |
+|**ndcNumber**: string | National Drug Code number |
+|**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
+|**pimKey**: integer *(int10)* | Product Information Management Key |
+|**altItemNo**: string | Alternative Item Number |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+            "vendorId": "00000000-0000-0000-0000-000000000000",
+            "facilityIdd": "00000000-0000-0000-0000-000000000000",
+            "vendorItemNo": "string",
+            "vendorUOM": "string",
+            "vendorConversionFactor": "integer (int32)",
+            "VendorCost": "number (double)",
+            "contractNo": "string",
+            "contractExpDate": "string (date-time)",
+            "manufacturerItemNo": "string",
+            "manufacturerNo": "string",
+            "gtin": "string",
+            "ndcNumber": "string",
+            "lockCost": "boolean",
+            "pimKey": "integer (int10)",
+            "altItemNo": "string",
+            }
+```
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Inventory here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+"Inventory Vendor is successfully created."
+```
+
+## Manage the purchasing option for inventory locations
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Inventory({inventoryId})/ManagePurchasing
+
+### <span style="color: #F05D30">Description</span>
+Manages purchasing option for the inventory location specified by inventory ID.
+
+### <span style="color: #F05D30">Request Body</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
+|**disablePurchasing**: boolean | Disable Purchasing for the Inventory Item or not? |
+|**facility**: string *(uuid)* | Unique Identifier of the Facility |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+      "managePurchasing": {
+        "disablePurchasing": "boolean",
+        "facility": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+```
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Inventory here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|

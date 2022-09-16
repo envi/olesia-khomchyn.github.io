@@ -257,7 +257,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -448,7 +448,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -559,7 +559,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -599,7 +599,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
@@ -718,7 +718,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
@@ -797,7 +797,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
@@ -970,7 +970,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
@@ -1066,7 +1066,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**facility**: string <br> *in query* | Enter the name of the facility here |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
@@ -1143,7 +1143,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
@@ -1635,7 +1635,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the id of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -1693,7 +1693,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the id of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -1710,3 +1710,72 @@ td, th {
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+
+## Save the specified inventory location
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Inventory({inventoryId})/InventoryLocation
+
+### <span style="color: #F05D30">Description</span>
+Creates a new Inventory Location within a logged organization and specified Inventory.
+
+### <span style="color: #F05D30">Request Body</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**locationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Location |
+|**defaultIssueUOM**: string | Unit of Measure used when issuing the Inventory Item |
+|**defaultIssueConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure when issuing the Inventory Item |
+|**defaultCountUOM**: string | Unit Of Measure used when counting the Inventory Item  |
+|**defaultCountConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure when counting the Inventory Item |
+|**itemType**: integer *(int8)* | Type of the Item |
+|**priceMarkup**: number *(double)* | The dollar or percent amount added to the Inventory Location Cost amount |
+|**priceMarkupType**: integer *(int8)* | Type of the Price Markup |
+|**cost**: number *(double)* | Cost for the Location |
+|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Item at specific locations |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the locations |
+|**binShelf**: string | Level of storage within the Location |
+|**crossReferenceNo**: string | Number of the Cross Reference |
+|**minQuantity**: integer *(int32)* | Minimal Inventory Items Quantity for this Location |
+|**maxQuantity**: integer *(int32)* | Prefered Maximum quantity of the Item on the Location |
+|**safetyStock**: integer *(int32)* | Level of extra Stock that is maintained to mitigate the risk of stockouts |
+|**locationUOM**: string | Unit of Measure of the Location |
+|**locationConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Location's Unit of Measure |
+|**isBillable**: boolean | Is Location Billable or not? |
+|**isTaxable**: boolean | Is Location Taxable or not? |
+|**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the id of the Inventory here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+"Inventory Location is successfully created."
+```

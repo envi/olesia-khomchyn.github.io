@@ -1,10 +1,10 @@
 # Envi Use Cases
-Except of general API end-points, Envi OData API also contains a number of operations intended to fulfill the specific business needs.
+Except for general API endpoints, Envi OData API also contains several operations intended to fulfil specific business needs.
 
 ## <span style="color: #F05D30">Batch Support</span> 
-Envi OData API supports repeatability for individual requests within a batch request, as well as for individual requests within a change set or atomicity group within a batch request. Batch requests allow grouping of multiple operations into a single HTTP request payload.
+Envi OData API supports repeatability for individual requests within a batch request, as well as for individual requests within a change set or atomicity group within a batch request. Batch requests allow the grouping of multiple operations into a single HTTP request payload.
 
-The service returns a single HTTP response in the response to all operations in requests. Individual requests within a batch may have a mix of ```Repeatability-Request-ID``` and ```Repeatability-First-Sent``` values. In this case, each individual response within the batch response will have the appropriate Repeatability-Result according to the corresponding request.
+The service returns a single HTTP response in the response to all operations in requests. Individual requests within a batch may have a mix of the ```Repeatability-Request-ID``` and ```Repeatability-First-Sent``` values. In this case, each individual response within the batch response will have the appropriate Repeatability-Result according to the corresponding request.
 
 This way, you can optimize calls to the server and improve the scalability of its service.
 
@@ -107,8 +107,7 @@ var batchUrl = $"{_baseAddress}/odata/$batch";
     }
 
 ```
-
-Perform the following actions:
+To do that, perform the following actions:
 
 1. Specify URL: ```<hostname>/odata/$batch```
 2. Specify Content-Type header: ```multipart/mixed```<br>
@@ -119,7 +118,7 @@ Perform the following actions:
 **```<Multipart Batch request body>```**
 3. Request body
 
-The **batch** body should have its own batch ID and start from ```--batch_ <id> ``` and end ```--batch_ <id>```. The **batch** consists of multiple changesets. Each **changeset** is defined in ```Content-Type``` and has a separate ID. Requests are described in **changeset** sections. An example of a request body for multiple PATCH requests using **batch** is the following:
+The batch body should have its own **batch ID** and start from ```--batch_ <id> ``` and end ```--batch_ <id>```. The batch consists of multiple changesets. Each **changeset** is defined in ```Content-Type``` and has a separate ID. Requests are described in the changeset sections. An example of a request body for multiple PATCH requests using the batch is the following:
 
 
 
@@ -378,17 +377,17 @@ public class ListRepresentation<T>
 ```
 ## <span style="color: #F05D30">HTTP Depletion Interface</span> 
 
-HTTP Depletion Interface is used for processing a multiple usages. The Interface combines data on the following entities:
+HTTP Depletion Interface is used for processing multiple usages. The Interface combines data on the following entities:
 
- - Create Usages ```/odata/Usages/BulkAdd```
- - Create Usage Items ```/odata/UsageItems/BulkAdd```
- - Create Procedures ```/odata/UsageProcedures/BulkAdd```
- - Submit Usages ```/odata/Usages/BulkSubmit```
+ - [Create Usages](#create-usages) ```/odata/Usages/BulkAdd```
+ - [Create Usage Items](#create-usage-items) ```/odata/UsageItems/BulkAdd```
+ - [Create Procedures](#create-procedures) ```/odata/UsageProcedures/BulkAdd```
+ - [Submit Usages](#submit-usages) ```/odata/Usages/BulkSubmit```
 The need for the Usage Procedure insertion depends on your Facility options. Use the POST method to perform these requests.
 
 ### <span style="color: #F05D30">Create Usages</span> 
 
-```/odata/Usages/BulkAdd``` endpoint helps you to create multiple usages. For this, use the appropriate model.
+The ```/odata/Usages/BulkAdd``` endpoint helps you to create multiple usages. For this, use the appropriate model.
 
 **Facility No** and **Department No** are required to receive a successful response. The following example shows the process of usage creation.
 
@@ -513,7 +512,7 @@ td, th {
 |**usageType**: string <br> *in formData* |**Standard** <br> Auto-Populated|
 |**source**: string <br> *in formData* | **Auto** <br> Auto-Populated|
 
-You can create several usages per one request using this example. For this, post the list of Usages. As a result, you’ll retrieve a string that contains a unique identifier of created usages divided by the comma separator (,). In case one of the Usages has an incorrect value, all items will not be saved.
+You can create several usages per one request using this example. For this, post the list of usages. As a result, you’ll retrieve a string that contains a unique identifier of created usages divided by the comma separator (,). In case one of the usages has an incorrect value, all items will not be saved.
 
 You'll receive the following response.
 
@@ -546,7 +545,7 @@ Physician: <physicianNo>
 
 ### <span style="color: #F05D30">Create Usage Items</span> 
 
-You can create multiple Usage Items per one request with the ```/odata/UsageItems/BulkAdd``` endpoint. For this, use the following model.
+You can create multiple usage items per one request with the ```/odata/UsageItems/BulkAdd``` endpoint. For this, use the following model.
 
 ``` cs title="Example"
 public class UsageItem
@@ -739,9 +738,9 @@ public class UsageItem
 
 ```
 
-To create Usage Items, the Usage ID is required.
+To create usage items, the usage ID is required.
 
-The following fields can be populated to add Usage Items:
+The following fields can be populated to add usage items:
 
 
 <style>
@@ -823,7 +822,7 @@ You can create multiple Procedures per one request with /odata/UsageProcedures/B
 
 ```
 
-To create Usage Procedure, Usage ID, and Procedure No are required. Usage Procedures are populated from procedureNo in case it matches Procedure No and Facility. The status of the procedure is not taken into account. You can add procedures only with unique values. The order of procedures is the same as it was provided in the request.
+To create usage Procedure, Usage ID, and Procedure No are required. Usage Procedures are populated from procedureNo in case it matches Procedure No and Facility. The status of the procedure is not taken into account. You can add procedures only with unique values. The order of procedures is the same as it was provided in the request.
 
 The following fields can be populated to add Usage Procedure:
      
@@ -877,8 +876,6 @@ public class Usage
 
 
 The following fields can be populated to submit Usage:
-
-| <div style="width:200px">Property</div>   |  <div style="width:380px">Explanation</div>  | 
 
 <style>
 td, th {
@@ -1028,12 +1025,12 @@ As a result, response will contain AP Batch ID.
 ### <span style="color: #F05D30">Retrieve AP Batch List (by ID)</span> 
 The ```odata/Batches``` endpoint helps you to see the list of AP Batches. To retrieve the specified AP Batch, add its ID and use the ```odata/Batches(batchID)```. Use the GET method for these endpoints.
 
-You can find the model and possible request parameters in the **Operations** section.
+You can find the model and possible request parameters in the [Operations](AP_Batch.md#get-the-list-of-ap-batches) section.
 
 ### <span style="color: #F05D30">Retrieve Invoices of AP Batch </span> 
 To retrieve the list of vouchered invoices that can be added to the AP Batch, use the ```odata/Batches(BatchId)/Invoices``` endpoint with the GET method. The model is the same as the AP Matched invoice.
 
-You can find the model and possible request parameters in the **Operations** section.
+You can find the model and possible request parameters in the [Operations](AP_Batch.md#get-the-specified-ap-batched-invoice) section.
 
 ### <span style="color: #F05D30">Add Invoice to AP Batch </span> 
 The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps you to include vouchered invoices to the AP batch. For this, specify the required Matched Invoice ID.

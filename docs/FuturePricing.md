@@ -39,7 +39,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**futurePricingId**: string *(uuid)* | Unique Identifier of the Future Pricing record |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory item |

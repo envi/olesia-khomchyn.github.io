@@ -133,9 +133,9 @@ td, th {
 |**gtin**: string | Global Trade Item Number |
 |**ndcNo**: string | National Drug Code number |
 |**departmentGlcode**: string | General Ledger Code of the Department |
-|**transactionQuantity**: integer *(int32)* | Quantity used for transaction the Inventory Item |
-|**transactionUOM**: string | Unit Of Measure used for transaction the Inventory Item |
-|**transactionCF**: integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure for transaction |
+|**transactionQuantity**: integer *(int32)* | Quantity used for the transaction the Inventory Item |
+|**transactionUOM**: string | Unit Of Measure used for the transaction the Inventory Item |
+|**transactionCF**: integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure for the transaction |
 |**extendedCost**: number *(double)* | Total Cost of the Line |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"

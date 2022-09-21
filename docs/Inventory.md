@@ -628,7 +628,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**futurePricingId**: string *(uuid)* | Unique Identifier of the Future Pricing record |
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
@@ -853,14 +853,14 @@ td, th {
 |**priceMarkup**: number *(double)* | The dollar or percent amount added to the Inventory Location Cost amount |
 |**priceMarkupType**: integer *(int8)* | Type of the Price Markup |
 |**priceMarkupTypeText**: string | Dollar or Percent |
-|**disablePurchasing**: boolean | Disable or not Purchasing for the Location |
+|**disablePurchasing**: boolean | Disable or not Purchasing for the Location? |
 |**minQuantity**: integer (int32) | Minimal Inventory Items Quantity for this Location |
-|**onRequisition**: integer (int32) | Quantity of Inventory items for Requisition |
+|**onRequisition**: integer (int32) | Quantity of Inventory Items for Requisition |
 |**maxQuantity**: integer (int32) | Maximal Inventory Items Quantity for this Location |
 |**safetyStock**: integer (int32) | Level of extra Stock that is maintained to mitigate risk of stockouts |
 |**binShelf**: string | Level of storage within the Location |
 |**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the locations |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
 |**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
 |**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
 |**costLastUpdatedBy**: string (uuid) | Unique Identifier of the last user who updated the Cost |
@@ -868,7 +868,7 @@ td, th {
 |**addedBy**: string *(uuid)* | Unique Identifier of the last user who added Location |
 |**lastUpdated**: string *(date-time)* | Date of last Location update |
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated Location |
-|**activeStatus**: boolean | Is Location active or not |
+|**activeStatus**: boolean | Is Location active or not?|
 |**locationSynchronizationDate**: <br> string *(date-time)* | Date when the Location was synchronized |
 |**costSynchronizationDate**: <br> string *(date-time)* | Date when the Cost was synchronized |
 |**defaultPurchaseUOM**: string | Default Unit of Measure for Purchasing |
@@ -954,7 +954,7 @@ td, th {
 GET /odata/Inventory({inventoryId})/inventoryTrackings
 
 ### <span style="color: #F05D30">Description</span>
-Returns paged the list of the existing inventory tracking settings within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing inventory tracking settings within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -999,7 +999,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryTrackingId**: string *(uuid)* | Unique Identifier of the Inventory Item Tracking |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -1067,7 +1067,7 @@ td, th {
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
-|**facility**: string <br> *in query* | Enter the name of the facility here |
+|**facility**: string <br> *in query* | Enter the name of the Facility here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|  
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition.|
@@ -1096,7 +1096,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------| 
 |**id**: string | Unique Identifier of the Inventory Item |
 |**monthName**: string | Name of the Month when Purchase Order was made |
@@ -1173,7 +1173,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -1381,10 +1381,10 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Id of the Inventory here.|
-|**includeInactiveInventory**: boolean <br> dafult: false <br> *in query* | Include Inactive Inventory Items. |
-|**includeInactiveLocations**: boolean <br> dafult: false <br> *in query* | Include Inactive Locations. |
-|**includeInactiveInventoryLocations**: boolean <br> dafult: false <br> *in query* | Include Inactive Inventory Locations. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here.|
+|**includeInactiveInventory**: boolean <br> default: false <br> *in query* | Include Inactive Inventory Items. |
+|**includeInactiveLocations**: boolean <br> default: false <br> *in query* | Include Inactive Locations. |
+|**includeInactiveInventoryLocations**: boolean <br> default: false <br> *in query* | Include Inactive Inventory Locations. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 
 |**$filter**: string <br> *in query* | Restricts the set of items returned. The maximum number of expressions is 100.|
 |**$orderby**: string <br> *in query* | Specifies the order in which items are returned. The maximum number of expressions is 5.|
@@ -1517,7 +1517,7 @@ td, th {
 |**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item was updated |
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Inventory Item |
 |**lastUpdatedByName**: string | Name of the last user who updated the Inventory Item |
-|**activeStatus**: boolean | Is the Status of the Inventory Item active or not |
+|**activeStatus**: boolean | Is the Status of the Inventory Item active or not? |
 |**unspscCode**: string | Code for categorizing Inventory Items |
 |**isLatex**: boolean | Is the Inventory Item latex or not? |
 |**classificationId**: string *(uuid)* | Unique Identifier of the Inventory Category defined on the Organization level |
@@ -1590,7 +1590,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
 |**facilityId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
@@ -1635,7 +1635,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the id of the Inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -1671,9 +1671,8 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
-|**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
 |**disablePurchasing**: boolean | Disable Purchasing for the Inventory Item or not? |
 |**facility**: string *(uuid)* | Unique Identifier of the Facility |
 
@@ -1693,7 +1692,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the id of the Inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -1749,6 +1748,34 @@ td, th {
 |**isBillable**: boolean | Is Location Billable or not? |
 |**isTaxable**: boolean | Is Location Taxable or not? |
 |**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
+|**disablePurchasing**: boolean | Disable or not Purchasing for the Location? |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+      "locationId": "00000000-0000-0000-0000-000000000000",
+      "defaultIssueUOM": "string",
+      "defaultIssueConversionFactor":"integer (int32)",
+      "defaultCountUOM": "string",
+      "defaultCountConversionFactor": "integer (int32)",
+      "itemType":"integer (int8)",
+      "priceMarkup": "number (double)",
+      "priceMarkupType": "integer (int8)",
+      "cost": "number (double)",
+      "assetLedgerNo": "string",
+      "expenseLedgerNo": "string",
+      "binShelf": "string",
+      "crossReferenceNo": "string",
+      "minQuantity": "integer (int32)",
+      "maxQuantity": "integer (int32)",
+      "safetyStock": "integer (int32)",
+      "locationUOM": "string",
+      "locationConversionFactor": "integer (int32)",
+      "isBillable": "boolean",
+      "isTaxable": "boolean",
+      "syncFlag": "boolean",
+      "disablePurchasinge": "boolean"
+    }
+```
 
 ### <span style="color: #F05D30">Request Parameters</span>
 <style>
@@ -1758,7 +1785,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the id of the Inventory here. |
+|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 

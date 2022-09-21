@@ -507,9 +507,9 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Invoice is **NOT** in the 'Vouchered' status |
+|**400 Bad Request** | Invoice is NOT in the Vouchered status |
 
 ``` json title="Response Example"
 
@@ -591,9 +591,9 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Specified batch exists in the 'Queued' status. |
+|**400 Bad Request** | Specified batch exists in the Queued status. |
 
 ``` json title="Response Example"
 

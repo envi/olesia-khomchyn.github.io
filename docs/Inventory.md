@@ -854,10 +854,10 @@ td, th {
 |**priceMarkupType**: integer *(int8)* | Type of the Price Markup |
 |**priceMarkupTypeText**: string | Dollar or Percent |
 |**disablePurchasing**: boolean | Disable or not Purchasing for the Location? |
-|**minQuantity**: integer (int32) | Minimal Inventory Items Quantity for this Location |
-|**onRequisition**: integer (int32) | Quantity of Inventory Items for Requisition |
-|**maxQuantity**: integer (int32) | Maximal Inventory Items Quantity for this Location |
-|**safetyStock**: integer (int32) | Level of extra Stock that is maintained to mitigate risk of stockouts |
+|**minQuantity**: integer *(int32)* | Minimal Inventory Items Quantity for this Location |
+|**onRequisition**: integer *(int32)* | Quantity of Inventory Items for Requisition |
+|**maxQuantity**: integer *(int32)* | Maximal Inventory Items Quantity for this Location |
+|**safetyStock**: integer *(int32)* | Level of extra Stock that is maintained to mitigate risk of stockouts |
 |**binShelf**: string | Level of storage within the Location |
 |**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
 |**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
@@ -1416,8 +1416,8 @@ td, th {
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
-|**inventoryId**: string *(uuid)* | Unique Identifier of the Location |
-|**inventoryNo**: string | Identification code of the Location |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory item |
 |**locationNo**: string | Identification Number of the Location |
 |**cost**: number *(double)* | Cost for the Location |
 |**quantityOnHand**: integer *(int32)* | The total number of stock-keeping Inventory Items that are physically located in the Location |

@@ -26,6 +26,7 @@ nav:
     - InventoryActivity: InventoryActivity.md
     - InventoryLocations: InventoryLocations.md
     - InventoryLocationsCostAndQuantity: InventoryLocationsCostAndQuantity.md
+    - InventoryLocationsExtended: InventoryLocationsExtended.md
    
   
 

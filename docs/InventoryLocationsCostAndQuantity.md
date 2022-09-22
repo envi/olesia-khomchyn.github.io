@@ -44,7 +44,7 @@ td, th {
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Location |
-|**inventoryNo**: string | Identification code of the Location |
+|**inventoryNo**: string | Identification code of the Inventory Item  |
 |**locationNo**: string | Identification Number of the Location |
 |**cost**: number *(double)* | Cost for the Location |
 |**quantityOnHand**: integer *(int32)*  | The total number of stock-keeping Inventory Items that are physically located in the Location |

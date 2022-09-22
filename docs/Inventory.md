@@ -47,7 +47,7 @@ td, th {
 </style>
 | <div style="width:200px">Property </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
-|**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
+|**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item |
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
 |**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
@@ -370,7 +370,7 @@ td, th {
 </style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
-|**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
+|**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item |
 |**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
 |**organizationName**: string | Name of the Organization|
 |**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |

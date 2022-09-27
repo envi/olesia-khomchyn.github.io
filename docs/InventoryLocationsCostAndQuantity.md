@@ -97,6 +97,7 @@ td, th {
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**$filter**: string <br> *in query* | Restricts the set of Items returned. The maximum number of expressions is 100. |  
 |**$orderby**: string <br> *in query* | Specifies the order in which items are returned. The maximum number of expressions is 5. |
+|**$search**: string <br> *in query*  | Picks the value in all possible fields.|   
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|

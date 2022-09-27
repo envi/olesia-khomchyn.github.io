@@ -25,8 +25,13 @@ nav:
     - Inventory: Inventory.md
     - InventoryActivity: InventoryActivity.md
     - InventoryLocations: InventoryLocations.md
-    - InventoryLocationsCostAndQuantity: InventoryLocationsCostAndQuantity.md
+    - InventoryLocationsCostAnd <br> Quantity: InventoryLocationsCostAndQuantity.md
     - InventoryLocationsExtended: InventoryLocationsExtended.md
+    - InventorySnapshotItems: InventorySnapshotItems.md
+    - InventorySnapshots: InventorySnapshots.md
+    - InventoryTrackings: InventoryTrackings.md
+    - InventoryUOMs: InventoryUOMs.md
+    - InventoryVendors: InventoryVendors.md
    
   
 

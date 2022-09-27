@@ -1736,8 +1736,8 @@ td, th {
 |**priceMarkup**: number *(double)* | The dollar or percent amount added to the Inventory Location Cost amount |
 |**priceMarkupType**: integer *(int8)* | Type of the Price Markup |
 |**cost**: number *(double)* | Cost for the Location |
-|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Item at specific locations |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the locations |
+|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Item at specific Locations |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
 |**binShelf**: string | Level of storage within the Location |
 |**crossReferenceNo**: string | Number of the Cross Reference |
 |**minQuantity**: integer *(int32)* | Minimal Inventory Items Quantity for this Location |

@@ -545,7 +545,7 @@ td, th {
 |-----:|:-------|
 |**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |
 |**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br>  *in path* | Enter the ID of the Facility here. |
-|**syncFlag**: boolean  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identifies if the lLocation is synced with an external system
+|**syncFlag**: boolean  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identifies if the Location is synced with an external system. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 

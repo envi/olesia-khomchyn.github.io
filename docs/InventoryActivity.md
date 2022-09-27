@@ -81,7 +81,7 @@ td, th {
 |**stockUOM**: string | Unit of Measure to track Inventory Balance |
 |**unitCost**: number *(double)* | Cost of the one unit of Item |
 |**unitPrice**: number *(double)*  | The vendor's price for the Inventory Item |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the locations |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
 |**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
 |**glCode**: string | General Ledger Code |
 |**lotNo**: string | Identification number assigned to a particular quantity or lot of material from a single manufacturer |
@@ -107,7 +107,7 @@ td, th {
 |**defaultExpenseLedgerNo**: string | Default General Ledger Account Code for the Inventory Item |
 |**defaultAssetLedgerNo**: string | Default General Ledger Account Code for the Inventory Item |
 |**locationUOM**: string | Unit of Measure of the Location |
-|**locationConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Unit of Measure for the location |
+|**locationConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Unit of Measure for the Location |
 |**itemTypeId**: integer *(int32)* | Unique identifier of the Item type |
 |**itemTypeName**: string | Name of the Item type (Stock, Non-Stock, Service, Consignment, Capital)|
 |**priceMarkup**: number *(double)* | Markup of the Price |

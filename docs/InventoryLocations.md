@@ -75,8 +75,8 @@ td, th {
 |**maxQuantity**: integer *(int32)* | Maximal Inventory Items Quantity for this Location |
 |**safetyStock**: integer *(int32)* | Level of extra Stock that is maintained to mitigate the risk of stockouts |
 |**binShelf**: string | Level of storage within the Location |
-|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
+|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Location |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Location |
 |**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
 |**costLastUpdated**: string <br> *(date-time)*  | Last Date when the Cost was updated |
 |**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |
@@ -237,8 +237,8 @@ td, th {
 |**maxQuantity**: integer *(int32)* | Maximal Inventory Items Quantity for this Location |
 |**safetyStock**: integer *(int32)* | Level of extra Stock that is maintained to mitigate the risk of stockouts |
 |**binShelf**: string | Level of storage within the Location |
-|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
+|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Location |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Location |
 |**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
 |**costLastUpdated**: string <br> *(date-time)*  | Last Date when the Cost was updated |
 |**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |
@@ -353,8 +353,8 @@ td, th {
 |**maxQuantity**: integer *(int32)* | Maximal Inventory Items Quantity for this Location |
 |**safetyStock**: integer *(int32)* | Level of extra Stock that is maintained to mitigate the risk of stockouts |
 |**binShelf**: string | Level of storage within the Location |
-|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
+|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Location |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Location |
 |**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
 |**activeStatus**: boolean | Is Location active or not ? |
 |**crossReferenceNo**: string | Number of the Cross Reference |
@@ -602,8 +602,8 @@ td, th {
 |**maxQuantity**: integer *(int32)* | Maximal Inventory Items Quantity for this Location |
 |**safetyStock**: integer *(int32)* | Level of extra Stock that is maintained to mitigate the risk of stockouts |
 |**binShelf**: string | Level of storage within the Location |
-|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
-|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
+|**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Location |
+|**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Location |
 |**syncFlag**: boolean | Is Inventory Location marked with Synchronization Flag or not? |
 |**costLastUpdated**: string <br> *(date-time)*  | Last Date when the Cost was updated |
 |**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |

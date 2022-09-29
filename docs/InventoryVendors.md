@@ -128,13 +128,13 @@ td, th {
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## <span style="color: #F05D30">Properties</span>
+### <span style="color: #F05D30">Properties</span>
 <style>
 td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorPurchasing<br>UnitId**: <br> string *(uuid)* | Unique Identifier of the Inventory Vendor Purchasing Unit |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Vendor |
@@ -184,3 +184,623 @@ td, th {
     }
 ```
 
+## Get the list of all inventory vendors
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/InventoryVendors
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the all existing inventory vendors. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**$search**: string <br> *in query*  | Picks the value in all possible fields.|
+|**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition. |  
+|**$orderby**: string <br> *in query* | Sorts the results.|
+|**$top**: string  <br> *in query* | Returns only the first n results.|
+|**$skip**: string <br> *in query*| Skips the first n results.|
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**vendorNo**: string | Code of the Supplier who sells products |
+|**vendorName**: string | Name of the Vendor |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Name of the Facility |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
+|**vendorUOM**: string | Vendor's Unit of Measure |
+|**vendorConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Vendor's Unit of Measure |
+|**vendorCost**: number *(double)* | Item Cost of the Vendor |
+|**vendorPriority**: integer *(int32)* | Priority of the Vendor |
+|**contractNo**: string | Number of the Contract |
+|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerNo**: string | Number of the Manufacturer |
+|**manufacturerName**: string | Name of the Manufacturer |
+|**gtin**: string | Global Trade Item Number |
+|**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |
+|**dateAdded**: string *(date-time)* | Date when the Vendor of Inventory Item was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Vendor |
+|**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item Vendor was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the user who updated Inventory Item Vendor |
+|**activeStatus**: boolean | Is the Status of the Inventory Item Vendor active or not? |
+|**ndcNumber**: string | National Drug Code number |
+|**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
+|**costLastUpdatedByUserName**: string | Name of the last user who updated the Cost |
+|**addedByUserName**: string | Name of the user who added the Inventory Item Vendor |
+|**lastUpdatedByUserName**: string | Name of the last user who updated Inventory Item Vendor |
+|**pimKey**: string | Product Information Management Key |
+|**altItemNo**: string | Alternative Item Number |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
+{
+      "items": [
+        {
+          "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+          "inventoryId": "00000000-0000-0000-0000-000000000000",
+          "inventoryNo": "string",
+          "vendorId": "00000000-0000-0000-0000-000000000000",
+          "vendorNo": "string",
+          "vendorName": "string",
+          "facilityId": "00000000-0000-0000-0000-000000000000",
+          "facilityNo": "string",
+          "facilityName": "string",
+          "vendorItemNo": "string",
+          "vendorUOM": "string",
+          "vendorConversionFactor": "integer (int32)",
+          "vendorCost": "number (double)",
+          "vendorPriority": "integer (int32)",
+          "contractNo": "string",
+          "contractExpDate": "string (date-time)",
+          "manufacturerItemNo": "string",
+          "manufacturerId": "00000000-0000-0000-0000-000000000000",
+          "manufacturerNo": "string",
+          "manufacturerName": "string",
+          "gtin": "string",
+          "costLastUpdated": "string (date-time)",
+          "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+          "dateAdded": "string (date-time)",
+          "addedBy": "00000000-0000-0000-0000-000000000000",
+          "lastUpdated": "string (date-time)",
+          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+          "activeStatus": "boolean",
+          "ndcNumber": "string",
+          "lockCost": "boolean",
+          "costLastUpdatedByUserName": "string",
+          "addedByUserName": "string",
+          "lastUpdatedByUserName": "string",
+          "pimKey": "string"
+          "altItemNo": "string"
+        }
+      ],
+      "nextPageLink": "string",
+      "count": "integer (int64)"
+    }
+    
+```
+
+## Get the specified inventory vendor
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/InventoryVendors({inventoryVendorId})
+
+### <span style="color: #F05D30">Description</span>
+Returns the details of the inventory vendor specified by ID.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**inventoryVendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Vendor here.|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**vendorNo**: string | Code of the Supplier who sells products |
+|**vendorName**: string | Name of the Vendor |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Name of the Facility |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
+|**vendorUOM**: string | Vendor's Unit of Measure |
+|**vendorConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Vendor's Unit of Measure |
+|**vendorCost**: number *(double)* | Item Cost of the Vendor |
+|**vendorPriority**: integer *(int32)* | Priority of the Vendor |
+|**contractNo**: string | Number of the Contract |
+|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerNo**: string | Number of the Manufacturer |
+|**manufacturerName**: string | Name of the Manufacturer |
+|**gtin**: string | Global Trade Item Number |
+|**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |
+|**dateAdded**: string *(date-time)* | Date when the Vendor of Inventory Item was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Vendor |
+|**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item Vendor was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the user who updated Inventory Item Vendor |
+|**activeStatus**: boolean | Is the Status of the Inventory Item Vendor active or not? |
+|**ndcNumber**: string | National Drug Code number |
+|**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
+|**costLastUpdatedByUserName**: string | Name of the last user who updated the Cost |
+|**addedByUserName**: string | Name of the user who added the Inventory Item Vendor |
+|**lastUpdatedByUserName**: string | Name of the last user who updated Inventory Item Vendor |
+|**pimKey**: string | Product Information Management Key |
+|**altItemNo**: string | Alternative Item Number |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
+{
+      "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "vendorId": "00000000-0000-0000-0000-000000000000",
+      "vendorNo": "string",
+      "vendorName": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "vendorItemNo": "string",
+      "vendorUOM": "string",
+      "vendorConversionFactor": "integer (int32)",
+      "vendorCost": "number (double)",
+      "vendorPriority": "integer (int32)",
+      "contractNo": "string",
+      "contractExpDate": "string (date-time)",
+      "manufacturerItemNo": "string",
+      "manufacturerId": "00000000-0000-0000-0000-000000000000",
+      "manufacturerNo": "string",
+      "manufacturerName": "string",
+      "gtin": "string",
+      "costLastUpdated": "string (date-time)",
+      "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "activeStatus": "boolean",
+      "ndcNumber": "string",
+      "lockCost": "boolean",
+      "costLastUpdatedByUserName": "string",
+      "addedByUserName": "string",
+      "lastUpdatedByUserName": "string",
+      "pimKey": "string"
+      "altItemNo": "string"
+    }   
+```
+
+
+## Partially update the specified inventory vendor
+
+### <span style="color: #F05D30">Path</span>
+PATCH /odata/InventoryVendors({inventoryVendorId})
+
+### <span style="color: #F05D30">Description</span>
+Partially updates the details of the inventory vendor specified by InventoryVendorId.
+
+### <span style="color: #F05D30">Request Body</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**vendorNo**: string | Code of the Supplier who sells products |
+|**vendorName**: string | Name of the Vendor |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Name of the Facility |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
+|**vendorUOM**: string | Vendor's Unit of Measure |
+|**vendorConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Vendor's Unit of Measure |
+|**vendorCost**: number *(double)* | Item Cost of the Vendor |
+|**vendorPriority**: integer *(int32)* | Priority of the Vendor <br> <br> **Note**: Inventory Vendor that had the priority equal or less than specified value is moved down for one step. <br> <br> In case ```vendorPriority``` in the Request Body contains a value larger than quantity of Inventory Vendors for a specific facility, then the Inventory Vendor priority is changed to the lowest priority for an appropriate facility. <br> <br> In case a specified Inventory Vendor has the Inactive status, then the Inventory Vendor priority is changed only within inactive Inventory Vendors.
+|**contractNo**: string | Number of the Contract |
+|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerNo**: string | Number of the Manufacturer |
+|**manufacturerName**: string | Name of the Manufacturer |
+|**gtin**: string | Global Trade Item Number |
+|**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: string (uuid) | Unique Identifier of the last user who updated the Cost |
+|**dateAdded**: string *(date-time)* | Date when the Vendor of Inventory Item was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Vendor |
+|**lastUpdated**: string *(date-time)* |Last Date when the Inventory Item Vendor was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the user who updated Inventory Item Vendor |
+|**activeStatus**: boolean | Is the Status of the Inventory item Vendor active or not?|
+|**ndcNumber**: string | National Drug Code number |
+|**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
+|**costLastUpdatedByUserName**: <br> string | Name of the last user who updated the Cost |
+|**addedByUserName**: string | Name of the user who added the Inventory Item Vendor |
+|**lastUpdatedByUserName**: string | Name of the last user who updated Inventory Item Vendor |
+|**pimKey**: string | Product Information Management Key |
+|**altItemNo**: string | Alternative Item Number |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+  "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "vendorId": "00000000-0000-0000-0000-000000000000",
+  "vendorNo": "string",
+  "vendorName": "string",
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "facilityNo": "string",
+  "facilityName": "string",
+  "vendorItemNo": "string",
+  "vendorUOM": "string",
+  "vendorConversionFactor": "integer (int32)",
+  "vendorCost": "number (double)",
+  "vendorPriority": "integer (int32)",
+  "contractNo": "string",
+  "contractExpDate": "string (date-time)",
+  "manufacturerItemNo": "string",
+  "manufacturerId": "00000000-0000-0000-0000-000000000000",
+  "manufacturerNo": "string",
+  "manufacturerName": "string",
+  "gtin": "string",
+  "costLastUpdated": "string (date-time)",
+  "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "dateAdded": "string (date-time)",
+  "addedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "activeStatus": "boolean",
+  "ndcNumber": "string",
+  "lockCost": "boolean",
+  "costLastUpdatedByUserName": "string",
+  "addedByUserName": "string",
+  "lastUpdatedByUserName": "string",
+  "pimKey": "string"
+  "altItemNo": "string"
+}
+```
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**inventoryVendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Vendor here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|    
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+### <span style="color: #F05D30">Custom Errors</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**403 Forbidden** | User without the Update Locked Cost privilege sends the request with a valid ```vendorCost``` for Inventory Vendor that has Lock Cost.|
+
+``` json title="Response Example"
+vendorCost: You do not have sufficient privileges to perform this action.
+```
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**403 Forbidden** | User without the Update Locked Cost privilege sends the request for the ```lockCost``` field updating.|
+
+``` json title="Response Example"
+lockCost: You do not have sufficient privileges to perform this action.
+```
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**403 Forbidden** | User with cleared Managing Enterprise fields sends request with a valid ```pimKey```.|
+
+``` json title="Response Example"
+pimKey: You do not have sufficient privileges to perform this action.
+```
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | User requested is not existing / from another Organization or restricted/inactive Facility.|
+
+``` json title="Response Example"
+Specified facilityId does not exist within organization.
+```
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | User requested is not existing/inactive or from another Organization Manufacturer.|
+
+``` json title="Response Example"
+Specified manufacturerNo does not exist within the organization.
+```
+
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | User updates Inventory Vendor to not unique values within Vendor, Vendor Item No, UOM, and Facility. |
+
+``` json title="Response Example"
+Inventory Vendor already exists within the specified Vendor Item No, Vendor UOM, and Facility.
+```
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | Combination of ```vendorUOM``` and ```vendorConversionFactor``` is not matched with existing Inventory UOM (UOM and CF) |
+
+``` json title="Response Example"
+Specified vendorConversionFactor and vendorUOM do not exist for Inventory Vendor.
+```
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | ```vendorUOM``` is specified without ```vendorConversionFactor``` or VCF is specified without ```vendorUOM```.|
+
+``` json title="Response Example"
+vendorConversionFactor and vendorUOM should be specified simultaneously.
+```
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | User specifies Facility that belongs to another Inventory Group in the Request Body.|
+
+``` json title="Response Example"
+Inventory and specified Facility belong to different inventory groups.
+```
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+|-----:|:-------|
+|**400 Bad Request** | ```contractExpDate``` contains value that is less than 2009-01-26 date.|
+
+``` json title="Response Example"
+ContractExpDate must be greater than 2009-01-25.
+```
+
+## Get the list of inventory vendors changed from specified date
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/InventoryVendors/GetAllFromDate(from={from},facilityId={facilityId},syncFlag={syncFlag})
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the existing inventory vendors changed from the specified date within a facility specified by ID.
+
+The empty GUID ```00000000-0000-0000-0000-000000000000``` is taken into account for inventory vendor with the Master facility retrieving. After sending the GET request ```{{url}}/odata/InventoryVendors/GetAllFromDate(from={{from}},facilityId=00000000-0000-0000-0000-000000000000,syncFlag={{syncFlag}})```, the response contains the list of all active inventory vendors for the Master facility.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Facility here. |
+|**syncFlag**: boolean <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identifies if Location is synced with an external system. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|   
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
+|**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**vendorNo**: string | Code of the Supplier who sells products |
+|**vendorName**: string | Name of the Vendor |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Name of the Facility |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
+|**vendorUOM**: string | Vendor's Unit of Measure |
+|**vendorConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Vendor's Unit of Measure |
+|**vendorCost**: number *(double)* | Item Cost of the Vendor |
+|**vendorPriority**: integer *(int32)* | Priority of the Vendor |
+|**contractNo**: string | Number of the Contract |
+|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerNo**: string | Number of the Manufacturer |
+|**manufacturerName**: string | Name of the Manufacturer |
+|**gtin**: string | Global Trade Item Number |
+|**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |
+|**dateAdded**: string *(date-time)* | Date when the Vendor of Inventory Item was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Vendor |
+|**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item Vendor was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the user who updated Inventory Item Vendor |
+|**activeStatus**: boolean | Is the Status of the Inventory Item Vendor active or not? |
+|**ndcNumber**: string | National Drug Code number |
+|**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
+|**costLastUpdatedByUserName**: string | Name of the last user who updated the Cost |
+|**addedByUserName**: string | Name of the user who added the Inventory Item Vendor |
+|**lastUpdatedByUserName**: string | Name of the last user who updated Inventory Item Vendor |
+|**pimKey**: string | Product Information Management Key |
+|**altItemNo**: string | Alternative Item Number |
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+[
+  {
+    "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+    "inventoryId": "00000000-0000-0000-0000-000000000000",
+    "inventoryNo": "string",
+    "vendorId": "00000000-0000-0000-0000-000000000000",
+    "vendorNo": "string",
+    "vendorName": "string",
+    "facilityId": "00000000-0000-0000-0000-000000000000",
+    "facilityNo": "string",
+    "facilityName": "string",
+    "vendorItemNo": "string",
+    "vendorUOM": "string",
+    "vendorConversionFactor": "integer (int32)",
+    "vendorCost": "number (double)",
+    "vendorPriority": "integer (int32)",
+    "contractNo": "string",
+    "contractExpDate": "string (date-time)",
+    "manufacturerItemNo": "string",
+    "manufacturerId": "00000000-0000-0000-0000-000000000000",
+    "manufacturerNo": "string",
+    "manufacturerName": "string",
+    "gtin": "string",
+    "costLastUpdated": "string (date-time)",
+    "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+    "dateAdded": "string (date-time)",
+    "addedBy": "00000000-0000-0000-0000-000000000000",
+    "lastUpdated": "string (date-time)",
+    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+    "activeStatus": "boolean",
+    "ndcNumber": "string",
+    "lockCost": "boolean",
+    "costLastUpdatedByUserName": "string",
+    "addedByUserName": "string",
+    "lastUpdatedByUserName": "string",
+    "pimKey": "string",
+    "altItemNo": "string"
+  }
+
+]
+```

@@ -32,6 +32,8 @@ nav:
     - InventoryTrackings: InventoryTrackings.md
     - InventoryUOMs: InventoryUOMs.md
     - InventoryVendors: InventoryVendors.md
+    - Locations: Locations.md
+    - Manufacturers: Manufacturers.md
    
   
 

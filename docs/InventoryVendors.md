@@ -42,7 +42,7 @@ td, th {
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## <span style="color: #F05D30">Properties</span>
+### <span style="color: #F05D30">Properties</span>
 <style>
 td, th {
    border: none!important;

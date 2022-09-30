@@ -1,5 +1,4 @@
 # Inventory
-
 ## Get the list of inventory items
 
 ### <span style="color: #F05D30">Path</span>

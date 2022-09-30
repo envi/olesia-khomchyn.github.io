@@ -34,6 +34,8 @@ nav:
     - InventoryVendors: InventoryVendors.md
     - Locations: Locations.md
     - Manufacturers: Manufacturers.md
+    - MatchedInvoiceItems: MatchedInvoiceItems.md
+    - MatchedInvoices: MatchedInvoices.md
    
   
 

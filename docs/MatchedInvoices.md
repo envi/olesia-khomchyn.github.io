@@ -64,7 +64,7 @@ td, th {
 |**vendorNo**: string | Code of the Supplier who sells products |
 |**vendorName**: string | Name of the Vendor |
 |**invoiceNo**: string | Number of the Invoice |
-|**matchedInvoiceStatusId**: <br> integer *(int32)*  | Unique Identifier of the Matched Invoice Status |
+|**matchedInvoiceStatusId**: <br> integer *(int32)*  | Unique Identifier of the Matched Invoice status |
 |**matchedInvoiceStatus**: string | Status of the Matched Invoice |
 |**vendorRemitToId**: string *(uuid)* | Unique Identifier of the Vendor Remit-to |
 |**remitToNo**: string | Number of the Remit-to |
@@ -229,7 +229,7 @@ td, th {
 |**vendorNo**: string | Code of the Supplier who sells products |
 |**vendorName**: string | Name of the Vendor |
 |**invoiceNo**: string | Number of the Invoice |
-|**matchedInvoiceStatusId**: <br> integer *(int32)*  | Unique Identifier of the Matched Invoice Status |
+|**matchedInvoiceStatusId**: <br> integer *(int32)*  | Unique Identifier of the Matched Invoice status |
 |**matchedInvoiceStatus**: string | Status of the Matched Invoice |
 |**vendorRemitToId**: string *(uuid)* | Unique Identifier of the Vendor Remit-to |
 |**remitToNo**: string | Number of the Remit-to |

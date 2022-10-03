@@ -1,6 +1,6 @@
-site_name:  Envi OData Public API 1.0
+site_name: Envi Developer Resources
 nav:
-  - Topics:
+  - API Topics:
     - Introduction: index.md
     - Testing with Postman: Testing with Postman.md 
     - Retrieving Data Using cURL: Retrieving_Data.md
@@ -15,7 +15,7 @@ nav:
     - Bi Tool Use Cases: BI_Tool_Use_Cases.md
     - Integrators: Integrators.md
     - GitHub Repositry: GitHub_Repository.md
-  - Operations:
+  - API Operations:
     - Authentication: Authentication_POST.md
     - Addresses: Addresses.md
     - AdjustmentItems: AdjustmentItems.md
@@ -36,6 +36,8 @@ nav:
     - Manufacturers: Manufacturers.md
     - MatchedInvoiceItems: MatchedInvoiceItems.md
     - MatchedInvoices: MatchedInvoices.md
+    - PARAreaItems: PARAreaItems.md
+    - PARAreas: PARAreas.md
    
   
 

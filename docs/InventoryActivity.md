@@ -84,8 +84,8 @@ td, th {
 |**expenseLedgerNo**: string | General Ledger Account Code for the Inventory Expense at the Locations |
 |**assetLedgerNo**: string | General Ledger Account Code for the Inventory Asset at the Locations |
 |**glCode**: string | General Ledger Code |
-|**lotNo**: string | Identification number assigned to a particular quantity or lot of material from a single manufacturer |
-|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item, to identify it |
+|**lotNo**: string |  Identification Number assigned to a particular Quantity or Lot of material from a single Manufacturer |
+|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item to identify it |
 |**expDate**: string *(date-time)* | Previously determined date after which item should no longer be used |
 |**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item was updated |
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the user who updated the Inventory Item |

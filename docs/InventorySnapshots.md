@@ -147,7 +147,7 @@ td, th {
 }
 ```
 
-## Get the list of inventory snapshot items for specific inventory snapshot
+## Get the list of inventory snapshot items for the specific inventory snapshot
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventorySnapshots({inventorySnapshotId})/inventorySnapshotItems

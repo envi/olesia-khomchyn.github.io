@@ -47,8 +47,8 @@ td, th {
 |**adjustmentId**: string *(uuid* | Unique Identifier of the Adjustment |
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
 |**notes**: string |Comments about the Adjustment Item |
-|**lotNo**: string |Identification number assigned to a particular quantity or lot of material from a single manufacturer |
-|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item, to identify it |
+|**lotNo**: string | Identification Number assigned to a particular Quantity or Lot of material from a single Manufacturer |
+|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item to identify it |
 |**expDate**: string *(date-time)* | Previously determined date after which Item should no longer be used |
 |**dateCreated**: string *(date-time)* | Date when the Adjustment Item was created |
 |**createdBy**: string *(uuid)* | Unique Identifier of the user who created the Adjustment Item |
@@ -164,8 +164,8 @@ td, th {
 |**adjustmentId**: string *(uuid* | Unique Identifier of the Adjustment |
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
 |**notes**: string |Comments about the Adjustment Item |
-|**lotNo**: string |Identification number assigned to a particular quantity or lot of material from a single manufacturer |
-|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item, to identify it |
+|**lotNo**: string | Identification Number assigned to a particular Quantity or Lot of material from a single Manufacturer |
+|**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item to identify it |
 |**expDate**: string *(date-time)* | Previously determined date after which Item should no longer be used |
 |**dateCreated**: string *(date-time)* | Date when the Adjustment Item was created |
 |**createdBy**: string *(uuid)* | Unique Identifier of the user who created the Adjustment Item |

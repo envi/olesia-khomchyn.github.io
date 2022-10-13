@@ -43,7 +43,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* | Unique Identifier of the PAR Area |
 |**parAreaNo**: string | Identification Number of the PAR Area |
@@ -135,7 +135,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* | Unique Identifier of the PAR Area |
 |**parAreaNo**: string | Identification Number of the PAR Area |

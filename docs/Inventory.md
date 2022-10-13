@@ -1008,7 +1008,7 @@ td, th {
 |**facilityName**: string | Name of the Facility |
 |**trackLot**: boolean | Is Tracking performed by Lot number or not? |
 |**trackExpiration**: boolean | Is Tracking performed by Expiration Date or not? |
-|**trackSerialNo**: boolean | Is Tracking performed by Serial number or not? |
+|**trackSerialNo**: boolean | Is Tracking performed by Serial Number or not? |
 |**isOptional**: boolean | Is Tracking optional or not? |
 |**dateAdded**: string *(date-time)* | Date when the Inventory Item Tracking was added |
 |**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Inventory Tracking |

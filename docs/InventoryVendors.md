@@ -1,5 +1,5 @@
 # InventoryVendors
-## Get the cost history for specified inventory vendor
+## Get the cost history for the specified inventory vendor
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors({inventoryVendorId})/costHistory
@@ -84,7 +84,7 @@ td, th {
     }
 ```
 
-## Get the list of purchasing units for specified inventory vendor
+## Get the list of purchasing units for the specified inventory vendor
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors({inventoryVendorId})/purchasingUnits
@@ -679,7 +679,7 @@ td, th {
 ContractExpDate must be greater than 2009-01-25.
 ```
 
-## Get the list of inventory vendors changed from specified date
+## Get the list of inventory vendors changed from the specified date
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors/GetAllFromDate(from={from},facilityId={facilityId},syncFlag={syncFlag})

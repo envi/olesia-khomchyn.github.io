@@ -331,7 +331,7 @@ td, th {
 }
 ```
 
-## Get the list of matched invoice items for specified matched invoice
+## Get the list of matched invoice items for the specified matched invoice
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/MatchedInvoices({matchedInvoiceId})/matchedInvoiceItems

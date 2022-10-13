@@ -38,6 +38,9 @@ nav:
     - MatchedInvoices: MatchedInvoices.md
     - PARAreaItems: PARAreaItems.md
     - PARAreas: PARAreas.md
+    - POConfirmationItems: POConfirmationItems.md
+    - POConfirmations: POConfirmations.md
+    - PurchaseOrderItems: PurchaseOrderItems.md
    
   
 

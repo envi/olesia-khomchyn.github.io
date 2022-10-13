@@ -1,11 +1,11 @@
 # AP Batch
-## Get the list of AP Batches
+## Get the list of AP batches
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Batches
 
 ### <span style="color: #F05D30">Description</span>
-Returns list of AP Batches within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).)
+Returns list of AP batches within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).)
 
 !!! note 
 
@@ -91,13 +91,13 @@ td, th {
     }
 ```
 
-## Create a new AP Batch
+## Create a new AP batch
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new AP Batch within a logged organization.
+Creates a new AP batch within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
 <style>
@@ -144,7 +144,7 @@ td, th {
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## Get the specified AP Batch
+## Get the specified AP batch
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Batches({batchId})
@@ -230,13 +230,13 @@ td, th {
     
 ```
 
-## Get the specified AP Batched Invoice
+## Get the specified AP batched invoice
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Batches({batchId})/invoices
 
 ### <span style="color: #F05D30">Description</span>
-Returns paged list of the existing invoices within Batch specified by ID.
+Returns paged list of the existing invoices within a batch specified by ID.
 
 !!! note 
 
@@ -405,13 +405,13 @@ td, th {
     
 ```
 
-## Add Invoice to Batch
+## Add invoice to batch
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/Invoices
 
 ### <span style="color: #F05D30">Description</span>
-Adds Invoice with the ‘Vouchered’ status to an existed Batch within a logged organization. After adding to the Batch, added Invoice changes its Invoice status to ‘Batched’.
+Adds an invoice with the ‘Vouchered’ status to an existed batch within a logged organization. After adding to the batch, an added invoice changes its invoice status to ‘Batched’.
 
 ### <span style="color: #F05D30">Request Parameters</span>
 <style>
@@ -517,13 +517,13 @@ Only Vouchered Invoices can be added to the Batch.
 
 ```
 
-## Change Batch Status to ‘Exported’
+## Change batch status to ‘Exported’
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/Export
 
 ### <span style="color: #F05D30">Description</span>
-Changes Batch Status to ‘Exported’ when the specified Batch has at least one Invoice.
+Changes batch status to ‘Exported’ when the specified batch has at least one invoice.
 
 ### <span style="color: #F05D30">Request Parameters</span>
 <style>
@@ -551,7 +551,7 @@ td, th {
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## Change AP Batch Status to ‘Queued’
+## Change AP batch status to ‘Queued’
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/SubmitToQueued

@@ -41,6 +41,11 @@ nav:
     - POConfirmationItems: POConfirmationItems.md
     - POConfirmations: POConfirmations.md
     - PurchaseOrderItems: PurchaseOrderItems.md
+    - PurchaseOrders: PurchaseOrders.md
+    - PurchasingUnits: PurchasingUnits.md 
+    - ReceiptItems: ReceiptItems.md
+    - Receipts: Receipts.md
+    - RequisitionItems: RequisitionItems.md
    
   
 

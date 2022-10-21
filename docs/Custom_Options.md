@@ -1,12 +1,12 @@
 While pulling some valuable information, Envi OData API allows you to use custom parameters. For inactive items, you can use the following parameters:
 
  - **```includeInactiveInventory```**–gets all inactive inventory items and works with the following endpoints:
-    - Inventory Vendors for a specified Inventory
-    - Inventory Vendors
-    - Specified Inventory Vendor
-    - Inventory Vendors changed from the specified date
-    - Inventory Items changed from the specified date
-    - Inventory Locations changed from the specified date
+    - [Inventory Vendors for the specified Inventory](Inventory.md#get-the-list-of-inventory-vendors-for-the-specified-inventory)
+    - [Inventory Vendors](InventoryVendors.md#get-the-list-of-all-inventory-vendors)
+    - [Specified Inventory Vendor](InventoryVendors.md#get-the-specified-inventory-vendor)
+    - [Inventory Vendors changed from the specified date](InventoryVendors.md#get-the-list-of-inventory-vendors-changed-from-the-specified-date)
+    - [Inventory Items changed from the specified date](Inventory.md#get-the-list-of-inventory-items-changed-from-the-specified-date)
+    - [Inventory Locations changed from the specified date](InventoryVendors.md#get-the-list-of-inventory-vendors-changed-from-the-specified-date)
 
 
 ``` title="Request Example"

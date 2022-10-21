@@ -33,6 +33,7 @@ td, th {
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -110,9 +111,11 @@ td, th {
 </style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**parAreaItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the PAR Area here. |
+|**parAreaId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the PAR Area here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
+
 
 ### <span style="color: #F05D30">Responses</span>
 <style>
@@ -215,6 +218,7 @@ td, th {
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -255,7 +259,7 @@ td, th {
 |**lastUpdatedByName**: string | First Name and Last Name of the last user who updated the PAR Area Item |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
-
+{
   "items": [
           {
   "parAreaItemId": "00000000-0000-0000-0000-000000000000",

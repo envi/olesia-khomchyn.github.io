@@ -1125,6 +1125,7 @@ td, th {
     }
     
 ```
+
 ## Get the list of inventory vendors for the specified inventory
 
 ### <span style="color: #F05D30">Path</span>

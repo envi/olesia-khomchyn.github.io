@@ -33,6 +33,7 @@ td, th {
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -60,41 +61,31 @@ td, th {
 |**lastUpdatedByName**: string | Name of the last user who updated the Purchase Order Confirmation |
 |**orderDate**: string *(date-time)* | Date when the Order was made |
 |**vendorComment**: string | Vendor Comments regarding Purchase Order Confirmation |
-|**notes**: string | Comments about the Purchase Order Confirmation Item |
+|**notes**: string | Comments about the Purchase Order Confirmation |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-"items": [
-{
-"poConfirmationItemId": "00000000-0000-0000-0000-000000000000",
 "poConfirmationId": "00000000-0000-0000-0000-000000000000",
+"organizationId": "00000000-0000-0000-0000-000000000000",
+"organizationName": "string",
 "purchaseOrderId": "00000000-0000-0000-0000-000000000000",
 "purchaseOrderNo": "string",
-"lineItemNo": "integer (int32)",
-"quantity": "integer (int32)",
-"uom": "string",
-"price": "number (double)",
-"inventoryNo": "string",
-"vendorItemNo": "string",
-"manufacturer": "string",
-"manufacturerItemNo": "string",
-"inventoryDescription": "string",
-"updatedPOPrice": "boolean",
-"updatedInventoryPrice": "boolean",
+"sequenceNo": "integer (int32)",
+"referenceNo": "string",
+"poConfirmationDate": "string (date-time)",
+"isUnresolved": "boolean",
 "dateCreated": "string (date-time)",
 "lastUpdated": "string (date-time)",
 "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
 "lastUpdatedByName": "string",
-"notes": "string",
-"isUnresolved": "boolean"
+"orderDate": "string (date-time)",
+"vendorComment": "string",
+"notes": "string"
 }
-],
-"nextPageLink": "string",
-"count": "integer (int64)"
-}
+        
 ```
 
-## Get the specified PO Confirmation
+## Get the specified PO confirmation 
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/POConfirmations({poConfirmationId})
@@ -152,7 +143,7 @@ td, th {
 |**lastUpdatedByName**: string | Name of the last user who updated the Purchase Order Confirmation |
 |**orderDate**: string *(date-time)* | Date when the Order was made |
 |**vendorComment**: string | Vendor Comments regarding Purchase Order Confirmation |
-|**notes**: string | Comments about the Purchase Order Confirmation Item |
+|**notes**: string | Comments about the Purchase Order Confirmation |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {

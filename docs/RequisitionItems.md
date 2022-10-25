@@ -45,7 +45,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -58,18 +58,18 @@ td, th {
 |**lineItemType**: string | Type of the Line Item |
 |**quantity**: integer *(int32)* | Quantity specified in the Line Items |
 |**UOM**: string | Unit of Measure |
-|**conversionFactor**: integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure |
+|**conversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure |
 |**price**: number *(double)* | Price of the Line Item |
-|**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
+|**inventoryLocationId**: <br> string *(uuid)* | Unique Identifier of the Inventory Location |
 |**notes**: string | Comments about the Requisition Item |
 |**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
 |**manufacturerItemNo**: string | Item Number of the Manufacturer |
-|**suggestedVendorId**: string *(uuid)* | Suggested Unique Identifier of the Vendor |
+|**suggestedVendorId**: <br> string *(uuid)* | Suggested Unique Identifier of the Vendor |
 |**stockUOM**: string | Unit of Measure to track Inventory Balance |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
-|**poConversionStatusId**: integer *(int32)* | Unique Identifier of Purchase Order Conversion Status |
+|**poConversionStatusId**: <br> integer *(int32)* | Unique Identifier of Purchase Order Conversion Status |
 |**poConversionStatus**: string | Conversion Status of Purchase Order |
-|**purchaseOrderItemId**: string *(uuid)* | Unique Identifier of the Purchase Order Item |
+|**purchaseOrderItemId**: <br> string *(uuid)* | Unique Identifier of the Purchase Order Item |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
 |**dateCreated**: string *(date-time)* | Date when the Requisition Item was created |
@@ -77,11 +77,11 @@ td, th {
 |**createdByUserName**: string | Name of the user who created the Requisition Item |
 |**lastUpdated**: string *(date-time)* | Last Date when the Requisition Item was updated |
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Requisition Item |
-|**lastUpdatedByUserName**: string | Name of the last user who updated the Requisition Item |
+|**lastUpdatedByUserName**: <br> string | Name of the last user who updated the Requisition Item |
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**isTaxable**: boolean | Is the Location Taxable or not? |
 |**contractNo**: string | Number of the Contract |
-|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**contractExpDate**: string <br> *(date-time)* | Expiration Date of the Contract |
 |**isPrinted**: boolean | Is the Pick Ticket printed or not? |
 |**supplierPartAuxiliaryId**: string | Unique Identifier of the Supplier Part Auxiliary |
 
@@ -175,7 +175,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -188,18 +188,18 @@ td, th {
 |**lineItemType**: string | Type of the Line Item |
 |**quantity**: integer *(int32)* | Quantity specified in the Line Items |
 |**UOM**: string | Unit of Measure |
-|**conversionFactor**: integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure |
+|**conversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure |
 |**price**: number *(double)* | Price of the Line Item |
-|**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
+|**inventoryLocationId**: <br> string *(uuid)* | Unique Identifier of the Inventory Location |
 |**notes**: string | Comments about the Requisition Item |
 |**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
 |**manufacturerItemNo**: string | Item Number of the Manufacturer |
-|**suggestedVendorId**: string *(uuid)* | Suggested Unique Identifier of the Vendor |
+|**suggestedVendorId**: <br> string *(uuid)* | Suggested Unique Identifier of the Vendor |
 |**stockUOM**: string | Unit of Measure to track Inventory Balance |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
-|**poConversionStatusId**: integer *(int32)* | Unique Identifier of Purchase Order Conversion Status |
+|**poConversionStatusId**: <br> integer *(int32)* | Unique Identifier of Purchase Order Conversion Status |
 |**poConversionStatus**: string | Conversion Status of Purchase Order |
-|**purchaseOrderItemId**: string *(uuid)* | Unique Identifier of the Purchase Order Item |
+|**purchaseOrderItemId**: <br> string *(uuid)* | Unique Identifier of the Purchase Order Item |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
 |**dateCreated**: string *(date-time)* | Date when the Requisition Item was created |
@@ -207,13 +207,14 @@ td, th {
 |**createdByUserName**: string | Name of the user who created the Requisition Item |
 |**lastUpdated**: string *(date-time)* | Last Date when the Requisition Item was updated |
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Requisition Item |
-|**lastUpdatedByUserName**: string | Name of the last user who updated the Requisition Item |
+|**lastUpdatedByUserName**: <br> string | Name of the last user who updated the Requisition Item |
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**isTaxable**: boolean | Is the Location Taxable or not? |
 |**contractNo**: string | Number of the Contract |
-|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**contractExpDate**: string <br> *(date-time)* | Expiration Date of the Contract |
 |**isPrinted**: boolean | Is the Pick Ticket printed or not? |
 |**supplierPartAuxiliaryId**: string | Unique Identifier of the Supplier Part Auxiliary |
+
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
@@ -335,7 +336,141 @@ td, th {
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 "00000000-0000-0000-0000-000000000000"
 
 ```
+
+## Partially update the specified requisition item
+
+### <span style="color: #F05D30">Path</span>
+PATCH /odata/RequisitionItems({requisitionItemId})
+
+### <span style="color: #F05D30">Description</span>
+Partially updates the details of the requisition line item specified by requisition item ID (applicable only for the **Standart** requisition type).
+
+### <span style="color: #F05D30">Properties</span>
+For Inventory Item (Item with Location and Vendor):
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**activeStatus**: boolean | Is the Requisition Item active or not? |
+|**notes**: string | Comments about the Requisition Item |
+|**quantity**: integer *(int8)* | Quantity specified in the Line Items |
+|**uom**: string | Unit of Measure |
+|**conversionFactor**: integer *(int8)* | Number of Stock Keeping Units in another Unit of Measure |
+|**price**: number *(double)* | Price of the Line Item |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request example (200 OK)"
+{
+      "activeStatus": "boolean",
+      "notes": "string",
+      "quantity": "integer (int8)",
+      "uom": "string",
+      "conversionFactor": "integer (int8)",
+      "price": "number (double)"
+      }  
+```
+
+For Non-Stock Item (Item with Vendor):
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**locationId**: string *(uuid)* | Unique Identifier of the Location |
+|**activeStatus**: boolean | Is the Requisition Item active or not? |
+|**notes**: string | Comments about the Requisition Item |
+|**quantity**: integer *(int8)* | Quantity specified in the Line Items |
+|**uom**: string | Unit of Measure |
+|**conversionFactor**: integer *(int8)* | Number of Stock Keeping Units in another Unit of Measure |
+|**price**: number *(double)* | Price of the Line Item |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example (200 OK)"
+{
+      "locationId": "00000000-0000-0000-0000-000000000000",
+      "activeStatus": "boolean",
+      "notes": "string",
+      "quantity": "integer (int8)",
+      "uom": "string",
+      "conversionFactor": "integer (int8)",
+      "price": "number (double)"
+      } 
+```
+
+For Free-Form Item:
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**inventoryDescription**: string | Description of the Inventory Item |
+|**locationId**: string *(uuid)* | Unique Identifier of the Location |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**activeStatus**: boolean | Is the Requisition Item active or not? |
+|**notes**: string | Comments about the Requisition Item |
+|**quantity**: integer *(int8)* | Quantity specified in the Line Items |
+|**uom**: string | Unit of Measure |
+|**conversionFactor**: integer *(int8)* | Number of Stock Keeping Units in another Unit of Measure |
+|**price**: number *(double)* | Price of the Line Item |
+|**isTaxable**: boolean | Is Requisiton Item taxable or not? |
+
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example (200 OK)"
+{
+      "inventoryNo": "string",
+      "inventoryDescription": "string",
+      "locationId": "00000000-0000-0000-0000-000000000000",
+      "vendorId": "00000000-0000-0000-0000-000000000000",
+      "vendorItemNo": "string",
+      "manufacturerId": "00000000-0000-0000-0000-000000000000",
+      "manufacturerItemNo": "string",
+      "activeStatus": "boolean",
+      "notes": "string",
+      "quantity": "integer (int8)",
+      "uom": "string",
+      "conversionFactor": "integer (int8)",
+      "price": "number (double)",
+      "isTaxable": "boolean"
+      }
+```  
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**requisitionItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition Item here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|

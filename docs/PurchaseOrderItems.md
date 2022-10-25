@@ -281,6 +281,71 @@ td, th {
 |**departmentNo**: string | Number of the Department |
 |**departmentName**: string | Name of the Department |
 
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
+{
+"purchaseOrderItemId": "00000000-0000-0000-0000-000000000000",
+"purchaseOrderNo": "string",
+"sequenceNo": "integer (int32)",
+"purchaseOrderId": "00000000-0000-0000-0000-000000000000",
+"facilityId": "00000000-0000-0000-0000-000000000000",
+"facilityNo": "string",
+"facilityName": "string",
+"lineItemNo": "integer (int32)",
+"locationNo": "string",
+"locationName": "string",
+"inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+"inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+"vendorNo": "string",
+"vendorName": "string",
+"vendorPriority": "integer (int32)",
+"inventoryNo": "string",
+"classificationId": "00000000-0000-0000-0000-000000000000",
+"classificationName": "string",
+"classification2Id": "00000000-0000-0000-0000-000000000000",
+"classification2Name": "string",
+"inventoryDescription": "string",
+"vendorItemNo": "string",
+"manufacturerId": "00000000-0000-0000-0000-000000000000",
+"manufacturerNo": "string",
+"manufacturerName": "string",
+"manufacturerItemNo": "string",
+"orderQuantity": "integer (int32)",
+"orderUOM": "string",
+"orderConversionFactor": "integer (int32)",
+"stockUOM": "string",
+"unitCost": "number (double)",
+"departmentGLCode": "string",
+"glCode": "string",
+"lineItemTypeId": "integer (int32)",
+"itemType": "string",
+"lineItemNotes": "string",
+"contractNo": "string",
+"contractExpDate": "string (date-time)",
+"lastUpdated": "string (date-time)",
+"lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+"lastUpdatedByUserName": "string",
+"dateCreated": "string (date-time)",
+"createdBy": "00000000-0000-0000-0000-000000000000",
+"createdByUserName": "string",
+"isTaxable": "boolean",
+"returnPOItemId": "00000000-0000-0000-0000-000000000000",
+"internalNotes": "string",
+"lotNo": "string",
+"serialNo": "string",
+"expirationDate": "string (date-time)",
+"activeStatus": "boolean",
+"activeStatusLastUpdated": "string (date-time)",
+"activeStatusLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+"activeStatusLastUpdatedByUserName": "string",
+"supplierPartAuxiliaryID": "string",
+"submittedUnitCost": "number (double)",
+"departmentId": "00000000-0000-0000-0000-000000000000",
+"departmentNo": "string",
+"departmentName": "string"
+}
+
+```
+
 
 
 

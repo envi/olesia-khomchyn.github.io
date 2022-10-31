@@ -15,7 +15,7 @@ td, th {
    border: none!important;
 }
 </style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:450px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Identification Number of the Facility. <br> **If not provided**: 400 Bad Request. |
 |**usageDate**: string <br> *in formData* | Date of the Usage. <br> **If not provided**: Date according to the user Time Zone. |
@@ -105,7 +105,7 @@ td, th {
    border: none!important;
 }
 </style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:450px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the the Usage. <br> **If not provided**: 400 Bad Request. |
 

@@ -47,7 +47,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
@@ -136,7 +136,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
@@ -221,7 +221,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorName**: string | Name of the Vendor |

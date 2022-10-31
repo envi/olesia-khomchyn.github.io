@@ -53,7 +53,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:450px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**usageItemId**: string *(uuid)* | Unique Identifier of the Usage |
 |**procedureCode1**: string | First Code of the Procedure |
@@ -163,7 +163,7 @@ td, th {
    border: none!important;
 }
 </style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the Usage. <br> **If not provided**: 400 Bad Request. |
 |**lineItemNo**: string <br> *in formData* | Number of the Line Item. <br> It is generated automatically and recalculated within active Usage Line Items. <br> **If not provided**: Auto-populated.

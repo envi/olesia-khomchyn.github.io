@@ -1,4 +1,5 @@
 # Inventory
+
 ## Get the list of inventory items
 
 ### <span style="color: #F05D30">Path</span>
@@ -273,6 +274,7 @@ td, th {
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>

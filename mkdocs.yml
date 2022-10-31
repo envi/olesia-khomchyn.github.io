@@ -47,6 +47,10 @@ nav:
     - Receipts: Receipts.md
     - RequisitionItems: RequisitionItems.md
     - Requisitions: Requisitions.md
+    - UsageItems: UsageItems.md
+    - UsageProcedures: UsageProcedures.md
+    - Usages: Usages.md
+    - Vendors: Vendors.md
    
   
 

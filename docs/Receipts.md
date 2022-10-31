@@ -45,7 +45,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* | Unique Identifier of the Receipt | 
 |**purchaseOrderId**: string *(uuid)* | Unique Identifier of the Purchase Order |
@@ -197,7 +197,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* | Unique Identifier of the Receipt | 
 |**purchaseOrderId**: string *(uuid)* | Unique Identifier of the Purchase Order |

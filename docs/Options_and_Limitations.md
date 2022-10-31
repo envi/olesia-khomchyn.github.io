@@ -271,19 +271,19 @@ https://api-demo.envi.net/odata/Inventory?$filter=classificationName in ('MEDICA
 The **in** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
- - Facilities
- - Inventory
- - Inventory Activity
- - Inventory Locations
- - Inventory Location Cost and Quantity
- - Inventory Location extended
- - Inventory Snapshot
- - Inventory Snapshot Item Details
- - Inventory Vendors
- - Purchase Orders
- - Purchase Orders Items
- - Receipts
- - Receipts Items
+ - [Facilities](Facilities.md#get-the-list-of-facilities)
+ - [Inventory](Inventory.md#get-the-list-of-inventory-items)
+ - [Inventory Activity](InventoryActivity.md#get-the-list-of-inventory-activities)
+ - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
+ - [Inventory Location Cost and Quantity](InventoryLocationsCostAndQuantity.md#get-the-list-of-inventory-locations-cost-and-quantity)
+ - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
+ - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
+ - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
+ - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - PAR Areas
  - PAR Area Items
  - PO Confirmations
@@ -304,17 +304,17 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=unitCost gt 1.2345
 The **gt** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
- - Facilities
- - Inventory
- - Inventory Location extended
+ - [Facilities](Facilities.md#get-the-list-of-facilities)
+ - [Inventory](Inventory.md#get-the-list-of-inventory-items)
+ - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
  - Inventory Locations
- - Inventory Snapshot
- - Inventory Snapshot Item Details
- - Inventory Vendors
- - Purchase Orders
- - Purchase Orders Items
- - Receipts
- - Receipts Items
+ - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
+ - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
+ - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - PAR Areas
  - PAR Area Items
  - PO Confirmations
@@ -334,17 +334,17 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=lastUpdated ge YYYY-MM-DD
 The **ge** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
- - Facilities
- - Inventory
- - Inventory Location extended
+ - [Facilities](Facilities.md#get-the-list-of-facilities)
+ - [Inventory](Inventory.md#get-the-list-of-inventory-items)
+ - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
  - Inventory Locations
- - Inventory Snapshot
- - Inventory Snapshot Item Details
- - Inventory Vendors
- - Purchase Orders
- - Purchase Orders Items
- - Receipts
- - Receipts Items
+ - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
+ - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
+ - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - PAR Areas
  - PAR Area Items
  - PO Confirmations
@@ -363,17 +363,17 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=unitCost lt 1.2345
 The **lt** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
- - Facilities
- - Inventory
- - Inventory Location extended
+ - [Facilities](Facilities.md#get-the-list-of-facilities)
+ - [Inventory](Inventory.md#get-the-list-of-inventory-items)
+ - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
  - Inventory Locations
- - Inventory Snapshot
- - Inventory Snapshot Item Details
- - Inventory Vendors
- - Purchase Orders
- - Purchase Orders Items
- - Receipts
- - Receipts Items
+ - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
+ - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
+ - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - PAR Areas
  - PAR Area Items
  - PO Confirmations
@@ -393,17 +393,17 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=lastUpdated le YYYY-MM-DD
 The **le** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
- - Facilities
- - Inventory
- - Inventory Location extended
+ - [Facilities](Facilities.md#get-the-list-of-facilities)
+ - [Inventory](Inventory.md#get-the-list-of-inventory-items)
+ - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
  - Inventory Locations
- - Inventory Snapshot
- - Inventory Snapshot Item Details
- - Inventory Vendors
- - Purchase Orders
- - Purchase Orders Items
- - Receipts
- - Receipts Items
+ - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
+ - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
+ - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - PAR Areas
  - PAR Area Items
  - PO Confirmations

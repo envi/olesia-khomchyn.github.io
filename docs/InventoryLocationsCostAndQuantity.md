@@ -1,4 +1,5 @@
 # InventoryLocationsCostAndQuantity
+
 ## Get the specified inventory location cost and quantity
 
 ### <span style="color: #F05D30">Path</span>

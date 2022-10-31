@@ -49,7 +49,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorCostHistoryId**: <br> string *(uuid)* | Unique Identifier of the Inventory Vendor Cost History |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Vendor |
@@ -136,7 +136,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorPurchasing<br>UnitId**: <br> string *(uuid)* | Unique Identifier of the Inventory Vendor Purchasing Unit |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Vendor |
@@ -231,7 +231,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:450px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -356,7 +356,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -586,7 +586,7 @@ td, th {
 </style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**403 Forbidden** | User with cleared Managing Enterprise fields sends request with a valid ```pimKey```.|
+|**403 Forbidden** | User with cleared Managing Enterprise fields sends the request with a valid ```pimKey```.|
 
 ``` json title="Response Example"
 pimKey: You do not have sufficient privileges to perform this action.
@@ -674,7 +674,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | ```contractExpDate``` contains value that is less than 2009-01-26 date.|
 
@@ -727,7 +727,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -744,24 +744,24 @@ td, th {
 |**vendorCost**: number *(double)* | Item Cost of the Vendor |
 |**vendorPriority**: integer *(int32)* | Priority of the Vendor |
 |**contractNo**: string | Number of the Contract |
-|**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
+|**contractExpDate**: string <br> *(date-time)* | Expiration Date of the Contract |
 |**manufacturerItemNo**: string | Item Number of the Manufacturer |
 |**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
 |**manufacturerNo**: string | Number of the Manufacturer |
 |**manufacturerName**: string | Name of the Manufacturer |
 |**gtin**: string | Global Trade Item Number |
-|**costLastUpdated**: string *(date-time)* | Last Date when the Cost was updated |
-|**costLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Cost |
+|**costLastUpdated**: string <br> *(date-time)* | Last Date when the Cost was updated |
+|**costLastUpdatedBy**: <br> string *(uuid)* | Unique Identifier of the last user who updated the Cost |
 |**dateAdded**: string *(date-time)* | Date when the Vendor of Inventory Item was added |
 |**addedBy**: string *(uuid)* | Unique Identifier of the user who added Inventory Item Vendor |
 |**lastUpdated**: string *(date-time)* | Last Date when the Inventory Item Vendor was updated |
-|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the user who updated Inventory Item Vendor |
+|**lastUpdatedBy**: string <br> *(uuid)* | Unique Identifier of the user who updated Inventory Item Vendor |
 |**activeStatus**: boolean | Is the Status of the Inventory Item Vendor active or not? |
 |**ndcNumber**: string | National Drug Code number |
 |**lockCost**: boolean | Is the Cost of the Inventory Item Vendor locked or not? |
-|**costLastUpdatedByUserName**: string | Name of the last user who updated the Cost |
+|**costLastUpdatedBy<br>UserName**: string | Name of the last user who updated the Cost |
 |**addedByUserName**: string | Name of the user who added the Inventory Item Vendor |
-|**lastUpdatedByUserName**: string | Name of the last user who updated Inventory Item Vendor |
+|**lastUpdatedBy<br>UserName**: string | Name of the last user who updated Inventory Item Vendor |
 |**pimKey**: string | Product Information Management Key |
 |**altItemNo**: string | Alternative Item Number |
 

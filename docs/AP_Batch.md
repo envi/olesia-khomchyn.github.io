@@ -47,7 +47,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**apBatchId**: string *(uuid)* | Unique Identifier of the Account Payable Batch |
 |**batchNo**: string | Identification Number of the Batch |
@@ -183,6 +183,7 @@ td, th {
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
@@ -191,7 +192,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**apBatchId**: string *(uuid)* | Unique Identifier of the Account Payable Batch |
 |**batchNo**: string | Identification Number of the Batch |
@@ -280,7 +281,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**apMatchedInvoiceId**: string *(uuid)* | Unique Identifier of the Account Payable Matched Invoice |
 |**purchaseOrderId**: string *(uuid)* | Unique Identifier of the Purchase Order |
@@ -405,7 +406,7 @@ td, th {
     
 ```
 
-## Add invoice to batch
+## Add an invoice to AP batch
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/Invoices
@@ -507,7 +508,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Invoice is NOT in the Vouchered status |
 
@@ -517,7 +518,7 @@ Only Vouchered Invoices can be added to the Batch.
 
 ```
 
-## Change batch status to ‘Exported’
+## Change AP batch status to ‘Exported’
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/Export

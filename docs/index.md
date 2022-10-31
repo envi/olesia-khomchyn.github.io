@@ -17,6 +17,20 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.7.4</span>
+
+Requisition Fills endpoints are now available on Envi OData API.
+
+<span style="color: #E0592A">V. 5.7.3</span>
+
+A new Requisition Item endpoint has been implemened. Thus, you can partially update the details of the Requisition Line Item specified by Requisition Item ID.
+
+WebHook is enabled within Envi. The WebHook subscription configuration allows you to get notifications regarding affected entities of selected types.
+
+<span style="color: #E0592A">V. 5.7.2</span>
+
+Now, active subscribers will receive updates via WebHook when the Usage transaction status has been changed to Submitted.
+
 <span style="color: #E0592A">V. 5.6.7</span>
 
 A new Requisition Item endpoint has been added. So, now you are able to add specified Requisition Line Items.
@@ -29,52 +43,58 @@ From now on, you can use the Requisition Items endpoints to get a list of Requis
 
 Requisitions endpoints are now available on **Envi OData API**.
 
-<span style="color: #E0592A">V. 5.4.5</span>
 
-We have added a new Inventory Vendor endpoint that enables you to create a new Inventory Vendor within a logged organization and specified Inventory.
 
-<span style="color: #E0592A">V. 5.4.4</span>
 
-You can now create a new Inventory Location specified by ID using the Inventory Locations endpoint.
 
-<span style="color: #E0592A">V. 5.4.0</span>
+??? note "Version History"
 
-Inventory Location Cost and Quantity endpoints have been added to the **Envi OData API**.
+    <span style="color: #E0592A">V. 5.4.5</span>
 
-<span style="color: #E0592A">V. 5.3.9</span>
+    We have added a new Inventory Vendor endpoint that enables you to create a new Inventory Vendor within a logged organization and specified Inventory.
 
-Vendors endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **lt**, **le** logical operators.
+    <span style="color: #E0592A">V. 5.4.4</span>
 
-<span style="color: #E0592A">V. 5.3.8</span>
+    You can now create a new Inventory Location specified by ID using the Inventory Locations endpoint.
 
-Facilities endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **lt**, **le** logical operators.
+    <span style="color: #E0592A">V. 5.4.0</span>
 
-<span style="color: #E0592A">V. 5.3.7</span>
+    Inventory Location Cost and Quantity endpoints have been added to the **Envi OData API**.
 
-Addresses endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **lt**, **le** logical operators.
+    <span style="color: #E0592A">V. 5.3.9</span>
 
-<span style="color: #E0592A">V. 5.3.6</span>
+    Vendors endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
-Inventory Vendor endpoints support the **in**, **gt**, **ge**, **lt**, **le** logical operators.
+    <span style="color: #E0592A">V. 5.3.8</span>
 
-<span style="color: #E0592A">V. 5.3.5</span>
+    Facilities endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
-Inventory supports the **in**, **gt**, **ge**, **lt**, **le** logical operators.
+    <span style="color: #E0592A">V. 5.3.7</span>
 
-<span style="color: #E0592A">V. 5.3.1</span>
+    Addresses endpoint supports now the **and**, **or**, **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
-Inventory Locations support the **in**, **gt**, **ge**, **lt**, **le** logical operators.
+    <span style="color: #E0592A">V. 5.3.6</span>
 
-Additional fields are now available in the Facilities endpoint.
+    Inventory Vendor endpoints support the **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
-<span style="color: #E0592A">V. 5.3.0</span>
+    <span style="color: #E0592A">V. 5.3.5</span>
 
-InventorySnapshotItems are now available on Envi OData API.
+    Inventory supports the **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
-<span style="color: #E0592A">V. 5.2.9</span>
+    <span style="color: #E0592A">V. 5.3.1</span>
 
-You can now get the InventorySnapshots data.
+    Inventory Locations support the **in**, **gt**, **ge**, **lt**, **le** logical operators.
 
-<span style="color: #E0592A">V. 5.2.6</span>
+    Additional fields are now available in the Facilities endpoint.
 
-The Receipts endpoints support now additional ``` receiptSourceId ```  and ``` receiptSource``` fields.
+    <span style="color: #E0592A">V. 5.3.0</span>
+
+    InventorySnapshotItems are now available on Envi OData API.
+
+    <span style="color: #E0592A">V. 5.2.9</span>
+
+    You can now get the InventorySnapshots data.
+
+    <span style="color: #E0592A">V. 5.2.6</span>
+
+    The Receipts endpoints support now additional ``` receiptSourceId ```  and ``` receiptSource``` fields.

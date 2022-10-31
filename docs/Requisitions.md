@@ -276,3 +276,368 @@ td, th {
 "00000000-0000-0000-0000-000000000000"
 
 ```
+
+## Get the specified requisition
+
+### <span style="color: #F05D30">Path</span>
+GET /odata/Requisitions({requisitionId})
+
+### <span style="color: #F05D30">Description</span>
+Returns the details of the Requisition specified by ID.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**requisitionId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
+
+### <span style="color: #F05D30">Properties</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|-----:|:-------|
+|**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
+|**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
+|**requisitionNo**: string | Identification code of the Requisition |
+|**lineItemNo**: integer *(int32)* | Number of the Line Item |
+|**inventoryNo**: string | Identification code of the Inventory Item |
+|**inventoryDescription**: string | Description of the Inventory Item |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
+|**lineItemTypeId**: integer *(int32)* | Unique Identifier of the Line Item Type |
+|**lineItemType**: string | Type of the Line Item |
+|**quantity**: integer *(int32)* | Quantity specified in the Line Items |
+|**UOM**: string | Unit of Measure |
+|**conversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure |
+|**price**: number *(double)* | Price of the Line Item |
+|**inventoryLocationId**: <br> string *(uuid)* | Unique Identifier of the Inventory Location |
+|**notes**: string | Comments about the Requisition Item |
+|**manufacturerId**: string *(uuid)* | Unique Identifier of the Manufacturer |
+|**manufacturerItemNo**: string | Item Number of the Manufacturer |
+|**suggestedVendorId**: <br> string *(uuid)* | Suggested Unique Identifier of the Vendor |
+|**stockUOM**: string | Unit of Measure to track Inventory Balance |
+|**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
+|**poConversionStatusId**: <br> integer *(int32)* | Unique Identifier of Purchase Order Conversion Status |
+|**poConversionStatus**: string | Conversion Status of Purchase Order |
+|**purchaseOrderItemId**: <br> string *(uuid)* | Unique Identifier of the Purchase Order Item |
+|**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
+|**activeStatus**: boolean | Is the Requisition Item active or not? |
+|**dateCreated**: string *(date-time)* | Date when the Requisition Item was created |
+|**createdBy**: string *(uuid)* | Unique Identifier of the user who created the Requisition Item |
+|**createdByUserName**: string | Name of the user who created the Requisition Item |
+|**lastUpdated**: string *(date-time)* | Last Date when the Requisition Item was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Requisition Item |
+|**lastUpdatedByUserName**: <br> string | Name of the last user who updated the Requisition Item |
+|**locationId**: string *(uuid)* | Unique Identifier of the Location |
+|**isTaxable**: boolean | Is the Location Taxable or not? |
+|**contractNo**: string | Number of the Contract |
+|**contractExpDate**: string <br> *(date-time)* | Expiration Date of the Contract |
+|**isPrinted**: boolean | Is the Pick Ticket printed or not? |
+|**supplierPartAuxiliaryId**: string | Unique Identifier of the Supplier Part Auxiliary |
+
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
+{
+  "items": [
+  {
+  "requisitionId": "00000000-0000-0000-0000-000000000000",
+  "requisitionNo": "string",
+  "requisitionTypeId": "integer (int32)",
+  "requisitionType": "string",
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "facilityNo": "string",
+  "facilityName": "string",
+  "patientId": "00000000-0000-0000-0000-000000000000",
+  "departmentId": "00000000-0000-0000-0000-000000000000",
+  "departmentNo": "string",
+  "departmentName": "string",
+  "deliveryLocationId": "00000000-0000-0000-0000-000000000000",
+  "deliveryLocationNo": "string",
+  "deliveryLocationName": "string",
+  "reference": "string",
+  "requisitionerId": "00000000-0000-0000-0000-000000000000",
+  "requisitionerName": "string",
+  "requisitionDate": "string (date-time)",
+  "requiredDeliveryDate": "string (date-time)",
+  "requisitionStatusId": "integer (int32)",
+  "requisitionStatus": "string",
+  "requisitionNotes": "string",
+  "buyerName": "string",
+  "buyerAddress1": "string",
+  "buyerAddress2": "string",
+  "buyerCity": "string",
+  "buyerState": "string",
+  "buyerZip": "string",
+  "buyerCountry": "string",
+  "buyerContact": "string",
+  "buyerContactEmail": "string",
+  "buyerPhone": "string",
+  "buyerPhoneExt": "string",
+  "buyerFax": "string",
+  "shippingName": "string",
+  "shippingAddress1": "string",
+  "shippingAddress2": "string",
+  "shippingCity": "string",
+  "shippingState": "string",
+  "shippingZip": "string",
+  "shippingCountry": "string",
+  "shippingContact": "string",
+  "shippingContactEmail": "string",
+  "shippingPhone": "string",
+  "shippingPhoneExt": "string",
+  "shippingFax": "string",
+  "discount": "number (double)",
+  "discountTypeId": "integer (int32)",
+  "discountType": "string",
+  "salesTax": "number (double)",
+  "salesTaxTypeId": "integer (int32)",
+  "salesTaxType": "string",
+  "shipping": "number (double)",
+  "shippingTypeId": "integer (int32)",
+  "shippingType": "string",
+  "dateSubmitted": "string (date-time)",
+  "dateCreated": "string (date-time)",
+  "createdBy": "00000000-0000-0000-0000-000000000000",
+  "createdByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string",
+  "requisitionSourceId": "integer (int32)",
+  "requisitionSource": "string",
+  "notes": "string",
+  "submittedBy": "00000000-0000-0000-0000-000000000000",
+  "submittedByName": "string",
+  "isCanceled": "boolean",
+  "parAreaId": "00000000-0000-0000-0000-000000000000",
+  "sourceFacilityId": "00000000-0000-0000-0000-000000000000",
+  "sourceFacilityNo": "string",
+  "sourceFacilityName": "string",
+  "statusLastUpdated": "string (date-time)",
+  "statusLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "statusLastUpdatedByName": "string",
+  "isConverted": "boolean",
+  "cancelledRemainingQuantitiesLastUpdated": "string (date-time)",
+  "cancelledRemainingQuantitiesBy": "00000000-0000-0000-0000-000000000000",
+  "cancelledRemainingQuantitiesByName": "string"
+  }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+  }
+```
+
+## Partially update the specified Requisition
+
+### <span style="color: #F05D30">Path</span>
+PATCH /odata/Requisitions({requisitionId})
+
+### <span style="color: #F05D30">Description</span>
+Partially updates the requisition specified by the requisition ID (applicable only for the **Standart** requisition type).
+
+### <span style="color: #F05D30">Request Body</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|-----:|:-------|
+|**reference**: string | Information concerning the Transaction |
+|**notes**: string | Comments about the Requisition |
+|**requisitionDate**: string *(date-time)* | Date of the Requsition |
+|**requiredDeliveryDate**: <br> string *(date-time)* | Required Delivery Date of the Requisition |
+|**shippingName**: string | Name of the Shipping |
+|**shippingAddress1**: string | The First Address for sending the Requisition |
+|**shippingAddress2**: string | The Second Address for sending the Requisition |
+|**shippingCity**: string | City for sending the Requisition |
+|**shippingState**: string | State for sending the Requisition |
+|**shippingZip**: string | Zip for sending the Requisition |
+|**shippingContact**: string | Contact for sending the Requisition |
+|**shippingPhone**: string | Phone for sending the Requisition |
+|**shippingPhoneExt**: string | Phone Extension for sending the Requisition |
+|**shippingFax**: string | Fax for sending the Requisition |
+|**shippingContactEmail**: string | Contact Email for sending the Requisition |
+|**shippingCountry**: string | Country for sending the Requisition |
+|**buyerName**: string | Name of the Buyer |
+|**buyerAddress1**: string | The first Address of the Buyer for shipping or billing purposes |
+|**buyerAddress2**: string | The second Address of the Buyer for shipping or billing purposes |
+|**buyerCity**: string | City of the Buyer |
+|**buyerState**: string | State of the Buyer |
+|**buyerZip**: string | Zip of the Buyer | 
+|**buyerContact**: string | Contact of the Buyer |
+|**buyerPhone**: string | Phone of the Buyer |
+|**buyerPhoneExt**: string | Phone Extension of the Buyer |
+|**buyerFax**: string | Fax of the Buyer |
+|**buyerContactEmail**: string | Contact Email of the Buyer |
+|**buyerCountry**: string | Country of the Buyer |
+|**requisitionNotes**: string | Comments about the Requisition |
+|**discount**: number *(double)* | Discount for the Requisition |
+|**discountTypeId**: integer *(int32)* | Unique Identifier of the Discount Type for the Requisition |
+|**salesTax**: number *(double)* | Tax for the Sales |
+|**salesTaxTypeId**: integer *(int32)* | Unique Identifier of the Tax for the Sales |
+|**shipping**: number *(double)* | Number of the Shipping |
+|**shippingTypeId**: integer <br> *(int32)* | Unique Identifier of the Shipping Type |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
+{
+    "reference": "string",
+    "notes": "string",
+    "requisitionDate": "string (date-time)",
+    "requiredDeliveryDate": "string (date-time)",
+    "shippingName": "string",
+    "shippingAddress1": "string",
+    "shippingAddress2": "string",
+    "shippingCity": "string",
+    "shippingState": "string",
+    "shippingZip": "string",
+    "shippingContact": "string",
+    "shippingPhone": "string",
+    "shippingPhoneExt": "string",
+    "shippingFax": "string",
+    "shippingContactEmail": "string",
+    "shippingCountry": "string",
+    "buyerName": "string",
+    "buyerAddress1": "string",
+    "buyerAddress2": "string",
+    "buyerCity": "string",
+    "buyerState": "string",
+    "buyerZip": "string",
+    "buyerContact": "string",
+    "buyerPhone": "string",
+    "buyerPhoneExt": "string",
+    "buyerFax": "string",
+    "buyerContactEmail": "string",
+    "buyerCountry": "string",
+    "requisitionNotes": "string",
+    "discount": "number (double)",
+    "discountTypeId": "integer (int32)",
+    "salesTax": "number (double)",
+    "salesTaxTypeId": "integer (int32)",
+    "shipping": "number (double)",
+    "shippingTypeId": "integer (int32)"
+    } 
+```
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**requisitionId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
+
+## Change the requisition status to ‘Open’
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Requisitions({requisitionId})/Submit
+
+### <span style="color: #F05D30">Description</span>
+Changes the requisition status to ‘Open’ if the specified requisition has at least one line item.
+
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**requisitionId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version. |   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|  
+|**400 Bad Request** | The request is incorrect.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
+
+
+## Cancel an existing Requisition
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Requisitions({requisitionId})/Cancel
+
+### <span style="color: #F05D30">Description</span>
+Cancels the requisition specified by the requisition ID.
+
+### <span style="color: #F05D30">Request Parameters</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**requisitionId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version. |   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
+### <span style="color: #F05D30">Responses</span>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|  
+|**400 Bad Request** | The request is incorrect.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
+
+
+

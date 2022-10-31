@@ -164,7 +164,6 @@ td, th {
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
-|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -276,19 +275,19 @@ td, th {
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory. <br> It is validated by Facility (Inventory Group). <br> **If not provided**: Item is added as Free-Form. |
-|**inventoryDescription**: string | Inventory Description of the Requisition Line Item. <br> The parameter is populated from matched Inventory if it is mapped with Inventory Vendor by ```vendor```, ```vendorItemNo```, ```uom```, and ```facility```. <br> **Optional**: for Item that matches Inventory Master. <br> **Required**: for Free-Form.|
-|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification. <br> The parameter is matched with appropriate Inventory Vendor data. |
+|**inventoryDescription**: string | Inventory Description of the Requisition Line Item. <br> It is populated from matched Inventory if it is mapped with Inventory Vendor by ```vendor```, ```vendorItemNo```, ```uom```, and ```facility```. <br> **Optional**: for Item that matches Inventory Master. <br> **Required**: for Free-Form.|
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification. <br> It is matched with appropriate Inventory Vendor data. |
 |**quantity**: <br> integer *(int32)* <br> <span style="color: #F05D30">**required**</span> | Quantity specified in the Line Items |
-|**uom**: string <br> <span style="color: #F05D30">**required**</span> | Unit of Measure. <br> The parameter is matched with appropriate Inventory Vendor data. |
-|**conversionFactor**: <br> integer *(int32)* <br> <span style="color: #F05D30">**required**</span> | Number of Stock Keeping Units in another Unit of Measure. <br> The parameter is populated from appropriate Inventory UOM Conversion Factor if Item is added as Inventory Item and the specified UOM value is matched with Inventory UOM. |
-|**price**: string | Price. <br> The parameter is populated from matched Inventory Location if it exists. <br> If Inventory Location doesn't exist, it is populated from matched Inventory Vendor. <br> If it isn't matched with Inventory Vendor, then is populated from the request. <br> **If not provided for the Free-Form type**: the **0** value will be set by default. |
-|**notes**: string | Comments about Requisition Items. <br> The parameter is empty by default if is matched with appropriate Inventory Vendor data. <br> It is populated from the request if is added as Free-Form. |
-|**manufacturerNo**: string | Number of the Manufacturer. <br> The parameter is populated from matched Inventory Vendor. <br> It is populated from matched Manufacturer if it is added as Free-Form.|
-|**manufacturerItemNo**: string | Item Number of the Manufacturer. <br> The parameter is populated from matched Inventory Vendor. <br> It is populated from the request if it is added as Free-Form. |
+|**uom**: string <br> <span style="color: #F05D30">**required**</span> | Unit of Measure. <br> It is matched with appropriate Inventory Vendor data. |
+|**conversionFactor**: <br> integer *(int32)* <br> <span style="color: #F05D30">**required**</span> | Number of Stock Keeping Units in another Unit of Measure. <br> It is populated from appropriate Inventory UOM Conversion Factor if Item is added as Inventory Item and the specified UOM value is matched with Inventory UOM. |
+|**price**: string | Price. <br> It is populated from matched Inventory Location if it exists. <br> If Inventory Location doesn't exist, it is populated from matched Inventory Vendor. <br> If it isn't matched with Inventory Vendor, then is populated from the request. <br> **If not provided for the Free-Form type**: the **0** value will be set by default. |
+|**notes**: string | Comments about Requisition Items. <br> It is empty by default if is matched with appropriate Inventory Vendor data. <br> It is populated from the request if is added as Free-Form. |
+|**manufacturerNo**: string | Number of the Manufacturer. <br> It is populated from matched Inventory Vendor. <br> It is populated from matched Manufacturer if it is added as Free-Form.|
+|**manufacturerItemNo**: string | Item Number of the Manufacturer. <br> It is populated from matched Inventory Vendor. <br> It is populated from the request if it is added as Free-Form. |
 |**vendorNo**: string <br> <span style="color: #F05D30">**required**</span> | Code of the Supplier who sells products |
-|**locationNo**: string | Identification Number of the Location. <br> The parameter is populated from mapped Inventory Location.<br> If Inventory Location doesn't exist, ```none``` by default for Item mapped with Inventory Vendor. <br> For **Free-Form**—the Location is added in the request. <br> If Item is added as Free-From but its Facility differs from RequisitionFacility, then ```locationNo``` is required.
+|**locationNo**: string | Identification Number of the Location. <br> It is populated from mapped Inventory Location.<br> If Inventory Location doesn't exist, ```none``` by default for Item mapped with Inventory Vendor. <br> For **Free-Form**—the Location is added in the request. <br> If Item is added as Free-From but its Facility differs from RequisitionFacility, then ```locationNo``` is required.
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> | Identification Number of the Facility |
-|**isTaxable**: boolean | Is Requisiton Item Taxable or not? <br> The parameter is populated from Inventory Location if Item is mapped with Inventory Vendor. <br> If Inventory Location doesn't exist, ```no``` by default for Item mapped with Inventory Vendor. <br> For **Free-Form**—```no``` by default.
+|**isTaxable**: boolean | Is Requisiton Item Taxable or not? <br> It is populated from Inventory Location if Item is mapped with Inventory Vendor. <br> If Inventory Location doesn't exist, ```no``` by default for Item mapped with Inventory Vendor. <br> For **Free-Form**—```no``` by default.
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
@@ -356,7 +355,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
 |**notes**: string | Comments about the Requisition Item |
@@ -375,6 +374,7 @@ td, th {
       "price": "number (double)"
       }  
 ```
+<br>
 
 For Non-Stock Item (Item with Vendor):
 <style>
@@ -382,7 +382,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
@@ -404,13 +404,15 @@ td, th {
       } 
 ```
 
+<br>
+
 For Free-Form Item:
 <style>
 td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory Item |
 |**inventoryDescription**: string | Description of the Inventory Item |
@@ -470,7 +472,7 @@ td, th {
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
-|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|

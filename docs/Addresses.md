@@ -44,7 +44,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|
@@ -153,6 +153,7 @@ td, th {
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
@@ -162,7 +163,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|

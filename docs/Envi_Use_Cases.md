@@ -762,8 +762,8 @@ td, th {
 |**serialNo**: string <br> *in formData* |It is populated from ```serialNo``` <br> **If not provided**: Empty |
 |**expirationDate**: string <br> *in formData* | It is populated from ```expirationDate``` <br> **If not provided**: Empty |
 |**quantity**: string <br> *in formData* | Quantity in Line Items <br> **If not provided**: 1 |
-|**UOM**: string <br> *in formData* | Can be matched with Inventory UOM <br> **If not provided**: EA |
-|**CF**: string <br> *in formData* | It is populated from appropriate Inventory UOM Conversion Factor in case item is added as Inventory Item, and the specified UOM value matched with Inventory UOM <br> **If not provided**: 1 |
+|**uom**: string <br> *in formData* | Can be matched with Inventory UOM <br> **If not provided**: EA |
+|**conversionFactor**: string <br> *in formData* | It is populated from appropriate Inventory UOM Conversion Factor in case item is added as Inventory Item, and the specified UOM value matched with Inventory UOM <br> **If not provided**: 1 |
 |**itemNotes**: string <br> *in formData* | It is populated from Item Notes <br> **If not provided**: Empty |
 
 You'll receive the following response.

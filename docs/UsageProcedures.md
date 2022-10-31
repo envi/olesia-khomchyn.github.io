@@ -15,7 +15,7 @@ td, th {
    border: none!important;
 }
 </style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the the Usage. <br> **If not provided**: 400 Bad Request. |
 |**procedureNo**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Number of the Procedure. <br> It is populated from ```procedureNo``` if it is matched by Procedure No and Facility. You can add procedures only with unique values. <br> **If not provided**: 400 Bad Request. |

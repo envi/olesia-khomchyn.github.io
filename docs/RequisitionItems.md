@@ -45,7 +45,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -174,7 +174,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -355,7 +355,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
 |**notes**: string | Comments about the Requisition Item |
@@ -382,7 +382,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
@@ -412,7 +412,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory Item |
 |**inventoryDescription**: string | Description of the Inventory Item |

@@ -231,7 +231,7 @@ td, th {
    border: none!important;
 }
 </style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:450px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Facility |
 |**departmentNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Department |
@@ -317,7 +317,7 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |

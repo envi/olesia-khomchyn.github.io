@@ -105,7 +105,7 @@ td, th {
    border: none!important;
 }
 </style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:450px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the the Usage. <br> **If not provided**: 400 Bad Request. |
 
@@ -181,7 +181,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with a negative Quantity and required Tracking.|
 
@@ -196,7 +196,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage has been already submitted by another user.|
 
@@ -226,7 +226,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with not unique Serial Number. |
 
@@ -286,7 +286,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Some arithmetic overflow errors occurred during the Usage submission. |
 
@@ -301,7 +301,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains at least one ‘Implant’ Line Item with **Implant Completed**—**No**. |
 
@@ -316,7 +316,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains failed Line Item(s).|
 
@@ -347,7 +347,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Case Number is not unique within a Facility or is not set.|
 
@@ -362,7 +362,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Department field of the Usage is not specified (“None”).|
 

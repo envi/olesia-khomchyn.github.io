@@ -9,11 +9,6 @@ GET /odata/Requisitions
 Returns the paged list of existing requisitions. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 

@@ -14,6 +14,8 @@ td, th {
    border: none!important;
 }
 </style>
+
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 
@@ -25,11 +27,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -40,11 +37,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
@@ -143,11 +135,6 @@ GET /odata/RequisitionItems({requisitionItemId})
 Returns the details of the requisition item specified by ID.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition Item here. |
@@ -155,11 +142,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -169,11 +151,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
@@ -267,11 +244,6 @@ Adds a new requisition line item within a logged organization and the specified 
 
 ### <span style="color: #F05D30">Request Body</span>
 For adding item(s) to requisition(s)
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory. <br> It is validated by Facility (Inventory Group). <br> **If not provided**: Item is added as Free-Form. |
@@ -309,11 +281,6 @@ td, th {
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
@@ -321,11 +288,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -350,11 +312,6 @@ Partially updates the details of the requisition line item specified by requisit
 
 ### <span style="color: #F05D30">Properties</span>
 For Inventory Item (Item with Location and Vendor):
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
@@ -377,11 +334,6 @@ td, th {
 <br>
 
 For Non-Stock Item (Item with Vendor):
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
@@ -407,11 +359,6 @@ td, th {
 <br>
 
 For Free-Form Item:
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory Item |
@@ -450,11 +397,6 @@ td, th {
 ```  
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition Item here. |
@@ -463,11 +405,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      

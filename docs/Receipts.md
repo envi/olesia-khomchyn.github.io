@@ -14,6 +14,8 @@ td, th {
    border: none!important;
 }
 </style>
+
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -25,11 +27,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -40,11 +37,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* | Unique Identifier of the Receipt | 
@@ -165,11 +157,6 @@ GET /odata/Receipts({receiptId})
 Returns the details of the receipt specified by ID.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Receipt here. |
@@ -177,11 +164,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -192,11 +174,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* | Unique Identifier of the Receipt | 
@@ -310,11 +287,6 @@ GET /odata/Receipts({receiptId})/receiptItems
 Returns the paged list of existing receipt items within a receipt specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Receipt here. |
@@ -327,11 +299,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -342,11 +309,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**receiptId**: string *(uuid)* | Unique Identifier of the Receipt |

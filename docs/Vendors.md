@@ -31,6 +31,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -42,12 +43,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
@@ -104,11 +100,6 @@ GET /odata/Vendors({vendorId})
 Returns the details of the vendor specified by ID.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Vendor here. |
@@ -116,11 +107,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -131,12 +117,7 @@ td, th {
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
@@ -190,23 +171,20 @@ Returns the details of the predefined vendor(s) within the facility specified by
 Enter the value of the vendor(s) from the existing template.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Facility. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
+[
+"value": ["00000000-0000-0000-0000-000000000000"]
+]
+```
+
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -216,12 +194,7 @@ td, th {
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorName**: string | Name of the Vendor |

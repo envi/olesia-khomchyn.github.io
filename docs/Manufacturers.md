@@ -7,10 +7,6 @@ GET /odata/Manufacturers
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of manufacturers. Contains link to the next page and information about overall entities count in the database. Supports Query options.
 
-!!! note 
-
-    This endpoint does not support logical operators (**and**, **or**,**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
-
 ### <span style="color: #F05D30">Request Parameters</span>
 <style>
 td, th {

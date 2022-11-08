@@ -243,21 +243,25 @@ Since no ```$top``` option is specified, only the first 20 records will be inclu
 
 ```
 
-### <span style="color: #1779BA">Logical Operators</span>
+### <span style="color: #F05D30">Logical Operators</span>
 
 Also, the ```$filter``` query option supports the following logical operators:
 
+#### <span style="color: #F05D30">and</span>
 The logical **and** operator evaluates True if both the left and right operands evaluate True, otherwise it evaluates False.
 ``` json title="Example"
 https://api-demo.envi.net/odata/Inventory?$filter=classificationName eq 'MEDICATION' and inventoryNo eq 'DEXAMT'
     
 ```
+#### <span style="color: #F05D30">or</span>
 The logical **or** operator evaluates True if one of the left or right operands evaluates True, otherwise it evaluates False.
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/Inventory?$filter=classificationName eq 'MEDICATION' or contains(inventoryDescription, 'DEXAMT')
     
 ```
+
+#### <span style="color: #F05D30">in</span>
 The **in** operator returns True if the left operand is a member of the right operand. The right operand must be either a comma-separated list of values, enclosed in parentheses or a single expression that resolves to a collection. Also, the **in** operator enables a shorthand way of writing multiple **eq** expressions joined by **or**.
 
 ``` json title="Example"
@@ -277,23 +281,25 @@ The **in** operator is supported in the following lists:
  - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
  - [Inventory Location Cost and Quantity](InventoryLocationsCostAndQuantity.md#get-the-list-of-inventory-locations-cost-and-quantity)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
- - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
- - PAR Areas
- - PAR Area Items
- - PO Confirmations
- - PO Confirmations Items
- - Requisition Items
- - Requisition Items specified
- - Requisitions
- - Requisitions specified
- - Vendors
+ - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
+ - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
+ - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
+ - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
+ - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
+ - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
+ - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendors](Vendors.md#get-the-list-of-vendors)
 
+
+#### <span style="color: #F05D30">gt</span>
 The **gt** operator returns True if the left operand is greater than the right operand, otherwise it returns False. This operator supports decimal, integer, and dates values.
 
 ``` json title="Example"
@@ -307,24 +313,25 @@ The **gt** operator is supported in the following lists:
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
- - Inventory Locations
- - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
+ - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
- - PAR Areas
- - PAR Area Items
- - PO Confirmations
- - PO Confirmations Items
- - Requisition Items
- - Requisition Items specified
- - Requisitions
- - Requisitions specified
- - Vendors
+ - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
+ - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
+ - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
+ - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
+ - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
+ - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
+ - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendors](Vendors.md#get-the-list-of-vendors)
 
+#### <span style="color: #F05D30">ge</span>
 The **ge** operator returns True if the left operand is greater than or equal to the right operand, otherwise it returns False. This operator supports decimal, integer, and dates values.
 
 ``` json title="Example"
@@ -337,24 +344,25 @@ The **ge** operator is supported in the following lists:
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
- - Inventory Locations
- - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
+ - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
- - PAR Areas
- - PAR Area Items
- - PO Confirmations
- - PO Confirmations Items
- - Requisition Items
- - Requisition Items specified
- - Requisitions
- - Requisitions specified
- - Vendors
+ - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
+ - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
+ - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
+ - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
+ - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
+ - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
+ - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendors](Vendors.md#get-the-list-of-vendors)
 
+#### <span style="color: #F05D30">lt</span>
 The **lt** operator returns True if the left operand is less than the right operand, otherwise it returns False. This operator supports decimal, integer, and dates values.
 ``` json title="Example"
 https://api-demo.envi.net/odata/PurchaseOrders?$filter=unitCost lt 1.2345
@@ -366,24 +374,25 @@ The **lt** operator is supported in the following lists:
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
- - Inventory Locations
- - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
+ - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
- - PAR Areas
- - PAR Area Items
- - PO Confirmations
- - PO Confirmations Items
- - Requisition Items
- - Requisition Items specified
- - Requisitions
- - Requisitions specified
- - Vendors
+ - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
+ - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
+ - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
+ - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
+ - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
+ - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
+ - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendors](Vendors.md#get-the-list-of-vendors)
 
+#### <span style="color: #F05D30">le</span>
 The **le** operator returns True if the left operand is less than or equal to the right operand, otherwise it returns False. This operator supports decimal, integer, and dates values.
 
 ``` json title="Example"
@@ -396,23 +405,24 @@ The **le** operator is supported in the following lists:
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
- - Inventory Locations
- - [Inventory Snapshot](InventorySnapshotItems.md#get-the-list-of-inventory-snapshot-items)
+ - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
+ - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
- - PAR Areas
- - PAR Area Items
- - PO Confirmations
- - PO Confirmations Items
- - Requisition Items
- - Requisition Items specified
- - Requisitions
- - Requisitions specified
- - Vendors
+ - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
+ - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
+ - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
+ - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
+ - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
+ - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
+ - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendors](Vendors.md#get-the-list-of-vendors)
+
 
 
 !!! warning 

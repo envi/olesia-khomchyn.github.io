@@ -218,7 +218,7 @@ POST /odata/Requisitions
 Creates a new standard requisition within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:450px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Facility |
 |**departmentNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Department |
@@ -235,7 +235,7 @@ Creates a new standard requisition within a logged organization.
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|

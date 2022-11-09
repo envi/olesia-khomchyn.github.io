@@ -82,3 +82,7 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - https://code.jquery.com/jquery-3.6.1.min.js
+  - stylesheets/extra.js

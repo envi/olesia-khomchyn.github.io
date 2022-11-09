@@ -9,12 +9,14 @@ POST /odata/Usages/BulkAdd
 Creates new usages within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
-For adding procedure(s) to usage(s)
+For usage(s) creation
+
 <style>
 td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Identification Number of the Facility. <br> **If not provided**: 400 Bad Request. |
@@ -46,37 +48,30 @@ td, th {
 
 ``` json title="Request Example"
 {
- "usageItems":[
-  {
-    "usageId": "UsageId1"
-  },
-  {
-    "usageId": "UsageId2"
-  },
-  {
-    "usageId": "UsageId3"
-  }
- ]
+  "usages":[
+   {
+     "facilityNo": facilityNo1,
+     "departmentNo": departmentNo1
+   },
+   {
+     "facilityNo": facilityNo3,
+     "departmentNo": departmentNo3
+   },
+   {
+     "facilityNo": facilityNo2,
+     "departmentNo": departmentNo2
+   }
+  ]
 }
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -100,12 +95,8 @@ Submits usages within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
 For usage(s) submition
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
+
+|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the the Usage. <br> **If not provided**: 400 Bad Request. |
 
@@ -132,11 +123,7 @@ td, th {
 }
 ```
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -145,11 +132,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -163,12 +145,7 @@ td, th {
 
 ```
 ### <span style="color: #F05D30">Custom Errors</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | There is at least one Line Item with the Quantity "0" (zero) on the Line Items tab.|
 
@@ -176,12 +153,8 @@ td, th {
 At least one line item has zero quantity.
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with a negative Quantity and required Tracking.|
 
@@ -191,12 +164,7 @@ At least one item with tracking values has negative quantity.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage has been already submitted by another user.|
 
@@ -206,11 +174,6 @@ Usage has been already processed, submitted, or canceled.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage has completed Line Item with Tracking by Serial Number and Quantity/CF larger than 1.|
@@ -221,12 +184,7 @@ At least one line item requires serial number tracking and has a quantity larger
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with not unique Serial Number. |
 
@@ -236,11 +194,6 @@ Usage contains not unique serial number.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with Tracking by Expiration Date and Quantity larger than Expiration Date quantity. |
@@ -251,11 +204,6 @@ Line items with tracking by Expiration Date have insufficient quantity.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with Tracking by Lot No with Quantity larger than Lot No Quantity. |
@@ -266,11 +214,6 @@ Line items with tracking by Lot No have insufficient quantity.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains Line Item with Tracking by Serial No with Quantity larger than Serial No Quantity. |
@@ -281,12 +224,7 @@ Line items with tracking by Serial No have insufficient quantity.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Some arithmetic overflow errors occurred during the Usage submission. |
 
@@ -296,27 +234,17 @@ Arithmetic Overflow Error(s) occurred during submission process.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains at least one ‘Implant’ Line Item with **Implant Completed**—**No**. |
 
 ``` json title="Response Example"
 
-Arithmetic Overflow Error(s) occurred during submission process.
+At least one implant line item is not completed.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Usage contains failed Line Item(s).|
 
@@ -326,11 +254,6 @@ Usage has failed line item(s).
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Patient field is not specified but Usage requires a selected Facility option of the Patient.|
@@ -342,12 +265,7 @@ Usage requires a patient.
 ```
 
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Case Number is not unique within a Facility or is not set.|
 
@@ -357,12 +275,7 @@ Usage requires a unique case number.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Department field of the Usage is not specified (“None”).|
 
@@ -372,11 +285,6 @@ Department is required.
 
 ```
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Patient, Procedure, Physician, Case Number and Schedule fields of the Usage are not specified and the 'Usage requires a procedure', 'Usage requires a doctor', 'Usage requires a case number' and 'Usage requires a schedule number', ‘Usage requires a patient’ facility settings are enabled. |

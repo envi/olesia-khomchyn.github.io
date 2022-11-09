@@ -37,7 +37,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -81,50 +81,49 @@ td, th {
 {
     "items": [
     {
-    "requisitionItemId": "00000000-0000-0000-0000-000000000000",
-    "requisitionId": "00000000-0000-0000-0000-000000000000",
-    "requisitionNo": "string",
-    "lineItemNo": "integer (int32)",
-    "inventoryNo": "string",
-    "inventoryDescription": "string",
-    "vendorItemNo": "string",
-    "lineItemTypeId": "integer (int32)",
-    "lineItemType": "string",
-    "quantity": "integer (int32)",
-    "uom": "string",
-    "conversionFactor": "integer (int32)",
-    "price": "number (double)",
-    "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-    "notes": "string",
-    "manufacturerId": "00000000-0000-0000-0000-000000000000",
-    "manufacturerItemNo": "string",
-    "suggestedVendorId": "00000000-0000-0000-0000-000000000000",
-    "stockUOM": "string",
-    "vendorId": "00000000-0000-0000-0000-000000000000",
-    "poConversionStatusId": "integer (int32)",
-    "poConversionStatus": "string",
-    "purchaseOrderItemId": "00000000-0000-0000-0000-000000000000",
-    "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
-    "activeStatus": "boolean",
-    "dateCreated": "string (date-time)",
-    "createdBy": "00000000-0000-0000-0000-000000000000",
-    "createdByUserName": "string",
-    "lastUpdated": "string (date-time)",
-    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-    "lastUpdatedByUserName": "string",
-    "locationId": "00000000-0000-0000-0000-000000000000",
-    "isTaxable": "boolean",
-    "contractNo": "string",
-    "contractExpDate": "string (date-time)",
-    "isPrinted": "boolean",
-    "supplierPartAuxiliaryId": "string"
+      "requisitionItemId": "00000000-0000-0000-0000-000000000000",
+      "requisitionId": "00000000-0000-0000-0000-000000000000",
+      "requisitionNo": "string",
+      "lineItemNo": "integer (int32)",
+      "inventoryNo": "string",
+      "inventoryDescription": "string",
+      "vendorItemNo": "string",
+      "lineItemTypeId": "integer (int32)",
+      "lineItemType": "string",
+      "quantity": "integer (int32)",
+      "uom": "string",
+      "conversionFactor": "integer (int32)",
+      "price": "number (double)",
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "notes": "string",
+      "manufacturerId": "00000000-0000-0000-0000-000000000000",
+      "manufacturerItemNo": "string",
+      "suggestedVendorId": "00000000-0000-0000-0000-000000000000",
+      "stockUOM": "string",
+      "vendorId": "00000000-0000-0000-0000-000000000000",
+      "poConversionStatusId": "integer (int32)",
+      "poConversionStatus": "string",
+      "purchaseOrderItemId": "00000000-0000-0000-0000-000000000000",
+      "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+      "activeStatus": "boolean",
+      "dateCreated": "string (date-time)",
+      "createdBy": "00000000-0000-0000-0000-000000000000",
+      "createdByUserName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByUserName": "string",
+      "locationId": "00000000-0000-0000-0000-000000000000",
+      "isTaxable": "boolean",
+      "contractNo": "string",
+      "contractExpDate": "string (date-time)",
+      "isPrinted": "boolean",
+      "supplierPartAuxiliaryId": "string"
     }
-    ],
-    "nextPageLink": "string",
-    "count": "integer (int64)"
-    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}   
 ```
-
 
 ## Get the specified requisition item
 
@@ -145,13 +144,14 @@ Returns the details of the requisition item specified by ID.
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
-|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
-|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
-|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -194,44 +194,44 @@ Returns the details of the requisition item specified by ID.
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-    "requisitionItemId": "00000000-0000-0000-0000-000000000000",
-    "requisitionId": "00000000-0000-0000-0000-000000000000",
-    "requisitionNo": "string",
-    "lineItemNo": "integer (int32)",
-    "inventoryNo": "string",
-    "inventoryDescription": "string",
-    "vendorItemNo": "string",
-    "lineItemTypeId": "integer (int32)",
-    "lineItemType": "string",
-    "quantity": "integer (int32)",
-    "uom": "string",
-    "conversionFactor": "integer (int32)",
-    "price": "number (double)",
-    "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-    "notes": "string",
-    "manufacturerId": "00000000-0000-0000-0000-000000000000",
-    "manufacturerItemNo": "string",
-    "suggestedVendorId": "00000000-0000-0000-0000-000000000000",
-    "stockUOM": "string",
-    "vendorId": "00000000-0000-0000-0000-000000000000",
-    "poConversionStatusId": "integer (int32)",
-    "poConversionStatus": "string",
-    "purchaseOrderItemId": "00000000-0000-0000-0000-000000000000",
-    "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
-    "activeStatus": "boolean",
-    "dateCreated": "string (date-time)",
-    "createdBy": "00000000-0000-0000-0000-000000000000",
-    "createdByUserName": "string",
-    "lastUpdated": "string (date-time)",
-    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-    "lastUpdatedByUserName": "string",
-    "locationId": "00000000-0000-0000-0000-000000000000",
-    "isTaxable": "boolean",
-    "contractNo": "string",
-    "contractExpDate": "string (date-time)",
-    "isPrinted": "boolean",
-    "supplierPartAuxiliaryId": "string"
-    }
+  "requisitionItemId": "00000000-0000-0000-0000-000000000000",
+  "requisitionId": "00000000-0000-0000-0000-000000000000",
+  "requisitionNo": "string",
+  "lineItemNo": "integer (int32)",
+  "inventoryNo": "string",
+  "inventoryDescription": "string",
+  "vendorItemNo": "string",
+  "lineItemTypeId": "integer (int32)",
+  "lineItemType": "string",
+  "quantity": "integer (int32)",
+  "uom": "string",
+  "conversionFactor": "integer (int32)",
+  "price": "number (double)",
+  "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+  "notes": "string",
+  "manufacturerId": "00000000-0000-0000-0000-000000000000",
+  "manufacturerItemNo": "string",
+  "suggestedVendorId": "00000000-0000-0000-0000-000000000000",
+  "stockUOM": "string",
+  "vendorId": "00000000-0000-0000-0000-000000000000",
+  "poConversionStatusId": "integer (int32)",
+  "poConversionStatus": "string",
+  "purchaseOrderItemId": "00000000-0000-0000-0000-000000000000",
+  "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+  "activeStatus": "boolean",
+  "dateCreated": "string (date-time)",
+  "createdBy": "00000000-0000-0000-0000-000000000000",
+  "createdByUserName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByUserName": "string",
+  "locationId": "00000000-0000-0000-0000-000000000000",
+  "isTaxable": "boolean",
+  "contractNo": "string",
+  "contractExpDate": "string (date-time)",
+  "isPrinted": "boolean",
+  "supplierPartAuxiliaryId": "string"
+}
 ```
 
 ## Add the specified requisition line item
@@ -244,6 +244,7 @@ Adds a new requisition line item within a logged organization and the specified 
 
 ### <span style="color: #F05D30">Request Body</span>
 For adding item(s) to requisition(s)
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory. <br> It is validated by Facility (Inventory Group). <br> **If not provided**: Item is added as Free-Form. |
@@ -263,21 +264,21 @@ For adding item(s) to requisition(s)
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
-      "inventoryNo": "string",
-      "inventoryDescription": "string",
-      "vendorItemNo": "string",
-      "quantity": "integer (int32)",
-      "uom": "string",
-      "conversionFactor": "integer (int32)",
-      "price": "string",
-      "notes": "string",
-      "manufacturerNo": "string",
-      "manufacturerItemNo": "string",
-      "vendorNo": "string",
-      "locationNo": "string",
-      "facilityNo": "string",
-      "isTaxable": "boolean",
-      }
+  "inventoryNo": "string",
+  "inventoryDescription": "string",
+  "vendorItemNo": "string",
+  "quantity": "integer (int32)",
+  "uom": "string",
+  "conversionFactor": "integer (int32)",
+  "price": "string",
+  "notes": "string",
+  "manufacturerNo": "string",
+  "manufacturerItemNo": "string",
+  "vendorNo": "string",
+  "locationNo": "string",
+  "facilityNo": "string",
+  "isTaxable": "boolean",
+}
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
@@ -312,7 +313,8 @@ Partially updates the details of the requisition line item specified by requisit
 
 ### <span style="color: #F05D30">Properties</span>
 For Inventory Item (Item with Location and Vendor):
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
 |**notes**: string | Comments about the Requisition Item |
@@ -323,18 +325,19 @@ For Inventory Item (Item with Location and Vendor):
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request example (200 OK)"
 {
-      "activeStatus": "boolean",
-      "notes": "string",
-      "quantity": "integer (int8)",
-      "uom": "string",
-      "conversionFactor": "integer (int8)",
-      "price": "number (double)"
-      }  
+  "activeStatus": "boolean",
+  "notes": "string",
+  "quantity": "integer (int8)",
+  "uom": "string",
+  "conversionFactor": "integer (int8)",
+  "price": "number (double)"
+}  
 ```
 <br>
 
 For Non-Stock Item (Item with Vendor):
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
@@ -346,20 +349,21 @@ For Non-Stock Item (Item with Vendor):
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example (200 OK)"
 {
-      "locationId": "00000000-0000-0000-0000-000000000000",
-      "activeStatus": "boolean",
-      "notes": "string",
-      "quantity": "integer (int8)",
-      "uom": "string",
-      "conversionFactor": "integer (int8)",
-      "price": "number (double)"
-      } 
+  "locationId": "00000000-0000-0000-0000-000000000000",
+  "activeStatus": "boolean",
+  "notes": "string",
+  "quantity": "integer (int8)",
+  "uom": "string",
+  "conversionFactor": "integer (int8)",
+  "price": "number (double)"
+} 
 ```
 
 <br>
 
 For Free-Form Item:
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory Item |
 |**inventoryDescription**: string | Description of the Inventory Item |
@@ -379,21 +383,21 @@ For Free-Form Item:
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example (200 OK)"
 {
-      "inventoryNo": "string",
-      "inventoryDescription": "string",
-      "locationId": "00000000-0000-0000-0000-000000000000",
-      "vendorId": "00000000-0000-0000-0000-000000000000",
-      "vendorItemNo": "string",
-      "manufacturerId": "00000000-0000-0000-0000-000000000000",
-      "manufacturerItemNo": "string",
-      "activeStatus": "boolean",
-      "notes": "string",
-      "quantity": "integer (int8)",
-      "uom": "string",
-      "conversionFactor": "integer (int8)",
-      "price": "number (double)",
-      "isTaxable": "boolean"
-      }
+  "inventoryNo": "string",
+  "inventoryDescription": "string",
+  "locationId": "00000000-0000-0000-0000-000000000000",
+  "vendorId": "00000000-0000-0000-0000-000000000000",
+  "vendorItemNo": "string",
+  "manufacturerId": "00000000-0000-0000-0000-000000000000",
+  "manufacturerItemNo": "string",
+  "activeStatus": "boolean",
+  "notes": "string",
+  "quantity": "integer (int8)",
+  "uom": "string",
+  "conversionFactor": "integer (int8)",
+  "price": "number (double)",
+  "isTaxable": "boolean"
+}
 ```  
 
 ### <span style="color: #F05D30">Request Parameters</span>

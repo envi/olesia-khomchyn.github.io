@@ -63,31 +63,32 @@ td, th {
 |**systemVendorName**: string | Name of the System Vendor |
 |**ediVendorNo**: string | Code of the Supplier EDI who sells products |
 
+
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-"items": [
-{
-  "vendorId": "00000000-0000-0000-0000-000000000000",
-  "vendorNo": "string",
-  "vendorName": "string",
-  "organizationId": "00000000-0000-0000-0000-000000000000",
-  "organizationNo": "string",
-  "organizationName": "string",
-  "vendorNotes": "string",
-  "dateAdded": "string (date-time)",
-  "addedBy": "00000000-0000-0000-0000-000000000000",
-  "addedByName": "string",
-  "lastUpdated": "string (date-time)",
-  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-  "lastUpdatedByName": "string",
-  "activeStatus": "boolean",
-  "url": "string",
-  "systemVendorName": "string",
-  "ediVendorNo": "string"
-}
-],
-"nextPageLink": "string",
-"count": "integer (int64)"
+  "items": [
+    {
+      "vendorId": "00000000-0000-0000-0000-000000000000",
+      "vendorNo": "string",
+      "vendorName": "string",
+      "organizationId": "00000000-0000-0000-0000-000000000000",
+      "organizationNo": "string",
+      "organizationName": "string",
+      "vendorNotes": "string",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "addedByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string",
+      "activeStatus": "boolean",
+      "url": "string",
+      "systemVendorName": "string",
+      "ediVendorNo": "string"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
 }
 ```
 
@@ -137,25 +138,26 @@ Returns the details of the vendor specified by ID.
 |**systemVendorName**: string | Name of the System Vendor |
 |**ediVendorNo**: string | Code of the Supplier EDI who sells products |
 
+
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-"vendorId": "00000000-0000-0000-0000-000000000000",
-"vendorNo": "string",
-"vendorName": "string",
-"organizationId": "00000000-0000-0000-0000-000000000000",
-"organizationNo": "string",
-"organizationName": "string",
-"vendorNotes": "string",
-"dateAdded": "string (date-time)",
-"addedBy": "00000000-0000-0000-0000-000000000000",
-"addedByName": "string",
-"lastUpdated": "string (date-time)",
-"lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-"lastUpdatedByName": "string",
-"activeStatus": "boolean",
-"url": "string",
-"systemVendorName": "string",
-"ediVendorNo": "string"
+   "vendorId": "00000000-0000-0000-0000-000000000000",
+   "vendorNo": "string",
+   "vendorName": "string",
+   "organizationId": "00000000-0000-0000-0000-000000000000",
+   "organizationNo": "string",
+   "organizationName": "string",
+   "vendorNotes": "string",
+   "dateAdded": "string (date-time)",
+   "addedBy": "00000000-0000-0000-0000-000000000000",
+   "addedByName": "string",
+   "lastUpdated": "string (date-time)",
+   "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+   "lastUpdatedByName": "string",
+   "activeStatus": "boolean",
+   "url": "string",
+   "systemVendorName": "string",
+   "ediVendorNo": "string"
 }
 ```
 
@@ -213,24 +215,26 @@ Enter the value of the vendor(s) from the existing template.
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 [
-{
-"vendorId": "00000000-0000-0000-0000-000000000000",
-"vendorName": "string",
-"vendorNo": "string",
-"address1": "string",
-"address2": "string",
-"city": "string",
-"state": "string",
-"zip": "string",
-"country": "string",
-"url": "string",
-"accountNumber": "string",
-"activeStatus": "boolean",
-"lastUpdated": "string (date-time)",
-"leadTime": "integer (int32)"
-}
+  {
+    "vendorId": "00000000-0000-0000-0000-000000000000",
+    "vendorName": "string",
+    "vendorNo": "string",
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "state": "string",
+    "zip": "string",
+    "country": "string",
+    "url": "string",
+    "accountNumber": "string",
+    "activeStatus": "boolean",
+    "lastUpdated": "string (date-time)",
+    "leadTime": "integer (int32)"
+  }
 ]
 ```
+
+
 
 
 

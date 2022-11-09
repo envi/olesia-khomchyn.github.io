@@ -121,92 +121,92 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-        "items": [
-        {
-        "requisitionId": "00000000-0000-0000-0000-000000000000",
-        "requisitionNo": "string",
-        "requisitionTypeId": "integer (int32)",
-        "requisitionType": "string",
-        "facilityId": "00000000-0000-0000-0000-000000000000",
-        "facilityNo": "string",
-        "facilityName": "string",
-        "patientId": "00000000-0000-0000-0000-000000000000",
-        "departmentId": "00000000-0000-0000-0000-000000000000",
-        "departmentNo": "string",
-        "departmentName": "string",
-        "deliveryLocationId": "00000000-0000-0000-0000-000000000000",
-        "deliveryLocationNo": "string",
-        "deliveryLocationName": "string",
-        "reference": "string",
-        "requisitionerId": "00000000-0000-0000-0000-000000000000",
-        "requisitionerName": "string",
-        "requisitionDate": "string (date-time)",
-        "requiredDeliveryDate":  "string (date-time)"  ,
-        "requisitionStatusId": "integer (int32)",
-        "requisitionStatus": "string",
-        "requisitionNotes": "string",
-        "buyerName": "string",
-        "buyerAddress1": "string",
-        "buyerAddress2": "string",
-        "buyerCity": "string",
-        "buyerState": "string",
-        "buyerZip": "string",
-        "buyerCountry": "string",
-        "buyerContact": "string",
-        "buyerContactEmail": "string",
-        "buyerPhone": "string",
-        "buyerPhoneExt": "string",
-        "buyerFax": "string",
-        "shippingName": "string",
-        "shippingAddress1": "string",
-        "shippingAddress2": "string",
-        "shippingCity": "string",
-        "shippingState": "string",
-        "shippingZip": "string",
-        "shippingCountry": "string",
-        "shippingContact": "string",
-        "shippingContactEmail": "string",
-        "shippingPhone": "string",
-        "shippingPhoneExt": "string",
-        "shippingFax": "string",
-        "discount": "number (double)",
-        "discountTypeId": "integer (int32)",
-        "discountType": "string",
-        "salesTax": "number (double)",
-        "salesTaxTypeId": "integer (int32)",
-        "salesTaxType": "string",
-        "shipping": "number (double)",
-        "shippingTypeId": "integer (int32)",
-        "shippingType": "string",
-        "dateSubmitted": "string (date-time)",
-        "dateCreated": "string (date-time)",
-        "createdBy": "00000000-0000-0000-0000-000000000000",
-        "createdByName": "string",
-        "lastUpdated": "string (date-time)",
-        "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-        "lastUpdatedByName": "string",
-        "requisitionSourceId": "integer (int32)",
-        "requisitionSource": "string",
-        "notes": "string",
-        "submittedBy": "00000000-0000-0000-0000-000000000000",
-        "submittedByName": "string",
-        "isCanceled": "boolean",
-        "parAreaId": "00000000-0000-0000-0000-000000000000",
-        "sourceFacilityId": "00000000-0000-0000-0000-000000000000",
-        "sourceFacilityNo": "string",
-        "sourceFacilityName": "string",
-        "statusLastUpdated": "string (date-time)",
-        "statusLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-        "statusLastUpdatedByName": "string",
-        "isConverted": "boolean",
-        "cancelledRemainingQuantitiesLastUpdated": "string (date-time)",
-        "cancelledRemainingQuantitiesBy": "00000000-0000-0000-0000-000000000000",
-        "cancelledRemainingQuantitiesByName": "string"
-        }
-        ],
-        "nextPageLink": "string",
-        "count": "integer (int64)"
-        }
+  "items": [
+    {
+      "requisitionId": "00000000-0000-0000-0000-000000000000",
+      "requisitionNo": "string",
+      "requisitionTypeId": "integer (int32)",
+      "requisitionType": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "patientId": "00000000-0000-0000-0000-000000000000",
+      "departmentId": "00000000-0000-0000-0000-000000000000",
+      "departmentNo": "string",
+      "departmentName": "string",
+      "deliveryLocationId": "00000000-0000-0000-0000-000000000000",
+      "deliveryLocationNo": "string",
+      "deliveryLocationName": "string",
+      "reference": "string",
+      "requisitionerId": "00000000-0000-0000-0000-000000000000",
+      "requisitionerName": "string",
+      "requisitionDate": "string (date-time)",
+      "requiredDeliveryDate": "string (date-time)",
+      "requisitionStatusId": "integer (int32)",
+      "requisitionStatus": "string",
+      "requisitionNotes": "string",
+      "buyerName": "string",
+      "buyerAddress1": "string",
+      "buyerAddress2": "string",
+      "buyerCity": "string",
+      "buyerState": "string",
+      "buyerZip": "string",
+      "buyerCountry": "string",
+      "buyerContact": "string",
+      "buyerContactEmail": "string",
+      "buyerPhone": "string",
+      "buyerPhoneExt": "string",
+      "buyerFax": "string",
+      "shippingName": "string",
+      "shippingAddress1": "string",
+      "shippingAddress2": "string",
+      "shippingCity": "string",
+      "shippingState": "string",
+      "shippingZip": "string",
+      "shippingCountry": "string",
+      "shippingContact": "string",
+      "shippingContactEmail": "string",
+      "shippingPhone": "string",
+      "shippingPhoneExt": "string",
+      "shippingFax": "string",
+      "discount": "number (double)",
+      "discountTypeId": "integer (int32)",
+      "discountType": "string",
+      "salesTax": "number (double)",
+      "salesTaxTypeId": "integer (int32)",
+      "salesTaxType": "string",
+      "shipping": "number (double)",
+      "shippingTypeId": "integer (int32)",
+      "shippingType": "string",
+      "dateSubmitted": "string (date-time)",
+      "dateCreated": "string (date-time)",
+      "createdBy": "00000000-0000-0000-0000-000000000000",
+      "createdByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string",
+      "requisitionSourceId": "integer (int32)",
+      "requisitionSource": "string",
+      "notes": "string",
+      "submittedBy": "00000000-0000-0000-0000-000000000000",
+      "submittedByName": "string",
+      "isCanceled": "boolean",
+      "parAreaId": "00000000-0000-0000-0000-000000000000",
+      "sourceFacilityId": "00000000-0000-0000-0000-000000000000",
+      "sourceFacilityNo": "string",
+      "sourceFacilityName": "string",
+      "statusLastUpdated": "string (date-time)",
+      "statusLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "statusLastUpdatedByName": "string",
+      "isConverted": "boolean",
+      "cancelledRemainingQuantitiesLastUpdated": "string (date-time)",
+      "cancelledRemainingQuantitiesBy": "00000000-0000-0000-0000-000000000000",
+      "cancelledRemainingQuantitiesByName": "string"
+      }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
 ```
 
 ## Create a new standard requisition
@@ -227,11 +227,11 @@ Creates a new standard requisition within a logged organization.
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
-      "facilityNo": "string",
-      "departmentNo": "string",
-      "patientId": "00000000-0000-0000-0000-000000000000",
-      "reference": "string"
-      }   
+  "facilityNo": "string",
+  "departmentNo": "string",
+  "patientId": "00000000-0000-0000-0000-000000000000",
+  "reference": "string"
+}   
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
@@ -276,6 +276,7 @@ Returns the details of the Requisition specified by ID.
 |**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
@@ -360,10 +361,9 @@ Returns the details of the Requisition specified by ID.
 |**cancelledRemaining<br>QuantitiesByName**: string | Name of the user who updated the Remaining Quantities of the Facility Source |
 
 
+
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-  "items": [
-  {
   "requisitionId": "00000000-0000-0000-0000-000000000000",
   "requisitionNo": "string",
   "requisitionTypeId": "integer (int32)",
@@ -376,9 +376,9 @@ Returns the details of the Requisition specified by ID.
   "departmentNo": "string",
   "departmentName": "string",
   "deliveryLocationId": "00000000-0000-0000-0000-000000000000",
-  "deliveryLocationNo": "string",
+  "deliveryLocationNo": "string",    
   "deliveryLocationName": "string",
-  "reference": "string",
+  "reference": "string",    
   "requisitionerId": "00000000-0000-0000-0000-000000000000",
   "requisitionerName": "string",
   "requisitionDate": "string (date-time)",
@@ -443,11 +443,7 @@ Returns the details of the Requisition specified by ID.
   "cancelledRemainingQuantitiesLastUpdated": "string (date-time)",
   "cancelledRemainingQuantitiesBy": "00000000-0000-0000-0000-000000000000",
   "cancelledRemainingQuantitiesByName": "string"
-  }
-  ],
-  "nextPageLink": "string",
-  "count": "integer (int64)"
-  }
+}
 ```
 
 ## Partially update the specified Requisition
@@ -499,42 +495,42 @@ Partially updates the requisition specified by the requisition ID (applicable on
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
-    "reference": "string",
-    "notes": "string",
-    "requisitionDate": "string (date-time)",
-    "requiredDeliveryDate": "string (date-time)",
-    "shippingName": "string",
-    "shippingAddress1": "string",
-    "shippingAddress2": "string",
-    "shippingCity": "string",
-    "shippingState": "string",
-    "shippingZip": "string",
-    "shippingContact": "string",
-    "shippingPhone": "string",
-    "shippingPhoneExt": "string",
-    "shippingFax": "string",
-    "shippingContactEmail": "string",
-    "shippingCountry": "string",
-    "buyerName": "string",
-    "buyerAddress1": "string",
-    "buyerAddress2": "string",
-    "buyerCity": "string",
-    "buyerState": "string",
-    "buyerZip": "string",
-    "buyerContact": "string",
-    "buyerPhone": "string",
-    "buyerPhoneExt": "string",
-    "buyerFax": "string",
-    "buyerContactEmail": "string",
-    "buyerCountry": "string",
-    "requisitionNotes": "string",
-    "discount": "number (double)",
-    "discountTypeId": "integer (int32)",
-    "salesTax": "number (double)",
-    "salesTaxTypeId": "integer (int32)",
-    "shipping": "number (double)",
-    "shippingTypeId": "integer (int32)"
-    } 
+  "reference": "string",
+  "notes": "string",
+  "requisitionDate": "string (date-time)",
+  "requiredDeliveryDate": "string (date-time)",
+  "shippingName": "string",
+  "shippingAddress1": "string",
+  "shippingAddress2": "string",
+  "shippingCity": "string",
+  "shippingState": "string",
+  "shippingZip": "string",
+  "shippingContact": "string",
+  "shippingPhone": "string",
+  "shippingPhoneExt": "string",
+  "shippingFax": "string",
+  "shippingContactEmail": "string",
+  "shippingCountry": "string",
+  "buyerName": "string",
+  "buyerAddress1": "string",
+  "buyerAddress2": "string",
+  "buyerCity": "string",
+  "buyerState": "string",
+  "buyerZip": "string",
+  "buyerContact": "string",
+  "buyerPhone": "string",
+  "buyerPhoneExt": "string",
+  "buyerFax": "string",
+  "buyerContactEmail": "string",
+  "buyerCountry": "string",
+  "requisitionNotes": "string",
+  "discount": "number (double)",
+  "discountTypeId": "integer (int32)",
+  "salesTax": "number (double)",
+  "salesTaxTypeId": "integer (int32)",
+  "shipping": "number (double)",
+  "shippingTypeId": "integer (int32)"
+} 
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
@@ -552,6 +548,7 @@ Partially updates the requisition specified by the requisition ID (applicable on
 |**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ## Change the requisition status to ‘Open’

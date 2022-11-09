@@ -19,9 +19,10 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**summary**: string default: false <br> *in query* | Set to **true** if you want to apply Grouping. |
+|**summary**: boolean default: false <br> *in query* | Set to **true** if you want to apply Grouping. |
 |**from**: string *(date-time)* <br> *in query* | Enter the start date here. |
 |**to**: string *(date-time)* <br> *in query* | Enter the end date here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 
@@ -33,11 +34,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|
@@ -48,11 +44,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**usageItemId**: string *(uuid)* | Unique Identifier of the Usage |
@@ -99,52 +90,52 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-"items": [
-{
-  "usageItemId": "00000000-0000-0000-0000-000000000000",
-  "procedureCode1": "string",
-  "procedureName1": "string",
-  "procedureCode2": "string",
-  "procedureName2": "string",
-  "procedure1Id": "00000000-0000-0000-0000-000000000000",
-  "procedure2Id": "00000000-0000-0000-0000-000000000000",
-  "date": "string (date-time)",
-  "caseNo": "string",
-  "facilityId": "00000000-0000-0000-0000-000000000000",
-  "departmentName": "string",
-  "departmentId": "00000000-0000-0000-0000-000000000000",
-  "extendedPrice": "number (double)",
-  "cost": "number (double)",
-  "extendedCost": "number (double)",
-  "patient": "string",
-  "facilityName": "string",
-  "facilityNo": "string",
-  "doctorName": "string",
-  "doctorId": "00000000-0000-0000-0000-000000000000",
-  "vendorItemNo": "string",
-  "inventoryDescription": "string",
-  "classification": "string",
-  "classification2": "string",
-  "quantity": "integer (int32)",
-  "uom": "string",
-  "price": "number (double)",
-  "conversionFactor": "integer (int32)",
-  "locationNo": "string",
-  "inventoryNo": "string",
-  "manufacturerNo": "string",
-  "manufacturerItemNo": "string",
-  "lotNo": "string",
-  "serialNo": "string",
-  "expirationDate": "string (date-time)",
-  "itemNotes": "string",
-  "lineNo": "integer (int32)",
-  "usageOrdinalNo": "integer (int32)",
-  "usageId": "00000000-0000-0000-0000-000000000000"
-  "usageNo": "string"
-  "dateSubmitted": "string (date-time)"
-}
-],
-"nextPageLink": "string",
+  "items": [
+    {
+      "usageItemId": "00000000-0000-0000-0000-000000000000",
+      "procedureCode1": "string",
+      "procedureName1": "string",
+      "procedureCode2": "string",
+      "procedureName2": "string",
+      "procedure1Id": "00000000-0000-0000-0000-000000000000",
+      "procedure2Id": "00000000-0000-0000-0000-000000000000",
+      "date": "string (date-time)",
+      "caseNo": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "departmentName": "string",
+      "departmentId": "00000000-0000-0000-0000-000000000000",
+      "extendedPrice": "number (double)",
+      "cost": "number (double)",
+      "extendedCost": "number (double)",
+      "patient": "string",
+      "facilityName": "string",
+      "facilityNo": "string",
+      "doctorName": "string",
+      "doctorId": "00000000-0000-0000-0000-000000000000",
+      "vendorItemNo": "string",
+      "inventoryDescription": "string",
+      "classification": "string",
+      "classification2": "string",
+      "quantity": "integer (int32)",
+      "uom": "string",
+      "price": "number (double)",
+      "conversionFactor": "integer (int32)",
+      "locationNo": "string",
+      "inventoryNo": "string",
+      "manufacturerNo": "string",
+      "manufacturerItemNo": "string",
+      "lotNo": "string",
+      "serialNo": "string",
+      "expirationDate": "string (date-time)",
+      "itemNotes": "string",
+      "lineNo": "integer (int32)",
+      "usageOrdinalNo": "integer (int32)",
+      "usageId": "00000000-0000-0000-0000-000000000000",
+      "usageNo": "string",
+      "dateSubmitted": "string (date-time)"
+    }
+  ],
+  "nextPageLink": "string",
 "count": "integer (int64)"
 }
 ```
@@ -158,11 +149,6 @@ POST /odata/UsageItems/BulkAdd
 Adds new items to existing usages within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the Usage. <br> **If not provided**: 400 Bad Request. |
@@ -200,6 +186,7 @@ td, th {
 }
 ```
 
+
 ``` json title="Request Example"
 {
  "usageItems":[
@@ -217,22 +204,12 @@ td, th {
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      

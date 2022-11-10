@@ -14,6 +14,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Location here. |
@@ -21,11 +22,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -36,11 +32,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
@@ -60,20 +51,20 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "locationNo": "string",
-      "cost": "number (double)",
-      "quantityOnHand": "integer (int32)",
-      "activeStatus": "boolean",
-      "dateAdded": "string (date-time)",
-      "addedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "costLastUpdated": "string (date-time)",
-      "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
-    }  
+  "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "locationNo": "string",
+  "cost": "number (double)",
+  "quantityOnHand": "integer (int32)",
+  "activeStatus": "boolean",
+  "dateAdded": "string (date-time)",
+  "addedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "costLastUpdated": "string (date-time)",
+  "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
+}  
 ```
 
 ## Get the list of inventory locations cost and quantity
@@ -85,11 +76,6 @@ GET /odata/InventoryLocationsCostAndQuantity
 Returns the paged list of the existing inventory locations cost and quantity within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**includeInactiveInventory**: <br> boolean default: false <br> *in query* | Include inactive Inventory Items. |
@@ -104,25 +90,16 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
@@ -142,25 +119,25 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-"items": [
-{
-  "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-  "inventoryId": "00000000-0000-0000-0000-000000000000",
-  "inventoryNo": "string",
-  "locationNo": "string",
-  "cost": "number (double)",
-  "quantityOnHand": "integer (int32)",
-  "activeStatus": "boolean",
-  "dateAdded": "string (date-time)",
-  "addedBy": "00000000-0000-0000-0000-000000000000",
-  "lastUpdated": "string (date-time)",
-  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-  "costLastUpdated": "string (date-time)",
-  "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
-}
-],
-"nextPageLink": "string",
-"count": "integer (int64)"
+  "items": [
+    {
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "locationNo": "string",
+      "cost": "number (double)",
+      "quantityOnHand": "integer (int32)",
+      "activeStatus": "boolean",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "costLastUpdated": "string (date-time)",
+      "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
 }
 ```
 

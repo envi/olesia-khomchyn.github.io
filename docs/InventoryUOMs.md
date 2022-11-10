@@ -13,6 +13,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryUOMId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the inventory UOM here. |
@@ -20,11 +21,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -34,11 +30,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryUOMId**: string *(uuid)* | Unique Identifier of the Inventory Item Unit of Measure |
@@ -53,14 +44,14 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-      "inventoryUOMId": "00000000-0000-0000-0000-000000000000",
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "uom": "string",
-      "conversionFactor": "integer (int32)",
-      "dateAdded": "string (date-time)",
-      "addedId": "00000000-0000-0000-0000-000000000000",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedId": "00000000-0000-0000-0000-000000000000"
-    }
+  "inventoryUOMId": "00000000-0000-0000-0000-000000000000",
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "uom": "string",
+  "conversionFactor": "integer (int32)",
+  "dateAdded": "string (date-time)",
+  "addedId": "00000000-0000-0000-0000-000000000000",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedId": "00000000-0000-0000-0000-000000000000"
+}
 ```

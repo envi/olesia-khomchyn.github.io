@@ -1,4 +1,5 @@
 # InventoryTrackings
+
 ## Get the specified inventory tracking setting
 
 ### <span style="color: #F05D30">Path</span>
@@ -13,6 +14,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryTrackingId**: <br> string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Tracking here. |
@@ -20,11 +22,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -34,12 +31,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryTrackingId**: string <br> *(uuid)* | Unique Identifier of the Inventory Item Tracking |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -60,21 +52,21 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-      "inventoryTrackingId": "00000000-0000-0000-0000-000000000000",
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "facilityId": "00000000-0000-0000-0000-000000000000",
-      "facilityNo": "string",
-      "facilityName": "string",
-      "trackLot": "boolean",
-      "trackExpiration": "boolean",
-      "trackSerialNo": "boolean",
-      "isOptional": "boolean",
-      "dateAdded": "string (date-time)",
-      "addedBy": "00000000-0000-0000-0000-000000000000",
-      "addedByName": "string",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByName": "string"
-    }
+  "inventoryTrackingId": "00000000-0000-0000-0000-000000000000",
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "facilityNo": "string",
+  "facilityName": "string",
+  "trackLot": "boolean",
+  "trackExpiration": "boolean",
+  "trackSerialNo": "boolean",
+  "isOptional": "boolean",
+  "dateAdded": "string (date-time)",
+  "addedBy": "00000000-0000-0000-0000-000000000000",
+  "addedByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string"
+}
 ```

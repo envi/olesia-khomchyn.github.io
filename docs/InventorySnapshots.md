@@ -13,6 +13,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|     
@@ -25,29 +26,20 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
-|**inventorySnapshotId**: string *(uuid)* |  Unique Identifier of the Inventory Snapshot |
+|**inventorySnapshot<br>Id**: string *(uuid)* |  Unique Identifier of the Inventory Snapshot |
 |**organizationId**: string *(uuid)* | Unique Identifier of the Organization |
 |**organizationName**: string | Name of the Organization |
 |**snapshotDate**: string *(date-time)* | Date when the Snapshot was created |
@@ -74,8 +66,8 @@ td, th {
       "isAutoExecuted": "boolean"
     }
   ],
-"nextPageLink": "string",
-"count": "integer (int64)"
+  "nextPageLink": "string",
+  "count": "integer (int64)"
 }
 ```
 
@@ -88,11 +80,6 @@ GET /odata/InventorySnapshots({inventorySnapshotId})
 Returns the details of the inventory snapshot specified by ID.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventorySnapshotId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Snapshot here. |
@@ -100,11 +87,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -115,12 +97,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**inventorySnapshotId**: string *(uuid)* |  Unique Identifier of the Inventory Snapshot |
 |**organizationId**: string *(uuid)* | Unique Identifier of the Organization |
@@ -157,11 +134,6 @@ GET /odata/InventorySnapshots({inventorySnapshotId})/inventorySnapshotItems
 Returns the list of items of the inventory snapshot specified by ID within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventorySnapshotId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Snapshot here. |
@@ -174,15 +146,11 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**404 Not Found** | Specified ID is absent in the system. |
@@ -190,11 +158,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventorySnapshotItemId**: <br> string *(uuid)* | Unique Identifier of the Inventory Snapshot Item |
@@ -214,27 +177,28 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
- "items": [
- {
-  "inventorySnapshotItemId": "00000000-0000-0000-0000-000000000000",
-  "inventorySnapshotId": "00000000-0000-0000-0000-000000000000",
-  "reference": "string",
-  "inventoryId": "00000000-0000-0000-0000-000000000000",
-  "inventoryNo": "string",
-  "inventoryDescription": "string",
-  "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-  "locationNo": "string",
-  "locationName": "string",
-  "cost": "number (double)",
-  "quantity": "integer (int32)",
-  "itemTypeId": "integer (int32)",
-  "itemTypeName": "string",
-  "dateCreated": "string (date-time)"
- }
- ],
-"nextPageLink": "string",
-"count": "integer (int64)"
+  "items": [
+    {     
+      "inventorySnapshotItemId": "00000000-0000-0000-0000-000000000000",
+      "inventorySnapshotId": "00000000-0000-0000-0000-000000000000",
+      "reference": "string",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "inventoryDescription": "string",
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "locationNo": "string",
+      "locationName": "string",
+      "cost": "number (double)",
+      "quantity": "integer (int32)",
+      "itemTypeId": "integer (int32)",
+      "itemTypeName": "string",
+      "dateCreated": "string (date-time)"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
 }
+
 ```
 
 

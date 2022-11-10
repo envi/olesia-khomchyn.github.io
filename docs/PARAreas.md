@@ -13,6 +13,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -24,11 +25,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -39,11 +35,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* | Unique Identifier of the PAR Area |
@@ -69,29 +60,29 @@ td, th {
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
   "items": [
-  {
-    "parAreaId": "00000000-0000-0000-0000-000000000000",
-    "parAreaNo": "string",
-    "parAreaName": "string",
-    "facilityId": "00000000-0000-0000-0000-000000000000",
-    "facilityNo": "string",
-    "facilityName": "string",
-    "departmentId": "00000000-0000-0000-0000-000000000000",
-    "departmentNo": "string",
-    "departmentName": "string",
-    "glCode": "string",
-    "reference": "string",
-    "activeStatus": "boolean",
-    "dateCreated": "string (date-time)",
-    "createdBy": "00000000-0000-0000-0000-000000000000",
-    "createdByName": "string",
-    "lastUpdated": "string (date-time)",
-    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-    "lastUpdatedByName": "string"
-  }
-],
-"nextPageLink": "string",
-"count": "integer (int64)"
+    {
+      "parAreaId": "00000000-0000-0000-0000-000000000000",
+      "parAreaNo": "string",
+      "parAreaName": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "departmentId": "00000000-0000-0000-0000-000000000000",
+      "departmentNo": "string",
+      "departmentName": "string",
+      "glCode": "string",
+      "reference": "string",
+      "activeStatus": "boolean",
+      "dateCreated": "string (date-time)",
+      "createdBy": "00000000-0000-0000-0000-000000000000",
+      "createdByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
 }
 ```
 
@@ -104,11 +95,6 @@ GET /odata/PARAreas({parAreaId})
 Returns the details of the PAR Area specified by ID within a logged organization.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the PAR Area here. |
@@ -118,11 +104,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -133,11 +114,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* | Unique Identifier of the PAR Area |
@@ -161,26 +137,26 @@ td, th {
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
-  {
-    "parAreaId": "00000000-0000-0000-0000-000000000000",
-    "parAreaNo": "string",
-    "parAreaName": "string",
-    "facilityId": "00000000-0000-0000-0000-000000000000",
-    "facilityNo": "string",
-    "facilityName": "string",
-    "departmentId": "00000000-0000-0000-0000-000000000000",
-    "departmentNo": "string",
-    "departmentName": "string",
-    "glCode": "string",
-    "reference": "string",
-    "activeStatus": "boolean",
-    "dateCreated": "string (date-time)",
-    "createdBy": "00000000-0000-0000-0000-000000000000",
-    "createdByName": "string",
-    "lastUpdated": "string (date-time)",
-    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-    "lastUpdatedByName": "string"
-  }
+{
+  "parAreaId": "00000000-0000-0000-0000-000000000000",
+  "parAreaNo": "string",
+  "parAreaName": "string",
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "facilityNo": "string",
+  "facilityName": "string",
+  "departmentId": "00000000-0000-0000-0000-000000000000",
+  "departmentNo": "string",
+  "departmentName": "string",
+  "glCode": "string",
+  "reference": "string",
+  "activeStatus": "boolean",
+  "dateCreated": "string (date-time)",
+  "createdBy": "00000000-0000-0000-0000-000000000000",
+  "createdByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string"
+}
 ```
 
 ## Get the list of PAR Area items for the specified PAR Area
@@ -192,11 +168,6 @@ GET /odata/PARAreas({parAreaId})/parAreaLineItems
 Returns the list of the existing PAR Area items within PAR Area specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Par Area here. |
@@ -209,11 +180,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -224,11 +190,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaItemId**: string *(uuid)* | Unique Identifier of the PAR Area Item |
@@ -261,36 +222,35 @@ td, th {
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
   "items": [
-          {
-  "parAreaItemId": "00000000-0000-0000-0000-000000000000",
-  "parAreaId": "00000000-0000-0000-0000-000000000000",
-  "parAreaNo": "string",
-  "parAreaName": "string",
-  "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-  "locationNo": "string",
-  "locationName": "string",
-  "lineItemNo": "integer (int32)",
-  "inventoryNo": "string",
-  "inventoryDescription": "string",
-  "notes": "string",
-  "minQuantity": "integer (int32)",
-  "maxQuantity": "integer (int32)",
-  "uom": "string",
-  "conversionFactor": "integer (int32)",
-  "binShelf": "string",
-  "lastCountDate": "string (date-time)",
-  "gtin": "string",
-  "manufacturerItemNo": "string",
-  "activeStatus": "boolean",
-  "dateCreated": "string (date-time)",
-  "createdBy": "00000000-0000-0000-0000-000000000000",
-  "createdByName": "string",
-  "lastUpdated": "string (date-time)",
-  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-  "lastUpdatedByName": "string"
-  }
+    {
+      "parAreaId": "00000000-0000-0000-0000-000000000000",
+      "parAreaNo": "string",
+      "parAreaName": "string",
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "locationNo": "string",
+      "locationName": "string",
+      "lineItemNo": "integer (int32)",
+      "inventoryNo": "string",
+      "inventoryDescription": "string",
+      "notes": "string",
+      "minQuantity": "integer (int32)",
+      "maxQuantity": "integer (int32)",
+      "uom": "string",
+      "conversionFactor": "integer (int32)",
+      "binShelf": "string",
+      "lastCountDate": "string (date-time)",
+      "gtin": "string",
+      "manufacturerItemNo": "string",
+      "activeStatus": "boolean",
+      "dateCreated": "string (date-time)",
+      "createdBy": "00000000-0000-0000-0000-000000000000",
+      "createdByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string"
+    }
   ],
   "nextPageLink": "string",
   "count": "integer (int64)"
-  }
+}
 ```

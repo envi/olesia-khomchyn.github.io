@@ -13,7 +13,8 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Parameter</div> | <div style="width:420px">Explanation</div>         |                      
+
+| <div style="width:200px">Parameter</div> | <div style="width:480px">Explanation</div>         |                      
 |-----:|:-------|
 |**grant_type**: string default: <br> password <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | Grant Type of the auth request. Should be set to 'password'.|
 |**client_id**: string default:<br> 099153c<br> 2625149bc8ecb3e85e03f0022 <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | ID of the client performing auth request. |
@@ -36,7 +37,7 @@ Now, you need to use the ```access_token``` part of obtained JWT in the Authoriz
 To authorize, in the **Parameters** section of the needed endpoint, paste the token to the **Authorization** field.
 
 
-### <span style="color: #F05D30">Refreshing the Token</span>
+### <span style="color: #F05D30">Refreshing the token</span>
 After the ```access_token``` got expired, you have two options to refresh it:
 
  - Send a separate request with the specified user name and password. In this case, hardcode your credentials in the application you are using.
@@ -47,12 +48,8 @@ After the ```access_token``` got expired, you have two options to refresh it:
     1. Send a POST request to ```/oauth2/token``` endpoint.
     2. Fill in the following:
 
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**grant_type**: string | ```refresh_token``` |
 |**client_id**: integer | 099153c2625149bc8ecb3e85e03f0022 |
@@ -101,21 +98,21 @@ td, th {
 
 ``` json title="Response Example (200 OK)"
 {
-        "access_token": "string",
-        "token_type": "string",
-        "expires_in": "integer",
-        "refresh_token": "string"
-      }
+  "access_token": "string",
+  "token_type": "string",
+  "expires_in": "integer",
+  "refresh_token": "string"
+}
 ```
 
 ``` json title="Response Example (400 Bad Request)"
 {
-        "error": "string",
-        "error_description": "string"
-      }
+  "error": "string",
+  "error_description": "string"
+}
 ```
 
-### <span style="color: #F05D30">Authentication With cURL</span>
+### <span style="color: #F05D30">Authentication with cURL</span>
 Each HTTP request of Envi OData API is authenticated. To authenticate with cURL do the following:
 
 1. Specify the POST request method to use when communicating with the HTTP server. The -X signifies the method used for the request.

@@ -14,6 +14,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
@@ -25,26 +26,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item |
@@ -82,45 +74,46 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "organizationId": "00000000-0000-0000-0000-000000000000",
-          "organizationName": "string",
-          "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "inventoryGroupName": "string",
-          "inventoryDescription": "string",
-          "inventoryDescription2": "string",
-          "stockUOM": "string",
-          "arBillingCode": "string",
-          "hcpcsCode": "string",
-          "notes": "string",
-          "dateAdded": "string (date-time)",
-          "addedId": "00000000-0000-0000-0000-000000000000",
-          "addedByName": "string",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "lastUpdatedByName": "string",
-          "activeStatus": "boolean",
-          "unspscCode": "string",
-          "isLatex": "boolean",
-          "classificationId": "00000000-0000-0000-0000-000000000000",
-          "classificationName": "string",
-          "classification2Id": "00000000-0000-0000-0000-000000000000",
-          "classification2Name": "string",
-          "defaultExpenseLedgerNo": "string",
-          "defaultAssetLedgerNo": "string",
-          "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-          "periopItemCategory": "string",
-          "systemTypeId": "integer (int32)",
-          "systemType": "string"
-          "defaultIsBillable": "boolean"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "organizationId": "00000000-0000-0000-0000-000000000000",
+      "organizationName": "string",
+      "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "inventoryGroupName": "string",
+      "inventoryDescription": "string",
+      "inventoryDescription2": "string",
+      "stockUOM": "string",
+      "arBillingCode": "string",
+      "hcpcsCode": "string",
+      "notes": "string",
+      "dateAdded": "string (date-time)",
+      "addedId": "00000000-0000-0000-0000-000000000000",
+      "addedByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string",
+      "activeStatus": "boolean",
+      "unspscCode": "string",
+      "isLatex": "boolean",
+      "classificationId": "00000000-0000-0000-0000-000000000000",
+      "classificationName": "string",
+      "classification2Id": "00000000-0000-0000-0000-000000000000",
+      "classification2Name": "string",
+      "defaultExpenseLedgerNo": "string",
+      "defaultAssetLedgerNo": "string",
+      "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+      "periopItemCategory": "string",
+      "systemTypeId": "integer (int32)",
+      "systemType": "string",
+      "defaultIsBillable": "boolean"
     }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
+
 ```
 ## Create a new inventory
 
@@ -131,11 +124,6 @@ POST /odata/Inventory
 Creates a new inventory within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Inventory Item|
@@ -174,58 +162,48 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "organizationId": "00000000-0000-0000-0000-000000000000",
-      "organizationName": "string",
-      "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "inventoryGroupName": "string",
-      "inventoryDescription": "string",
-      "inventoryDescription2": "string",
-      "stockUOM": "string",
-      "arBillingCode": "string",
-      "hcpcsCode": "string",
-      "notes": "string",
-      "dateAdded": "string (date-time)",
-      "addedId": "00000000-0000-0000-0000-000000000000",
-      "addedByName": "string",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByName": "string",
-      "activeStatus": "boolean",
-      "unspscCode": "string",
-      "isLatex": "boolean",
-      "classificationId": "00000000-0000-0000-0000-000000000000",
-      "classificationName": "string",
-      "classification2Id": "00000000-0000-0000-0000-000000000000",
-      "classification2Name": "string",
-      "defaultExpenseLedgerNo": "string",
-      "defaultAssetLedgerNo": "string",
-      "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-      "periopItemCategory": "string",
-      "systemTypeId": "integer (int32)",
-      "systemType": "string",
-      "defaultIsBillable": "boolean"
-        }
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "organizationId": "00000000-0000-0000-0000-000000000000",
+  "organizationName": "string",
+  "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "inventoryGroupName": "string",
+  "inventoryDescription": "string",
+  "inventoryDescription2": "string",
+  "stockUOM": "string",
+  "arBillingCode": "string",
+  "hcpcsCode": "string",
+  "notes": "string",
+  "dateAdded": "string (date-time)",
+  "addedId": "00000000-0000-0000-0000-000000000000",
+  "addedByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string",
+  "activeStatus": "boolean",
+  "unspscCode": "string",
+  "isLatex": "boolean",
+  "classificationId": "00000000-0000-0000-0000-000000000000",
+  "classificationName": "string",
+  "classification2Id": "00000000-0000-0000-0000-000000000000",
+  "classification2Name": "string",
+  "defaultExpenseLedgerNo": "string",
+  "defaultAssetLedgerNo": "string",
+  "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+  "periopItemCategory": "string",
+  "systemTypeId": "integer (int32)",
+  "systemType": "string",
+  "defaultIsBillable": "boolean"
+}
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|   
@@ -250,11 +228,6 @@ GET /odata/Inventory({inventoryId})
 Returns the details of the inventory specified by ID.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -263,11 +236,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -278,11 +246,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
@@ -320,40 +283,39 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "organizationId": "00000000-0000-0000-0000-000000000000",
-      "organizationName": "string",
-      "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "inventoryGroupName": "string",
-      "inventoryDescription": "string",
-      "inventoryDescription2": "string",
-      "stockUOM": "string",
-      "arBillingCode": "string",
-      "hcpcsCode": "string",
-      "notes": "string",
-      "dateAdded": "string (date-time)",
-      "addedId": "00000000-0000-0000-0000-000000000000",
-      "addedByName": "string",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByName": "string",
-      "activeStatus": "boolean",
-      "unspscCode": "string",
-      "isLatex": "boolean",
-      "classificationId": "00000000-0000-0000-0000-000000000000",
-      "classificationName": "string",
-      "classification2Id": "00000000-0000-0000-0000-000000000000",
-      "classification2Name": "string",
-      "defaultExpenseLedgerNo": "string",
-      "defaultAssetLedgerNo": "string",
-      "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-      "periopItemCategory": "string",
-      "systemTypeId": "integer (int32)",
-      "systemType": "string",
-      "defaultIsBillable": "boolean"
-        }
-            
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "organizationId": "00000000-0000-0000-0000-000000000000",
+  "organizationName": "string",
+  "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "inventoryGroupName": "string",
+  "inventoryDescription": "string",
+  "inventoryDescription2": "string",
+  "stockUOM": "string",
+  "arBillingCode": "string",
+  "hcpcsCode": "string",
+  "notes": "string",
+  "dateAdded": "string (date-time)",
+  "addedId": "00000000-0000-0000-0000-000000000000",
+  "addedByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string",
+  "activeStatus": "boolean",
+  "unspscCode": "string",
+  "isLatex": "boolean",
+  "classificationId": "00000000-0000-0000-0000-000000000000",
+  "classificationName": "string",
+  "classification2Id": "00000000-0000-0000-0000-000000000000",
+  "classification2Name": "string",
+  "defaultExpenseLedgerNo": "string",
+  "defaultAssetLedgerNo": "string",
+  "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+  "periopItemCategory": "string",
+  "systemTypeId": "integer (int32)",
+  "systemType": "string",
+  "defaultIsBillable": "boolean"
+}           
 ```
 ## Fully update the specified inventory
 
@@ -364,11 +326,6 @@ PUT /odata/Inventory({inventoryId})
 Fully updates the details of the inventory specified by ID.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item |
@@ -406,47 +363,41 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "organizationId": "00000000-0000-0000-0000-000000000000",
-      "organizationName": "string",
-      "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "inventoryGroupName": "string",
-      "inventoryDescription": "string",
-      "inventoryDescription2": "string",
-      "stockUOM": "string",
-      "arBillingCode": "string",
-      "hcpcsCode": "string",
-      "notes": "string",
-      "dateAdded": "string (date-time)",
-      "addedId": "00000000-0000-0000-0000-000000000000",
-      "addedByName": "string",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByName": "string",
-      "activeStatus": "boolean",
-      "unspscCode": "string",
-      "isLatex": "boolean",
-      "classificationId": "00000000-0000-0000-0000-000000000000",
-      "classificationName": "string",
-      "classification2Id": "00000000-0000-0000-0000-000000000000",
-      "classification2Name": "string",
-      "defaultExpenseLedgerNo": "string",
-      "defaultAssetLedgerNo": "string",
-      "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-      "periopItemCategory": "string",
-      "systemTypeId": "integer (int32)",
-      "systemType": "string",
-      "defaultIsBillable": "boolean"
-    }
-            
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "organizationId": "00000000-0000-0000-0000-000000000000",
+  "organizationName": "string",
+  "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "inventoryGroupName": "string",
+  "inventoryDescription": "string",
+  "inventoryDescription2": "string",
+  "stockUOM": "string",
+  "arBillingCode": "string",
+  "hcpcsCode": "string",
+  "notes": "string",
+  "dateAdded": "string (date-time)",
+  "addedId": "00000000-0000-0000-0000-000000000000",
+  "addedByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string",
+  "activeStatus": "boolean",
+  "unspscCode": "string",
+  "isLatex": "boolean",
+  "classificationId": "00000000-0000-0000-0000-000000000000",
+  "classificationName": "string",
+  "classification2Id": "00000000-0000-0000-0000-000000000000",
+  "classification2Name": "string",
+  "defaultExpenseLedgerNo": "string",
+  "defaultAssetLedgerNo": "string",
+  "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+  "periopItemCategory": "string",
+  "systemTypeId": "integer (int32)",
+  "systemType": "string",
+  "defaultIsBillable": "boolean"
+}           
 ```
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -454,11 +405,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -476,11 +422,6 @@ PATCH /odata/Inventory({inventoryId})
 Partially updates the details of the inventory specified by ID.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item|
@@ -518,46 +459,41 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-      "inventoryId": "00000000-0000-0000-0000-000000000000",
-      "organizationId": "00000000-0000-0000-0000-000000000000",
-      "organizationName": "string",
-      "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-      "inventoryNo": "string",
-      "inventoryGroupName": "string",
-      "inventoryDescription": "string",
-      "inventoryDescription2": "string",
-      "stockUOM": "string",
-      "arBillingCode": "string",
-      "hcpcsCode": "string",
-      "notes": "string",
-      "dateAdded": "string (date-time)",
-      "addedId": "00000000-0000-0000-0000-000000000000",
-      "addedByName": "string",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByName": "string",
-      "activeStatus": "boolean",
-      "unspscCode": "string",
-      "isLatex": "boolean",
-      "classificationId": "00000000-0000-0000-0000-000000000000",
-      "classificationName": "string",
-      "classification2Id": "00000000-0000-0000-0000-000000000000",
-      "classification2Name": "string",
-      "defaultExpenseLedgerNo": "string",
-      "defaultAssetLedgerNo": "string",
-      "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-      "periopItemCategory": "string",
-      "systemTypeId": "integer (int32)",
-      "systemType": "string"
-      "defaultIsBillable": "boolean"
-    }
+  "inventoryId": "00000000-0000-0000-0000-000000000000",
+  "organizationId": "00000000-0000-0000-0000-000000000000",
+  "organizationName": "string",
+  "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+  "inventoryNo": "string",
+  "inventoryGroupName": "string",
+  "inventoryDescription": "string",
+  "inventoryDescription2": "string",
+  "stockUOM": "string",
+  "arBillingCode": "string",
+  "hcpcsCode": "string",
+  "notes": "string",
+  "dateAdded": "string (date-time)",
+  "addedId": "00000000-0000-0000-0000-000000000000",
+  "addedByName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByName": "string",
+  "activeStatus": "boolean",
+  "unspscCode": "string",
+  "isLatex": "boolean",
+  "classificationId": "00000000-0000-0000-0000-000000000000",
+  "classificationName": "string",
+  "classification2Id": "00000000-0000-0000-0000-000000000000",
+  "classification2Name": "string",
+  "defaultExpenseLedgerNo": "string",
+  "defaultAssetLedgerNo": "string",
+  "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+  "periopItemCategory": "string",
+  "systemTypeId": "integer (int32)",
+  "systemType": "string",
+  "defaultIsBillable": "boolean"
+}
 ```
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -566,11 +502,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -593,11 +524,6 @@ Returns the paged list of the existing future pricing items within inventory spe
 
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -610,26 +536,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**futurePricingId**: string *(uuid)* | Unique Identifier of the Future Pricing record |
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
@@ -661,41 +578,40 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "futurePricingId": "00000000-0000-0000-0000-000000000000",
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "vendorItemNo": "string",
-          "facilityId": "00000000-0000-0000-0000-000000000000",
-          "vendorId": "00000000-0000-0000-0000-000000000000",
-          "organizationId": "00000000-0000-0000-0000-000000000000",
-          "organizationNo": "string",
-          "organizationName": "string",
-          "vendorUOM": "string",
-          "vendorConversionFactor": "integer (int32)",
-          "contractNo": "string",
-          "contractExpDate": "string (date-time)",
-          "priceChangeDate": "string (date-time)",
-          "newPrice": "number (double)",
-          "priceChangeStatus": "integer (int32)",
-          "priceChangeStatusName": "string",
-          "dateAdded": "string (date-time)",
-          "addedBy": "00000000-0000-0000-0000-000000000000",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "vendorNo": "string",
-          "vendorName": "string",
-          "facilityNo": "string",
-          "facilityName": "string",
-          "addedByName": "string",
-          "lastUpdatedByName": "string"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "futurePricingId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "vendorItemNo": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "vendorId": "00000000-0000-0000-0000-000000000000",
+      "organizationId": "00000000-0000-0000-0000-000000000000",
+      "organizationNo": "string",
+      "organizationName": "string",
+      "vendorUOM": "string",
+      "vendorConversionFactor": "integer (int32)",
+      "contractNo": "string",
+      "contractExpDate": "string (date-time)",
+      "priceChangeDate": "string (date-time)",
+      "newPrice": "number (double)",
+      "priceChangeStatus": "integer (int32)",
+      "priceChangeStatusName": "string",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "vendorNo": "string",
+      "vendorName": "string",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "addedByName": "string",
+      "lastUpdatedByName": "string"
     }
-    
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}  
 ```
 
 ## Get the list of inventory UOMs for the specified inventory
@@ -712,11 +628,6 @@ Returns the paged list of the existing inventory UOMs within inventory specified
 
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -730,25 +641,16 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryUOMId**: string *(uuid)* | Unique Identifier of the Inventory Item Unit of Measure |
@@ -763,23 +665,22 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "inventoryUOMId": "00000000-0000-0000-0000-000000000000",
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "uom": "string",
-          "conversionFactor": "integer (int32)",
-          "dateAdded": "string (date-time)",
-          "addedId": "00000000-0000-0000-0000-000000000000",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedId": "00000000-0000-0000-0000-000000000000"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "inventoryUOMId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "uom": "string",
+      "conversionFactor": "integer (int32)",
+      "dateAdded": "string (date-time)",
+      "addedId": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedId": "00000000-0000-0000-0000-000000000000"
     }
-    
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}   
 ```
 
 ## Get the list of inventory locations for the specified inventory
@@ -791,11 +692,6 @@ GET /odata/Inventory({inventoryId})/inventoryLocations
 Returns the paged list of the existing inventory locations within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -809,25 +705,16 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Item Location |
@@ -886,67 +773,66 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "facilityId": "00000000-0000-0000-0000-000000000000",
-          "facilityName": "string",
-          "facilityNo": "string",
-          "locationId": "00000000-0000-0000-0000-000000000000",
-          "locationName": "string",
-          "locationNo": "string",
-          "locationUOM": "string",
-          "locationConversionFactor": "integer (int32)",
-          "inventoryStockUOM": "string",
-          "defaultIssueUOM": "string",
-          "defaultIssueConversionFactor": "integer (int32)",
-          "defaultCountUOM": "string",
-          "defaultCountConversionFactor": "integer (int32)",
-          "cost": "number (double)",
-          "isBillable": "boolean",
-          "isTaxable": "boolean",
-          "itemType": "integer (int8)",
-          "itemTypeText": "string",
-          "priceMarkup": "number (double)",
-          "priceMarkupType": "integer (int8)",
-          "priceMarkupTypeText": "string",
-          "disablePurchasing": "boolean",
-          "minQuantity": "integer (int32)",
-          "onRequisition": "integer (int32)",
-          "maxQuantity": "integer (int32)",
-          "safetyStock": "integer (int32)",
-          "binShelf": "string",
-          "assetLedgerNo": "string",
-          "expenseLedgerNo": "string",
-          "syncFlag": "boolean",
-          "costLastUpdated": "string (date-time)",
-          "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "dateAdded": "string (date-time)",
-          "addedBy": "00000000-0000-0000-0000-000000000000",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "activeStatus": "boolean",
-          "locationSynchronizationDate": "string (date-time)",
-          "costSynchronizationDate": "string (date-time)",
-          "defaultPurchaseUOM": "string",
-          "valuationMethod": "integer (int32)",
-          "valuationMethodText": "string",
-          "pendingOrders": "integer (int32)",
-          "submittedOrders": "integer (int32)",
-          "quantityOnHand": "integer (int32)",
-          "lastUpdatedByName": "string",
-          "addedByName": "string",
-          "costLastUpdatedByName": "string",
-          "crossReferenceNo": "string",
-          "inventoryActiveStatus": "boolean"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityName": "string",
+      "facilityNo": "string",
+      "locationId": "00000000-0000-0000-0000-000000000000",
+      "locationName": "string",
+      "locationNo": "string",
+      "locationUOM": "string",
+      "locationConversionFactor": "integer (int32)",
+      "inventoryStockUOM": "string",
+      "defaultIssueUOM": "string",
+      "defaultIssueConversionFactor": "integer (int32)",
+      "defaultCountUOM": "string",
+      "defaultCountConversionFactor": "integer (int32)",
+      "cost": "number (double)",
+      "isBillable": "boolean",
+      "isTaxable": "boolean",
+      "itemType": "integer (int8)",
+      "itemTypeText": "string",
+      "priceMarkup": "number (double)",
+      "priceMarkupType": "integer (int8)",
+      "priceMarkupTypeText": "string",
+      "disablePurchasing": "boolean",
+      "minQuantity": "integer (int32)",
+      "onRequisition": "integer (int32)",
+      "maxQuantity": "integer (int32)",
+      "safetyStock": "integer (int32)",
+      "binShelf": "string",
+      "assetLedgerNo": "string",
+      "expenseLedgerNo": "string",
+      "syncFlag": "boolean",
+      "costLastUpdated": "string (date-time)",
+      "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "activeStatus": "boolean",
+      "locationSynchronizationDate": "string (date-time)",
+      "costSynchronizationDate": "string (date-time)",
+      "defaultPurchaseUOM": "string",
+      "valuationMethod": "integer (int32)",
+      "valuationMethodText": "string",
+      "pendingOrders": "integer (int32)",
+      "submittedOrders": "integer (int32)",
+      "quantityOnHand": "integer (int32)",
+      "lastUpdatedByName": "string",
+      "addedByName": "string",
+      "costLastUpdatedByName": "string",
+      "crossReferenceNo": "string",
+      "inventoryActiveStatus": "boolean"
     }
-    
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
 ```
 
 ## Get the list of tracking settings for the specified inventory
@@ -964,11 +850,6 @@ Returns the paged list of the existing inventory tracking settings within invent
 
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -981,26 +862,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryTrackingId**: string *(uuid)* | Unique Identifier of the Inventory Item Tracking |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -1022,29 +894,29 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "inventoryTrackingId": "00000000-0000-0000-0000-000000000000",
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "facilityId": "00000000-0000-0000-0000-000000000000",
-          "facilityNo": "string",
-          "facilityName": "string",
-          "trackLot": "boolean",
-          "trackExpiration": "boolean",
-          "trackSerialNo": "boolean",
-          "isOptional": "boolean",
-          "dateAdded": "string (date-time)",
-          "addedBy": "00000000-0000-0000-0000-000000000000",
-          "addedByName": "string",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "lastUpdatedByName": "string"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
-    }   
+  "items": [
+    {
+      "inventoryTrackingId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "trackLot": "boolean",
+      "trackExpiration": "boolean",
+      "trackSerialNo": "boolean",
+      "isOptional": "boolean",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "addedByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
 ```
 
 ## Get PO history for the specified inventory
@@ -1060,11 +932,6 @@ Returns the paged list of the existing Purchase Order history within inventory s
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1078,26 +945,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------| 
 |**id**: string | Unique Identifier of the Inventory Item |
 |**monthName**: string | Name of the Month when Purchase Order was made |
@@ -1110,22 +968,21 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "id": "string",
-          "monthName": "string",
-          "monthNumber": "integer (int32)",
-          "quantityOrdered": "integer (int64)",
-          "numberOfPOs": "integer (int32)",
-          "totalCost": "number (double)",
-          "facilityName": "string",
-          "year": "integer (int32)"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "id": "string",
+      "monthName": "string",
+      "monthNumber": "integer (int32)",
+      "quantityOrdered": "integer (int64)",
+      "numberOfPOs": "integer (int32)",
+      "totalCost": "number (double)",
+      "facilityName": "string",
+      "year": "integer (int32)"
     }
-    
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}   
 ```
 
 ## Get the list of inventory vendors for the specified inventory
@@ -1138,11 +995,6 @@ Returns the paged list of the existing inventory vendors within inventory specif
 
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1156,26 +1008,17 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -1215,49 +1058,48 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-              "items": [
-              {
-              "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
-              "inventoryId": "00000000-0000-0000-0000-000000000000",
-              "inventoryNo": "string",
-              "vendorId": "00000000-0000-0000-0000-000000000000",
-              "vendorNo": "string",
-              "vendorName": "string",
-              "facilityId": "00000000-0000-0000-0000-000000000000",
-              "facilityNo": "string",
-              "facilityName": "string",
-              "vendorItemNo": "string",
-              "vendorUOM": "string",
-              "vendorConversionFactor": "integer (int32)",
-              "vendorCost": "number (double)",
-              "vendorPriority": "integer (int32)",
-              "contractNo": "string",
-              "contractExpDate": "string (date-time)",
-              "manufacturerItemNo": "string",
-              "manufacturerId": "00000000-0000-0000-0000-000000000000",
-              "manufacturerNo": "string",
-              "manufacturerName": "string",
-              "gtin": "string",
-              "costLastUpdated": "string (date-time)",
-              "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-              "dateAdded": "string (date-time)",
-              "addedBy": "00000000-0000-0000-0000-000000000000",
-              "lastUpdated": "string (date-time)",
-              "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-              "activeStatus": "boolean",
-              "ndcNumber": "string",
-              "lockCost": "boolean",
-              "costLastUpdatedByUserName": "string",
-              "addedByUserName": "string",
-              "lastUpdatedByUserName": "string",
-              "pimKey": "string"
-              "altItemNo": "string"
-              }
-              ],
-              "nextPageLink": "string",
-              "count": "integer (int64)"
-              }
-    
+  "items": [
+    {
+      "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "vendorId": "00000000-0000-0000-0000-000000000000",
+      "vendorNo": "string",
+      "vendorName": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "vendorItemNo": "string",
+      "vendorUOM": "string",
+      "vendorConversionFactor": "integer (int32)",
+      "vendorCost": "number (double)",
+      "vendorPriority": "integer (int32)",
+      "contractNo": "string",
+      "contractExpDate": "string (date-time)",
+      "manufacturerItemNo": "string",
+      "manufacturerId": "00000000-0000-0000-0000-000000000000",
+      "manufacturerNo": "string",
+      "manufacturerName": "string",
+      "gtin": "string",
+      "costLastUpdated": "string (date-time)",
+      "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "activeStatus": "boolean",
+      "ndcNumber": "string",
+      "lockCost": "boolean",
+      "costLastUpdatedByUserName": "string",
+      "addedByUserName": "string",
+      "lastUpdatedByUserName": "string",
+      "pimKey": "string",
+      "altItemNo": "string"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+} 
 ```
 ## Get the list of tracking data
 
@@ -1272,11 +1114,6 @@ Returns the details of the inventory tracking values within inventory, facility,
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1291,26 +1128,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryTrackingItemId**: string <br> *(uuid)* | Unique Identifier of the Inventory Item Tracking |
@@ -1336,34 +1164,33 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-      "items": [
-        {
-          "inventoryTrackingItemId": "00000000-0000-0000-0000-000000000000",
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "stockUOM": "string",
-          "facilityId": "00000000-0000-0000-0000-000000000000",
-          "facilityNo": "string",
-          "facilityName": "string",
-          "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-          "locationNo": "string",
-          "locationName": "string",
-          "lot": "string",
-          "expirationDate": "string (date-time)",
-          "serialNo": "string",
-          "quantity": "integer (int32)",
-          "dateAdded": "string (date-time)",
-          "addedBy": "00000000-0000-0000-0000-000000000000",
-          "addedByName": "string",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "lastUpdatedByName": "string"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "inventoryTrackingItemId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "stockUOM": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "locationNo": "string",
+      "locationName": "string",
+      "lot": "string",
+      "expirationDate": "string (date-time)",
+      "serialNo": "string",
+      "quantity": "integer (int32)",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "addedByName": "string",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string"
     }
-    
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}    
 ```
 
 
@@ -1376,11 +1203,6 @@ GET /odata/Inventory({inventoryId})/inventoryLocationsCostAndQuantity
 Returns the paged list of the existing inventory locations cost and quantity within inventory specified by Id. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here.|
@@ -1396,25 +1218,16 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
@@ -1433,26 +1246,27 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 {
-"items": [
-  {
-    "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-    "inventoryId": "00000000-0000-0000-0000-000000000000",
-    "inventoryNo": "string",
-    "locationNo": "string",
-    "cost": "number (double)",
-    "quantityOnHand": "integer (int32)",
-    "activeStatus": "boolean",
-    "dateAdded": "string (date-time)",
-    "addedBy": "00000000-0000-0000-0000-000000000000",
-    "lastUpdated": "string (date-time)",
-    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-    "costLastUpdated": "string (date-time)",
-    "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
-  }
-],
-"nextPageLink": "string",
-"count": "integer (int64)"
+  "items": [
+    {
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "locationNo": "string",
+      "cost": "number (double)",
+      "quantityOnHand": "integer (int32)",
+      "activeStatus": "boolean",
+      "dateAdded": "string (date-time)",
+      "addedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "costLastUpdated": "string (date-time)",
+      "costLastUpdatedBy": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
 }
+
 ```
 
 ## Get the list of inventory items changed from the specified date
@@ -1464,11 +1278,6 @@ GET /odata/Inventory/GetAllFromDate(from={from},facilityId={facilityId},syncFlag
 Returns the paged list of the inventory items changed from the specified date within a facility specified by ID.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |
@@ -1478,11 +1287,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -1492,11 +1296,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Property</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------| 
 |**itemType**: string | Type of the Item |
@@ -1538,44 +1337,44 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
 [
-      {
-        "itemType": "string",
-        "billable": "boolean",
-        "inventoryId": "00000000-0000-0000-0000-000000000000",
-        "organizationId": "00000000-0000-0000-0000-000000000000",
-        "organizationName": "string",
-        "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-        "inventoryNo": "string",
-        "inventoryGroupName": "string",
-        "inventoryDescription": "string",
-        "inventoryDescription2": "string",
-        "stockUOM": "string",
-        "arBillingCode": "string",
-        "hcpcsCode": "string",
-        "notes": "string",
-        "dateAdded": "string (date-time)",
-        "addedId": "00000000-0000-0000-0000-000000000000",
-        "addedByName": "string",
-        "lastUpdated": "string (date-time)",
-        "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-        "lastUpdatedByName": "string",
-        "activeStatus": "boolean",
-        "unspscCode": "string",
-        "isLatex": "boolean",
-        "classificationId": "00000000-0000-0000-0000-000000000000",
-        "classificationName": "string",
-        "classification2Id": "00000000-0000-0000-0000-000000000000",
-        "classification2Name": "string",
-        "defaultExpenseLedgerNo": "string",
-        "defaultAssetLedgerNo": "string",
-        "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-        "periopItemCategory": "string",
-        "itemType": "string",
-        "systemTypeId": "integer (int32)",
-        "systemType": "string"
-      "defaultIsBillable": "boolean"
-      }
-    ]
+  {
+    "itemType": "string",
+    "billable": "boolean",
+    "inventoryId": "00000000-0000-0000-0000-000000000000",
+    "organizationId": "00000000-0000-0000-0000-000000000000",
+    "organizationName": "string",
+    "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+    "inventoryNo": "string",
+    "inventoryGroupName": "string",
+    "inventoryDescription": "string",
+    "inventoryDescription2": "string",
+    "stockUOM": "string",
+    "arBillingCode": "string",
+    "hcpcsCode": "string",
+    "notes": "string",
+    "dateAdded": "string (date-time)",
+    "addedId": "00000000-0000-0000-0000-000000000000",
+    "addedByName": "string",
+    "lastUpdated": "string (date-time)",
+    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+    "lastUpdatedByName": "string",
+    "activeStatus": "boolean",
+    "unspscCode": "string",
+    "isLatex": "boolean",
+    "classificationId": "00000000-0000-0000-0000-000000000000",
+    "classificationName": "string",
+    "classification2Id": "00000000-0000-0000-0000-000000000000",
+    "classification2Name": "string",
+    "defaultExpenseLedgerNo": "string",
+    "defaultAssetLedgerNo": "string",
+    "periopCategoryId": "00000000-0000-0000-0000-000000000000",
+    "periopItemCategory": "string",
+    "itemType": "string",
+    "systemTypeId": "integer (int32)",
+    "systemType": "string",
+    "defaultIsBillable": "boolean"
+  }
+]
 ```
 
 ## Save the specified inventory vendor
@@ -1587,12 +1386,7 @@ POST /odata/Inventory({inventoryId})/InventoryVendor
 Creates a new Inventory Vendor within a logged organization and specified Inventory.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
 |**facilityId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
@@ -1611,30 +1405,25 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-            "vendorId": "00000000-0000-0000-0000-000000000000",
-            "facilityIdd": "00000000-0000-0000-0000-000000000000",
-            "vendorItemNo": "string",
-            "vendorUOM": "string",
-            "vendorConversionFactor": "integer (int32)",
-            "VendorCost": "number (double)",
-            "contractNo": "string",
-            "contractExpDate": "string (date-time)",
-            "manufacturerItemNo": "string",
-            "manufacturerNo": "string",
-            "gtin": "string",
-            "ndcNumber": "string",
-            "lockCost": "boolean",
-            "pimKey": "integer (int10)",
-            "altItemNo": "string",
-            }
+  "vendorId": "00000000-0000-0000-0000-000000000000",
+  "facilityIdd": "00000000-0000-0000-0000-000000000000",
+  "vendorItemNo": "string",
+  "vendorUOM": "string",
+  "vendorConversionFactor": "integer (int32)",
+  "VendorCost": "number (double)",
+  "contractNo": "string",
+  "contractExpDate": "string (date-time)",
+  "manufacturerItemNo": "string",
+  "manufacturerNo": "string",
+  "gtin": "string",
+  "ndcNumber": "string",
+  "lockCost": "boolean",
+  "pimKey": "integer (int10)",
+  "altItemNo": "string",
+}
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1642,11 +1431,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -1668,30 +1452,21 @@ POST /odata/Inventory({inventoryId})/ManagePurchasing
 Manages purchasing option for the inventory location specified by inventory ID.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**disablePurchasing**: boolean | Disable Purchasing for the Inventory Item or not? |
 |**facility**: string *(uuid)* | Unique Identifier of the Facility |
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-      "managePurchasing": {
-        "disablePurchasing": "boolean",
-        "facility": "00000000-0000-0000-0000-000000000000"
-      }
-    }
+  "managePurchasing": {
+    "disablePurchasing": "boolean",
+     "facility": "00000000-0000-0000-0000-000000000000"
+  }
+}
+
 ```
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1699,11 +1474,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
@@ -1722,11 +1492,6 @@ POST /odata/Inventory({inventoryId})/InventoryLocation
 Creates a new Inventory Location within a logged organization and specified Inventory.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Location |
@@ -1754,37 +1519,32 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-      "locationId": "00000000-0000-0000-0000-000000000000",
-      "defaultIssueUOM": "string",
-      "defaultIssueConversionFactor":"integer (int32)",
-      "defaultCountUOM": "string",
-      "defaultCountConversionFactor": "integer (int32)",
-      "itemType":"integer (int8)",
-      "priceMarkup": "number (double)",
-      "priceMarkupType": "integer (int8)",
-      "cost": "number (double)",
-      "assetLedgerNo": "string",
-      "expenseLedgerNo": "string",
-      "binShelf": "string",
-      "crossReferenceNo": "string",
-      "minQuantity": "integer (int32)",
-      "maxQuantity": "integer (int32)",
-      "safetyStock": "integer (int32)",
-      "locationUOM": "string",
-      "locationConversionFactor": "integer (int32)",
-      "isBillable": "boolean",
-      "isTaxable": "boolean",
-      "syncFlag": "boolean",
-      "disablePurchasinge": "boolean"
-    }
+  "locationId": "00000000-0000-0000-0000-000000000000",
+  "defaultIssueUOM": "string",
+  "defaultIssueConversionFactor":"integer (int32)",
+  "defaultCountUOM": "string",
+  "defaultCountConversionFactor": "integer (int32)",
+  "itemType":"integer (int8)",
+  "priceMarkup": "number (double)",
+  "priceMarkupType": "integer (int8)",
+  "cost": "number (double)",
+  "assetLedgerNo": "string",
+  "expenseLedgerNo": "string",
+  "binShelf": "string",
+  "crossReferenceNo": "string",
+  "minQuantity": "integer (int32)",
+  "maxQuantity": "integer (int32)",
+  "safetyStock": "integer (int32)",
+  "locationUOM": "string",
+  "locationConversionFactor": "integer (int32)",
+  "isBillable": "boolean",
+  "isTaxable": "boolean",
+  "syncFlag": "boolean",
+  "disablePurchasinge": "boolean"
+}
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1792,11 +1552,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      

@@ -1,4 +1,5 @@
 # AP Batch
+
 ## Get the list of AP batches
 
 ### <span style="color: #F05D30">Path</span>
@@ -17,6 +18,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*|The requested API version.|    
@@ -28,25 +30,16 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**apBatchId**: string *(uuid)* | Unique Identifier of the Account Payable Batch |
@@ -67,7 +60,7 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-    "items": [
+  "items": [
     {
       "apBatchId": "00000000-0000-0000-0000-000000000000",
       "batchNo": "string",
@@ -85,10 +78,10 @@ td, th {
       "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
       "lastUpdatedByUserName": "string"
     }
-    ],
-    "nextPageLink": "string",
-    "count": "integer (int64)"
-    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
 ```
 
 ## Create a new AP batch
@@ -100,11 +93,6 @@ POST /odata/Batches
 Creates a new AP batch within a logged organization.
 
 ### <span style="color: #F05D30">Request Body</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchNo**: string | Identification Number of the Batch |
@@ -113,29 +101,19 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
-      "batchNo": "string",
-      "reference": "string"
-    }
+  "batchNo": "string",
+  "reference": "string"
+}
     
 ```
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content** | No Content |    
@@ -159,11 +137,6 @@ Returns details of the batch specified by ID.
 
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the batch here. |
@@ -172,11 +145,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK** | OK |    
@@ -187,11 +155,6 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**apBatchId**: string *(uuid)* | Unique Identifier of the Account Payable Batch |
@@ -212,22 +175,22 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-    "apBatchId": "00000000-0000-0000-0000-000000000000",
-    "batchNo": "string",
-    "reference": "string",
-    "batchStatusId": "integer (int32)",
-    "batchStatus": "string",
-    "batchTotal": "number (double)",
-    "invoiceCount": "integer (int32)",
-    "isScheduledExporting": "boolean",
-    "lastExportDate": "string (date-time)",
-    "dateCreated": "string (date-time)",
-    "createdBy": "00000000-0000-0000-0000-000000000000",
-    "createdByUserName": "string",
-    "lastUpdated": "string (date-time)",
-    "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-    "lastUpdatedByUserName": "string"
-    }
+  "apBatchId": "00000000-0000-0000-0000-000000000000",
+  "batchNo": "string",
+  "reference": "string",
+  "batchStatusId": "integer (int32)",
+  "batchStatus": "string",
+  "batchTotal": "number (double)",
+  "invoiceCount": "integer (int32)",
+  "isScheduledExporting": "boolean",
+  "lastExportDate": "string (date-time)",
+  "dateCreated": "string (date-time)",
+  "createdBy": "00000000-0000-0000-0000-000000000000",
+  "createdByUserName": "string",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByUserName": "string"
+}
     
 ```
 
@@ -244,11 +207,6 @@ Returns paged list of the existing invoices within a batch specified by ID.
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -261,26 +219,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**apMatchedInvoiceId**: string *(uuid)* | Unique Identifier of the Account Payable Matched Invoice |
@@ -341,7 +290,7 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-    "items": [
+  "items": [
     {
       "apMatchedInvoiceId": "00000000-0000-0000-0000-000000000000",
       "purchaseOrderId": "00000000-0000-0000-0000-000000000000",
@@ -399,10 +348,10 @@ td, th {
       "submittedBy": "00000000-0000-0000-0000-000000000000",
       "submittedByUserName": "string",
     }
-    ],
-    "nextPageLink": "string",
-    "count": "integer (int64)"
-    }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
     
 ```
 
@@ -415,11 +364,6 @@ POST /odata/Batches({batchId})/Invoices
 Adds an invoice with the ‘Vouchered’ status to an existed batch within a logged organization. After adding to the batch, an added invoice changes its invoice status to ‘Batched’.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -428,71 +372,65 @@ td, th {
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
-      "apMatchedInvoiceId": "00000000-0000-0000-0000-000000000000",
-      "purchaseOrderId": "00000000-0000-0000-0000-000000000000",
-      "purchaseOrderNo": "string",
-      "sequenceNo": "integer (int32)",
-      "poType": "string",
-      "facilityId": "00000000-0000-0000-0000-000000000000",
-      "facilityNo": "string",
-      "facilityName": "string",
-      "locationId": "00000000-0000-0000-0000-000000000000",
-      "locationNo": "string",
-      "locationName": "string",
-      "vendorId": "00000000-0000-0000-0000-000000000000",
-      "vendorNo": "string",
-      "vendorName": "string",
-      "invoiceNo": "string",
-      "matchedInvoiceStatusId": "integer (int32)",
-      "matchedInvoiceStatus": "string",
-      "vendorRemitToId": "00000000-0000-0000-0000-000000000000",
-      "remitToNo": "string",
-      "remitToDescription": "string",
-      "remitToVendorNo": "string",
-      "creditCardIDId": "00000000-0000-0000-0000-000000000000",
-      "creditCardID": "string",
-      "creditCardIDDescription": "string",
-      "reference": "string",
-      "notes": "string",
-      "invoiceDate": "string (date-time)",
-      "invoiceDueDate": "string (date-time)",
-      "trackingCode": "string",
-      "invoiceValidationTotal": "number (double)",
-      "cerNoId": "00000000-0000-0000-0000-000000000000",
-      "cerNo": "string",
-      "cerNoDescription": "string",
-      "discountAmount": "number (double)",
-      "taxAmount": "number (double)",
-      "shippingAmount": "number (double)",
-      "taxExpenseGLCode": "string",
-      "taxAccrualGLCode": "string",
-      "discountGLCode": "string",
-      "taxExpenseAmount": "number (double)",
-      "apBatchId": "00000000-0000-0000-0000-000000000000",
-      "apBatchNo": "string",
-      "taxCode": "string",
-      "receivedInvoiceId": "00000000-0000-0000-0000-000000000000",
-      "offset": "number (double)",
-      "offsetGLCode": "string",
-      "createdBy": "00000000-0000-0000-0000-000000000000",
-      "createdByUserName": "string",
-      "dateCreated": "string (date-time)",
-      "lastUpdated": "string (date-time)",
-      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByUserName": "string",
-      "dateSubmitted": "string (date-time)",
-      "submittedBy": "00000000-0000-0000-0000-000000000000",
-      "submittedByUserName": "string"
-    }
-    
-    
+  "apMatchedInvoiceId": "00000000-0000-0000-0000-000000000000",
+  "purchaseOrderId": "00000000-0000-0000-0000-000000000000",
+  "purchaseOrderNo": "string",
+  "sequenceNo": "integer (int32)",
+  "poType": "string",
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "facilityNo": "string",
+  "facilityName": "string",
+  "locationId": "00000000-0000-0000-0000-000000000000",
+  "locationNo": "string",
+  "locationName": "string",
+  "vendorId": "00000000-0000-0000-0000-000000000000",
+  "vendorNo": "string",
+  "vendorName": "string",
+  "invoiceNo": "string",
+  "matchedInvoiceStatusId": "integer (int32)",
+  "matchedInvoiceStatus": "string",
+  "vendorRemitToId": "00000000-0000-0000-0000-000000000000",
+  "remitToNo": "string",
+  "remitToDescription": "string",
+  "remitToVendorNo": "string",
+  "creditCardIDId": "00000000-0000-0000-0000-000000000000",
+  "creditCardID": "string",
+  "creditCardIDDescription": "string",
+  "reference": "string",
+  "notes": "string",
+  "invoiceDate": "string (date-time)",
+  "invoiceDueDate": "string (date-time)",
+  "trackingCode": "string",
+  "invoiceValidationTotal": "number (double)",
+  "cerNoId": "00000000-0000-0000-0000-000000000000",
+  "cerNo": "string",
+  "cerNoDescription": "string",
+  "discountAmount": "number (double)",
+  "taxAmount": "number (double)",
+  "shippingAmount": "number (double)",
+  "taxExpenseGLCode": "string",
+  "taxAccrualGLCode": "string",
+  "discountGLCode": "string",
+  "taxExpenseAmount": "number (double)",
+  "apBatchId": "00000000-0000-0000-0000-000000000000",
+  "apBatchNo": "string",
+  "taxCode": "string",
+  "receivedInvoiceId": "00000000-0000-0000-0000-000000000000",
+  "offset": "number (double)",
+  "offsetGLCode": "string",
+  "createdBy": "00000000-0000-0000-0000-000000000000",
+  "createdByUserName": "string",
+  "dateCreated": "string (date-time)",
+  "lastUpdated": "string (date-time)",
+  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+  "lastUpdatedByUserName": "string",
+  "dateSubmitted": "string (date-time)",
+  "submittedBy": "00000000-0000-0000-0000-000000000000",
+  "submittedByUserName": "string"
+}
+
 ```
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content**| No Content |      
@@ -503,11 +441,6 @@ td, th {
 
 
 ### <span style="color: #F05D30">Custom Errors</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Invoice is NOT in the Vouchered status |
@@ -527,11 +460,6 @@ POST /odata/Batches({batchId})/Export
 Changes batch status to ‘Exported’ when the specified batch has at least one invoice.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -539,11 +467,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content**| No Content |      
@@ -561,11 +484,6 @@ POST /odata/Batches({batchId})/SubmitToQueued
 Submits AP Batch to the 'Queued' status.
 
 ### <span style="color: #F05D30">Request Parameters</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -573,11 +491,6 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content**| No Content |      
@@ -587,12 +500,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Custom Errors</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Specified batch exists in the Queued status. |
 

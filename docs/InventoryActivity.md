@@ -1,4 +1,5 @@
 # InventoryActivity
+
 ## Get the list of inventory activities
 
 ### <span style="color: #F05D30">Path</span>
@@ -18,6 +19,7 @@ td, th {
    border: none!important;
 }
 </style>
+
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -29,26 +31,17 @@ td, th {
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK**|OK|      
 |**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
 ### <span style="color: #F05D30">Properties</span>
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 |<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryActivityId**: string *(uuid)* | Unique Identifier of the Inventory Item activity |
@@ -140,97 +133,98 @@ td, th {
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-      "items": [
-        {
-          "inventoryActivityId": "00000000-0000-0000-0000-000000000000",
-          "activityType": "integer (int32)",
-          "activityTypeName": "string",
-          "organizationId": "00000000-0000-0000-0000-000000000000",
-          "organizationNo": "string",
-          "organizationName": "string",
-          "facilityId": "00000000-0000-0000-0000-000000000000",
-          "facilityNo": "string",
-          "facilityName": "string",
-          "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
-          "inventoryGroupName": "string",
-          "inventoryId": "00000000-0000-0000-0000-000000000000",
-          "inventoryNo": "string",
-          "inventoryDescription": "string",
-          "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
-          "locationNo": "string",
-          "locationName": "string",
-          "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
-          "vendorNo": "string",
-          "vendorName": "string",
-          "referenceNo": "string",
-          "patientId": "00000000-0000-0000-0000-000000000000",
-          "patientNo": "string",
-          "departmentId": "00000000-0000-0000-0000-000000000000",
-          "departmentNo": "string",
-          "departmentName": "string",
-          "impactQuantity": "integer (int32)",
-          "stockUOM": "string",
-          "unitCost": "number (double)",
-          "unitPrice": "number (double)",
-          "expenseLedgerNo": "string",
-          "assetLedgerNo": "string",
-          "glCode": "string",
-          "lotNo": "string",
-          "serialNo": "string",
-          "expDate": "string (date-time)",
-          "lastUpdated": "string (date-time)",
-          "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-          "lastUpdatedByName": "string",
-          "userName": "string",
-          "quantityOnHand": "integer (int32)",
-          "sourceEntityId": "00000000-0000-0000-0000-000000000000",
-          "submittedEntityId": "00000000-0000-0000-0000-000000000000",
-          "classification": "string",
-          "classification2": "string",
-          "arBillingCode": "string",
-          "hcpcsCode": "string",
-          "unspscCode": "string",
-          "isLatex": "boolean",
-          "defaultIssueUOM": "string",
-          "defaultIssueConversionFactor": "integer (int32)",
-          "defaultCountUOM": "string",
-          "defaultCountConversionFactor": "integer (int32)",
-          "defaultExpenseLedgerNo": "string",
-          "defaultAssetLedgerNo": "string",
-          "locationUOM": "string",
-          "locationConversionFactor": "integer (int32)",
-          "itemTypeId": "integer (int32)",
-          "itemTypeName": "string",
-          "priceMarkup": "number (double)",
-          "priceMarkupType": "string",
-          "minQuantity": "integer (int32)",
-          "maxQuantity": "integer (int32)",
-          "safetyStock": "integer (int32)",
-          "binShelf": "string",
-          "syncFlag": "boolean",
-          "disablePurchasing": "boolean",
-          "isBillable": "boolean",
-          "isTaxable": "boolean",
-          "vendorItemNo": "string",
-          "vendorUOM": "string",
-          "vendorConversionFactor": "integer (int32)",
-          "priority": "integer (int32)",
-          "contractNo": "string",
-          "contractExpirationDate": "string (date-time)",
-          "manufacturerId": "00000000-0000-0000-0000-000000000000",
-          "manufacturerNo": "string",
-          "manufacturerName": "string",
-          "manufacturerItemNo": "string",
-          "gtin": "string",
-          "ndcNo": "string",
-          "departmentGlcode": "string",
-          "transactionQuantity": "integer (int32)",
-          "transactionUOM": "string",
-          "transactionCF": "integer (int32)",
-          "extendedCost": "number (double)"
-        }
-      ],
-      "nextPageLink": "string",
-      "count": "integer (int64)"
+  "items": [
+    {
+      "inventoryActivityId": "00000000-0000-0000-0000-000000000000",
+      "activityType": "integer (int32)",
+      "activityTypeName": "string",
+      "organizationId": "00000000-0000-0000-0000-000000000000",
+      "organizationNo": "string",
+      "organizationName": "string",
+      "facilityId": "00000000-0000-0000-0000-000000000000",
+      "facilityNo": "string",
+      "facilityName": "string",
+      "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+      "inventoryGroupName": "string",
+      "inventoryId": "00000000-0000-0000-0000-000000000000",
+      "inventoryNo": "string",
+      "inventoryDescription": "string",
+      "inventoryLocationId": "00000000-0000-0000-0000-000000000000",
+      "locationNo": "string",
+      "locationName": "string",
+      "inventoryVendorId": "00000000-0000-0000-0000-000000000000",
+      "vendorNo": "string",
+      "vendorName": "string",
+      "referenceNo": "string",
+      "patientId": "00000000-0000-0000-0000-000000000000",
+      "patientNo": "string",
+      "departmentId": "00000000-0000-0000-0000-000000000000",
+      "departmentNo": "string",
+      "departmentName": "string",
+      "impactQuantity": "integer (int32)",
+      "stockUOM": "string",
+      "unitCost": "number (double)",
+      "unitPrice": "number (double)",
+      "expenseLedgerNo": "string",
+      "assetLedgerNo": "string",
+      "glCode": "string",
+      "lotNo": "string",
+      "serialNo": "string",
+      "expDate": "string (date-time)",
+      "lastUpdated": "string (date-time)",
+      "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
+      "lastUpdatedByName": "string",
+      "userName": "string",
+      "quantityOnHand": "integer (int32)",
+      "sourceEntityId": "00000000-0000-0000-0000-000000000000",
+      "submittedEntityId": "00000000-0000-0000-0000-000000000000",
+      "classification": "string",
+      "classification2": "string",
+      "arBillingCode": "string",
+      "hcpcsCode": "string",
+      "unspscCode": "string",
+      "isLatex": "boolean",
+      "defaultIssueUOM": "string",
+      "defaultIssueConversionFactor": "integer (int32)",
+      "defaultCountUOM": "string",
+      "defaultCountConversionFactor": "integer (int32)",
+      "defaultExpenseLedgerNo": "string",
+      "defaultAssetLedgerNo": "string",
+      "locationUOM": "string",
+      "locationConversionFactor": "integer (int32)",
+      "itemTypeId": "integer (int32)",
+      "itemTypeName": "string",
+      "priceMarkup": "number (double)",
+      "priceMarkupType": "string",
+      "minQuantity": "integer (int32)",
+      "maxQuantity": "integer (int32)",
+      "safetyStock": "integer (int32)",
+      "binShelf": "string",
+      "syncFlag": "boolean",
+      "disablePurchasing": "boolean",
+      "isBillable": "boolean",
+      "isTaxable": "boolean",
+      "vendorItemNo": "string",
+      "vendorUOM": "string",
+      "vendorConversionFactor": "integer (int32)",
+      "priority": "integer (int32)",
+      "contractNo": "string",
+      "contractExpirationDate": "string (date-time)",
+      "manufacturerId": "00000000-0000-0000-0000-000000000000",
+      "manufacturerNo": "string",
+      "manufacturerName": "string",
+      "manufacturerItemNo": "string",
+      "gtin": "string",
+      "ndcNo": "string",
+      "departmentGlcode": "string",
+      "transactionQuantity": "integer (int32)",
+      "transactionUOM": "string",
+      "transactionCF": "integer (int32)",
+      "extendedCost": "number (double)"
     }
+  ],
+  "nextPageLink": "string",
+  "count": "integer (int64)"
+}
+
 ```

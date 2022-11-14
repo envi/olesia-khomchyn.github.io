@@ -45,6 +45,8 @@ nav:
     - PurchasingUnits: PurchasingUnits.md 
     - ReceiptItems: ReceiptItems.md
     - Receipts: Receipts.md
+    - RequisitionFillItems: RequisitionFillItems.md
+    - RequisitionFills: RequisitionFills.md
     - RequisitionItems: RequisitionItems.md
     - Requisitions: Requisitions.md
     - UsageItems: UsageItems.md
@@ -56,6 +58,7 @@ nav:
 
 theme:
   name: material
+  title: developer
   palette: 
     primary: black
   logo: assets/logo.png

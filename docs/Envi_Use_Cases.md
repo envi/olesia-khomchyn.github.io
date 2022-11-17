@@ -1,10 +1,15 @@
 # Envi Use Cases
-Except for general API endpoints, Envi OData API also contains several operations intended to fulfil specific business needs.
+Besides general API endpoints, Envi OData API also contains several operations intended to fulfil specific business needs.
 
-## <span style="color: #F05D30">Batch Support</span> 
+ - [Batch support](#batch-support)
+ - [Inventory Master interface](#inventory-master-interface)
+ - [HTTP Depletion interface](#http-depletion-interface)
+ - [AP batch and export invoices](#ap-batch-and-export-invoices)
+
+## <span style="color: #F05D30">Batch support</span> 
 Envi OData API supports repeatability for individual requests within a batch request, as well as for individual requests within a change set or atomicity group within a batch request. Batch requests allow the grouping of multiple operations into a single HTTP request payload.
 
-The service returns a single HTTP response in the response to all operations in requests. Individual requests within a batch may have a mix of the ```Repeatability-Request-ID``` and ```Repeatability-First-Sent``` values. In this case, each individual response within the batch response will have the appropriate Repeatability-Result according to the corresponding request.
+The service returns a single HTTP response in response to all operations in requests. Individual requests within a batch may have a mix of the ```Repeatability-Request-ID``` and ```Repeatability-First-Sent``` values. In this case, each individual response within the batch response will have the appropriate Repeatability-Result according to the corresponding request.
 
 This way, you can optimize calls to the server and improve the scalability of its service.
 
@@ -158,8 +163,8 @@ Batch part 2 start
 Batch (all) end
 
 ```
-## <span style="color: #F05D30">Inventory Master Interface</span> 
-Inventory Master Interface is used for synchronization of Inventory related changes that occurred in Envi with other external systems since the specified point in time. The Interface combines data on the following entities:
+## <span style="color: #F05D30">Inventory Master interface</span> 
+The Inventory Master interface is used for synchronization of Inventory related changes that occurred in Envi with other external systems since the specified point in time. The interface combines data on the following entities:
 
  - Inventory
  - Inventory Vendors
@@ -309,7 +314,7 @@ public class Inventory
       }
 
 ```
-3. Use the following code to retrieve Inventory Master Interface data.
+3. Use the following code to retrieve Inventory Master interface data.
 
 ``` cs title="Example"
 DateTime lastRunDate = new DateTime(2017, 10, 1);
@@ -375,17 +380,17 @@ public class ListRepresentation<T>
       }
 
 ```
-## <span style="color: #F05D30">HTTP Depletion Interface</span> 
+## <span style="color: #F05D30">HTTP Depletion interface</span> 
 
-HTTP Depletion Interface is used for processing multiple usages. The Interface combines data on the following entities:
+HTTP Depletion interface is used for processing multiple usages. The interface combines data on the following entities:
 
- - [Create Usages](#create-usages) ```/odata/Usages/BulkAdd```
- - [Create Usage Items](#create-usage-items) ```/odata/UsageItems/BulkAdd```
- - [Create Procedures](#create-procedures) ```/odata/UsageProcedures/BulkAdd```
- - [Submit Usages](#submit-usages) ```/odata/Usages/BulkSubmit```
+ - [Create usages](#create-usages) ```/odata/Usages/BulkAdd```
+ - [Create usage items](#create-usage-items) ```/odata/UsageItems/BulkAdd```
+ - [Create procedures](#create-procedures) ```/odata/UsageProcedures/BulkAdd```
+ - [Submit usages](#submit-usages) ```/odata/Usages/BulkSubmit```
 The need for the Usage Procedure insertion depends on your Facility options. Use the POST method to perform these requests.
 
-### <span style="color: #F05D30">Create Usages</span> 
+### <span style="color: #F05D30">Create usages</span> 
 
 The ```/odata/Usages/BulkAdd``` endpoint helps you to create multiple usages. For this, use the appropriate model.
 
@@ -499,18 +504,19 @@ td, th {
    border: none!important;
 }
 </style>
-|<div style="width:200px">Property </div> | <div style="width:380px">Explanation</div> |                      
+
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
-|**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* |Facility for the Usage <br> **If not provided**: 400 Bad Request|
-|**usageDate**: string <br> *in formData* |Usage date <br> **If not provided**: Date according to the user Time Zone|
-|**departmentNo**: string <span style="color: #F05D30">**required**</span> <br> *in formData* |Department for the Usage <br> **If not provided**: User Default Department in case it is set and matches with user Default Facility. Otherwise, ```none```|
-|**patientNo**: string |Patient number <br> If not provided: ```none```|
-|**reference**: string <br> *in formData* | Reference for the Usage <br> **If not provided**: Empty|
-|**caseNo**: string <br> *in formData* |Number of case <br> **If not provided**: Empty|
-|**trackingCode**: string <br> *in formData* |Tracking code of the Usage <br> **If not provided**: Empty|
-|**physicianNo**: string <br> *in formData* |Physician number for the Usage <br> **If not provided**: The ```none``` value in case it is not specified or it doesn't match specified facility|
-|**usageType**: string <br> *in formData* |**Standard** <br> Auto-Populated|
-|**source**: string <br> *in formData* | **Auto** <br> Auto-Populated|
+|**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Identification Number of the Facility. <br> **If not provided**: 400 Bad Request. |
+|**usageDate**: string <br> *in formData* | Date of the Usage. <br> **If not provided**: Date according to the user Time Zone. |
+|**departmentNo**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Number of the Department. <br> **If not provided**: User Default Department if it is set and matches with user Default Facility. Otherwise, ```none```. 
+|**patientNo**: string <br> *in formData* | Number of the Patient. <br> **If not provided**: ```none```. |
+|**reference**: string <br> *in formData* | Information concerning the Usage.<br> **If not provided**: Empty. |
+|**caseNo**: string <br> *in formData* | Number of the Case. <br> **If not provided**: Empty. |
+|**trackingCode**: string <br> *in formData* | Code for Tracking. <br> **If not provided**: Empty. |
+|**physicianNo**: string <br> *in formData* | Number of the Physician. <br> **If not provided**: The ```none``` value if it is not specified or it doesn't match the specified Facility. |
+|**usageType**: string <br> *in formData* | Standard <br> **Auto-Populated** |
+|**source**: string <br> *in formData* | Auto <br> **Auto-Populated** |
 
 You can create several usages per one request using this example. For this, post the list of usages. As a result, you’ll retrieve a string that contains a unique identifier of created usages divided by the comma separator (,). In case one of the usages has an incorrect value, all items will not be saved.
 
@@ -543,7 +549,7 @@ Physician: <physicianNo>
 ```
 
 
-### <span style="color: #F05D30">Create Usage Items</span> 
+### <span style="color: #F05D30">Create usage items</span> 
 
 You can create multiple usage items per one request with the ```/odata/UsageItems/BulkAdd``` endpoint. For this, use the following model.
 
@@ -794,7 +800,7 @@ Physician: <physicianNo>
 
 ```
 
-### <span style="color: #F05D30">Create Procedures</span> 
+### <span style="color: #F05D30">Create procedures</span> 
 You can create multiple Procedures per one request with /odata/UsageProcedures/BulkAdd endpoint. For this, use the following model.
 
 ``` cs title="Example"
@@ -857,7 +863,7 @@ You'll receive the following response.
 
 The **Usage Notes** field is populated with procedureNo, in case procedure with specified procedureNo doesn't exist or it exists within another Facility.
 
-### <span style="color: #F05D30">Submit Usages</span> 
+### <span style="color: #F05D30">Submit usages</span> 
 
 After appropriate items are inserted, you can submit the Usage with the ```/odata/Usages/BulkSubmit``` endpoint. For this, use the following model.
 
@@ -915,17 +921,17 @@ There can be the following main reasons for invalid data:
         }
 
 ```
-## <span style="color: #F05D30">AP Batch and Export Invoices</span> 
+## <span style="color: #F05D30">AP batch and export invoices</span> 
 To queue the batch and export it, you can use the following flow:
 
- - Create AP Batch
- - Retrieve AP Batch list (by ID)
- - Retrieve Invoices of AP Batch
- - Add Invoice to AP Batch
- - Export AP Batch
+ - Create AP batch
+ - Retrieve AP batch list (by ID)
+ - Retrieve invoices of AP batch
+ - Add invoice to AP batch
+ - Export AP batch
  - Submit to Queued
 
-### <span style="color: #F05D30">Create AP Batch</span> 
+### <span style="color: #F05D30">Create AP batch</span> 
 
 The ```/odata/Batches``` endpoint helps you to create a new AP batch in the Pending status and use it for further exporting.
 
@@ -1022,17 +1028,17 @@ As a result, response will contain AP Batch ID.
 
 ```
 
-### <span style="color: #F05D30">Retrieve AP Batch List (by ID)</span> 
+### <span style="color: #F05D30">Retrieve AP batch list (by ID)</span> 
 The ```odata/Batches``` endpoint helps you to see the list of AP Batches. To retrieve the specified AP Batch, add its ID and use the ```odata/Batches(batchID)```. Use the GET method for these endpoints.
 
 You can find the model and possible request parameters in the [Operations](AP_Batch.md#get-the-list-of-ap-batches) section.
 
-### <span style="color: #F05D30">Retrieve Invoices of AP Batch </span> 
+### <span style="color: #F05D30">Retrieve invoices of AP batch </span> 
 To retrieve the list of vouchered invoices that can be added to the AP Batch, use the ```odata/Batches(BatchId)/Invoices``` endpoint with the GET method. The model is the same as the AP Matched invoice.
 
 You can find the model and possible request parameters in the [Operations](AP_Batch.md#get-the-specified-ap-batched-invoice) section.
 
-### <span style="color: #F05D30">Add Invoice to AP Batch </span> 
+### <span style="color: #F05D30">Add invoice to AP batch </span> 
 The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps you to include vouchered invoices to the AP batch. For this, specify the required Matched Invoice ID.
 
 ``` json title="Request Example"
@@ -1058,8 +1064,8 @@ The ```odata/Batches(Batchid)/Invoices``` endpoint with the POST method helps yo
 
 ```
 
-### <span style="color: #F05D30">Export AP Batch </span> 
-The ```odata/Batches(BatchId)/Export``` endpoint with the POST method helps you to export AP Batch. For this, specify the required AP Batch ID.
+### <span style="color: #F05D30">Export AP batch </span> 
+The ```odata/Batches(BatchId)/Export``` endpoint with the POST method helps you to export AP batch. For this, specify the required AP Batch ID.
 
 !!! note 
 

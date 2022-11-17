@@ -6,7 +6,7 @@ While pulling some valuable information, Envi OData API allows you to use custom
     - [Specified Inventory Vendor](InventoryVendors.md#get-the-specified-inventory-vendor)
     - [Inventory Vendors changed from the specified date](InventoryVendors.md#get-the-list-of-inventory-vendors-changed-from-the-specified-date)
     - [Inventory Items changed from the specified date](Inventory.md#get-the-list-of-inventory-items-changed-from-the-specified-date)
-    - [Inventory Locations changed from the specified date](InventoryVendors.md#get-the-list-of-inventory-vendors-changed-from-the-specified-date)
+    - [Inventory Locations changed from the specified date](InventoryLocations.md#get-the-list-of-inventory-locations-changed-from-the-specified-date)
 
 
 ``` title="Request Example"
@@ -30,7 +30,7 @@ https://api-demo.envi.net/odata/inventoryLocations/GetAllFromDate?includeInactiv
 
  - **```includeInactiveVendorFacilities```**–gets all inactive vendor facilities and works with the following endpoint:
     - [Inventory Vendors changed from the specified date](InventoryVendors.md#get-the-list-of-inventory-vendors-changed-from-the-specified-date)
-    - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors-1)
+    - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors)
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendorFacilities=true
@@ -56,7 +56,7 @@ https://api-demo.envi.net/odata/inventory/GetAllFromDate?includeInactiveLocation
 ```
 
  - **```includeInactiveVendorAddresses```**–gets all inactive vendor addresses and works with the following endpoint:
-    - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors-1)
+    - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors)
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendorAddresses=true
@@ -64,7 +64,7 @@ https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendorAddr
 ```
 
  - **```includeInactiveVendors```**–gets all inactive vendors and works with the following endpoint:
-    - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors-1)
+    - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors)
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendors=true

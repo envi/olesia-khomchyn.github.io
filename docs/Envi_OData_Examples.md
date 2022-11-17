@@ -15,7 +15,7 @@ To communicate with Envi API, do the following:
     OData protocol has additional metadata information included in a response.
 
 
-## <span style="color: #F05D30">Obtaining a JWT Access Token</span> 
+## <span style="color: #F05D30">Obtaining a JWT access token</span> 
 
 The following example, written in the C# programming language, shows how to obtain a JWT token and how to use ```refresh_token``` in case ```access_token``` gets expired. For your convenience, introduce a class for representation of the authentication response. In JSON format, the authentication response looks like this.
 
@@ -63,7 +63,7 @@ In the original JSON, there are two additions except for properties:
  - ```IssuedAt``` property – holds the date and time information when the token is received. The value of the property is populated in the constructor, so each time you de-serialize an authentication request, this property will be populated with the current date and time.
  - ```IsValid``` property – holds some simple logic to indicate whether ```access_token``` is still valid based on the IssuedAt value.
 
-The example uses ```Newtonsoft.Json``` nugget package to perform serialization or deserialization. To preserve correct behavior, additional properties are marked with the ```JsonIgnore``` attribute and all others – with the ```JsonProperty``` attribute.
+The example uses the ```Newtonsoft.Json``` nugget package to perform serialization or deserialization. To preserve correct behavior, additional properties are marked with the ```JsonIgnore``` attribute and all others–with the ```JsonProperty``` attribute.
 
 To communicate with API, use an instance of the ```HttpClient``` standard .net class. The ```Private``` field is intended to hold the ```HttpClient``` instance and appropriate property with additional logic for instance creation in case it does not exist.
 
@@ -141,7 +141,7 @@ private static async Task<JWT> RequestToken(List<KeyValuePair<string, string>> r
 
 ```
 
-## <span style="color: #F05D30">Sending HTTP Request to a Resource URL</span> 
+## <span style="color: #F05D30">Sending HTTP request to a resource URL</span> 
 
 The examples are based on the Inventory module, so let’s introduce the .net class, which represents the Inventory entity and two additional classes, which will be helpful for response de-serialization.
 
@@ -190,7 +190,7 @@ public class Inventory
 ```
 
 
-## <span style="color: #F05D30">Retrieving Entities List</span> 
+## <span style="color: #F05D30">Retrieving entities list</span> 
 
 The following generic class represents the response for the endpoint, which returns a paged list of entities.
 
@@ -250,7 +250,7 @@ private static async Task<ODataListResponse> GetInventoryList()
     }  
 ```
 
-## <span style="color: #F05D30">Retrieving Entity Details</span> 
+## <span style="color: #F05D30">Retrieving entity details</span> 
 The following method retrieves details of an Inventory item by the specified ID.
 
 ``` cs title="Example"
@@ -262,7 +262,7 @@ private static async Task<Inventory> GetInventoryById(Guid inventoryId)
     } 
 ```
 
-## <span style="color: #F05D30">New Entity Creation</span> 
+## <span style="color: #F05D30">New entity creation</span> 
 To add a new entity using Envi API, do the following:
 
 1. Send the POST request to an appropriate resource, then provide new entity details with filled-in all required fields in JSON format.
@@ -317,7 +317,7 @@ private static async Task<ODataSingleValueResponse<Guid>> PostInventory(Inventor
       return JsonConvert.DeserializeObject<ODataSingleValueResponse>(await response.Content.ReadAsStringAsync());
     }
 ```
-## <span style="color: #F05D30">Update Existing Entity</span> 
+## <span style="color: #F05D30">Update existing entity</span> 
 To update an existing entity using Envi API, do the following:
 
 1. Send the PUT request to an appropriate resource, and then provide the ID of the entity that will be updated as well as entity details with all required fields filled-in in JSON format.
@@ -348,7 +348,7 @@ private static async Task<bool> PutInventory(Inventory inventory)
     return response.IsSuccessStatusCode;
     }
 ```
-## <span style="color: #F05D30">Partially Update Existing Entity </span> 
+## <span style="color: #F05D30">Partially update existing entity </span> 
 
 In addition to full entity update, Envi API supports partial update based on the provided data with a help of the PATCH HTTP method. In case of entity patching, only changed fields should be sent to API. For example, if you want to update only Inventory No filed, do the following:
 

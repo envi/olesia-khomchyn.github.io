@@ -6,13 +6,13 @@ Refine the results of your query by using query options.
 - [$orderby](#orderby)
 - [$format](#format)
 
-This section will help you go through query options supported by Envi OData API and common scenarios for using them. Envi OData API is based on OData protocol v4.0 but has its custom implementation, so currently not all query options are supported. Envi API allows using query options for all resources that return lists of entities, except those for which actions or functions are applied to OData.
+This section will help you go through query options supported by Envi OData API and common scenarios for using them. Envi OData API is based on OData protocol v4.0 but has its custom implementation, so currently, not all query options are supported. Envi API allows using query options for all resources that return lists of entities, except those for which actions or functions are applied to OData.
 
-Also, Envi OData API defines a set of logical operators that evaluate True or False. Logical operators are typically used in the $filter query option to filter the set of resources. For more details go to the [$filter](#filter) article. The concept of logical operators is simple. They allow the program to make a decision based on multiple conditions. Each operand is considered a condition that can be evaluated True or False. These operands can combine multiple Boolean expressions or values and provide a single Boolean output.
+Also, Envi OData API defines a set of logical operators that evaluate True or False. Logical operators are typically used in the $filter query option to filter the set of resources. For more details, go to the [$filter](#filter) article. The concept of logical operators is simple. They allow the program to make a decision based on multiple conditions. Each operand is considered a condition that can be evaluated True or False. These operands can combine multiple Boolean expressions or values and provide a single Boolean output.
 
 ## <span style="color: #F05D30">$search</span> 
 
-The ``` $search ```  system query option allows searching through all available entity fields in a collection of resources that are addressed by the request URL. The expression specified by ``` $search ```  consists of the search value only which is treated as the ``` like ```  expression.
+The ``` $search ```  system query option allows searching through all available entity fields in a collection of resources that are addressed by the request URL. The expression specified by ``` $search ```  consists of the search value only, which is treated as the ``` like ```  expression.
 
 - The expression of the item evaluates True for at least one of the fields included in the response.
 - The expression of resources evaluates False or Null for all searchable fields omitted in the response.
@@ -24,9 +24,9 @@ https://<HOSTNAME>/odata/Inventory?$search="inv"
 ```
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-The following request example filters target records set based on the ``` inv ```  search value. If any of the searchable fields contains ``` inv```, the entity is included in the response.
+The following request example filters target records set based on the ``` inv ```  search value. If any searchable fields contain ``` inv```, the entity is included in the response.
 
-Since no ``` $top ```  option is specified, only the first 20 records are included in the response. Except for ``` $top```  and ``` $skip```  options, ``` @odata.nextLink``` includes the ``` $search``` option.
+Since no ``` $top ```  option is specified, only the first 20 records are included in the response. Except for the ``` $top```  and ``` $skip```  options, ``` @odata.nextLink``` includes the ``` $search``` option.
 
 
 ``` json title="Response example"
@@ -62,7 +62,7 @@ The ```$top``` system query option requests the number of items in the queried c
 
 Due to the ```$top``` operator max value, the current limit is **5 000** records within one API request. When the specified ```$top``` value is greater than the limit, you will receive the response—400 Bad Request.
 
-The ```$skip``` query option requests the number of items in the queried collection that should be skipped and not included in the response. If the ```$top``` option is not provided, Envi API automatically adds ```$top=20``` to the initial query. Thus, a response contains only the first 20 records, and the ```@odata.next``` link includes ```$top``` and ```$skip``` query options based on that value.
+The ```$skip``` query option requests the number of items in the queried collection that should be skipped and not included in the response. If the ```$top``` option is not provided, Envi API automatically adds ```$top=20``` to the initial query. Thus, a response contains only the first 20 records, the ```@odata.next``` link includes the ```$top``` and ```$skip``` query options based on that value.
 
 
 ``` title="Request Example"
@@ -171,7 +171,7 @@ https://<HOSTNAME>/odata/Inventory?$filter=notes eq 'Capital Item'
 
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-This request example filters target records set based on the value of notes property and if it equals Capital Item, an entity will be included in the resulting set.
+This request example filters target records set based on the value of notes property, and if it equals Capital Item, an entity will be included in the resulting set.
 
 Since no ```$top``` option is specified, only the first 20 records will be included. Except for the ```$top``` and ```$skip``` options, ```@odata.nextLink``` in the response will include the ```$filter``` option.
 
@@ -208,7 +208,7 @@ https://<HOSTNAME>/odata/Inventory?$filter=contains(notes, 'Capital')
 
 (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net)
 
-This request example filters target records set based on the value of notes property and if it contains Capital in any part of the text, an entity will be included in the resulting set.
+This request example filters target records set based on the value of notes property, and if it contains Capital in any part of the text, an entity will be included in the resulting set.
 
 Since no ```$top``` option is specified, only the first 20 records will be included. Except for the ```$top``` and ```$skip``` options, ```@odata.nextLink``` in the response will include the ```$filter``` option.
 
@@ -243,7 +243,7 @@ Since no ```$top``` option is specified, only the first 20 records will be inclu
 
 ```
 
-### <span style="color: #F05D30">Logical Operators</span>
+### <span style="color: #F05D30">Logical operators</span>
 
 Also, the ```$filter``` query option supports the following logical operators:
 
@@ -262,7 +262,7 @@ https://api-demo.envi.net/odata/Inventory?$filter=classificationName eq 'MEDICAT
 ```
 
 #### <span style="color: #F05D30">in</span>
-The **in** operator returns True if the left operand is a member of the right operand. The right operand must be either a comma-separated list of values, enclosed in parentheses or a single expression that resolves to a collection. Also, the **in** operator enables a shorthand way of writing multiple **eq** expressions joined by **or**.
+The **in** operator returns True if the left operand is a member of the right operand. The right operand must be either a comma-separated list of values enclosed in parentheses or a single expression that resolves to a collection. Also, the **in** operator enables a shorthand way of writing multiple **eq** expressions joined by **or**.
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/Inventory?$filter=classificationName eq 'MEDICATION' or classificationName eq = 'DEXAMT' 
@@ -279,23 +279,27 @@ The **in** operator is supported in the following lists:
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Activity](InventoryActivity.md#get-the-list-of-inventory-activities)
  - [Inventory Locations](InventoryLocations.md#get-the-list-of-inventory-locations)
- - [Inventory Location Cost and Quantity](InventoryLocationsCostAndQuantity.md#get-the-list-of-inventory-locations-cost-and-quantity)
+ - [Inventory Locations Cost and Quantity](InventoryLocationsCostAndQuantity.md#get-the-list-of-inventory-locations-cost-and-quantity)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
  - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Manufacturers](Manufacturers.md#get-the-list-of-manufacturers)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
  - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
  - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
  - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Fill Items](RequisitionFillItems.md#get-the-list-of-requisition-fill-items)
+ - [Requisition Fills](RequisitionFills.md#get-the-list-of-requisition-fills)
  - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
- - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
  - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
- - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+ - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+ - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 
@@ -317,18 +321,22 @@ The **gt** operator is supported in the following lists:
  - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Manufacturers](Manufacturers.md#get-the-list-of-manufacturers)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
  - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
  - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
  - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Fill Items](RequisitionFillItems.md#get-the-list-of-requisition-fill-items)
+ - [Requisition Fills](RequisitionFills.md#get-the-list-of-requisition-fills)
  - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
- - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
  - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
- - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+ - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+ - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 #### <span style="color: #F05D30">ge</span>
@@ -348,18 +356,22 @@ The **ge** operator is supported in the following lists:
  - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Manufacturers](Manufacturers.md#get-the-list-of-manufacturers)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
  - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
  - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
  - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Fill Items](RequisitionFillItems.md#get-the-list-of-requisition-fill-items)
+ - [Requisition Fills](RequisitionFills.md#get-the-list-of-requisition-fills)
  - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
- - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
  - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
- - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+ - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+ - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 #### <span style="color: #F05D30">lt</span>
@@ -378,18 +390,22 @@ The **lt** operator is supported in the following lists:
  - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Manufacturers](Manufacturers.md#get-the-list-of-manufacturers)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
  - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
  - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
  - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Fill Items](RequisitionFillItems.md#get-the-list-of-requisition-fill-items)
+ - [Requisition Fills](RequisitionFills.md#get-the-list-of-requisition-fills)
  - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
- - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
  - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
- - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+ - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+ - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 #### <span style="color: #F05D30">le</span>
@@ -409,18 +425,22 @@ The **le** operator is supported in the following lists:
  - [Inventory Snapshots](InventorySnapshots.md#get-the-list-of-inventory-snapshots)
  - [Inventory Snapshot Item Details](InventorySnapshotItems.md#get-the-details-of-the-specified-inventory-snapshot-item)
  - [Inventory Vendors](InventoryVendors.md#get-the-cost-history-for-the-specified-inventory-vendor)
+ - [Manufacturers](Manufacturers.md#get-the-list-of-manufacturers)
  - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
  - [Purchase Orders Items](PurchaseOrderItems.md#get-the-list-of-purchase-order-items)
- - [PO Receipts](Receipts.md#get-the-list-of-po-receipts)
- - [PO Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
+ - [Receipts](Receipts.md#get-the-list-of-po-receipts)
+ - [Receipts Items](ReceiptItems.md#get-the-list-of-po-receipt-items)
  - [PAR Areas](PARAreas.md#get-the-list-of-par-areas)
  - [PAR Area Items](PARAreaItems.md#get-the-list-of-par-area-items)
  - [PO Confirmations](POConfirmations.md#get-the-list-of-po-confirmations)
  - [PO Confirmations Items](POConfirmationItems.md#get-the-list-of-po-confirmation-items)
+ - [Requisition Fill Items](RequisitionFillItems.md#get-the-list-of-requisition-fill-items)
+ - [Requisition Fills](RequisitionFills.md#get-the-list-of-requisition-fills)
  - [Requisition Items](RequisitionItems.md#get-the-list-of-requisition-items)
- - [Requisition Items specified](RequisitionItems.md#get-the-specified-requisition-item)
  - [Requisitions](Requisitions.md#get-the-list-of-requisitions)
- - [Requisitions specified](Requisitions.md#get-the-specified-requisition)
+ - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+ - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+ - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 

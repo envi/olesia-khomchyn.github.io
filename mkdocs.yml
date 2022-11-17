@@ -52,13 +52,15 @@ nav:
     - UsageItems: UsageItems.md
     - UsageProcedures: UsageProcedures.md
     - Usages: Usages.md
+    - VendorAddresses: VendorAddresses.md
+    - VendorContracts: VendorContacts.md
+    - VendorEmailConfigurations: VendorEmailConfigurations.md
     - Vendors: Vendors.md
    
   
 
 theme:
   name: material
-  title: developer
   palette: 
     primary: black
   logo: assets/logo.png

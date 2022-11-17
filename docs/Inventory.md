@@ -1383,7 +1383,7 @@ Returns the paged list of the inventory items changed from the specified date wi
 POST /odata/Inventory({inventoryId})/InventoryVendor
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new Inventory Vendor within a logged organization and specified Inventory.
+Creates a new inventory vendor within a logged organization and specified Inventory.
 
 ### <span style="color: #F05D30">Request Body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      

@@ -113,7 +113,7 @@ Returns the details of the requisition fill specified by ID within a logged orga
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionFillId**: string *(uuid)* | Unique Identifier of the Requisition Fill |
 |**requisitionFillNo**: string | Identification code of the Requisition Fill |

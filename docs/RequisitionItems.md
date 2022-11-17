@@ -29,7 +29,8 @@ td, th {
 ### <span style="color: #F05D30">Responses</span>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
-|**200 OK**|OK|      
+|**200 OK**|OK|   
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in. |      
 |**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip).
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|

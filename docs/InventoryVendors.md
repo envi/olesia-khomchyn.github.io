@@ -462,7 +462,7 @@ Partially updates the details of the inventory vendor specified by InventoryVend
   "costLastUpdatedByUserName": "string",
   "addedByUserName": "string",
   "lastUpdatedByUserName": "string",
-  "pimKey": "string"
+  "pimKey": "string",
   "altItemNo": "string"
 }
 ```

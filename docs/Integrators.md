@@ -65,7 +65,7 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
             Facilities URL: https://api-demo.envi.net/odata/Facilities
             Vendors URL: https:// api-demo.envi.net/odata/Vendors
             Disputed Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq 'Disputed'
-            Pending Batched Invoices URL:  https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
+            Pending Batches:  https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
             ```
                 Before adding new data flows to the existing one, disable previous items. For this, right-click the **Data Flow Task** and select **Disable**. After that, you’ll see the following result: ![image](img/Integrators_5.png)
 
@@ -121,7 +121,7 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
 
         ![image](img/Integrators_21.png)
 
-    ??? example "Pending Batched Invoice Columns"
+    ??? example "Pending Batches Columns"
 
         ![image](img/Integrators_20.png)
 
@@ -337,10 +337,10 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         GO  
         ```
     
-    ??? example "Pending Batched Invoice Table" 
+    ??? example "Pending Batches Table" 
         
         ```
-        CREATE TABLE [dbo].[BatchedInvoices](
+        CREATE TABLE [dbo].[Batches](
         [apBatchedInvoiceId] [nvarchar](144) NOT NULL,
         [batchNo] [nvarchar](44) NULL,
         [reference] [nvarchar](80) NULL,
@@ -500,7 +500,7 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
     Facilities URL: https://api-demo.envi.net/odata/Facilities
     Vendors URL: https:// api-demo.envi.net/odata/Vendors
     Disputed Matched Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq 'Disputed'
-    Pending Batched Invoices URL: https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
+    Pending Batches URL: https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
 
     ```
 

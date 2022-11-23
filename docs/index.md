@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.7.6</span>
+
+New [Vendor Facilities](VendorFacilities.md) endpoints have been implemented. You can now get the list of Vendor Facilities and the details of the Vendor Facility specified by ID within a logged organization.
+
 <span style="color: #E0592A">V. 5.7.5 </span>
 
 The following endpoints have been added to Envi Developer Resources:

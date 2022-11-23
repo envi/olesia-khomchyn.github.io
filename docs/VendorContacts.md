@@ -102,7 +102,7 @@ td, th {
 GET /odata/VendorContacts({VendorContactID})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor contact specified by ID within a logged Organization.
+Returns the details of the vendor contact specified by ID within a logged organization.
 
 ### <span style="color: #F05D30">Request Parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

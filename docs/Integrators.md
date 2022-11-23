@@ -21,7 +21,7 @@ Before working with integrators, please see the following requirements and insta
 With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData API and insert into the MSSQL database. To do it:
 
  - [Create JSON Source](#create-json-source)
- - [Build Database Schema in MS SQL Server](#build-database-schema-in-ms-sql-server)
+ - [Build database schema in MS SQL Server](#build-database-schema-in-ms-sql-server)
  - [Test SSIS Package](#test-ssis-package)
 
 ### <span style="color: #F05D30">Create JSON Source</span> 
@@ -52,7 +52,7 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
         https://<HOSTNAME>/odata/<ENDPOINT>$<QUERY>
         
         ``` 
-        (for eaxample, **&lt;HOSTNAME&gt;** = api-demo.envi.net). 
+        (for example, **&lt;HOSTNAME&gt;** = api-demo.envi.net). 
 
         ![image](img/Integrators_4.png)
 
@@ -65,7 +65,7 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
             Facilities URL: https://api-demo.envi.net/odata/Facilities
             Vendors URL: https:// api-demo.envi.net/odata/Vendors
             Disputed Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq 'Disputed'
-            Pending Batches:  https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
+            Pending Batches:  https:// api-demo.envi.net/odata/Batches?$filter=batchStatus eq 'Pending'
             ```
                 Before adding new data flows to the existing one, disable previous items. For this, right-click the **Data Flow Task** and select **Disable**. After that, you’ll see the following result: ![image](img/Integrators_5.png)
 
@@ -76,8 +76,8 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
     2. From the **OAuth Version** dropdown menu, select the **OAuth2** option.
     3. From the **OAuth Grant Type** dropdown menu, select the **Password Grant** option.
     4. Enter **Client ID**, **User Name**, and **Password**.
-    5. Enter **Access Token URL**. (for example, ```api-demo.envi.net/oauth2/token```) <br> ![image](img/Integrators_8.png)
-    6. Go to the **OAuth2 Grand Options** tab, select the ellipsis **(…)** button, and provide a refresh token file path.
+    5. Enter **Access Token URL** (for example, ```api-demo.envi.net/oauth2/token```). <br> ![image](img/Integrators_8.png)
+    6. Go to the **OAuth2 Grand Options** tab, select the ellipsis (**…**) button, and provide a refresh token file path.
 
         !!! note
 
@@ -97,16 +97,16 @@ With the **SSIS Powerpack** tool, you can easily retrieve data from Envi OData A
 
     !!! note
     
-        Ensure, that **OAuth 2** is preselected.
+        Ensure that **OAuth 2** is preselected.
     
     ![image](img/Integrators_10.png)
 
 9. Select the **value** filter path, then select **OK**. ![image](img/Integrators_11.png)
 10. Then, you will see the **Metadata Scan Options** dialog box. There, select **OK**. ![image](img/Integrators_12.png)
 11. In the **JSON Source (REST API or File)** dialog box, select the **Pagination** tab.
-12. From the **Next Link/Cursor Expression** field, select the ellipsis **(…)** button. ![image](img/Integrators_13.png)
+12. From the **Next Link/Cursor Expression** field, select the ellipsis (**…**) button. ![image](img/Integrators_13.png)
 13. Select **@odata.nextLink**, then select **OK**. ![image](img/Integrators_14.png)
-14. In the **JSON Source (REST API or File)** dialog box, go to the **Columns** section, and then select the needed fields. Select **OK**. ![image](img/Integrators_15.png) <br> 
+14. In the **JSON Source (REST API or File)** dialog box, go to the **Columns** section and then select the needed fields. Select **OK**. ![image](img/Integrators_15.png) <br> 
 
 
     ??? example "Facility Columns" 
@@ -130,7 +130,7 @@ The **JSON Source** setup is completed. Go to the **JSON Source (REST API or Fil
 
 The data is retrieved successfully. ![image](img/Integrators_17.png)
 
-### <span style="color: #F05D30">Build Database Schema in MS SQL Server</span> 
+### <span style="color: #F05D30">Build database schema in MS SQL Server</span> 
 1. In **MS SQL Studio**, create a needed table.
 
     !!! note
@@ -243,6 +243,12 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         [lastUpdated] [datetime2](7) NULL,
         [lastUpdatedBy] [nvarchar](144) NULL,
         [lastUpdatedByName] [nvarchar](88) NULL
+        [memberID] [nvarchar](144) NOT NULL, - ???
+        [capitalTaxExpenseCodeTemplate] [nvarchar](255) NULL, - ???
+        [capitalTaxAccrualCodeTemplate] [nvarchar](255) NULL,  - ???
+        [capitalDiscountCodeTemplate] [nvarchar](84) NULL,  - ???
+        [capitalShippingCodeTemplate] [nvarchar](255) NULL,  - ???
+        [capitalOffsetCodeTemplate] [nvarchar](1020) NULL,  - ???
         ) ON [PRIMARY]
         GO
             
@@ -331,6 +337,7 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         [lastUpdated] [datetime2](7) NULL,
         [lastUpdatedBy] [nvarchar](144) NULL,
         [lastUpdatedByUserName] [nvarchar](96) NULL,
+        [dateSubmitted] [datetime2](7) NULL,
         [submittedBy] [nvarchar](144) NULL,
         [submittedByUserName] [nvarchar](108) NULL
         ) ON [PRIMARY]
@@ -341,7 +348,7 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         
         ```
         CREATE TABLE [dbo].[Batches](
-        [apBatchedInvoiceId] [nvarchar](144) NOT NULL,
+        [apBatchId] [nvarchar](144) NOT NULL,
         [batchNo] [nvarchar](44) NULL,
         [reference] [nvarchar](80) NULL,
         [batchStatusId] [tinyint] NULL,
@@ -386,10 +393,10 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
 
 ## <span style="color: #F05D30">ODBC Powerpack</span> 
 
- - [ODBC Powerpack Configuration](#odbc-powerpack-configuration)
+ - [ODBC Powerpack configuration](#odbc-powerpack-configuration)
  - [CData ODBC Driver for OData](#ocdata-odbc-driver-for-odata)
 
-### <span style="color: #F05D30">ODBC Powerpack Configuration</span> 
+### <span style="color: #F05D30">ODBC Powerpack configuration</span> 
 With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi OData API and insert it into the MSSQL database. To do it:
 
 1. Download and install [ODBC PowerPack](https://zappysys.com/products/odbc-powerpack/).
@@ -408,7 +415,8 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
     3. From the **OAuth Grant Type** dropdown menu, select the **Password Grant** option.
     4. Enter **Client ID**, **User Name**, and **Password**.
     5. Enter **Access Token URL** (for example, ```api-demo.envi.net/oauth2/token```).
-    6. Select **OK**. ![image](img/Integrators_41.png) 
+    6. Select **OK**. <br> ![image](img/Integrators_41.png) 
+
     
         !!! note
 
@@ -500,7 +508,7 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
     Facilities URL: https://api-demo.envi.net/odata/Facilities
     Vendors URL: https:// api-demo.envi.net/odata/Vendors
     Disputed Matched Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq 'Disputed'
-    Pending Batches URL: https:// api-demo.envi.net/odata/BatchedInvoices?$filter=batchStatus eq 'Pending'
+    Pending Batches URL: https:// api-demo.envi.net/odata/Batches?$filter=batchStatus eq 'Pending'
 
     ```
 
@@ -578,7 +586,7 @@ With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi ODa
                 
         ```
 
-As the result, you’ll see the following page: ![image](img/Integrators_60.png) 
+As a result, you’ll see the following page: ![image](img/Integrators_60.png) 
 
 ### <span style="color: #F05D30">OCData ODBC Driver for OData</span> 
 

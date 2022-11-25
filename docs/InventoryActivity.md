@@ -13,7 +13,7 @@ Returns the paged list of the existing inventory activity. You can filter the re
     This endpoint does not support logical operators ( **gt**, **ge**, **lt**, **le**) for data filtering.
     
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;

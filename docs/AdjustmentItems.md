@@ -6,13 +6,13 @@
 GET /odata/AdjustmentItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns paged list of the existing items within all adjustments. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing items within all adjustments. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note
     
     This endpoint does not support logical operators (**and**, **or**, **in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**from**: string *(date-time)* <br> *in query* | Enter the start date here. |
@@ -24,6 +24,8 @@ Returns paged list of the existing items within all adjustments. You can filter 
 |**$top**: string  <br> *in query* | Returns only the first n results.|
 |**$skip**: string <br> *in query*| Skips the first n results.|
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+
 
 ### <span style="color: #F05D30">Responses</span>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
@@ -59,7 +61,7 @@ Returns paged list of the existing items within all adjustments. You can filter 
 |**inventoryDescription**: string | Description of the Inventory Item |
 |**classificationName**: string | Name of the Category of the Item defined on the Organization level |
 |**vendorName**: string | Name of the Vendor |
-|**vendorItemNo**: string | Code that is used by the vendor for the Item identification |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
 |**quantity**: integer *(int32)* | Quantity specified in the Line Items |
 |**impactQuantity**: integer *(int32)* | Unit that is used for differentiation of the quantity change |
 |**uom**: string | Unit of Measure |
@@ -117,7 +119,7 @@ GET /odata/AdjustmentItems({adjustmentItemId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the adjustment item specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -126,9 +128,8 @@ td, th {
 
 | <div style="width:200px"> Parameter </div> |<div style="width:380px">Explanation</div> |                      
 |-----:|:-------|
-|**addressId**: string (uuid) <br> <span style="color: #F05D30">**required**</span> <br> *in path*| Enter the ID of the address here.|
 |**adjustmentItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*| Enter the ID of the Adjustment Item here.|
-|**api-version**: string 1.0 <br> *in header* | The requested API version. |
+|**api-version**: string default: 1.0 <br> *in header* | The requested API version. |
 |**Authorization**: string <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
 ### <span style="color: #F05D30">Responses</span>
@@ -166,7 +167,7 @@ td, th {
 |**inventoryDescription**: string | Description of the Inventory Item |
 |**classificationName**: string | Name of the Category of the Item defined on the Organization level |
 |**vendorName**: string | Name of the Vendor |
-|**vendorItemNo**: string | Code that is used by the vendor for the Item identification |
+|**vendorItemNo**: string | Code that is used by the Vendor for the Item identification |
 |**quantity**: integer *(int32)* | Quantity specified in the Line Items |
 |**impactQuantity**: integer *(int32)* | Unit that is used for differentiation of the quantity change |
 |**uom**: string | Unit of Measure |

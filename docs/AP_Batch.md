@@ -12,7 +12,7 @@ Returns list of AP batches within a logged organization. You can filter the resu
 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -92,8 +92,8 @@ POST /odata/Batches
 ### <span style="color: #F05D30">Description</span>
 Creates a new AP batch within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
+### <span style="color: #F05D30">Request body</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchNo**: string | Identification Number of the Batch |
 |**reference**: string | Information concerning the Transaction |
@@ -107,7 +107,7 @@ Creates a new AP batch within a logged organization.
     
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
@@ -136,7 +136,7 @@ Returns details of the batch specified by ID.
 
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the batch here. |
@@ -206,7 +206,7 @@ Returns paged list of the existing invoices within a batch specified by ID.
 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -363,7 +363,7 @@ POST /odata/Batches({batchId})/Invoices
 ### <span style="color: #F05D30">Description</span>
 Adds an invoice with the ‘Vouchered’ status to an existed batch within a logged organization. After adding to the batch, an added invoice changes its invoice status to ‘Batched’.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -440,7 +440,7 @@ Adds an invoice with the ‘Vouchered’ status to an existed batch within a log
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
-### <span style="color: #F05D30">Custom Errors</span>
+### <span style="color: #F05D30">Custom errors</span>
 | <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Invoice is NOT in the Vouchered status |
@@ -459,7 +459,7 @@ POST /odata/Batches({batchId})/Export
 ### <span style="color: #F05D30">Description</span>
 Changes batch status to ‘Exported’ when the specified batch has at least one invoice.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -483,7 +483,7 @@ POST /odata/Batches({batchId})/SubmitToQueued
 ### <span style="color: #F05D30">Description</span>
 Submits AP Batch to the 'Queued' status.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Batched Invoice here. |
@@ -499,7 +499,7 @@ Submits AP Batch to the 'Queued' status.
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-### <span style="color: #F05D30">Custom Errors</span>
+### <span style="color: #F05D30">Custom errors</span>
 | <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Specified batch exists in the Queued status. |

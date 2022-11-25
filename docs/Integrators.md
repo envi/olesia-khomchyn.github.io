@@ -243,12 +243,12 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
         [lastUpdated] [datetime2](7) NULL,
         [lastUpdatedBy] [nvarchar](144) NULL,
         [lastUpdatedByName] [nvarchar](88) NULL
-        [memberID] [nvarchar](144) NOT NULL, - ???
-        [capitalTaxExpenseCodeTemplate] [nvarchar](255) NULL, - ???
-        [capitalTaxAccrualCodeTemplate] [nvarchar](255) NULL,  - ???
-        [capitalDiscountCodeTemplate] [nvarchar](84) NULL,  - ???
-        [capitalShippingCodeTemplate] [nvarchar](255) NULL,  - ???
-        [capitalOffsetCodeTemplate] [nvarchar](1020) NULL,  - ???
+        [memberID] [nvarchar](144) NULL, 
+        [capitalTaxExpenseCodeTemplate] [nvarchar](255) NULL,
+        [capitalTaxAccrualCodeTemplate] [nvarchar](255) NULL, 
+        [capitalDiscountCodeTemplate] [nvarchar](255) NULL,  
+        [capitalShippingCodeTemplate] [nvarchar](255) NULL, 
+        [capitalOffsetCodeTemplate] [nvarchar](255) NULL, 
         ) ON [PRIMARY]
         GO
             

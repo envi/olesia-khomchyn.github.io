@@ -7,7 +7,7 @@ GET /odata/InventorySnapshots
 ### <span style="color: #F05D30">Description</span>
 Returns the list of inventory snapshots within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -39,7 +39,7 @@ td, th {
 ### <span style="color: #F05D30">Properties</span>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
-|**inventorySnapshot<br>Id**: string *(uuid)* |  Unique Identifier of the Inventory Snapshot |
+|**inventorySnapshotId**: string *(uuid)* |  Unique Identifier of the Inventory Snapshot |
 |**organizationId**: string *(uuid)* | Unique Identifier of the Organization |
 |**organizationName**: string | Name of the Organization |
 |**snapshotDate**: string *(date-time)* | Date when the Snapshot was created |
@@ -79,10 +79,10 @@ GET /odata/InventorySnapshots({inventorySnapshotId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the inventory snapshot specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**inventorySnapshotId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Snapshot here. |
+|**inventorySnapshotId**: string *(uuid)* <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Snapshot here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version. |     
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
@@ -133,7 +133,7 @@ GET /odata/InventorySnapshots({inventorySnapshotId})/inventorySnapshotItems
 ### <span style="color: #F05D30">Description</span>
 Returns the list of items of the inventory snapshot specified by ID within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventorySnapshotId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Snapshot here. |

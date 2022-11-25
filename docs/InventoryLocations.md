@@ -8,7 +8,7 @@ GET /odata/InventoryLocations
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing inventory locations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -166,10 +166,10 @@ GET /odata/InventoryLocations({inventoryLocationId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the inventory location specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**inventoryLocationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Location here. |
+|**inventoryLocationId**: string *(uuid)* <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Location here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 
@@ -195,7 +195,7 @@ Returns the details of the inventory location specified by ID.
 |**locationName**: string | Name of the Location |
 |**locationNo**: string | Identification Number of the Location |
 |**locationUOM**: string | Unit of Measure of the Location |
-|**locationConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Location's Unit of Measure |
+|**locationConversionFactor**: integer *(int32)* | Number of Stock Keeping Units in another Location's Unit of Measure |
 |**inventoryStockUOM**: string | Unit of Measure to track Inventory Balance |
 |**defaultIssueUOM**: string | Unit Of Measure used when issuing the Inventory Item to a Department or Patient |
 |**defaultIssueConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Unit of Measure when issuing the Inventory Item to a Department or Patient |
@@ -306,15 +306,15 @@ PATCH /odata/InventoryLocations({inventoryLocationId})
 ### <span style="color: #F05D30">Description</span>
 Partially updates the details of the inventory location specified by the Inventory Location ID.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**locationUOM**: string | Unit of Measure of the Location |
-|**locationConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Location's Unit of Measure |
+|**locationConversionFactor**: integer *(int32)* | Number of Stock Keeping Units in another Location's Unit of Measure |
 |**defaultIssueUOM**: string | Unit Of Measure used when issuing the Inventory Item to a Department or Patient |
-|**defaultIssueConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Unit of Measure when issuing the Inventory Item to a Department or Patient |
+|**defaultIssueConversionFactor**: integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure when issuing the Inventory Item to a Department or Patient |
 |**defaultCountUOM**: string | Unit Of Measure used when counting the Inventory Item to a Department or Patient |
-|**defaultCountConversionFactor**: integer <br> *(int32)* | Number of Stock Keeping Units in another Unit of Measure when counting the Inventory Item |
+|**defaultCountConversionFactor**: integer *(int32)* | Number of Stock Keeping Units in another Unit of Measure when counting the Inventory Item |
 |**cost**: number *(double)* | Cost for the Location |
 |**isBillable**: boolean | Is Location Billable or not? |
 |**isTaxable**: boolean | Is Location Taxable or not? |
@@ -359,7 +359,7 @@ Partially updates the details of the inventory location specified by the Invento
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Location here. |
@@ -415,7 +415,7 @@ Returns the paged list of the existing cost layers within inventory location spe
 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryLocationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Location here. |
@@ -484,7 +484,7 @@ GET /odata/InventoryLocations/GetAllFromDate(from={from},facilityId={facilityId}
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the inventory locations changed from the specified date within facility specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |

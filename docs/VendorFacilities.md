@@ -8,6 +8,7 @@ GET/odata/VendorFacilities
 ### <span style="color: #F05D30">Description</span>
 Returns the list of vendor facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
+
 ### <span style="color: #F05D30">Request Parameters</span>
 <style>
 td, th {

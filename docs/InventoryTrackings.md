@@ -8,7 +8,7 @@ GET /odata/InventoryTrackings({inventoryTrackingId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the inventory tracking setting specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -17,7 +17,7 @@ td, th {
 
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**inventoryTrackingId**: <br> string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Tracking here. |
+|**inventoryTrackingId**: string *(uuid)* <span style="color: #F05D30">**required**</span> <br> *in path*  | Enter the ID of the Inventory Tracking here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version. |     
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 

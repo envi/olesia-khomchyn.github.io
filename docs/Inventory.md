@@ -8,7 +8,7 @@ GET /odata/Inventory
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing inventory within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -123,7 +123,7 @@ POST /odata/Inventory
 ### <span style="color: #F05D30">Description</span>
 Creates a new inventory within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Inventory Item|
@@ -197,7 +197,7 @@ Creates a new inventory within a logged organization.
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -227,7 +227,7 @@ GET /odata/Inventory({inventoryId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the inventory specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -325,7 +325,7 @@ PUT /odata/Inventory({inventoryId})
 ### <span style="color: #F05D30">Description</span>
 Fully updates the details of the inventory specified by ID.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item |
@@ -397,7 +397,7 @@ Fully updates the details of the inventory specified by ID.
   "defaultIsBillable": "boolean"
 }           
 ```
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -421,7 +421,7 @@ PATCH /odata/Inventory({inventoryId})
 ### <span style="color: #F05D30">Description</span>
 Partially updates the details of the inventory specified by ID.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item|
@@ -493,7 +493,7 @@ Partially updates the details of the inventory specified by ID.
   "defaultIsBillable": "boolean"
 }
 ```
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -523,7 +523,7 @@ Returns the paged list of the existing future pricing items within inventory spe
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -627,7 +627,7 @@ Returns the paged list of the existing inventory UOMs within inventory specified
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -691,7 +691,7 @@ GET /odata/Inventory({inventoryId})/inventoryLocations
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing inventory locations within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -849,7 +849,7 @@ Returns the paged list of the existing inventory tracking settings within invent
     
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -919,19 +919,19 @@ Returns the paged list of the existing inventory tracking settings within invent
 }
 ```
 
-## Get PO history for the specified inventory
+## Get the PO history for the specified inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/poHistoryItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing Purchase Order history within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing purchase order history within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -994,7 +994,7 @@ GET /odata/Inventory({inventoryId})/inventoryVendors
 Returns the paged list of the existing inventory vendors within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1113,7 +1113,7 @@ Returns the details of the inventory tracking values within inventory, facility,
 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1202,7 +1202,7 @@ GET /odata/Inventory({inventoryId})/inventoryLocationsCostAndQuantity
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing inventory locations cost and quantity within inventory specified by Id. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here.|
@@ -1277,7 +1277,7 @@ GET /odata/Inventory/GetAllFromDate(from={from},facilityId={facilityId},syncFlag
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the inventory items changed from the specified date within a facility specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |
@@ -1385,7 +1385,7 @@ POST /odata/Inventory({inventoryId})/InventoryVendor
 ### <span style="color: #F05D30">Description</span>
 Creates a new inventory vendor within a logged organization and specified Inventory.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
@@ -1423,7 +1423,7 @@ Creates a new inventory vendor within a logged organization and specified Invent
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1451,7 +1451,7 @@ POST /odata/Inventory({inventoryId})/ManagePurchasing
 ### <span style="color: #F05D30">Description</span>
 Manages purchasing option for the inventory location specified by inventory ID.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**disablePurchasing**: boolean | Disable Purchasing for the Inventory Item or not? |
@@ -1466,7 +1466,7 @@ Manages purchasing option for the inventory location specified by inventory ID.
 }
 
 ```
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |
@@ -1489,9 +1489,9 @@ Manages purchasing option for the inventory location specified by inventory ID.
 POST /odata/Inventory({inventoryId})/InventoryLocation
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new Inventory Location within a logged organization and specified Inventory.
+Creates a new inventory location within a logged organization and specified inventory.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Location |
@@ -1544,7 +1544,7 @@ Creates a new Inventory Location within a logged organization and specified Inve
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
 |**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory here. |

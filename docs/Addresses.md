@@ -6,9 +6,9 @@
 GET /odata/Addresses
 
 ### <span style="color: #F05D30">Description</span>
-Returns paged list of the existing addresses within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing addresses within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -76,7 +76,7 @@ td, th {
 {
   "items": [
     {
-     "addressId": "00000000-0000-0000-0000-000000000000",
+      "addressId": "00000000-0000-0000-0000-000000000000",
       "organizationId": "00000000-0000-0000-0000-000000000000",
       "organizationNo": "string",
       "organizationName": "string",
@@ -122,7 +122,7 @@ GET /odata/Addresses({addressId})
 ### <span style="color: #F05D30">Description</span>
 Returns details of the address specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px"> Parameter </div> |<div style="width:380px">Explanation</div> |                      
 |-----:|:-------|
 |**addressId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path*| Enter the ID of the address here.|

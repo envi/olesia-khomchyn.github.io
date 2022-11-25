@@ -11,7 +11,7 @@ Returns the paged list of the existing cost history records within inventory ven
 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -89,7 +89,7 @@ Returns the paged list of the existing purchasing units within inventory vendor 
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Vendor here.|
@@ -170,7 +170,7 @@ GET /odata/InventoryVendors
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the all existing inventory vendors. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -284,7 +284,7 @@ GET /odata/InventoryVendors({inventoryVendorId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the inventory vendor specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Vendor here.|
@@ -388,7 +388,7 @@ PATCH /odata/InventoryVendors({inventoryVendorId})
 ### <span style="color: #F05D30">Description</span>
 Partially updates the details of the inventory vendor specified by InventoryVendorId.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
@@ -404,7 +404,7 @@ Partially updates the details of the inventory vendor specified by InventoryVend
 |**vendorUOM**: string | Vendor's Unit of Measure |
 |**vendorConversionFactor**: <br> integer *(int32)* | Number of Stock Keeping Units in another Vendor's Unit of Measure |
 |**vendorCost**: number *(double)* | Item Cost of the Vendor |
-|**vendorPriority**: integer *(int32)* | Priority of the Vendor <br> <br> **Note**: Inventory Vendor that had the priority equal or less than specified value is moved down for one step. <br> <br> In case ```vendorPriority``` in the Request Body contains a value larger than quantity of Inventory Vendors for a specific facility, then the Inventory Vendor priority is changed to the lowest priority for an appropriate facility. <br> <br> In case a specified Inventory Vendor has the Inactive status, then the Inventory Vendor priority is changed only within inactive Inventory Vendors.
+|**vendorPriority**: integer *(int32)* | Priority of the Vendor <br> <br> **Note**: Inventory Vendor that had the priority equal or less than specified value is moved down for one step. <br> <br> In case ```vendorPriority``` in the Request body contains a value larger than quantity of Inventory Vendors for a specific facility, then the Inventory Vendor priority is changed to the lowest priority for an appropriate facility. <br> <br> In case a specified Inventory Vendor has the Inactive status, then the Inventory Vendor priority is changed only within inactive Inventory Vendors.
 |**contractNo**: string | Number of the Contract |
 |**contractExpDate**: string *(date-time)* | Expiration Date of the Contract |
 |**manufacturerItemNo**: string | Item Number of the Manufacturer |
@@ -467,7 +467,7 @@ Partially updates the details of the inventory vendor specified by InventoryVend
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Inventory Vendor here. |
@@ -483,7 +483,7 @@ Partially updates the details of the inventory vendor specified by InventoryVend
 |**403 Forbidden**| User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-### <span style="color: #F05D30">Custom Errors</span>
+### <span style="color: #F05D30">Custom errors</span>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**403 Forbidden** | User without the Update Locked Cost privilege sends the request with a valid ```vendorCost``` for Inventory Vendor that has Lock Cost.|
@@ -551,7 +551,7 @@ vendorConversionFactor and vendorUOM should be specified simultaneously.
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | User specifies Facility that belongs to another Inventory Group in the Request Body.|
+|**400 Bad Request** | User specifies Facility that belongs to another Inventory Group in the Request body.|
 
 ``` json title="Response Example"
 Inventory and specified Facility belong to different inventory groups.
@@ -575,7 +575,7 @@ Returns the paged list of the existing inventory vendors changed from the specif
 
 The empty GUID ```00000000-0000-0000-0000-000000000000``` is taken into account for inventory vendor with the Master facility retrieving. After sending the GET request ```{{url}}/odata/InventoryVendors/GetAllFromDate(from={{from}},facilityId=00000000-0000-0000-0000-000000000000,syncFlag={{syncFlag}})```, the response contains the list of all active inventory vendors for the Master facility.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**from**: string *(date-time)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the Start Date here. |

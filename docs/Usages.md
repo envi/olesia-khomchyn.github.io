@@ -8,7 +8,7 @@ POST /odata/Usages/BulkAdd
 ### <span style="color: #F05D30">Description</span>
 Creates new usages within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 For usage(s) creation
 
 <style>
@@ -65,7 +65,7 @@ td, th {
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
@@ -93,7 +93,7 @@ POST /odata/Usages/BulkSubmit
 ### <span style="color: #F05D30">Description</span>
 Submits usages within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 For usage(s) submition
 
 |  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
@@ -122,7 +122,7 @@ For usage(s) submition
  ]
 }
 ```
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
@@ -144,7 +144,7 @@ For usage(s) submition
 "object"
 
 ```
-### <span style="color: #F05D30">Custom Errors</span>
+### <span style="color: #F05D30">Custom errors</span>
 | <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | There is at least one Line Item with the Quantity "0" (zero) on the Line Items tab.|

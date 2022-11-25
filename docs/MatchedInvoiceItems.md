@@ -13,7 +13,7 @@ Returns the paged list of the existing matched invoice items within a logged org
     This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -129,7 +129,7 @@ GET /odata/MatchedInvoiceItems({matchedInvoiceItemId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the matched invoice item specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**matchedInvoiceItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Matched Invoice Item here. |

@@ -8,7 +8,7 @@ GET /odata/PurchasingUnits({inventoryVendorPurchasingUnitId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the purchasing unit specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;

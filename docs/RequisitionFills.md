@@ -9,7 +9,7 @@ GET /odata/RequisitionFills
 Returns the list of requisition fills within a logged organization.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -93,7 +93,7 @@ GET /odata/RequisitionFills({requisitionFillId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the requisition fill specified by ID within a logged organization.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionFillId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition Fill here. |

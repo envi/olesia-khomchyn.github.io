@@ -13,7 +13,7 @@ Returns the paged list of existing items within all usages. You can filter the r
     This endpoint does not support logical operators (**and**, **or**, **in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -148,7 +148,7 @@ POST /odata/UsageItems/BulkAdd
 ### <span style="color: #F05D30">Description</span>
 Adds new items to existing usages within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the Usage. <br> **If not provided**: 400 Bad Request. |
@@ -203,7 +203,7 @@ Adds new items to existing usages within a logged organization.
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   

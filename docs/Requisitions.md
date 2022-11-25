@@ -8,7 +8,7 @@ GET /odata/Requisitions
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of existing requisitions. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -217,7 +217,7 @@ POST /odata/Requisitions
 ### <span style="color: #F05D30">Description</span>
 Creates a new standard requisition within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Facility |
@@ -234,7 +234,7 @@ Creates a new standard requisition within a logged organization.
 }   
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
@@ -243,7 +243,8 @@ Creates a new standard requisition within a logged organization.
 
 ### <span style="color: #F05D30">Responses</span>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
-|-----:|:-------|   
+|-----:|:-------| 
+|**200 OK** | OK |
 |**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
 |**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**| User doesn’t have appropriate privileges.|
@@ -260,9 +261,9 @@ Creates a new standard requisition within a logged organization.
 GET /odata/Requisitions({requisitionId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the Requisition specified by ID.
+Returns the details of the requisition specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
@@ -454,7 +455,7 @@ PATCH /odata/Requisitions({requisitionId})
 ### <span style="color: #F05D30">Description</span>
 Partially updates the requisition specified by the requisition ID (applicable only for the **Standart** requisition type).
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
 |-----:|:-------|
 |**reference**: string | Information concerning the Transaction |
@@ -533,7 +534,7 @@ Partially updates the requisition specified by the requisition ID (applicable on
 } 
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
@@ -560,7 +561,7 @@ POST /odata/Requisitions({requisitionId})/Submit
 Changes the requisition status to ‘Open’ if the specified requisition has at least one line item.
 
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
@@ -587,7 +588,7 @@ POST /odata/Requisitions({requisitionId})/Cancel
 ### <span style="color: #F05D30">Description</span>
 Cancels the requisition specified by the requisition ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |

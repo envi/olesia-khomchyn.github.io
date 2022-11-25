@@ -8,7 +8,7 @@ GET /odata/RequisitionItems
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of existing requisition items.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -134,7 +134,7 @@ GET /odata/RequisitionItems({requisitionItemId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the requisition item specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition Item here. |
@@ -243,7 +243,7 @@ POST odata/Requisitions({requisitionID})/RequisitionItems
 ### <span style="color: #F05D30">Description</span>
 Adds a new requisition line item within a logged organization and the specified requisition (applicable only for the **Standart** requisition type).
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 For adding item(s) to requisition(s)
 
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
@@ -282,7 +282,7 @@ For adding item(s) to requisition(s)
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition here. |
@@ -401,7 +401,7 @@ For Free-Form Item:
 }
 ```  
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Requisition Item here. |

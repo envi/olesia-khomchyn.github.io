@@ -8,7 +8,7 @@ GET /odata/PurchaseOrderItems
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing purchase order items within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -177,12 +177,13 @@ GET /odata/PurchaseOrderItems({purchaseOrderItemId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the purchase order item specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
-|**poConfirmationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Purchase Order Item here. |
+|**purchaseOrderItemId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Purchase Order Item here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
+
 
 ### <span style="color: #F05D30">Responses</span>
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      

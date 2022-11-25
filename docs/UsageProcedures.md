@@ -8,7 +8,7 @@ POST /odata/UsageProcedures/BulkAdd
 ### <span style="color: #F05D30">Description</span>
 Adds new procedures to existing usages within a logged organization.
 
-### <span style="color: #F05D30">Request Body</span>
+### <span style="color: #F05D30">Request body</span>
 For adding procedure(s) to usage(s)
 
 <style>
@@ -29,7 +29,7 @@ td, th {
 }
 ```
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   

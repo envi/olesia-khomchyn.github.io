@@ -8,7 +8,7 @@ GET /odata/Manufacturers
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of manufacturers. Contains link to the next page and information about overall entities count in the database. Supports Query options.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -86,7 +86,7 @@ GET /odata/Manufacturers({manufacturerId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the manufacturer specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**manufacturerId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Manufacturer here.|

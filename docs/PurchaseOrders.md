@@ -8,7 +8,7 @@ GET /odata/PurchaseOrders
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing purchase orders within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {
    border: none!important;
@@ -223,7 +223,7 @@ GET /odata/PurchaseOrders({purchaseOrderId})
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the purchase order specified by ID.
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**purchaseOrderId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Purchase Order here. |
@@ -423,7 +423,7 @@ GET /odata/PurchaseOrders({purchaseOrderId})/purchaseOrderItems
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing purchase order items within purchase order specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-### <span style="color: #F05D30">Request Parameters</span>
+### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**purchaseOrderId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Purchase Order here. |
@@ -513,7 +513,6 @@ Returns the paged list of the existing purchase order items within purchase orde
 {
   "items": [
     {
-      "purchaseOrderId": "00000000-0000-0000-0000-000000000000",
       "purchaseOrderItemId": "00000000-0000-0000-0000-000000000000",
       "purchaseOrderNo": "string",
       "sequenceNo": "integer (int32)",

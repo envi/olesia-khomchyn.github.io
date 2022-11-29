@@ -6,7 +6,10 @@
 GET /odata/Addresses
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing addresses within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Addresses within a logged Organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+
+### <span style="color: #F05D30">Description</span>
+Returns the paged list of the existing Addresses within a logged Organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -37,7 +40,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:460px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:470px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|
@@ -141,7 +144,7 @@ Returns details of the address specified by ID.
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:460px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:470px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|

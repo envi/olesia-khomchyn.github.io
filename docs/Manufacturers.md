@@ -78,6 +78,72 @@ td, th {
 }
 ```
 
+
+## Create a new manufacturer
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Manufacturers
+
+### <span style="color: #F05D30">Description</span>
+Creates a new manufacturer within a logged organization.
+
+### <span style="color: #F05D30">Request body</span>
+If **Auto ID** is configured for a manufacturer, then ```manufacturerNo``` is optional.
+
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**manufacturerNo**: string   | Number of the Manufacturer |
+|**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span> | Name of the Manufacturer |
+
+
+If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` and ```manufacturerName``` are required.
+
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**manufacturerNo**: string <br> <span style="color: #F05D30">**required**</span> | Number of the Manufacturer |
+|**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span>  | Name of the Manufacturer |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+  "manufacturerNo": "string",
+  "manufacturerName": "string",
+}
+```
+!!! note 
+
+    The request with ```externalMfgNo``` could be sent only by System users.
+
+
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+|-----:|:-------|
+|**manufacturerNo**: string <br> <span style="color: #F05D30">**required**</span> | Number of the Manufacturer |
+|**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span>  | Name of the Manufacturer |
+|**externalMfgNo**: string | External Manufacturer Number |
+
+
+### <span style="color: #F05D30">Request parameters</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|   
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+"00000000-0000-0000-0000-000000000000"
+
+```
+
+
+
 ## Get the specified manufacturer
 
 ### <span style="color: #F05D30">Path</span>

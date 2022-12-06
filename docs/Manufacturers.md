@@ -114,7 +114,7 @@ If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` a
     The request with ```externalMfgNo``` could be sent only by System users.
 
 
-| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**manufacturerNo**: string <br> <span style="color: #F05D30">**required**</span> | Number of the Manufacturer |
 |**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span>  | Name of the Manufacturer |

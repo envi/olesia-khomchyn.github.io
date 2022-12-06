@@ -90,7 +90,7 @@ Creates a new manufacturer within a logged organization.
 ### <span style="color: #F05D30">Request body</span>
 If **Auto ID** is configured for a manufacturer, then ```manufacturerNo``` is optional.
 
-| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**manufacturerNo**: string   | Number of the Manufacturer |
 |**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span> | Name of the Manufacturer |
@@ -98,7 +98,7 @@ If **Auto ID** is configured for a manufacturer, then ```manufacturerNo``` is op
 
 If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` and ```manufacturerName``` are required.
 
-| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**manufacturerNo**: string <br> <span style="color: #F05D30">**required**</span> | Number of the Manufacturer |
 |**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span>  | Name of the Manufacturer |
@@ -141,8 +141,6 @@ If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` a
 "00000000-0000-0000-0000-000000000000"
 
 ```
-
-
 
 ## Get the specified manufacturer
 

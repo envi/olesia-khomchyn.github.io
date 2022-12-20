@@ -19,6 +19,8 @@ td, th {
 
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
+|**includeInactiveVendors** <br> boolean default: false <br> *in query* | Include inactive Vendors. |
+|**includeInactiveFacilities** <br> boolean default: false <br> *in query* | Include inactive Facilities. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 
 |**$filter**: string <br> *in query* | Restricts the set of items returned. The maximum number of expressions is 100. | 
 |**$orderby**: string <br> *in query* | Specifies the order in which items are returned. The maximum number of expressions is 5. | 
@@ -118,10 +120,11 @@ Returns the details of the vendor email configuration specified by ID within a l
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
+|**includeInactiveVendors** <br> boolean default: false <br> *in query* | Include inactive Vendors. |
+|**includeInactiveFacilities** <br> boolean default: false <br> *in query* | Include inactive Facilities. |
 |**vendorEmailId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Vendor Email Configuration here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version. |   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
-
 
 
 ### <span style="color: #F05D30">Responses</span>

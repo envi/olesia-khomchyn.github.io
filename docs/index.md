@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.7.8</span>
+
+[Vendor Addresses](VendorAddresses.md), [Vendor Contacts](VendorContacts.md), and [Vendor Email Configurations](VendorEmailConfigurations.md) support now the ```includeInactiveVendors``` and ```includeInactiveFacilities``` optional parameters.
+
 <span style="color: #E0592A">V. 5.7.7</span>
 
 Create a new Manufacturer within a logged organization by using a new [endpoint](Manufacturers.md#create-a-new-manufacturer).
@@ -30,9 +34,9 @@ New [Vendor Facilities](VendorFacilities.md) endpoints have been implemented. Yo
 The following endpoints have been added to Envi Developer Resources:
 
  - [Requisition Fill Items](RequisitionFillItems.md)
- - [Vendor Addresses](VendorAddresses.md#)
- - [Vendor Contacts](VendorContacts.md#)
- - [Vendor Email Configurations](VendorEmailConfigurations.md#)
+ - [Vendor Addresses](VendorAddresses.md)
+ - [Vendor Contacts](VendorContacts.md)
+ - [Vendor Email Configurations](VendorEmailConfigurations.md)
  
 [Manufacturers](Manufacturers.md#get-the-list-of-manufacturers) endpoint supports now the and, or, in, gt, ge, lt, le [logical operators](Options_and_Limitations.md#logical-operators).
 

@@ -301,6 +301,7 @@ The **in** operator is supported in the following lists:
  - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
  - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendor Facilities](VendorFacilities.md#get-the-list-of-vendor-facilities)
+ - [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 
@@ -339,6 +340,7 @@ The **gt** operator is supported in the following lists:
  - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
  - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendor Facilities](VendorFacilities.md#get-the-list-of-vendor-facilities)
+ - [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 #### <span style="color: #F05D30">ge</span>
@@ -375,6 +377,7 @@ The **ge** operator is supported in the following lists:
  - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
  - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendor Facilities](VendorFacilities.md#get-the-list-of-vendor-facilities)
+ - [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 #### <span style="color: #F05D30">lt</span>
@@ -410,6 +413,7 @@ The **lt** operator is supported in the following lists:
  - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
  - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendor Facilities](VendorFacilities.md#get-the-list-of-vendor-facilities)
+ - [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 #### <span style="color: #F05D30">le</span>
@@ -446,6 +450,7 @@ The **le** operator is supported in the following lists:
  - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
  - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
  - [Vendor Facilities](VendorFacilities.md#get-the-list-of-vendor-facilities)
+ - [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations)
  - [Vendors](Vendors.md#get-the-list-of-vendors)
 
 

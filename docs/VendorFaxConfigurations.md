@@ -1,12 +1,12 @@
-# VendorEmailConfigurations
+# VendorFaxConfigurations
 
-## Get the list of vendor email configurations
+## Get the list of vendor fax configurations 
 
 ### <span style="color: #F05D30">Path</span>
-GET /odata/VendorEmailConfigurations
+GET/odata/VendorFaxConfigurations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of vendor email configurations within a logged organizations. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list with active/inactive fax configurations of active vendors related to active facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -44,63 +44,49 @@ td, th {
 ### <span style="color: #F05D30">Properties</span>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
-|**vendorEmailId**: string *(uuid)* | Unique Identifier of the Vendor Email |
-|**emailDescription**: string | Description of the Vendor Email |
+|**vendorFaxId**: string *(uuid)* | Unique Identifier of the Vendor Fax |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
 |**vendorName**: string | Name of the Vendor |
 |**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
 |**facilityNo**: string | Identification Number of the Facility |
 |**facilityName**: string | Name of the Facility |
-|**emailName**: string | Name of the Vendor Email |
-|**emailAddress**: string | Address of the Vendor Email |
-|**emailCC**: string | Carbon Copy of the Vendor Email |
-|**emailBCC**: string | Blind Carbon Copy of the Vendor Email |
-|**emailBody**: string | Body of the Vendor Email |
-|**replyToTypeId**: string | Reply To Type Identifier |
-|**replyToType**: string | Type of the Reply To |
-|**replyToAddress**: string | Address of the Reply To |
-|**requestReadReceipt**: boolean | Request a read Receipt |
-|**activeStatus**: boolean | Is the Status of the Vendor Email active or not? |
-|**dateAdded**: string *(date-time)* | Date when the Vendor Email was added |
-|**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Email |
-|**addedByName**: string | Name of the user who added the Vendor Email |
-|**lastUpdated**: string *(date-time)* | Last Date when the Vendor Email was updated |
-|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Vendor Email |
-|**lastUpdatedByName**: string | Name of the last user who updated the Vendor Email |
-|**confirmOrders**: boolean | Orders Confirmation Email |
-|**doNotIncludeContactInfo**: boolean | Do Not Include Contact Info |
+|**faxDescription**: string | Description of the Vendor Fax |
+|**csid**: string | Called Subscriber Identification |
+|**faxNumber**: string | Number of the Fax |
+|**useCoverPage**: boolean | **Use Cover Page or not?**|
+|**coverPageBody**: string | **Body Cover Page** |
+|**activeStatus**: boolean | Is the Status of the Vendor Fax active or not? |
+|**dateAdded**: string *(date-time)* | Date when the Vendor Fax was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Fax |
+|**addedByName**: string | Name of the user who added the Vendor Fax |
+|**lastUpdated**: string *(date-time)* | Last Date when the Vendor Fax was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Vendor Fax |
+|**lastUpdatedByName**: string | Name of the last user who updated the Vendor Fax |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
   "items": [
     {
-      "vendorEmailId": "00000000-0000-0000-0000-000000000000",
-      "emailDescription": "string",
+      "vendorFaxId": "00000000-0000-0000-0000-000000000000",
       "vendorId": "00000000-0000-0000-0000-000000000000",
       "vendorNo": "string",
       "vendorName": "string",
       "facilityId": "00000000-0000-0000-0000-000000000000",
       "facilityNo": "string",
       "facilityName": "string",
-      "emailName": "string",
-      "emailAddress": "string",
-      "emailCC": "string",
-      "emailBCC": "string",
-      "emailBody": "string",
-      "replyToTypeId": "string",
-      "replyToType": "string",
-      "replyToAddress": "string",
-      "requestReadReceipt": "boolean",
+      "faxDescription": "string",
+      "csid": "string",
+      "faxNumber": "string",
+      "useCoverPage": "boolean",
+      "coverPageBody": "string",
       "activeStatus": "boolean",
       "dateAdded": "string (date-time)",
       "addedBy": "00000000-0000-0000-0000-000000000000",
-      "addeddByName": "string",
+      "addedByName": "string",
       "lastUpdated": "string (date-time)",
       "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-      "lastUpdatedByName": "string",
-      "confirmOrders": "boolean",
-      "doNotIncludeContactInfo": "boolean"
+      "lastUpdatedByName": "string"
       }
   ],
   "nextPageLink": "string",
@@ -109,20 +95,20 @@ td, th {
 ```
 
 
-## Get the specified vendor email configuration
+## Get the specified vendor fax configuration
 
 ### <span style="color: #F05D30">Path</span>
-GET odata/VendorEmailConfigurations({VendorEmailId})
+GET/odata/VendorFaxConfigurations(<VendorFaxConfigurationId>)
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor email configuration specified by ID within a logged organization.
+Returns the details of active/inactive, specified by ID Vendor Fax Configuration with active vendors related to active facilities within a logged organization.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**includeInactiveVendors** <br> boolean default: false <br> *in query* | Include inactive Vendors. |
 |**includeInactiveFacilities** <br> boolean default: false <br> *in query* | Include inactive Facilities. |
-|**vendorEmailId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Vendor Email Configuration here. |
+|**vendorFaxConfigurationId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Vendor Fax Configuration here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version. |   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
@@ -141,61 +127,47 @@ Returns the details of the vendor email configuration specified by ID within a l
 ### <span style="color: #F05D30">Properties</span>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
-|**vendorEmailId**: string *(uuid)* | Unique Identifier of the Vendor Email |
-|**emailDescription**: string | Description of the Vendor Email |
+|**vendorFaxId**: string *(uuid)* | Unique Identifier of the Vendor Fax |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
 |**vendorName**: string | Name of the Vendor |
 |**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
 |**facilityNo**: string | Identification Number of the Facility |
 |**facilityName**: string | Name of the Facility |
-|**emailName**: string | Name of the Vendor Email |
-|**emailAddress**: string | Address of the Vendor Email |
-|**emailCC**: string | Carbon Copy of the Vendor Email |
-|**emailBCC**: string | Blind Carbon Copy of the Vendor Email |
-|**emailBody**: string | Body of the Vendor Email |
-|**replyToTypeId**: string | Reply To Type Identifier |
-|**replyToType**: string | Type of the Reply To |
-|**replyToAddress**: string | Address of the Reply To |
-|**requestReadReceipt**: boolean | Request a read Receipt |
-|**activeStatus**: boolean | Is the Status of the Vendor Email active or not? |
-|**dateAdded**: string *(date-time)* | Date when the Vendor Email was added |
-|**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Email |
-|**addedByName**: string | Name of the user who added the Vendor Email |
-|**lastUpdated**: string *(date-time)* | Last Date when the Vendor Email was updated |
-|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Vendor Email |
-|**lastUpdatedByName**: string | Name of the last user who updated the Vendor Email |
-|**confirmOrders**: boolean | Orders Confirmation Email |
-|**doNotIncludeContactInfo**: boolean | Do Not Include Contact Info |
+|**faxDescription**: string | Description of the Vendor Fax |
+|**csid**: string | Called Subscriber Identification |
+|**faxNumber**: string | Number of the Fax |
+|**useCoverPage**: boolean | **Use Cover Page or not?**|
+|**coverPageBody**: string | **Body Cover Page** |
+|**activeStatus**: boolean | Is the Status of the Vendor Fax active or not? |
+|**dateAdded**: string *(date-time)* | Date when the Vendor Fax was added |
+|**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Fax |
+|**addedByName**: string | Name of the user who added the Vendor Fax |
+|**lastUpdated**: string *(date-time)* | Last Date when the Vendor Fax was updated |
+|**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Vendor Fax |
+|**lastUpdatedByName**: string | Name of the last user who updated the Vendor Fax |
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
-  "vendorEmailId": "00000000-0000-0000-0000-000000000000",
-  "emailDescription": "string",
+  "vendorFaxId": "00000000-0000-0000-0000-000000000000",
   "vendorId": "00000000-0000-0000-0000-000000000000",
   "vendorNo": "string",
   "vendorName": "string",
   "facilityId": "00000000-0000-0000-0000-000000000000",
   "facilityNo": "string",
   "facilityName": "string",
-  "emailName": "string",
-  "emailAddress": "string",
-  "emailCC": "string",
-  "emailBCC": "string",
-  "emailBody": "string",
-  "replyToTypeId": "string",
-  "replyToType": "string",
-  "replyToAddress": "string",
-  "requestReadReceipt": "boolean",
+  "faxDescription": "string",
+  "csid": "string",
+  "faxNumber": "string",
+  "useCoverPage": "boolean",
+  "coverPageBody": "string",
   "activeStatus": "boolean",
   "dateAdded": "string (date-time)",
   "addedBy": "00000000-0000-0000-0000-000000000000",
-  "addeddByName": "string",
+  "addedByName": "string",
   "lastUpdated": "string (date-time)",
   "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-  "lastUpdatedByName": "string",
-  "confirmOrders": "boolean",
-  "doNotIncludeContactInfo": "boolean"
+  "lastUpdatedByName": "string"
 }
 ```

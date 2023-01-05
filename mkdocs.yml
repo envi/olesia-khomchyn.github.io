@@ -56,6 +56,7 @@ nav:
     - VendorContracts: VendorContacts.md
     - VendorEmailConfigurations: VendorEmailConfigurations.md
     - VendorFacilities: VendorFacilities.md
+    - VendorFaxConfigurations: VendorFaxConfigurations.md
     - Vendors: Vendors.md
    
   

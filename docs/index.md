@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.7.9</span>
+
+We have added two new [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations) endpoints. You can retrieve appropriate data to get the Vendor Fax Delivery info of Purchase Order.
+
 <span style="color: #E0592A">V. 5.7.8</span>
 
 [Vendor Addresses](VendorAddresses.md), [Vendor Contacts](VendorContacts.md), and [Vendor Email Configurations](VendorEmailConfigurations.md) support now the ```includeInactiveVendors``` and ```includeInactiveFacilities``` optional parameters.

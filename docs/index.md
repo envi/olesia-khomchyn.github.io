@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.8.0</span>
+
+The Batch Size is available within Envi, so now you have the possibility to customize the batch size for each Webhook Subscription.
+
 <span style="color: #E0592A">V. 5.7.9</span>
 
 We have added two new [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations) endpoints. You can retrieve appropriate data to get the Vendor Fax Delivery info of Purchase Order.
@@ -98,7 +102,7 @@ You can now create a new Inventory Location specified by ID using the [Inventory
 
 <span style="color: #E0592A">V. 5.3.6</span>
 
-[Inventory Vendor](InventoryVendors.md#get-the-list-of-all-inventory-vendors) endpoints support the in, gt, ge, lt, le [logical operators](Options_and_Limitations.md#logical-operators).
+[Inventory Vendors](InventoryVendors.md#get-the-list-of-all-inventory-vendors) endpoints support the in, gt, ge, lt, le [logical operators](Options_and_Limitations.md#logical-operators).
 
 <span style="color: #E0592A">V. 5.3.5</span>
 

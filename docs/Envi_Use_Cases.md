@@ -388,6 +388,7 @@ HTTP Depletion interface is used for processing multiple usages. The interface c
  - [Create usage items](#create-usage-items) ```/odata/UsageItems/BulkAdd```
  - [Create procedures](#create-procedures) ```/odata/UsageProcedures/BulkAdd```
  - [Submit usages](#submit-usages) ```/odata/Usages/BulkSubmit```
+
 The need for the Usage Procedure insertion depends on your Facility options. Use the POST method to perform these requests.
 
 ### <span style="color: #F05D30">Create usages</span> 

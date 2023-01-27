@@ -98,6 +98,60 @@ td, th {
 }
 ```
 
+## Create a new vendor address
+
+### <span style="color: #F05D30">Path</span>
+POST /odata/Vendors({VendorId})/VendorAddresses
+
+### <span style="color: #F05D30">Description</span>
+Creates a new vendor address within a logged organization and a specified vendor only for active vendors and active facilities.
+
+### <span style="color: #F05D30">Request body</span>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**description**: string <br> <span style="color: #F05D30">**required**</span> | Description of the Vendor Address |
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
+|**address**: string <br> <span style="color: #F05D30">**required**</span> | The first Address for shipping or billing purposes |
+|**address2**: string | The second Address for shipping or billing purposes |
+|**city**: string <br> <span style="color: #F05D30">**required**</span> | City |
+|**state**: string <br> <span style="color: #F05D30">**required**</span> | State |
+|**zip**: string <br> <span style="color: #F05D30">**required**</span>| Zip |
+|**country**: string | Country |
+|**url**: string | URL |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+  "description": "string",
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "address": "string",
+  "address2": "string",
+  "city": "string",
+  "state": "string",
+  "zip": "string",
+  "country": "string",
+  "url": "string"
+}
+```
+
+### <span style="color: #F05D30">Request parameters</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|   
+|**400 Bad Request**| Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**| Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**| User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+"00000000-0000-0000-0000-000000000000"
+
+```
 
 ## Get the specified vendor asddress
 

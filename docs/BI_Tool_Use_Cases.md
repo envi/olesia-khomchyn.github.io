@@ -83,12 +83,12 @@ You can connect **Power BI** with the [ODBC driver](Integrators.md#odbc-powerpac
     
     !!! note
 
-        To specify the custom endpoint, use a query with additional parameters. For this, select **Advanced Options** on the **Get Data from ODBC** dialog box, and then specify your query with the **Src** option. 
+        To specify the custom endpoint, use a query with additional parameters. For this, select **Advanced Options** on the **Get Data from ODBC** dialog box, and then specify your query with the **Src** option. <br>![image](img/ODBC_Driver_4.png)
 
  4. When the data is downloaded, in the **Navigator** dialog box, expand the **DATA** folder, select value, and then click **Load**. ![image](img/ODBC_Driver_5.png)
 The **Load** dialog box with uploading progress appears. ![image](img/ODBC_Driver_6.png)
  5. Once the data is uploaded, a dataset and a list of all available columns are shown. ![image](img/ODBC_Driver_7.png)
- 6. To refresh the date, select the **Refresh** icon. ![image](img/ODBC_Driver_7.png)
+ 6. To refresh the date, select the **Refresh** icon. ![image](img/ODBC_Driver_8.png)
 
 The integration with **Power BI** is finished. You can use retrieved data easily for your further needs.
 

@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.8.1</span>
+
+You can now use a new [Vendor Address](VendorAddresses.md#create-a-new-vendor-address) endpoint to create a new Vendor Address within a logged organization.
+
 <span style="color: #E0592A">V. 5.8.0</span>
 
 The Batch Size is available within Envi, so now you have the possibility to customize the batch size for each Webhook Subscription.

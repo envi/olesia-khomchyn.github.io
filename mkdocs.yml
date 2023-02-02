@@ -53,7 +53,7 @@ nav:
     - UsageProcedures: UsageProcedures.md
     - Usages: Usages.md
     - VendorAddresses: VendorAddresses.md
-    - VendorContracts: VendorContacts.md
+    - VendorContacts: VendorContacts.md
     - VendorEmailConfigurations: VendorEmailConfigurations.md
     - VendorFacilities: VendorFacilities.md
     - VendorFaxConfigurations: VendorFaxConfigurations.md

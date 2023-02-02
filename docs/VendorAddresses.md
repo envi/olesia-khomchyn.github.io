@@ -107,7 +107,7 @@ POST /odata/Vendors({VendorId})/VendorAddresses
 Creates a new vendor address within a logged organization and a specified vendor only for active vendors and active facilities.
 
 ### <span style="color: #F05D30">Request body</span>
-| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
 |**description**: string <br> <span style="color: #F05D30">**required**</span> | Description of the Vendor Address |
 |**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |

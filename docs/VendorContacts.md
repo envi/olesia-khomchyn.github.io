@@ -98,6 +98,61 @@ td, th {
 ```
 
 
+
+## Create a new vendor contact
+
+### <span style="color: #F05D30">Path</span>
+POST /OData/Vendors({VendorId})/VendorContacts
+
+### <span style="color: #F05D30">Description</span>
+Creates a new vendor contact within a logged organization and a specified vendor only for active vendors and active facilities.
+
+### <span style="color: #F05D30">Request body</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|-----:|:-------|
+|**contactName**: string <br> <span style="color: #F05D30">**required**</span> | Name of the main contact point |
+|**title**: string <br> <span style="color: #F05D30">**required**</span>| Title |
+|**emailAddress**: string | Email Address of the main contact point |
+|**phone**: string | Phone of the main contact point |
+|**phoneExt**: string | Phone Extension of the main contact point |
+|**fax**: string | Fax |
+|**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
+|**isDefault**: boolean | Is the Vendor Contact default or not? <br> If ```isDefault=true```, then other contacts for this particular Facility (including Master) with ```isDefault=true``` should be updated to false.|
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
+{
+  "contactName": "string",
+  "title ": "string",
+  "emailAddress ": "string",
+  "phone ": "string",
+  "phoneExt ": "string",
+  "fax": "string",
+  "facilityId ": "00000000-0000-0000-0000-000000000000",
+  "isDefault ": "boolean"
+}
+    
+```
+
+### <span style="color: #F05D30">Request parameters</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**vendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Vendor here. |
+|**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK** | OK |    
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+"00000000-0000-0000-0000-000000000000"
+```
+
 ## Get the specified vendor contact
 
 ### <span style="color: #F05D30">Path</span>
@@ -115,8 +170,6 @@ Returns the details of the vendor contact specified by ID within a logged organi
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version. |   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |
 
-
-
 ### <span style="color: #F05D30">Responses</span>
 | <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
@@ -126,7 +179,6 @@ Returns the details of the vendor contact specified by ID within a logged organi
 |**403 Forbidden**| User doesn’t have appropriate privileges.|
 |**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
-
 
 ### <span style="color: #F05D30">Properties</span>
 |<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      

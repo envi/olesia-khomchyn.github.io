@@ -141,13 +141,12 @@ For usage(s) submition
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
-"object"
-
+"Usage has been submitted successfully."
 ```
 ### <span style="color: #F05D30">Custom errors</span>
 | <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
 |-----:|:-------|
-|**400 Bad Request** | There is at least one Line Item with the Quantity "0" (zero) on the Line Items tab.|
+|**200 OK** | There is at least one Line Item with the Quantity 0 (zero) on the Line Items tab.|
 
 ``` json title="Response Example"
 At least one line item has zero quantity.
@@ -156,17 +155,17 @@ At least one line item has zero quantity.
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains Line Item with a negative Quantity and required Tracking.|
+|**200 OK** | Usage contains Line Item with a negative Quantity and required Tracking.|
 
 ``` json title="Response Example"
 
-At least one item with tracking values has negative quantity.
+At least one Item with Tracking values has negative Quantity.
 
 ```
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage has been already submitted by another user.|
+|**200 OK** | Usage has been already submitted by another user.|
 
 ``` json title="Response Example"
 
@@ -176,7 +175,7 @@ Usage has been already processed, submitted, or canceled.
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage has completed Line Item with Tracking by Serial Number and Quantity/CF larger than 1.|
+|**200 OK** | Usage has completed Line Item with Tracking by Serial Number and Quantity/CF larger than 1.|
 
 ``` json title="Response Example"
 
@@ -186,7 +185,7 @@ At least one line item requires serial number tracking and has a quantity larger
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains Line Item with not unique Serial Number. |
+|**200 OK** | Usage contains Line Item with not unique Serial Number. |
 
 ``` json title="Response Example"
 
@@ -196,17 +195,17 @@ Usage contains not unique serial number.
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains Line Item with Tracking by Expiration Date and Quantity larger than Expiration Date quantity. |
+|**200 OK** | Usage contains Line Item with Tracking by Expiration Date and Quantity larger than Expiration Date quantity. |
 
 ``` json title="Response Example"
 
-Line items with tracking by Expiration Date have insufficient quantity.
+Line items with Tracking by Expiration Date have insufficient quantity.
 
 ```
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains Line Item with Tracking by Lot No with Quantity larger than Lot No Quantity. |
+|**200 OK** | Usage contains Line Item with Tracking by Lot No with Quantity larger than Lot No Quantity. |
 
 ``` json title="Response Example"
 
@@ -216,7 +215,7 @@ Line items with tracking by Lot No have insufficient quantity.
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains Line Item with Tracking by Serial No with Quantity larger than Serial No Quantity. |
+|**200 OK** | Usage contains Line Item with Tracking by Serial No with Quantity larger than Serial No Quantity. |
 
 ``` json title="Response Example"
 
@@ -226,7 +225,7 @@ Line items with tracking by Serial No have insufficient quantity.
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Some arithmetic overflow errors occurred during the Usage submission. |
+|**200 OK** | Some arithmetic overflow errors occurred during the Usage submission. |
 
 ``` json title="Response Example"
 
@@ -236,7 +235,7 @@ Arithmetic Overflow Error(s) occurred during submission process.
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains at least one ‘Implant’ Line Item with **Implant Completed**—**No**. |
+|**200 OK** | Usage contains at least one Implant Line Item with **Implant Completed**—**No**. |
 
 ``` json title="Response Example"
 
@@ -246,7 +245,7 @@ At least one implant line item is not completed.
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Usage contains failed Line Item(s).|
+|**200 OK** | Usage contains failed Line Item(s).|
 
 ``` json title="Response Example"
 
@@ -256,7 +255,7 @@ Usage has failed line item(s).
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Patient field is not specified but Usage requires a selected Facility option of the Patient.|
+|**200 OK** | Patient field is not specified, but Usage requires a selected Facility option of the Patient.|
 
 ``` json title="Response Example"
 
@@ -267,7 +266,7 @@ Usage requires a patient.
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Case Number is not unique within a Facility or is not set.|
+|**200 OK** | Case Number is not unique within a Facility or is not set.|
 
 ``` json title="Response Example"
 
@@ -277,7 +276,7 @@ Usage requires a unique case number.
 
 | <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Department field of the Usage is not specified (“None”).|
+|**200 OK** | Department field of the Usage is not specified (“None”).|
 
 ``` json title="Response Example"
 
@@ -287,7 +286,7 @@ Department is required.
 
 | <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
-|**400 Bad Request** | Patient, Procedure, Physician, Case Number and Schedule fields of the Usage are not specified and the 'Usage requires a procedure', 'Usage requires a doctor', 'Usage requires a case number' and 'Usage requires a schedule number', ‘Usage requires a patient’ facility settings are enabled. |
+|**200 OK** | Patient, Procedure, Physician, Case Number, and Schedule fields of the Usage are not specified and the **Usage requires a procedure**, **Usage requires a doctor**, **Usage requires a case number**, **Usage requires a schedule number**, and **Usage requires a patient** Facility settings are enabled. |
 
 ``` json title="Response Example"
 
@@ -311,5 +310,25 @@ Usage requires a procedure.
 ``` json title="Response Example"
 
 Usage requires a schedule number.
+
+```
+
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+|-----:|:-------|
+|**200 OK** |**Enable block billable supplies for Usage** Facility option is selected, <br> Usage is created for a current Facility and contains Line Item with <br> **Is Billable**—**Yes**.|
+
+``` json title="Response Example"
+
+At least one line item is billable.
+
+```
+
+| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+|-----:|:-------|
+|**200 OK** |**Do Not Allow Negative On-hand Quantity** Facility option is selected, <br> Quantity on Hand is less than Qty*CF of the Usage <br> Inventory Item.|
+
+``` json title="Response Example"
+
+At least one line item doesn't have required Qty on Hand.
 
 ```

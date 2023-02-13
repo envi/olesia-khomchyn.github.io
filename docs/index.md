@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.8.2</span>
+
+You can now use a new [Vendor Contact](VendorContacts.md#create-a-new-vendor-contact) endpoint to create a new Vendor Contact within a logged organization.
+
 <span style="color: #E0592A">V. 5.8.1</span>
 
 You can now use a new [Vendor Address](VendorAddresses.md#create-a-new-vendor-address) endpoint to create a new Vendor Address within a logged organization.
@@ -27,7 +31,7 @@ The Batch Size is available within Envi, so now you have the possibility to cust
 
 <span style="color: #E0592A">V. 5.7.9</span>
 
-We have added two new [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations) endpoints. You can retrieve appropriate data to get the Vendor Fax Delivery info of Purchase Order.
+We have added two new [Vendor Fax Configurations](VendorFaxConfigurations.md#get-the-list-of-vendor-fax-configurations) endpoints. You can retrieve appropriate data to get the Vendor Fax Delivery info of the Purchase Order.
 
 <span style="color: #E0592A">V. 5.7.8</span>
 

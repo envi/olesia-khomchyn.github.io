@@ -126,73 +126,45 @@ Creates a new inventory within a logged organization.
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
-|**inventoryId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Inventory Item|
-|**organizationId**: string *(uuid)*| Unique Identifier of the Organization|
-|**organizationName**: string | Name of the Organization|
 |**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory Items |
 |**inventoryNo**: string| Identification code of the Inventory Item |
-|**inventoryGroupName**: string | Name of the Group that contains related Inventory Items|
 |**inventoryDescription**: string |Description of the Inventory Item |
 |**inventoryDescription2**: string | Additional Description of the Inventory Item |
 |**stockUOM**: string | Unit of Measure to track Inventory Balance |
 |**arBillingCode**: string | Code for interfacing billing codes in a patient billing system |
 |**hcpcsCode**: string | Code for interfacing billing codes in a patient billing system |
 |**notes**: string | Comments about the Inventory Item |
-|**dateAdded**: string *(date-time)* | Date when the Inventory Item was added |
-|**addedId**: string *(uuid)* | Unique Identifier of the user who added the Inventory Item |
-|**addedByName**: string | Name of the user who added Inventory Item |
-|**lastUpdated**: string (date-time) | Last Date when the Inventory Item was updated |
-|**lastUpdatedBy**: string (uuid) | Unique Identifier of the last user who updated the Inventory Item |
-|**lastUpdatedByName**: string | Name of the last user who updated the Inventory Item |
 |**activeStatus**: boolean | Is the Status of the Inventory Item active or not? |
 |**unspscCode**: string | Code for categorizing the Inventory Items |
 |**isLatex**: boolean |Is the Item latex or not? |
 |**classificationId**: string *(uuid)* | Unique Identifier of the Inventory Category defined on the Organization level |
-|**classificationName**: string | Name of the Category of the Inventory defined on the Organization level |
 |**classification2Id**: string *(uuid)* | Unique Identifier of the second Inventory Category defined on the Organization level |
-|**classification2Name**: string | Name of the second Inventory Category defined on the Organization level |
 |**defaultExpenseLedgerNo**: string | Default General Ledger Account Code for the Inventory Item at specific locations |
 |**defaultAssetLedgerNo**: string | Default General Ledger Account Code for the Inventory Item at specific locations |
 |**periopCategoryId**: string *(uuid)* | Unique Identifier of the Perioperative Category |
-|**periopItemCategory**: string | Category of the Perioperative Item |
 |**systemTypeId**: integer *(int32)* | Unique Identifier of the System Type |
-|**systemType**: string | Type of the Inventory Item in the scope of the system (Standard or Implant) |
 |**defaultIsBillable**: boolean | Is Inventory billable by default or not? |
 
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
 {
-  "inventoryId": "00000000-0000-0000-0000-000000000000",
-  "organizationId": "00000000-0000-0000-0000-000000000000",
-  "organizationName": "string",
   "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
   "inventoryNo": "string",
-  "inventoryGroupName": "string",
   "inventoryDescription": "string",
   "inventoryDescription2": "string",
   "stockUOM": "string",
   "arBillingCode": "string",
   "hcpcsCode": "string",
   "notes": "string",
-  "dateAdded": "string (date-time)",
-  "addedId": "00000000-0000-0000-0000-000000000000",
-  "addedByName": "string",
-  "lastUpdated": "string (date-time)",
-  "lastUpdatedBy": "00000000-0000-0000-0000-000000000000",
-  "lastUpdatedByName": "string",
   "activeStatus": "boolean",
   "unspscCode": "string",
   "isLatex": "boolean",
   "classificationId": "00000000-0000-0000-0000-000000000000",
-  "classificationName": "string",
   "classification2Id": "00000000-0000-0000-0000-000000000000",
-  "classification2Name": "string",
   "defaultExpenseLedgerNo": "string",
   "defaultAssetLedgerNo": "string",
   "periopCategoryId": "00000000-0000-0000-0000-000000000000",
-  "periopItemCategory": "string",
   "systemTypeId": "integer (int32)",
-  "systemType": "string",
   "defaultIsBillable": "boolean"
 }
 ```

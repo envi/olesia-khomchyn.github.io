@@ -15,8 +15,6 @@ td, th {
    border: none!important;
 }
 </style>
-
-
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.| 
@@ -71,26 +69,26 @@ td, th {
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Vendor Facility |
 |**lastUpdatedByName**: string | Name of the last user who updated the Vendor Facility |
 |**activeStatus**: boolean | Is the Status of the Vendor Facility active or not? |
-|**aPToleranceLevel**: number *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevelType**: integer *(int32)* | Type of the Dicrepancy between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevelType<br>Value**: string | Type Value of the Dicrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel**: number *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevelType**: integer *(int32)* | Type of the Discrepancy  between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevelType<br>Value**: string | Type Value of the Discrepancy  between the original PO and the Invoice sent by the Vendor |
 |**paymentMethodId**: string *(uuid)* | Unique Identifier of the Payment Method |
 |**paymentMethod**: string | Purchase Order Payment Method |
 |**paymentTermsId**: string *(uuid)* | Purchase Order Payment Terms |
 |**paymentTermsValue**: string | Value of the Payment Terms |
-|**fOBId**: string *(uuid)*  | Unique Identifier of the Free On Board (Destination or Ship Point) |
-|**fOBValue**: string | Value of the Free On Board (Destination or Ship Point)|
+|**fobId**: string *(uuid)*  | Unique Identifier of the Free On Board (Destination or Ship Point) |
+|**fobValue**: string | Value of the Free On Board (Destination or Ship Point)|
 |**shipMethod**: string | Method of Shipment |
 |**shipVia**: string | Way of Shipment |
-|**aPToleranceLevel2**: number *(double)* | Discrepancy2 between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevel2Type**: integer *(int32)* | Type of the Dicrepancy2 between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevel2Type<br>Value**: string | Type Value of the Dicrepancy2 between the original PO and the Invoice sent by the Vendor |
-|**aPFreeFormedTolerance<br>Level**: number *(double)* | Tolerance Level for Free-Form of the Account Payable |
-|**aPFreeFormedTolerance<br>LevelType**: integer *(int32)* | Type of the Account Payable Free-Formed Tolerance Level |
-|**aPFreeFormedTolerance<br>LevelTypeValue**: string | Value of the Account Payable Free-Formed Tolerance Level Type |
-|**aPFreeFormedTolerance<br>Level2**: number *(double)*  | Second Tolerance Level for Free-Form of the Account Payable |
-|**aPFreeFormedTolerance<br>Level2Type**: integer *(int32)* | Second Type of the Account Payable Free-Formed Tolerance Level |
-|**aPFreeFormedTolerance<br>Level2TypeValue**: string | Second Value of the Account Payable Free-Formed Tolerance Level Type |
+|**apToleranceLevel2**: number *(double)* | Discrepancy2 between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel2Type**: integer *(int32)* | Type of the Discrepancy 2 between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel2Type<br>Value**: string | Type Value of the Discrepancy 2 between the original PO and the Invoice sent by the Vendor |
+|**apFreeFormedTolerance<br>Level**: number *(double)* | Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedTolerance<br>LevelType**: integer *(int32)* | Type of the Account Payable Free-Formed Tolerance Level |
+|**apFreeFormedTolerance<br>LevelTypeValue**: string | Value of the Account Payable Free-Formed Tolerance Level Type |
+|**apFreeFormedTolerance<br>Level2**: number *(double)*  | Second Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedTolerance<br>Level2Type**: integer *(int32)* | Second Type of the Account Payable Free-Formed Tolerance Level |
+|**apFreeFormedTolerance<br>Level2TypeValue**: string | Second Value of the Account Payable Free-Formed Tolerance Level Type |
 |**defaultBlankPOExpected<br>Date**: boolean | Expected Date of Delivery Purchase Order Blank by default </span> |
 |**defaultPONotes**: string | Default Notes fo Purchase Orders  |
 |**creditCardIDId**: string *(uuid)* | Unique Identifier of the Credit Card |
@@ -188,6 +186,121 @@ td, th {
 }
 ```
 
+## Create a new vendor facility
+
+### <span style="color: #F05D30">Path</span>
+POST/OData/Vendors(VendorId)/VendorFacilities
+
+### <span style="color: #F05D30">Description</span>
+Creates a new vendor facility for a specified active location (All Locations) within an active vendor logged in an organization.
+
+### <span style="color: #F05D30">Request body</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
+|-----:|:-------|
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
+|**locationId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Location |
+|**shipToAccount**: string | Ship To Account |
+|**billToAccount**: string | Bill To Account |
+|**leadTime**: integer *(int32)*  <br> <span style="color: #F05D30">**required**</span> | Allowed Time for the Completion |
+|**paymentMethodId**: string *(uuid)* | Unique Identifier of the Payment Method. <br> **If not provided**: None.|
+|**paymentTermsId**: string *(uuid)* | Purchase Order Payment Terms. <br> **If not provided**: None.|
+|**creditCardIDId**: string *(uuid)* | Unique Identifier of the Credit Card. <br> **If not provided**: None. |
+|**fobId**: string *(uuid)*  | Unique Identifier of the Free On Board (Destination or Ship Point). <br> **If not provided**: None. |
+|**shipMethod**: string | Method of Shipment |
+|**shipVia**: string | Way of Shipment |
+|**vendorXref**: string | Cross Reference of the Vendor | 
+|**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option. <br> **If not provided**: Three-way matching.|
+|**minimumOrder**: number *(double)* | Minimum Order |
+|**minimumOrderTypeId**: integer *(int32)* | Identifier of the Minimum Order Type. <br> **If not provided**: warning message. |
+|**discountValue**: number *(double)* | Value of the Discount |
+|**discountTypeId**: integer *(int32)* | Unique Identifier of the Discount Type for the Vendor Facility. <br> **If not provided**: %. |
+|**splitDiscountValue**: boolean | Value of the Discount Split |
+|**taxValue**: number *(double)* | Value of the Tax |
+|**taxTypeId**: integer *(int32)* | Unique Identifier of the Tax Type. <br> **If not provided**: %. |
+|**splitTaxValue**: boolean | Value of the Split Tax |
+|**shippingValue**: number *(double)* | Value of the Shipping |
+|**shippingTypeId**: integer *(int32)* | Unique Identifier of the Shipping Type. <br> **If not provided**: %. |
+|**splitShippingValue**: boolean | Value of the Split Shipping |
+|**vendorGLCode**: string | General Ledger Code of the Vendor |
+|**vendorAPNumber**: string | Accounts Payable Number of the Vendor |
+|**apToleranceLevel**: number *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevelType**: integer *(int32)* | Type of the Discrepancy between the original PO and the Invoice sent by the Vendor. <br> **If not provided**: % (Unit Cost).|
+|**apToleranceLevel2**: number *(double)* | Discrepancy2 between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel2Type**: integer *(int32)* | Type of the Discrepancy 2 between the original PO and the Invoice sent by the Vendor. <br> **If not provided**: % (Unit Cost). |
+|**apFreeFormedTolerance<br>Level**: number *(double)* | Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedTolerance<br>LevelType**: integer *(int32)* | Type of the Account Payable Free-Formed Tolerance Level. <br> **If not provided**: $ (Extended Cost).|
+|**apFreeFormedTolerance<br>Level2**: number *(double)*  | Second Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedTolerance<br>Level2Type**: integer *(int32)* | Second Type of the Account Payable Free-Formed Tolerance Level. <br> **If not provided**: $ (Extended Cost). |
+|**currencyTypeId**: integer *(int32)* | Unique Identifier of the Currency Type. <br> **If not provided**: USD. |
+|**defaultBlankPOExpected<br>Date**: boolean | Expected Date of Delivery Purchase Order Blank by default. <br> **If not provided**: ```true```.  |
+|**autoAttachProcessOCR**: boolean | Indicates Automatical Processing of OCR Invoices |
+|**vendorFacilityPOAlert**: string | Vendor Facility Purchase Order Alert|
+|**defaultPONotes**: string | Default Notes fo Purchase Orders  |
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
+{
+  "facilityId": "00000000-0000-0000-0000-000000000000",
+  "locationId": "00000000-0000-0000-0000-000000000000",
+  "shipToAccount": "string",
+  "billToAccount": "string",
+  "leadTime": "integer (int32)",
+  "paymentMethodId": "00000000-0000-0000-0000-000000000000",
+  "paymentTermsId": "00000000-0000-0000-0000-000000000000",
+  "creditCardIDId": "00000000-0000-0000-0000-000000000000",
+  "fobId": "00000000-0000-0000-0000-000000000000",
+  "shipMethod": "string",
+  "shipVia": "string",
+  "vendorXref": "string",
+  "matchOptionId": "integer (int32)",
+  "minimumOrder": "number (double)",
+  "minimumOrderTypeId": "integer (int32)",
+  "discountValue": "number (double)",
+  "discountTypeId": "integer (int32)",
+  "splitDiscountValue": "boolean",
+  "taxValue": "number (double)",
+  "taxTypeId": "integer (int32)",
+  "splitTaxValue": "boolean",
+  "shippingValue": "number (double)",
+  "shippingTypeId": "integer (int32)",
+  "splitShippingValue": "boolean",
+  "vendorGLCode": "string",
+  "vendorAPNumber": "string",
+  "apToleranceLevel": "number (double)",
+  "apToleranceLevelType": "integer (int32)",
+  "apToleranceLevel2": "number (double)",
+  "apToleranceLevel2Type": "integer (int32)",
+  "apFreeFormedToleranceLevel": "number (double)",
+  "apFreeFormedToleranceLevelType": "integer (int32)",
+  "apFreeFormedToleranceLevel2": "number (double)",
+  "apFreeFormedToleranceLevel2Type": "integer (int32)",
+  "currencyTypeId": "integer (int32)",
+  "defaultBlankPOExpectedDate": "boolean",
+  "autoAttachProcessOCR": "boolean",
+  "vendorFacilityPOAlert": "string",
+  "defaultPONotes": "string"
+}
+    
+```
+### <span style="color: #F05D30">Request parameters</span>
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|-----:|:-------|
+|**vendorId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Vendor here. |
+|**api-version**: string default: 1.0 <br> *in header*|The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK** | OK |    
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response Example (200 OK)"
+"00000000-0000-0000-0000-000000000000"
+```
+
 
 ## Get the specified vendor facility
 
@@ -249,26 +362,26 @@ Returns the details of the vendor facility specified by ID within a logged organ
 |**lastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Vendor Facility |
 |**lastUpdatedByName**: string | Name of the last user who updated the Vendor Facility |
 |**activeStatus**: boolean | Is the Status of the Vendor Facility active or not? |
-|**aPToleranceLevel**: number *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevelType**: integer *(int32)* | Type of the Dicrepancy between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevelType<br>Value**: string | Type Value of the Dicrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel**: number *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevelType**: integer *(int32)* | Type of the Discrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevelType<br>Value**: string | Type Value of the Discrepancy between the original PO and the Invoice sent by the Vendor |
 |**paymentMethodId**: string *(uuid)* | Unique Identifier of the Payment Method |
 |**paymentMethod**: string | Purchase Order Payment Method |
 |**paymentTermsId**: string *(uuid)* | Purchase Order Payment Terms |
 |**paymentTermsValue**: string | Value of the Payment Terms |
-|**fOBId**: string *(uuid)*  | Unique Identifier of the Free On Board (Destination or Ship Point) |
-|**fOBValue**: string | Value of the Free On Board (Destination or Ship Point)|
+|**fobId**: string *(uuid)*  | Unique Identifier of the Free On Board (Destination or Ship Point) |
+|**fobValue**: string | Value of the Free On Board (Destination or Ship Point)|
 |**shipMethod**: string | Method of Shipment |
 |**shipVia**: string | Way of Shipment |
-|**aPToleranceLevel2**: number *(double)* | Discrepancy2 between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevel2Type**: integer *(int32)* | Type of the Dicrepancy2 between the original PO and the Invoice sent by the Vendor |
-|**aPToleranceLevel2Type<br>Value**: string | Type Value of the Dicrepancy2 between the original PO and the Invoice sent by the Vendor |
-|**aPFreeFormedTolerance<br>Level**: number *(double)* | Tolerance Level for Free-Form of the Account Payable |
-|**aPFreeFormedTolerance<br>LevelType**: integer *(int32)* | Type of the Account Payable Free-Formed Tolerance Level |
-|**aPFreeFormedTolerance<br>LevelTypeValue**: string | Value of the Account Payable Free-Formed Tolerance Level Type |
-|**aPFreeFormedTolerance<br>Level2**: number *(double)*  | Second Tolerance Level for Free-Form of the Account Payable |
-|**aPFreeFormedTolerance<br>Level2Type**: integer *(int32)* | Second Type of the Account Payable Free-Formed Tolerance Level |
-|**aPFreeFormedTolerance<br>Level2TypeValue**: string | Second Value of the Account Payable Free-Formed Tolerance Level Type |
+|**apToleranceLevel2**: number *(double)* | Discrepancy2 between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel2Type**: integer *(int32)* | Type of the Discrepancy 2 between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel2Type<br>Value**: string | Type Value of the Discrepancy 2 between the original PO and the Invoice sent by the Vendor |
+|**apFreeFormedTolerance<br>Level**: number *(double)* | Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedTolerance<br>LevelType**: integer *(int32)* | Type of the Account Payable Free-Formed Tolerance Level |
+|**apFreeFormedTolerance<br>LevelTypeValue**: string | Value of the Account Payable Free-Formed Tolerance Level Type |
+|**apFreeFormedTolerance<br>Level2**: number *(double)*  | Second Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedTolerance<br>Level2Type**: integer *(int32)* | Second Type of the Account Payable Free-Formed Tolerance Level |
+|**apFreeFormedTolerance<br>Level2TypeValue**: string | Second Value of the Account Payable Free-Formed Tolerance Level Type |
 |**defaultBlankPOExpected<br>Date**: boolean | Expected Date of Delivery Purchase Order Blank by default </span> |
 |**defaultPONotes**: string | Default Notes fo Purchase Orders  |
 |**creditCardIDId**: string *(uuid)* | Unique Identifier of the Credit Card |

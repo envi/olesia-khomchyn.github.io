@@ -17,6 +17,12 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.8.3</span>
+
+You can now use a new [Vendor Facility](VendorFacilities.md#create-a-new-vendor-facility) endpoint to create a new Vendor Facility for a specified active Location within an active Vendor logged in an organization.
+
+We have added a new feature that enhances our Webhooks: custom headers defined in the subscription will now be sent with each Webhook.
+
 <span style="color: #E0592A">V. 5.8.2</span>
 
 You can now use a new [Vendor Contact](VendorContacts.md#create-a-new-vendor-contact) endpoint to create a new Vendor Contact within a logged organization.

@@ -195,7 +195,7 @@ td, th {
 ## Partially update the specified facility
 
 ### <span style="color: #F05D30">Path</span>
-PATCH /odata/Facilities(&lt;facilityId&gt;)
+PATCH /odata/Facilities({facilityId})
 
 ### <span style="color: #F05D30">Description</span>
 Partially updates the details of the facility specified by the facility ID.

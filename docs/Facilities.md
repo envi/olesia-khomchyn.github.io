@@ -106,6 +106,9 @@ td, th {
 |**capitalDiscountCodeTemplate**: <br> string | Capital Discount Code Template |
 |**capitalShippingCodeTemplate**: <br> string | Capital Shipping Code Template |
 |**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
+|**customField1**: string | Custom Field 1 |
+|**customField2**: string | Custom Field 2 |
+
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML <br> Response Example (200 OK)"
@@ -178,7 +181,9 @@ td, th {
       "capitalTaxAccrualCodeTemplate": "string",
       "capitalDiscountCodeTemplate": "string",
       "capitalShippingCodeTemplate": "string",
-      "capitalOffsetCodeTemplate": "string"
+      "capitalOffsetCodeTemplate": "string",
+      "customField1": "string",
+      "customField2": "string"
     }
   ],
   "nextPageLink": "string",
@@ -186,6 +191,139 @@ td, th {
 }
     
 ```
+
+## Partially update the specified facility
+
+### <span style="color: #F05D30">Path</span>
+PATCH /odata/Facilities(&lt;facilityId&gt;)
+
+### <span style="color: #F05D30">Description</span>
+Partially updates the details of the facility specified by the facility ID.
+
+### <span style="color: #F05D30">Request body</span>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**facilityNo**: string | Identification Number of the Facility |
+|**facilityName**: string | Number of the Facility |
+|**address1**: string | The first Address for shipping or billing purposes |
+|**address2**:| The second Address for shipping or billing purposes |
+|**city**: string | City |
+|**state**: string | State |
+|**zip**: string | Zip |
+|**country**: string | Country |
+|**taxExpenseCodeTemplate**:<br> string | Template for displaying the General Ledger sequence for a Facility's tax expense account |
+|**capitalTaxExpenseCode<br>Template**: string | Capital Tax Expense Code Template |
+|**taxAccrualCodeTemplate**: string | Template for displaying the General Ledger sequence for a Facility's tax accrual account |
+|**capitalTaxAccrualCode<br>Template**: string | Capital Tax Accrual Code Template |
+|**discountCodeTemp**: string | Template for displaying the Discount Code |
+|**capitalDiscountCodeTemplate**: <br> string | Capital Discount Code Template |
+|**shippingCodeTemplate**: string | Template for displaying the Shipping Code |
+|**capitalShippingCodeTemplate**: <br> string | Capital Shipping Code Template |
+|**offsetCodeTemplate**: string | Template for displaying the Offset Code |
+|**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
+|**patientDisplayTemplate**: string | Template for displaying the Patient |
+|**poglCodeDisplayTemplate**: <br> string | Template for displaying the Purchase Order General Ledger Code |
+|**poDeptDisplayTemplate**: string | Template for displaying the Purchase Order Department |
+|**activeStatus**: boolean | Is the Facility active or not? |
+|**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory items |
+|**apToleranceLevel**: number <br> *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevelType**: integer <br> *(int32)* | Type of the Discrepancy between the original PO and the Invoice sent <br> by the Vendor |
+|**apToleranceLevel2**: <br> number *(double)* | Discrepancy2 between the original PO and the Invoice sent by the Vendor |
+|**apToleranceLevel2Type**: integer <br> *(int32)* | Type of the Dicrepancy2 between the original PO and the Invoice <br> sent by the Vendor |
+|**apFreeFormedToleranceLevel**: <br> number *(double)* | Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedToleranceLevel<br>Type**: integer *(int32)* | Type of the Account Payable Free-Formed Tolerance Level |
+|**apFreeFormedToleranceLevel2**: <br> number *(double)* | Second Tolerance Level for Free-Form of the Account Payable |
+|**apFreeFormedToleranceLevel2<br>Type**: integer *(int32)* | Second Type of the Account Payable Free-Formed Tolerance Level |
+|**apOffsetTolerance**: <br> number *(double)* | Account Payable Offset Tolerance |
+|**apOffsetToleranceType**: <br> integer *(int32)* | Type of the Account Payable Offset Tolerance |
+|**taxAmount**: number *(double)* | Amount of the Tax |
+|**taxType**: integer *(int32)* | Type of the Tax |
+|**taxExpenseAmount**: number <br> *(double)* | Amount of the Tax Expense |
+|**taxExpenseType**: integer *(int32)* | Type of the Tax Expense |
+|**facilityNoXref**: string | Cross Reference Number of the Facility |
+|**taxShipping**: boolean | Is the Shipping taxable or not? |
+|**poGlValidation**: string | Validation for the Purchase Order General Ledger |
+|**poGlValidationMsg**: string | Message for the Purchase Order General Ledger |
+|**capitalPOGlValidation**: string | Validation for the Capital Purchase Order General Ledger |
+|**capitalPOGlValidationMsg**: <br>string | Message for the Capital Purchase Order General Ledger |
+|**timeZoneId**: string *(uuid)* | Unique Identifier of the Time Zone |
+|**preferenceCardMatching**: <br> integer *(int32)* |  Matching of the Preference Card |
+|**memberID**: string | Unique Identifier of the Facility for external use |
+|**customField1**: string | Custom Field 1 |
+|**customField2**: string | Custom Field 2 |
+
+
+``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
+{
+  "facilityNo": "string",
+  "facilityName": "string",
+  "address1": "string",
+  "address2": "string",
+  "city": "string",
+  "state": "string",
+  "zip": "string",
+  "country": "string",
+  "taxExpenseCodeTemplate": "string",
+  "capitalTaxExpenseCodeTemplate": "string",
+  "taxAccrualCodeTemplate": "string",
+  "capitalTaxAccrualCodeTemplate": "string",
+  "discountCodeTemp": "string",
+  "capitalDiscountCodeTemplate": "string",
+  "shippingCodeTemplate": "string",
+  "capitalShippingCodeTemplate": "string",
+  "offsetCodeTemplate": "string",
+  "capitalOffsetCodeTemplate": "string",
+  "patientDisplayTemplate": "string",
+  "poglCodeDisplayTemplate": "string",
+  "poDeptDisplayTemplate": "string",
+  "activeStatus": "boolean",
+  "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
+  "apToleranceLevel": "number (double)",
+  "apToleranceLevelType": "integer (int32)",
+  "apToleranceLevel2": "number (double)",
+  "apToleranceLevel2Type": "integer (int32)",
+  "apFreeFormedToleranceLevel": "number (double)",
+  "apFreeFormedToleranceLevelType": "integer (int32)",
+  "apFreeFormedToleranceLevel2": "number (double)",
+  "apFreeFormedToleranceLevel2Type": "integer (int32)",
+  "apOffsetTolerance": "number (double)",
+  "apOffsetToleranceType": "integer (int32)",
+  "taxAmount": "number (double)",
+  "taxType": "integer (int32)",
+  "taxExpenseAmount": "number (double)",
+  "taxExpenseType": "integer (int32)",
+  "facilityNoXref": "string",
+  "taxShipping": "boolean",
+  "poGlValidation": "string",
+  "poGlValidationMsg": "string",
+  "capitalPOGlValidation": "string",
+  "capitalPOGlValidationMsg": "string",
+  "timeZoneId": "00000000-0000-0000-0000-000000000000",
+  "preferenceCardMatching": "integer (int32)",
+  "memberID": "string",
+  "customField1": "string",
+  "customField2": "string"
+}
+```
+
+### <span style="color: #F05D30">Request parameters</span>
+| <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
+|-----:|:-------|
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Facility |
+|**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
+|**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
+
+### <span style="color: #F05D30">Responses</span>
+| <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
+|-----:|:-------|
+|**200 OK**|OK|      
+|**400 Bad Request**|Incorrect input data or organization ID does not match with the organization ID user is logged in.|
+|**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
+|**403 Forbidden**|User doesn’t have appropriate privileges.|
+|**404 Not Found** | Specified ID is absent in the system. |
+|**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
+
+
 
 ## Get the specified facility
 
@@ -282,6 +420,8 @@ Returns the details of the facility specified by ID.
 |**capitalDiscountCodeTemplate**: <br> string | Capital Discount Code Template |
 |**capitalShippingCodeTemplate**: <br> string | Capital Shipping Code Template |
 |**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
+|**customField1**: string | Custom Field 1 |
+|**customField2**: string | Custom Field 2 |
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML <br> Response Example (200 OK)"
@@ -352,7 +492,9 @@ Returns the details of the facility specified by ID.
   "capitalTaxAccrualCodeTemplate": "string",
   "capitalDiscountCodeTemplate": "string",
   "capitalShippingCodeTemplate": "string",
-  "capitalOffsetCodeTemplate": "string"
+  "capitalOffsetCodeTemplate": "string",
+  "customField1": "string",
+  "customField2": "string"
 }
 ```
 

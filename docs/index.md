@@ -17,6 +17,12 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 5.8.4</span>
+
+The two new properties are added to the [Facilities](Facilities.md) endpoints: ```customField1``` and ```customField1```.
+
+A new  [Facility](Facilities.md#partially-update-the-specified-facility) endpoint has been included, which allows you to partially update the details of the Facility based on Facility ID.
+
 <span style="color: #E0592A">V. 5.8.3</span>
 
 You can now use a new [Vendor Facility](VendorFacilities.md#create-a-new-vendor-facility) endpoint to create a new Vendor Facility for a specified active Location within an active Vendor logged in an organization.

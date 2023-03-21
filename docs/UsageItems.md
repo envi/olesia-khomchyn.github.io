@@ -1,12 +1,12 @@
 # UsageItems
 
-## Get the list of usage items
+## Get the list of Usage Items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/UsageItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of existing items within all usages. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of existing items within all Usages. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -140,13 +140,13 @@ td, th {
 }
 ```
 
-## Add new items to existing usages
+## Add new Items to existing Usages
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/UsageItems/BulkAdd
 
 ### <span style="color: #F05D30">Description</span>
-Adds new items to existing usages within a logged organization.
+Adds new items to existing Usages within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      

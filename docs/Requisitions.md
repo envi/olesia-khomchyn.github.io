@@ -1,12 +1,12 @@
 # Requisitions
 
-## Get the list of requisitions
+## Get the list of Requisitions
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Requisitions
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of existing requisitions. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of existing Requisitions. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -113,10 +113,10 @@ td, th {
 |**statusLastUpdated**: string <br> *(date-time)* | Last Date when the Status of the Facility Source was updated |
 |**statusLastUpdatedBy**: string *(uuid)* | Unique Identifier of the last user who updated the Status of the Facility Source |
 |**statusLastUpdatedByName**: string | Name of the last user who updated the Status of the Facility Source |
-|**isConverted**: boolean | Is the Facility Source converted or not? |
-|**cancelledRemainingQuantities<br>LastUpdated**: string *(date-time)* | Last Date when the Remaining Quantities of the Facility Source was canceled and updated |
-|**cancelledRemaining<br>QuantitiesBy**: string *(uuid)* | Unique Identifier of the user who canceled the Remaining Quantities of the Facility Source |
-|**cancelledRemaining<br>QuantitiesByName**: string | Name of the user who updated the Remaining Quantities of the Facility Source |
+|**isConverted**: boolean | Is the Requisition converted or not? |
+|**cancelledRemainingQuantities<br>LastUpdated**: string *(date-time)* | Last Date when the Remaining Quantities of the Facility was canceled and updated |
+|**cancelledRemaining<br>QuantitiesBy**: string *(uuid)* | Unique Identifier of the user who canceled the Remaining Quantities of the Facility |
+|**cancelledRemaining<br>QuantitiesByName**: string | Name of the user who updated the Remaining Quantities of the Facility |
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
@@ -209,16 +209,16 @@ td, th {
 }
 ```
 
-## Create a new standard requisition
+## Create a new standard Requisition
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Requisitions
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new standard requisition within a logged organization.
+Creates a new standard Requisition within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**facilityNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Facility |
 |**departmentNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Identification Number of the Department |
@@ -255,13 +255,13 @@ Creates a new standard requisition within a logged organization.
 
 ```
 
-## Get the specified requisition
+## Get the specified Requisition
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Requisitions({requisitionId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the requisition specified by ID.
+Returns the details of the Requisition specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -453,10 +453,10 @@ Returns the details of the requisition specified by ID.
 PATCH /odata/Requisitions({requisitionId})
 
 ### <span style="color: #F05D30">Description</span>
-Partially updates the requisition specified by the requisition ID (applicable only for the **Standart** requisition type).
+Partially updates the Requisition specified by the Requisition ID (applicable only for the **Standart** Requisition type).
 
 ### <span style="color: #F05D30">Request body</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**reference**: string | Information concerning the Transaction |
 |**notes**: string | Comments about the Requisition |
@@ -552,13 +552,13 @@ Partially updates the requisition specified by the requisition ID (applicable on
 |**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
-## Change the requisition status to ‘Open’
+## Change the Requisition status to ‘Open’
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Requisitions({requisitionId})/Submit
 
 ### <span style="color: #F05D30">Description</span>
-Changes the requisition status to ‘Open’ if the specified requisition has at least one line item.
+Changes the Requisition status to ‘Open’ if the specified Requisition has at least one line item.
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -586,7 +586,7 @@ Changes the requisition status to ‘Open’ if the specified requisition has at
 POST /odata/Requisitions({requisitionId})/Cancel
 
 ### <span style="color: #F05D30">Description</span>
-Cancels the requisition specified by the requisition ID.
+Cancels the Requisition specified by the Requisition ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

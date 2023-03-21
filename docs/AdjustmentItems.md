@@ -1,12 +1,12 @@
 # AdjustmentItems
 
-## Get the list of adjustment items
+## Get the list of Adjustment Items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/AdjustmentItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing items within all adjustments. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing items within all Adjustments. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note
     
@@ -111,13 +111,13 @@ Returns the paged list of the existing items within all adjustments. You can fil
 }
 ```
 
-## Get the specified adjustment item
+## Get the specified Adjustment Item
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/AdjustmentItems({adjustmentItemId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the adjustment item specified by ID.
+Returns the details of the Adjustment Item specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>

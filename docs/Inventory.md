@@ -1,12 +1,12 @@
 # Inventory
 
-## Get the list of inventory items
+## Get the list of Inventory Items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -115,13 +115,13 @@ td, th {
 }
 
 ```
-## Create a new inventory
+## Create a new Inventory
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Inventory
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new inventory within a logged organization.
+Creates a new Inventory within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
@@ -191,13 +191,13 @@ Creates a new inventory within a logged organization.
 
 ```
 
-## Get the specified inventory
+## Get the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory specified by ID.
+Returns the details of the Inventory specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
@@ -289,13 +289,13 @@ Returns the details of the inventory specified by ID.
   "defaultIsBillable": "boolean"
 }           
 ```
-## Fully update the specified inventory
+## Fully update the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 PUT /odata/Inventory({inventoryId})
 
 ### <span style="color: #F05D30">Description</span>
-Fully updates the details of the inventory specified by ID.
+Fully updates the details of the Inventory specified by ID.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
@@ -385,13 +385,13 @@ Fully updates the details of the inventory specified by ID.
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## Partially update the specified inventory
+## Partially update the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 PATCH /odata/Inventory({inventoryId})
 
 ### <span style="color: #F05D30">Description</span>
-Partially updates the details of the inventory specified by ID.
+Partially updates the details of the Inventory specified by ID.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
@@ -482,13 +482,13 @@ Partially updates the details of the inventory specified by ID.
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## Get future pricing items for the specified inventory
+## Get Future Pricing Items for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/futurePricing
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing future pricing items within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Future Pricing Items within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -518,7 +518,7 @@ Returns the paged list of the existing future pricing items within inventory spe
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**futurePricingId**: string *(uuid)* | Unique Identifier of the Future Pricing record |
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item|
@@ -586,13 +586,13 @@ Returns the paged list of the existing future pricing items within inventory spe
 }  
 ```
 
-## Get the list of inventory UOMs for the specified inventory
+## Get the list of Inventory UOMs for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/inventoryUOMs
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory UOMs within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory UOMs within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -655,13 +655,13 @@ Returns the paged list of the existing inventory UOMs within inventory specified
 }   
 ```
 
-## Get the list of inventory locations for the specified inventory
+## Get the list of Inventory Locations for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/inventoryLocations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory locations within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory Locations within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
@@ -807,13 +807,13 @@ Returns the paged list of the existing inventory locations within inventory spec
 }
 ```
 
-## Get the list of tracking settings for the specified inventory
+## Get the list of tracking settings for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/inventoryTrackings
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory tracking settings within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory tracking settings within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -844,7 +844,7 @@ Returns the paged list of the existing inventory tracking settings within invent
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryTrackingId**: string *(uuid)* | Unique Identifier of the Inventory Item Tracking |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -891,13 +891,13 @@ Returns the paged list of the existing inventory tracking settings within invent
 }
 ```
 
-## Get the PO history for the specified inventory
+## Get the PO history for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/poHistoryItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing purchase order history within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Purchase Order history within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -927,7 +927,7 @@ Returns the paged list of the existing purchase order history within inventory s
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------| 
 |**id**: string | Unique Identifier of the Inventory Item |
 |**monthName**: string | Name of the Month when Purchase Order was made |
@@ -957,13 +957,13 @@ Returns the paged list of the existing purchase order history within inventory s
 }   
 ```
 
-## Get the list of inventory vendors for the specified inventory
+## Get the list of Inventory Vendors for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/inventoryVendors
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory vendors within inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory Vendors within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -990,7 +990,7 @@ Returns the paged list of the existing inventory vendors within inventory specif
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-| <div style="width:200px">Property</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Property</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------| 
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -1079,7 +1079,7 @@ Returns the paged list of the existing inventory vendors within inventory specif
 GET /odata/Inventory({inventoryId})/inventoryTrackingValues
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory tracking values within inventory, facility, and tracking type specified by ID.
+Returns the details of the Inventory tracking values within the Inventory, Facility, and tracking type specified by ID.
 
 !!! note 
 
@@ -1166,13 +1166,13 @@ Returns the details of the inventory tracking values within inventory, facility,
 ```
 
 
-## Get the list of inventory locations cost and quantity for the specified inventory
+## Get the list of Inventory Locations cost and quantity for the specified Inventory
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory({inventoryId})/inventoryLocationsCostAndQuantity
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory locations cost and quantity within inventory specified by Id. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory Locations cost and quantity within the Inventory specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
@@ -1241,13 +1241,13 @@ Returns the paged list of the existing inventory locations cost and quantity wit
 
 ```
 
-## Get the list of inventory items changed from the specified date
+## Get the list of Inventory Items changed from the specified date
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Inventory/GetAllFromDate(from={from},facilityId={facilityId},syncFlag={syncFlag})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the inventory items changed from the specified date within a facility specified by ID.
+Returns the paged list of the Inventory Items changed from the specified date within the Facility specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
@@ -1349,16 +1349,16 @@ Returns the paged list of the inventory items changed from the specified date wi
 ]
 ```
 
-## Save the specified inventory vendor
+## Save the specified Inventory Vendor
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Inventory({inventoryId})/InventoryVendor
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new inventory vendor within a logged organization and specified Inventory.
+Creates a new Inventory Vendor within a logged organization and specified Inventory.
 
 ### <span style="color: #F05D30">Request body</span>
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Vendor |
 |**facilityId**: string <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
@@ -1415,16 +1415,16 @@ Creates a new inventory vendor within a logged organization and specified Invent
 "Inventory Vendor is successfully created."
 ```
 
-## Manage the purchasing option for inventory locations
+## Manage the Purchasing option for Inventory Locations
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Inventory({inventoryId})/ManagePurchasing
 
 ### <span style="color: #F05D30">Description</span>
-Manages purchasing option for the inventory location specified by inventory ID.
+Manages the Purchasing option for the Inventory Location specified by Inventory ID.
 
 ### <span style="color: #F05D30">Request body</span>
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**disablePurchasing**: boolean | Disable Purchasing for the Inventory Item or not? |
 |**facility**: string *(uuid)* | Unique Identifier of the Facility |
@@ -1455,13 +1455,13 @@ Manages purchasing option for the inventory location specified by inventory ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 
-## Save the specified inventory location
+## Save the specified Inventory Location
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Inventory({inventoryId})/InventoryLocation
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new inventory location within a logged organization and specified inventory.
+Creates a new Inventory Location within a logged organization and specified Inventory.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      

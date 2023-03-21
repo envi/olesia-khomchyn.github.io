@@ -1,12 +1,12 @@
 # InventoryTrackings
 
-## Get the specified inventory tracking setting
+## Get the specified Inventory tracking setting
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryTrackings({inventoryTrackingId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory tracking setting specified by ID.
+Returns the details of the Inventory tracking setting specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -31,7 +31,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryTrackingId**: string <br> *(uuid)* | Unique Identifier of the Inventory Item Tracking |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |

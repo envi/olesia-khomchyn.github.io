@@ -1,12 +1,12 @@
 # Manufacturers
 
-## Get the list of manufacturers
+## Get the list of Manufacturers
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Manufacturers
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of manufacturers. Contains link to the next page and information about overall entities count in the database. Supports Query options.
+Returns the paged list of Manufacturers. Contains the link to the next page and information about overall entities count in the database. Supports Query options.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -35,7 +35,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-| <div style="width:200px">Property </div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Property </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**organizationId**: string *(uuid)* | Unique Identifier of the Organization |
 |**organizationNo**: string | Identification Number of the Organization |
@@ -79,26 +79,26 @@ td, th {
 ```
 
 
-## Create a new manufacturer
+## Create a new Manufacturer
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Manufacturers
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new manufacturer within a logged organization.
+Creates a new Manufacturer within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
 If **Auto ID** is configured for a manufacturer, then ```manufacturerNo``` is optional.
 
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
-|**manufacturerNo**: string   | Number of the Manufacturer |
+|**manufacturerNo**: string  | Number of the Manufacturer |
 |**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span> | Name of the Manufacturer |
 
 
 If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` and ```manufacturerName``` are required.
 
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**manufacturerNo**: string <br> <span style="color: #F05D30">**required**</span> | Number of the Manufacturer |
 |**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span>  | Name of the Manufacturer |
@@ -114,7 +114,7 @@ If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` a
     The request with ```externalMfgNo``` could be sent only by System users.
 
 
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**manufacturerNo**: string <br> <span style="color: #F05D30">**required**</span> | Number of the Manufacturer |
 |**manufacturerName**: string <br> <span style="color: #F05D30">**required**</span>  | Name of the Manufacturer |
@@ -142,13 +142,13 @@ If **Auto ID** is not configured for a manufacturer, then ```manufacturerNo``` a
 
 ```
 
-## Get the specified manufacturer
+## Get the specified Manufacturer
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Manufacturers({manufacturerId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the manufacturer specified by ID.
+Returns the details of the Manufacturer specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -168,7 +168,7 @@ Returns the details of the manufacturer specified by ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-| <div style="width:200px">Property </div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Property </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**organizationId**: string *(uuid)* | Unique Identifier of the Organization |
 |**organizationNo**: string | Identification Number of the Organization |

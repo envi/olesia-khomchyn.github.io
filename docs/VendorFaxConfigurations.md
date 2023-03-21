@@ -1,12 +1,12 @@
 # VendorFaxConfigurations
 
-## Get the list of vendor fax configurations 
+## Get the list of Vendor Fax Configurations 
 
 ### <span style="color: #F05D30">Path</span>
 GET/odata/VendorFaxConfigurations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list with active/inactive fax configurations of active vendors related to active facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list with active/inactive Fax Configurations of active Vendors related to active Facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -42,7 +42,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorFaxId**: string *(uuid)* | Unique Identifier of the Vendor Fax |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
@@ -95,13 +95,13 @@ td, th {
 ```
 
 
-## Get the specified vendor fax configuration
+## Get the specified Vendor Fax Configuration
 
 ### <span style="color: #F05D30">Path</span>
 GET/odata/VendorFaxConfigurations(<VendorFaxConfigurationId>)
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of active/inactive, specified by ID Vendor Fax Configuration with active vendors related to active facilities within a logged organization.
+Returns the details of active/inactive, specified by ID Vendor Fax Configuration with active Vendors related to active Facilities within a logged organization.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -125,7 +125,7 @@ Returns the details of active/inactive, specified by ID Vendor Fax Configuration
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorFaxId**: string *(uuid)* | Unique Identifier of the Vendor Fax |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |

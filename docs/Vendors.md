@@ -1,12 +1,12 @@
 # Vendors
 
-## Get the list of vendors
+## Get the list of Vendors
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Vendors
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of existing vendors within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of existing Vendors within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -43,7 +43,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
@@ -92,13 +92,13 @@ td, th {
 }
 ```
 
-## Get the specified vendor
+## Get the specified Vendor
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Vendors({vendorId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor specified by ID.
+Returns the details of the Vendor specified by ID.
 
 ### <span style="color: #F05D30">Request body</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
@@ -118,7 +118,7 @@ Returns the details of the vendor specified by ID.
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorNo**: string | Code of the Supplier who sells products |
@@ -161,13 +161,13 @@ Returns the details of the vendor specified by ID.
 }
 ```
 
-## Get the list of vendors
+## Get the list of Vendors
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Vendors/GetVendorsInfo(facilityId={facilityId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the predefined vendor(s) within the facility specified by ID.
+Returns the details of the predefined Vendor(s) within the Facility specified by ID.
 
 ### <span style="color: #F05D30">Request body</span>
 Enter the value of the vendor(s) from the existing template.
@@ -196,7 +196,7 @@ Enter the value of the vendor(s) from the existing template.
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
 |**vendorName**: string | Name of the Vendor |

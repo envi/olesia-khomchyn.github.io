@@ -1,12 +1,12 @@
 # POConfirmations
 
-## Get the list of PO confirmations
+## Get the list of PO Confirmations
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/POConfirmations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of PO confirmations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of PO Confirmations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -82,13 +82,13 @@ td, th {
 }       
 ```
 
-## Get the specified PO confirmation 
+## Get the specified PO Confirmation 
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/POConfirmations({poConfirmationId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the PO confirmation specified by ID.
+Returns the details of the PO Confirmation specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -148,13 +148,13 @@ Returns the details of the PO confirmation specified by ID.
 }
 ```
 
-## Get the list of PO confirmation items for the specified PO confirmation
+## Get the list of PO Confirmation Items for the specified PO Confirmation
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/POConfirmations({poConfirmationId})/poConfirmationItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of PO confirmation items within a PO confirmation specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of PO Confirmation Items within the PO Confirmation specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

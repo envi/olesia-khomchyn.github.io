@@ -1,12 +1,12 @@
 # VendorContacts
 
-## Get the list of vendor contacts
+## Get the list of Vendor Contacts
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/VendorContacts
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of vendor vontacts within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of Vendor Contacts within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -41,7 +41,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorContactId**: string *(uuid)* | Unique Identifier of the Vendor Contact |
 |**contactName**: string | Name of the main contact point |
@@ -99,16 +99,16 @@ td, th {
 
 
 
-## Create a new vendor contact
+## Create a new Vendor Contact
 
 ### <span style="color: #F05D30">Path</span>
 POST /OData/Vendors({VendorId})/VendorContacts
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new vendor contact within a logged organization and a specified vendor only for active vendors and active facilities.
+Creates a new Vendor Contact within a logged organization and a specified Vendor only for active Vendors and active Facilities.
 
 ### <span style="color: #F05D30">Request body</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**contactName**: string <br> <span style="color: #F05D30">**required**</span> | Name of the main contact point |
 |**title**: string <br> <span style="color: #F05D30">**required**</span>| Title |
@@ -153,13 +153,13 @@ Creates a new vendor contact within a logged organization and a specified vendor
 "00000000-0000-0000-0000-000000000000"
 ```
 
-## Get the specified vendor contact
+## Get the specified Vendor Contact
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/VendorContacts({VendorContactID})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor contact specified by ID within a logged organization.
+Returns the details of the Vendor Contact specified by ID within a logged organization.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -181,7 +181,7 @@ Returns the details of the vendor contact specified by ID within a logged organi
 |**500 Internal Server Error**| Server encountered an unexpected condition that prevented it from fulfilling the request. |
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorContactId**: string *(uuid)* | Unique Identifier of the Vendor Contact |
 |**contactName**: string | Name of the main contact point |

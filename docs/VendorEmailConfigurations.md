@@ -1,12 +1,12 @@
 # VendorEmailConfigurations
 
-## Get the list of vendor email configurations
+## Get the list of Vendor Email Configurations
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/VendorEmailConfigurations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of vendor email configurations within a logged organizations. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of Vendor Email Configurations within a logged organizations. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -42,7 +42,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorEmailId**: string *(uuid)* | Unique Identifier of the Vendor Email |
 |**emailDescription**: string | Description of the Vendor Email |
@@ -109,13 +109,13 @@ td, th {
 ```
 
 
-## Get the specified vendor email configuration
+## Get the specified Vendor Email Configuration
 
 ### <span style="color: #F05D30">Path</span>
 GET odata/VendorEmailConfigurations({VendorEmailId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor email configuration specified by ID within a logged organization.
+Returns the details of the Vendor Email Configuration specified by ID within a logged organization.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -139,7 +139,7 @@ Returns the details of the vendor email configuration specified by ID within a l
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorEmailId**: string *(uuid)* | Unique Identifier of the Vendor Email |
 |**emailDescription**: string | Description of the Vendor Email |

@@ -1,12 +1,12 @@
 # VendorAddresses
 
-## Get the list of vendor addresses
+## Get the list of Vendor Addresses
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/VendorAddresses
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of vendor addresses within a logged organization.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of Vendor Addresses within a logged organization.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -40,7 +40,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorAddressId**: string *(uuid)* | Unique Identifier of the Vendor Address |
 |**vendorId**: string *(uuid)* | Unique Identifier of the Vendor |
@@ -98,16 +98,16 @@ td, th {
 }
 ```
 
-## Create a new vendor address
+## Create a new Vendor Address
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Vendors({VendorId})/VendorAddresses
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new vendor address within a logged organization and a specified vendor only for active vendors and active facilities.
+Creates a new Vendor Address within a logged organization and a specified Vendor only for active Vendors and active Facilities.
 
 ### <span style="color: #F05D30">Request body</span>
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**description**: string <br> <span style="color: #F05D30">**required**</span> | Description of the Vendor Address |
 |**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> | Unique Identifier of the Facility |
@@ -154,13 +154,13 @@ Creates a new vendor address within a logged organization and a specified vendor
 
 ```
 
-## Get the specified vendor asddress
+## Get the specified Vendor Address
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/VendorAddresses({vendorAddressId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor address specified by ID within a logged organization.
+Returns the details of the Vendor Address specified by ID within a logged organization.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

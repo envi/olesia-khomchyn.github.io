@@ -1,11 +1,12 @@
 # InventoryVendors
-## Get the cost history for the specified inventory vendor
+
+## Get the cost history for the specified Inventory Vendor
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors({inventoryVendorId})/costHistory
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing cost history records within inventory vendor specified by ID.
+Returns the paged list of the existing cost history records within the Inventory Vendor specified by ID.
 
 !!! note 
 
@@ -76,13 +77,13 @@ td, th {
 }
 ```
 
-## Get the list of purchasing units for the specified inventory vendor
+## Get the list of purchasing units for the specified Inventory Vendor
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors({inventoryVendorId})/purchasingUnits
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing purchasing units within inventory vendor specified by ID.
+Returns the paged list of the existing purchasing units within the Inventory Vendor specified by ID.
 
 !!! note 
 
@@ -162,13 +163,13 @@ Returns the paged list of the existing purchasing units within inventory vendor 
 }
 ```
 
-## Get the list of all inventory vendors
+## Get the list of all Inventory Vendors
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the all existing inventory vendors. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the all existing Inventory Vendors. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -276,13 +277,13 @@ Returns the paged list of the all existing inventory vendors. You can filter the
 }  
 ```
 
-## Get the specified inventory vendor
+## Get the specified Inventory Vendor
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors({inventoryVendorId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory vendor specified by ID.
+Returns the details of the Inventory Vendor specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -380,13 +381,13 @@ Returns the details of the inventory vendor specified by ID.
 ```
 
 
-## Partially update the specified inventory vendor
+## Partially update the specified Inventory Vendor
 
 ### <span style="color: #F05D30">Path</span>
 PATCH /odata/InventoryVendors({inventoryVendorId})
 
 ### <span style="color: #F05D30">Description</span>
-Partially updates the details of the inventory vendor specified by InventoryVendorId.
+Partially updates the details of the Inventory Vendor specified by Inventory Vendor ID.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
@@ -565,13 +566,13 @@ Inventory and specified Facility belong to different inventory groups.
 ContractExpDate must be greater than 2009-01-25.
 ```
 
-## Get the list of inventory vendors changed from the specified date
+## Get the list of Inventory Vendors changed from the specified date
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryVendors/GetAllFromDate(from={from},facilityId={facilityId},syncFlag={syncFlag})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory vendors changed from the specified date within a facility specified by ID.
+Returns the paged list of the existing Inventory Vendors changed from the specified date within a Facility specified by ID.
 
 The empty GUID ```00000000-0000-0000-0000-000000000000``` is taken into account for inventory vendor with the Master facility retrieving. After sending the GET request ```{{url}}/odata/InventoryVendors/GetAllFromDate(from={{from}},facilityId=00000000-0000-0000-0000-000000000000,syncFlag={{syncFlag}})```, the response contains the list of all active inventory vendors for the Master facility.
 

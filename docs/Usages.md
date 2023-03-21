@@ -1,12 +1,12 @@
 # Usages
 
-## Create new usages
+## Create new Usages
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Usages/BulkAdd
 
 ### <span style="color: #F05D30">Description</span>
-Creates new usages within a logged organization.
+Creates new Usages within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
 For usage(s) creation
@@ -85,7 +85,7 @@ td, th {
 
 ```
 
-## Submit usages
+## Submit Usages
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Usages/BulkSubmit
@@ -94,9 +94,9 @@ POST /odata/Usages/BulkSubmit
 Submits usages within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
-For usage(s) submition
+For Usage(s) submition
 
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the the Usage. <br> **If not provided**: 400 Bad Request. |
 
@@ -144,7 +144,7 @@ For usage(s) submition
 "Usage has been submitted successfully."
 ```
 ### <span style="color: #F05D30">Custom errors</span>
-| <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**200 OK** | There is at least one Line Item with the Quantity 0 (zero) on the Line Items tab.|
 
@@ -153,7 +153,7 @@ At least one line item has zero quantity.
 ```
 
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Usage contains Line Item with a negative Quantity and required Tracking.|
 
@@ -163,7 +163,7 @@ At least one Item with Tracking values has negative Quantity.
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Usage has been already submitted by another user.|
 
@@ -183,7 +183,7 @@ At least one line item requires serial number tracking and has a quantity larger
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Usage contains Line Item with not unique Serial Number. |
 
@@ -223,7 +223,7 @@ Line items with tracking by Serial No have insufficient quantity.
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Some arithmetic overflow errors occurred during the Usage submission. |
 
@@ -243,7 +243,7 @@ At least one implant line item is not completed.
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Usage contains failed Line Item(s).|
 
@@ -264,7 +264,7 @@ Usage requires a patient.
 ```
 
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Case Number is not unique within a Facility or is not set.|
 
@@ -274,7 +274,7 @@ Usage requires a unique case number.
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** | Department field of the Usage is not specified (“None”).|
 
@@ -313,7 +313,7 @@ Usage requires a schedule number.
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** |**Enable block billable supplies for Usage** Facility option is selected, <br> Usage is created for a current Facility and contains Line Item with <br> **Is Billable**—**Yes**.|
 
@@ -323,7 +323,7 @@ At least one line item is billable.
 
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**200 OK** |**Do Not Allow Negative On-hand Quantity** Facility option is selected, <br> Quantity on Hand is less than Qty*CF of the Usage <br> Inventory Item.|
 

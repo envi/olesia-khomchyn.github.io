@@ -1,12 +1,12 @@
 # MatchedInvoices
 
-## Get the list of matched invoices
+## Get the list of Matched Invoices
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/MatchedInvoices
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing matched invoices within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Matched Invoices within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -163,13 +163,13 @@ td, th {
 }
 ```
 
-## Get the specified matched invoice
+## Get the specified Matched Invoice
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/MatchedInvoices({matchedInvoiceId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the matched invoice specified by ID.
+Returns the details of the Matched Invoice specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

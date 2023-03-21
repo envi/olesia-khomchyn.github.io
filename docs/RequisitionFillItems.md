@@ -1,12 +1,12 @@
 # RequisitionFillItems
 
-## Get the list of requisition fill items
+## Get the list of Requisition Fill Items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/RequisitionFillItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of requisition fill items from fill requisitions within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of Requisition Fill Items from Fill Requisitions within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -94,13 +94,13 @@ td, th {
 }
 ```
 
-## Get the specified requisition fill item
+## Get the specified Requisition Fill Item
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/RequisitionFillItems({requisitionFillItemId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the requisition fill item specified by ID within a logged organization.
+Returns the details of the Requisition Fill Item specified by ID within a logged organization.
 
 
 ### <span style="color: #F05D30">Request parameters</span>

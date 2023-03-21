@@ -1,4 +1,5 @@
 # PARAreas
+
 ## Get the list of PAR Areas
 
 ### <span style="color: #F05D30">Path</span>
@@ -159,13 +160,13 @@ Returns the details of the PAR Area specified by ID within a logged organization
 }
 ```
 
-## Get the list of PAR Area items for the specified PAR Area
+## Get the list of PAR Area Items for the specified PAR Area
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/PARAreas({parAreaId})/parAreaLineItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of the existing PAR Area items within PAR Area specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of the existing PAR Area Items within PAR Area specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

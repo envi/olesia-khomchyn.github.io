@@ -1,12 +1,12 @@
 # Addresses
 
-## Get the list of addresses
+## Get the list of Addresses
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Addresses
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing Addresses within a logged Organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Addresses within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -37,7 +37,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|
@@ -114,13 +114,13 @@ td, th {
 }
 ```
 
-## Get the specified address
+## Get the specified Address
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Addresses({addressId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns details of the address specified by ID.
+Returns details of the Address specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px"> Parameter </div> |<div style="width:380px">Explanation</div> |                      
@@ -141,7 +141,7 @@ Returns details of the address specified by ID.
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:40px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|

@@ -1,12 +1,12 @@
 # FuturePricing
 
-## Get the specified future pricing item
+## Get the specified Future Pricing Item
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/FuturePricing({futurePricingId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns details of the future pricing specified by ID.
+Returns details of the Future Pricing specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -31,7 +31,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**futurePricingId**: string *(uuid)* | Unique Identifier of the Future Pricing record |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory item |

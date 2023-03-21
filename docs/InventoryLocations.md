@@ -1,12 +1,12 @@
 # InventoryLocations
 
-## Get the list of inventory locations
+## Get the list of Inventory Locations
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryLocations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory locations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory Locations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -158,13 +158,13 @@ td, th {
 ```
 
 
-## Get the specified inventory location
+## Get the specified Inventory Location
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryLocations({inventoryLocationId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory location specified by ID.
+Returns the details of the Inventory Location specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -298,13 +298,13 @@ Returns the details of the inventory location specified by ID.
 }  
 ```
 
-## Partially update the specified inventory location
+## Partially update the specified Inventory Location
 
 ### <span style="color: #F05D30">Path</span>
 PATCH /odata/InventoryLocations({inventoryLocationId})
 
 ### <span style="color: #F05D30">Description</span>
-Partially updates the details of the inventory location specified by the Inventory Location ID.
+Partially updates the details of the Inventory Location specified by the Inventory Location ID.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
@@ -403,13 +403,13 @@ Partially updates the details of the inventory location specified by the Invento
 }
 ```
 
-## Get the list of cost layers for the specified inventory location
+## Get the list of cost layers for the specified Inventory Location
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryLocations({inventoryLocationId})/costLayers
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing cost layers within inventory location specified by ID.
+Returns the paged list of the existing cost layers within the Inventory Location specified by ID.
 
 !!! note 
 
@@ -439,7 +439,7 @@ Returns the paged list of the existing cost layers within inventory location spe
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**costLayerId**: string *(uuid)* | Unique Identifier of the Cost Layer |
 |**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
@@ -476,13 +476,13 @@ Returns the paged list of the existing cost layers within inventory location spe
   "count": "integer (int64)"
 }
 ```
-## Get the list of inventory locations changed from the specified date
+## Get the list of Inventory Locations changed from the specified date
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryLocations/GetAllFromDate(from={from},facilityId={facilityId},syncFlag={syncFlag})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the inventory locations changed from the specified date within facility specified by ID.
+Returns the paged list of the Inventory Locations changed from the specified date within the Facility specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       

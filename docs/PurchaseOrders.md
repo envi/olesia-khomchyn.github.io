@@ -1,12 +1,12 @@
 # PurchaseOrders
 
-## Get the list of purchase orders
+## Get the list of Purchase Orders
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/PurchaseOrders
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing purchase orders within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Purchase Orders within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -36,7 +36,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**purchaseOrderId**: string *(uuid)* | Unique Identifier of the Purchase Order |
 |**purchaseOrderNo**: string | Number of the Purchase Order |
@@ -215,13 +215,13 @@ td, th {
   "count": "integer (int64)"
 }
 ```
-## Get the specified purchase order
+## Get the specified Purchase Order
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/PurchaseOrders({purchaseOrderId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the purchase order specified by ID.
+Returns the details of the Purchase Order specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -241,7 +241,7 @@ Returns the details of the purchase order specified by ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**purchaseOrderId**: string *(uuid)* | Unique Identifier of the Purchase Order |
 |**purchaseOrderNo**: string | Number of the Purchase Order |
@@ -415,13 +415,13 @@ Returns the details of the purchase order specified by ID.
 }
 ```
 
-## Get the list of purchase order items for the specified purchase order
+## Get the list of Purchase Order Items for the specified Purchase Order
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/PurchaseOrders({purchaseOrderId})/purchaseOrderItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing purchase order items within purchase order specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Purchase Order Items within the Purchase Order specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -446,7 +446,7 @@ Returns the paged list of the existing purchase order items within purchase orde
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**purchaseOrderItemId**: string *(uuid)* | Unique Identifier of the Purchase Order Item |
 |**purchaseOrderNo**: string | Number of the Purchase Order Item |

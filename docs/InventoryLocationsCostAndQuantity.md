@@ -1,12 +1,12 @@
 # InventoryLocationsCostAndQuantity
 
-## Get the list of inventory locations cost and quantity
+## Get the list of Inventory Locations cost and quantity
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryLocationsCostAndQuantity
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory locations cost and quantity within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory Locations cost and quantity within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -75,13 +75,13 @@ Returns the paged list of the existing inventory locations cost and quantity wit
 ```
 
 
-## Get the specified inventory location cost and quantity
+## Get the specified Inventory Location cost and quantity
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryLocationsCostAndQuantity({inventoryLocationId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory location cost and quantity specified by ID.
+Returns the details of the Inventory Location cost and quantity specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>

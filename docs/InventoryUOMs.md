@@ -1,11 +1,12 @@
 # InventoryUOMs
-## Get the specified inventory UOM
+
+## Get the specified Inventory UOM
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryUOMs({inventoryUOMId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the inventory UOM specified by ID.
+Returns the details of the Inventory UOM specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>

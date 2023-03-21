@@ -1,12 +1,12 @@
 # Facilities
 
-## Get the list of facilities
+## Get the list of Facilities
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Facilities
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -192,13 +192,13 @@ td, th {
     
 ```
 
-## Partially update the specified facility
+## Partially update the specified Facility
 
 ### <span style="color: #F05D30">Path</span>
 PATCH /odata/Facilities({facilityId})
 
 ### <span style="color: #F05D30">Description</span>
-Partially updates the details of the facility specified by the facility ID.
+Partially updates the details of the Facility specified by the Facility ID.
 
 ### <span style="color: #F05D30">Request body</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                      
@@ -325,16 +325,16 @@ Partially updates the details of the facility specified by the facility ID.
 
 
 
-## Get the specified facility
+## Get the specified Facility
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Facilities({facilityId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the facility specified by ID.
+Returns the details of the Facility specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Facility here. |
 |**api-version**: string default: 1.0 <br> *in header*|The requested API version.|   

@@ -1,12 +1,12 @@
 # AP Batch
 
-## Get the list of AP batches
+## Get the list of AP Batches
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Batches
 
 ### <span style="color: #F05D30">Description</span>
-Returns list of AP batches within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).)
+Returns the list of AP Batches within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).)
 
 !!! note 
 
@@ -40,7 +40,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**apBatchId**: string *(uuid)* | Unique Identifier of the Account Payable Batch |
 |**batchNo**: string | Identification Number of the Batch |
@@ -84,16 +84,16 @@ td, th {
 }
 ```
 
-## Create a new AP batch
+## Create a new AP Batch
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new AP batch within a logged organization.
+Creates a new AP Batch within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
-|  <div style="width:200px">Parameter</div>  |  <div style="width:480px">Explanation</div>  |                      
+|  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**batchNo**: string | Identification Number of the Batch |
 |**reference**: string | Information concerning the Transaction |
@@ -122,13 +122,13 @@ Creates a new AP batch within a logged organization.
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
-## Get the specified AP batch
+## Get the specified AP Batch
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Batches({batchId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns details of the batch specified by ID.
+Returns details of the Batch specified by ID.
 
 !!! note 
 
@@ -155,7 +155,7 @@ Returns details of the batch specified by ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**apBatchId**: string *(uuid)* | Unique Identifier of the Account Payable Batch |
 |**batchNo**: string | Identification Number of the Batch |
@@ -194,13 +194,13 @@ Returns details of the batch specified by ID.
     
 ```
 
-## Get the specified AP batched invoice
+## Get the specified AP Batched invoice
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Batches({batchId})/invoices
 
 ### <span style="color: #F05D30">Description</span>
-Returns paged list of the existing invoices within a batch specified by ID.
+Returns the paged list of the existing invoices within the Batch specified by ID.
 
 !!! note 
 
@@ -230,7 +230,7 @@ Returns paged list of the existing invoices within a batch specified by ID.
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**apMatchedInvoiceId**: string *(uuid)* | Unique Identifier of the Account Payable Matched Invoice |
 |**purchaseOrderId**: string *(uuid)* | Unique Identifier of the Purchase Order |
@@ -355,13 +355,13 @@ Returns paged list of the existing invoices within a batch specified by ID.
     
 ```
 
-## Add an invoice to AP batch
+## Add an invoice to AP Batch
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/Invoices
 
 ### <span style="color: #F05D30">Description</span>
-Adds an invoice with the ‘Vouchered’ status to an existed batch within a logged organization. After adding to the batch, an added invoice changes its invoice status to ‘Batched’.
+Adds an invoice with the ‘Vouchered’ status to an existed Batch within a logged organization. After adding to the Batch, an added invoice changes its invoice status to ‘Batched’.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -441,7 +441,7 @@ Adds an invoice with the ‘Vouchered’ status to an existed batch within a log
 
 
 ### <span style="color: #F05D30">Custom errors</span>
-| <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Invoice is NOT in the Vouchered status |
 
@@ -451,13 +451,13 @@ Only Vouchered Invoices can be added to the Batch.
 
 ```
 
-## Change AP batch status to ‘Exported’
+## Change AP Batch status to ‘Exported’
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/Batches({batchId})/Export
 
 ### <span style="color: #F05D30">Description</span>
-Changes batch status to ‘Exported’ when the specified batch has at least one invoice.
+Changes Batch status to ‘Exported’ when the specified Batch has at least one invoice.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -470,7 +470,7 @@ Changes batch status to ‘Exported’ when the specified batch has at least one
 | <div style="width:200px">Response </div>|<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
 |**204 No Content**| No Content |      
-|**400 Bad Request**|This batch cannot be exported because it does not contain any invoice.|
+|**400 Bad Request**|This Batch cannot be exported because it does not contain any invoice.|
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
@@ -500,7 +500,7 @@ Submits AP Batch to the 'Queued' status.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Custom errors</span>
-| <div style="width:200px">Response </div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Response </div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**400 Bad Request** | Specified batch exists in the Queued status. |
 

@@ -1,12 +1,12 @@
 # Locations
 
-## Get the list of locations
+## Get the list of Locations
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Locations
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing locations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Locations within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 
@@ -41,7 +41,7 @@ td, th {
 
 ### <span style="color: #F05D30">Properties</span>
 
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**locationNo**: string | Identification Number of the Location |
@@ -97,13 +97,13 @@ td, th {
 }
 ```
 
-## Get the specified location
+## Get the specified Location
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/Locations({locationId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the location specified by ID.
+Returns the details of the Location specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -123,7 +123,7 @@ Returns the details of the location specified by ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**locationNo**: string | Identification Number of the Location |

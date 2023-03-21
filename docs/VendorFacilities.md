@@ -1,12 +1,12 @@
 # VendorFacilities
 
-## Get the list of vendor facilities
+## Get the list of Vendor Facilities
 
 ### <span style="color: #F05D30">Path</span>
 GET/odata/VendorFacilities
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of vendor facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of Vendor Facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -38,7 +38,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorFacilityId**: string *(uuid)* | Unique Identifier of the Vendor Facility |
 |**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
@@ -186,13 +186,13 @@ td, th {
 }
 ```
 
-## Create a new vendor facility
+## Create a new Vendor Facility
 
 ### <span style="color: #F05D30">Path</span>
-POST/OData/Vendors(VendorId)/VendorFacilities
+POST/Vendors({VendorId})/VendorFacilities 
 
 ### <span style="color: #F05D30">Description</span>
-Creates a new vendor facility for a specified active location (All Locations) within an active vendor logged in an organization.
+Creates a new Vendor Facility for a specified active Location (All Locations) within an active Vendor logged in an organization.
 
 ### <span style="color: #F05D30">Request body</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
@@ -209,7 +209,7 @@ Creates a new vendor facility for a specified active location (All Locations) wi
 |**shipMethod**: string | Method of Shipment |
 |**shipVia**: string | Way of Shipment |
 |**vendorXref**: string | Cross Reference of the Vendor | 
-|**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option. <br> **If not provided**: Three-way matching.|
+|**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option. <br> **If not provided**: None.|
 |**minimumOrder**: number *(double)* | Minimum Order |
 |**minimumOrderTypeId**: integer *(int32)* | Identifier of the Minimum Order Type. <br> **If not provided**: warning message. |
 |**discountValue**: number *(double)* | Value of the Discount |
@@ -302,13 +302,13 @@ Creates a new vendor facility for a specified active location (All Locations) wi
 ```
 
 
-## Get the specified vendor facility
+## Get the specified Vendor Facility
 
 ### <span style="color: #F05D30">Path</span>
 GET/odata/VendorFacilities(<VendorFacilityId>)
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the vendor facility specified by ID within a logged organization
+Returns the details of the Vendor Facility specified by ID within a logged organization
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -331,7 +331,7 @@ Returns the details of the vendor facility specified by ID within a logged organ
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**vendorFacilityId**: string *(uuid)* | Unique Identifier of the Vendor Facility |
 |**facilityId**: string *(uuid)* | Unique Identifier of the Facility |

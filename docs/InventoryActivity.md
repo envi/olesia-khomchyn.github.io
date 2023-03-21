@@ -1,12 +1,12 @@
 # InventoryActivity
 
-## Get the list of inventory activities
+## Get the list of Inventory Activities
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/InventoryActivity
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of the existing inventory activity. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of the existing Inventory Activity. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 !!! note 
 

@@ -14,7 +14,7 @@ td, th {
 }
 </style>
 
-| <div style="width:200px">Parameter</div> | <div style="width:480px">Explanation</div>         |                      
+| <div style="width:200px">Parameter</div> | <div style="width:420px">Explanation</div>         |                      
 |-----:|:-------|
 |**grant_type**: string default: <br> password <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | Grant Type of the auth request. Should be set to 'password'.|
 |**client_id**: string default:<br> 099153c<br> 2625149bc8ecb3e85e03f0022 <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | ID of the client performing auth request. |
@@ -49,7 +49,7 @@ After the ```access_token``` got expired, you have two options to refresh it:
     2. Fill in the following:
 
 
-| <div style="width:200px">Parameter</div>|<div style="width:480px">Explanation</div>|                      
+| <div style="width:200px">Parameter</div>|<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**grant_type**: string | ```refresh_token``` |
 |**client_id**: integer | 099153c2625149bc8ecb3e85e03f0022 |
@@ -65,7 +65,7 @@ td, th {
    border: none!important;
 }
 </style>
-| <div style="width:200px">Parameter</div>     |  <div style="width:380px">Explanation</div>         |                      
+| <div style="width:200px">Parameter</div> | <div style="width:380px">Explanation</div>         |                      
 |-----:|:-------|
 |**grant_type**: string | ```refresh_token``` |
 |**access_token**: string| Token that you need for authentication. |

@@ -1,12 +1,12 @@
 # PurchasingUnits
 
-## Get the specified purchasing unit
+## Get the specified Purchasing Unit
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/PurchasingUnits({inventoryVendorPurchasingUnitId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the purchasing unit specified by ID.
+Returns the details of the Purchasing Unit specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>

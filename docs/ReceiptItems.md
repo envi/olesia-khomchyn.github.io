@@ -1,12 +1,12 @@
 # ReceiptItems
 
-## Get the list of PO receipt items
+## Get the list of PO Receipt Items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/ReceiptItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of PO receipt items within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of PO Receipt Items within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -121,13 +121,13 @@ td, th {
 }
 ```
 
-## Get the specified receipt item
+## Get the specified Receipt Item
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/ReceiptItems({receiptItemId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the receipt item specified by ID.
+Returns the details of the Receipt Item specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

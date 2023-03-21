@@ -1,15 +1,15 @@
 # UsageProcedures
 
-## Add new procedures to existing usages
+## Add new Procedures to existing Usages
 
 ### <span style="color: #F05D30">Path</span>
 POST /odata/UsageProcedures/BulkAdd
 
 ### <span style="color: #F05D30">Description</span>
-Adds new procedures to existing usages within a logged organization.
+Adds new Procedures to existing Usages within a logged organization.
 
 ### <span style="color: #F05D30">Request body</span>
-For adding procedure(s) to usage(s)
+For adding Procedure(s) to Usage(s)
 
 <style>
 td, th {

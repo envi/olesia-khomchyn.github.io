@@ -1,12 +1,12 @@
 # RequisitionFills
 
-## Get the list of requisition fills
+## Get the list of Requisition Fills
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/RequisitionFills
 
 ### <span style="color: #F05D30">Description</span>
-Returns the list of requisition fills within a logged organization.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the list of Requisition Fills within a logged organization.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 
 ### <span style="color: #F05D30">Request parameters</span>
@@ -85,13 +85,13 @@ td, th {
 ```
 
 
-## Get the specified requisition fill
+## Get the specified Requisition Fill
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/RequisitionFills({requisitionFillId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the requisition fill specified by ID within a logged organization.
+Returns the details of the Requisition Fill specified by ID within a logged organization.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      

@@ -1,12 +1,12 @@
 # RequisitionItems
 
-## Get the list of requisition items
+## Get the list of Requisition Items
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/RequisitionItems
 
 ### <span style="color: #F05D30">Description</span>
-Returns the paged list of existing requisition items.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
+Returns the paged list of existing Requisition Items.  You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
@@ -38,7 +38,7 @@ td, th {
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -126,13 +126,13 @@ td, th {
 }   
 ```
 
-## Get the specified requisition item
+## Get the specified Requisition Item
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/RequisitionItems({requisitionItemId})
 
 ### <span style="color: #F05D30">Description</span>
-Returns the details of the requisition item specified by ID.
+Returns the details of the Requisition Item specified by ID.
 
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
@@ -152,7 +152,7 @@ Returns the details of the requisition item specified by ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**requisitionItemId**: string *(uuid)* | Unique Identifier of the Requisition Item |
 |**requisitionId**: string *(uuid)* | Unique Identifier of the Requisition |
@@ -235,13 +235,13 @@ Returns the details of the requisition item specified by ID.
 }
 ```
 
-## Add the specified requisition line item
+## Add the specified Requisition Line Item
 
 ### <span style="color: #F05D30">Path</span>
 POST odata/Requisitions({requisitionID})/RequisitionItems
 
 ### <span style="color: #F05D30">Description</span>
-Adds a new requisition line item within a logged organization and the specified requisition (applicable only for the **Standart** requisition type).
+Adds a new Requisition Line Item within a logged organization and the specified Requisition (applicable only for the **Standart** Requisition type).
 
 ### <span style="color: #F05D30">Request body</span>
 For adding item(s) to requisition(s)
@@ -304,18 +304,18 @@ For adding item(s) to requisition(s)
 
 ```
 
-## Partially update the specified requisition item
+## Partially update the specified Requisition Item
 
 ### <span style="color: #F05D30">Path</span>
 PATCH /odata/RequisitionItems({requisitionItemId})
 
 ### <span style="color: #F05D30">Description</span>
-Partially updates the details of the requisition line item specified by requisition item ID (applicable only for the **Standart** requisition type).
+Partially updates the details of the Requisition Line Item specified by Requisition Item ID (applicable only for the **Standart** Requisition type).
 
 ### <span style="color: #F05D30">Properties</span>
 For Inventory Item (Item with Location and Vendor):
 
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
 |**notes**: string | Comments about the Requisition Item |
@@ -338,7 +338,7 @@ For Inventory Item (Item with Location and Vendor):
 
 For Non-Stock Item (Item with Vendor):
 
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**locationId**: string *(uuid)* | Unique Identifier of the Location |
 |**activeStatus**: boolean | Is the Requisition Item active or not? |
@@ -364,7 +364,7 @@ For Non-Stock Item (Item with Vendor):
 
 For Free-Form Item:
 
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryNo**: string | Identification code of the Inventory Item |
 |**inventoryDescription**: string | Description of the Inventory Item |

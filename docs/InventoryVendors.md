@@ -41,7 +41,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorCostHistoryId**: <br> string *(uuid)* | Unique Identifier of the Inventory Vendor Cost History |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Vendor |
@@ -113,7 +113,7 @@ Returns the paged list of the existing purchasing units within the Inventory Ven
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorPurchasing<br>UnitId**: <br> string *(uuid)* | Unique Identifier of the Inventory Vendor Purchasing Unit |
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Vendor |
@@ -193,7 +193,7 @@ Returns the paged list of the all existing Inventory Vendors. You can filter the
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:450px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -302,7 +302,7 @@ Returns the details of the Inventory Vendor specified by ID.
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |
@@ -558,7 +558,7 @@ vendorConversionFactor and vendorUOM should be specified simultaneously.
 Inventory and specified Facility belong to different inventory groups.
 ```
 
-| <div style="width:200px"> </div>|<div style="width:480px"></div>|                      
+| <div style="width:200px"> </div>|<div style="width:420px"></div>|                      
 |-----:|:-------|
 |**400 Bad Request** | ```contractExpDate``` contains value that is less than 2009-01-26 date.|
 
@@ -596,7 +596,7 @@ The empty GUID ```00000000-0000-0000-0000-000000000000``` is taken into account 
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**inventoryVendorId**: string *(uuid)* | Unique Identifier of the Inventory Item Vendor |
 |**inventoryId**: string *(uuid)* | Unique Identifier of the Inventory Item |

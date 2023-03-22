@@ -36,7 +36,7 @@ td, th {
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* | Unique Identifier of the PAR Area |
 |**parAreaNo**: string | Identification Number of the PAR Area |
@@ -115,7 +115,7 @@ Returns the details of the PAR Area specified by ID within a logged organization
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:480px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**parAreaId**: string *(uuid)* | Unique Identifier of the PAR Area |
 |**parAreaNo**: string | Identification Number of the PAR Area |

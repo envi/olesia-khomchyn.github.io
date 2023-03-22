@@ -54,8 +54,8 @@ td, th {
 |**faxDescription**: string | Description of the Vendor Fax |
 |**csid**: string | Called Subscriber Identification |
 |**faxNumber**: string | Number of the Fax |
-|**useCoverPage**: boolean | **Use Cover Page or not?**|
-|**coverPageBody**: string | **Body Cover Page** |
+|**useCoverPage**: boolean | Use Cover Page or not?|
+|**coverPageBody**: string | Body Cover Page |
 |**activeStatus**: boolean | Is the Status of the Vendor Fax active or not? |
 |**dateAdded**: string *(date-time)* | Date when the Vendor Fax was added |
 |**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Fax |
@@ -137,8 +137,8 @@ Returns the details of active/inactive, specified by ID Vendor Fax Configuration
 |**faxDescription**: string | Description of the Vendor Fax |
 |**csid**: string | Called Subscriber Identification |
 |**faxNumber**: string | Number of the Fax |
-|**useCoverPage**: boolean | **Use Cover Page or not?**|
-|**coverPageBody**: string | **Body Cover Page** |
+|**useCoverPage**: boolean | Use Cover Page or not?|
+|**coverPageBody**: string | Body Cover Page |
 |**activeStatus**: boolean | Is the Status of the Vendor Fax active or not? |
 |**dateAdded**: string *(date-time)* | Date when the Vendor Fax was added |
 |**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Fax |

@@ -62,7 +62,7 @@ The ```$top``` system query option requests the number of items in the queried c
 
 Due to the ```$top``` operator max value, the current limit is **5 000** records within one API request. When the specified ```$top``` value is greater than the limit, you will receive the response—400 Bad Request.
 
-The ```$skip``` query option requests the number of items in the queried collection that should be skipped and not included in the response. If the ```$top``` option is not provided, Envi API automatically adds ```$top=20``` to the initial query. Thus, a response contains only the first 20 records, the ```@odata.next``` link includes the ```$top``` and ```$skip``` query options based on that value.
+The ```$skip``` query option requests the number of items in the queried collection that should be skipped and not included in the response. If the ```$top``` option is not provided, Envi API automatically adds ```$top=20``` to the initial query. So, the response contains only the first 20 records. 
 
 
 ``` title="Request Example"

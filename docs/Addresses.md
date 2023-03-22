@@ -141,7 +141,7 @@ Returns details of the Address specified by ID.
 
 
 ### <span style="color: #F05D30">Properties</span>
-|<div style="width:200px">Property </div> |<div style="width:40px">Explanation</div>|                      
+|<div style="width:200px">Property </div> |<div style="width:420px">Explanation</div>|                      
 |-----:|:-------|
 |**addressId**: string *(uuid)*|Unique Identifier of the Address|
 |**organizationId**: string *(uuid)*|Unique Identifier of the Organization|

@@ -228,8 +228,8 @@ private static async Task<bool> SetAuthHeader()
     }
     
 ```
+```SetAuthHeader``` method returns a Boolean value that will be not omitted but awaited. And, the following method performs actually the call itself.
 
-The following method performs the call itself.
 ``` cs title="Example"
 private static async Task<ODataListResponse> GetInventoryList()
     {
@@ -239,16 +239,42 @@ private static async Task<ODataListResponse> GetInventoryList()
     }    
 ```
 
-```SetAuthHeader``` method returns a Boolean value that will be not omitted but awaited. And, the following method performs actually the call itself.
+The OData protocol uses the system query options ```$skip``` and ```$top``` to implement server-driven paging, which allows clients to request a specific subset of data from a large collection.  In addition to these options, OData pagination also utilizes ```odata.nextLink```.
+
+The ```odata.nextLink``` is a URL included in each list type response to show more results are available beyond what was returned in the first request.
+
+When you make a request to an OData API, it may return only a subset of the total results (for example, 100 out of 1000). If there are other results, the API will include ```odata.nextLink``` in the response, which you can use to retrieve the next subset of the requested collection.
+
+If the response does not include ```odata.nextLink```, it means that all records have been retrieved.
+
+The following method allows you to retrieve all entities in the collection by using ```odata.nextLink```. 
 
 ``` cs title="Example"
 private static async Task<ODataListResponse> GetInventoryList()
-    {
-      await SetAuthHeader();
-      var response = await Client.GetAsync("/odata/Inventory");
-      return JsonConvert.DeserializeObject<ODataListResponse>(await response.Content.ReadAsStringAsync());
-    }  
+{
+			var result = new List<T>();
+
+			while (!string.IsNullOrEmpty(requestUri))
+			{
+				var list = await Get<ODataListResponse<T>>(requestUri);
+				if (list.Value.Any())
+				{
+					result.AddRange(list.Value);
+				}
+
+				requestUri = list.ODataNextLink;
+				if (!string.IsNullOrEmpty(requestUri))
+				{
+					requestUri = requestUri.Replace(_baseAddress, string.Empty);
+				}
+			}
+
+			return result;
+		}
 ```
+
+
+
 
 ## <span style="color: #F05D30">Retrieving entity details</span> 
 The following method retrieves details of an Inventory item by the specified ID.

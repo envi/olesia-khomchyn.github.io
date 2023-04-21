@@ -189,7 +189,7 @@ td, th {
 ## Create a new Vendor Facility
 
 ### <span style="color: #F05D30">Path</span>
-POST/Vendors({VendorId})/VendorFacilities 
+POST/odata/Vendors({VendorId})/VendorFacilities 
 
 ### <span style="color: #F05D30">Description</span>
 Creates a new Vendor Facility for a specified active Location (All Locations) within an active Vendor logged in an organization.

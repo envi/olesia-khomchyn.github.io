@@ -238,7 +238,7 @@ Returns the details of the Requisition Item specified by ID.
 ## Add the specified Requisition Line Item
 
 ### <span style="color: #F05D30">Path</span>
-POST odata/Requisitions({requisitionID})/RequisitionItems
+POST /odata/Requisitions({requisitionID})/RequisitionItems
 
 ### <span style="color: #F05D30">Description</span>
 Adds a new Requisition Line Item within a logged organization and the specified Requisition (applicable only for the **Standart** Requisition type).

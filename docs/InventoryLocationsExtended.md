@@ -38,7 +38,7 @@ td, th {
 ### <span style="color: #F05D30">Properties</span>
 |<div style="width:200px">Property </div> |<div style="width:380px">Explanation</div>|                      
 |-----:|:-------|
-|**inventoryLocationExtended<br>Id**: string *(uuid)* | Unique Identifier of the extended Inventory Location |
+|**inventoryLocationId**: string *(uuid)* | Unique Identifier of the Inventory Location |
 |**inventoryId**: string *(uuid)*| Unique Identifier of the Inventory Item |
 |**inventoryNo**: string | Identification code of the Inventory Item |
 |**inventoryDescription**: string | Description of the Inventory Item |

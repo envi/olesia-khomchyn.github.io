@@ -181,9 +181,9 @@ Enter the value of the vendor(s) from the existing template.
 
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
-[
+{
 "value": ["00000000-0000-0000-0000-000000000000"]
-]
+}
 ```
 
 ### <span style="color: #F05D30">Responses</span>

@@ -3,7 +3,7 @@
 ## Get the list of Vendor Facilities
 
 ### <span style="color: #F05D30">Path</span>
-GET/odata/VendorFacilities
+GET /odata/VendorFacilities
 
 ### <span style="color: #F05D30">Description</span>
 Returns the list of Vendor Facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
@@ -189,7 +189,7 @@ td, th {
 ## Create a new Vendor Facility
 
 ### <span style="color: #F05D30">Path</span>
-POST/odata/Vendors({VendorId})/VendorFacilities 
+POST /odata/Vendors({VendorId})/VendorFacilities 
 
 ### <span style="color: #F05D30">Description</span>
 Creates a new Vendor Facility for a specified active Location (All Locations) within an active Vendor logged in an organization.
@@ -305,7 +305,7 @@ Creates a new Vendor Facility for a specified active Location (All Locations) wi
 ## Get the specified Vendor Facility
 
 ### <span style="color: #F05D30">Path</span>
-GET/odata/VendorFacilities(<VendorFacilityId>)
+GET /odata/VendorFacilities({vendorFacilityId})
 
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the Vendor Facility specified by ID within a logged organization

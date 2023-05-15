@@ -102,7 +102,7 @@ td, th {
 ## Create a new Vendor Contact
 
 ### <span style="color: #F05D30">Path</span>
-POST /OData/Vendors({VendorId})/VendorContacts
+POST /odata/Vendors({VendorId})/VendorContacts
 
 ### <span style="color: #F05D30">Description</span>
 Creates a new Vendor Contact within a logged organization and a specified Vendor only for active Vendors and active Facilities.
@@ -156,7 +156,7 @@ Creates a new Vendor Contact within a logged organization and a specified Vendor
 ## Get the specified Vendor Contact
 
 ### <span style="color: #F05D30">Path</span>
-GET /odata/VendorContacts({VendorContactID})
+GET /odata/VendorContacts({vendorContactId})
 
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the Vendor Contact specified by ID within a logged organization.

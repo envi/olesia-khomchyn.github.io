@@ -112,7 +112,7 @@ td, th {
 ## Get the specified Vendor Email Configuration
 
 ### <span style="color: #F05D30">Path</span>
-GET odata/VendorEmailConfigurations({VendorEmailId})
+GET /odata/VendorEmailConfigurations({vendorEmailConfigurationId})
 
 ### <span style="color: #F05D30">Description</span>
 Returns the details of the Vendor Email Configuration specified by ID within a logged organization.

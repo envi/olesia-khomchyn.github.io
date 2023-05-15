@@ -3,7 +3,7 @@
 ## Get the list of Vendor Fax Configurations 
 
 ### <span style="color: #F05D30">Path</span>
-GET/odata/VendorFaxConfigurations
+GET /odata/VendorFaxConfigurations
 
 ### <span style="color: #F05D30">Description</span>
 Returns the list with active/inactive Fax Configurations of active Vendors related to active Facilities within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
@@ -98,7 +98,7 @@ td, th {
 ## Get the specified Vendor Fax Configuration
 
 ### <span style="color: #F05D30">Path</span>
-GET/odata/VendorFaxConfigurations(<VendorFaxConfigurationId>)
+GET /odata/VendorFaxConfigurations({vendorFaxConfigurationId})
 
 ### <span style="color: #F05D30">Description</span>
 Returns the details of active/inactive, specified by ID Vendor Fax Configuration with active Vendors related to active Facilities within a logged organization.

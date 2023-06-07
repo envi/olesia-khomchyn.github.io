@@ -95,6 +95,7 @@ td, th {
 |**400 (no org.)** | No default organization is associated with this account. Contact your application administrator. |
 |**400 (locked)** | This account has been locked. Check your email or contact your administrator to unlock it. |
 |**400 (no active role)** | This account does not have any active role. Contact your application administrator. |
+|**400 (Simple user Punchout Domain)** | User cannot be logged in. Please contact your administrator. |
 
 ``` json title="Response Example (200 OK)"
 {

@@ -1,4 +1,4 @@
-# GitHub Repositry
+# GitHub Repository
 
 Our [GitHhub Repository](https://github.com/envi/Envi.SDK) сontains a source code of SDK and examples of how to use Envi OData public API. It consists of three projects:
 

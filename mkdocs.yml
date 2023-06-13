@@ -14,7 +14,7 @@ nav:
     - Envi Use Cases: Envi_Use_Cases.md
     - Bi Tool Use Cases: BI_Tool_Use_Cases.md
     - Integrators: Integrators.md
-    - GitHub Repositry: GitHub_Repository.md
+    - GitHub Repository: GitHub_Repository.md
   - API Operations:
     - Authentication: Authentication_POST.md
     - Addresses: Addresses.md

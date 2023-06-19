@@ -105,7 +105,7 @@ td, th {
   "refresh_token": "string"
 }
 ```
-!!! warning
+!!! note
 
     It is strongly recommended to omit unexpected values in response while building integrations.
 

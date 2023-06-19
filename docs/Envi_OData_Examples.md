@@ -214,6 +214,11 @@ public class ODataListResponse<T>
     }
 
 ```
+!!! note
+
+    It is strongly recommended to omit unexpected values in response while building integrations.
+
+
 The following method will help to do this job.
 ``` cs title="Example"
 private static async Task<bool> SetAuthHeader()
@@ -287,6 +292,11 @@ private static async Task<Inventory> GetInventoryById(Guid inventoryId)
       return JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
     } 
 ```
+!!! note
+
+    It is strongly recommended to omit unexpected values in response while building integrations.
+
+
 
 ## <span style="color: #F05D30">New entity creation</span> 
 To add a new entity using Envi API, do the following:

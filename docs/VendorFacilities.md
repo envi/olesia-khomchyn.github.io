@@ -103,6 +103,8 @@ td, th {
 |**minimumOrder**: number *(double)* | Minimum Order |
 |**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option |
 |**matchOptionValue**: string | Value of the Match Option |
+|**ocrMatchOptionId**: integer *(int32)* | Unique Identifier of the OCR Match Option |
+|**ocrMatchOptionValue**: string | Value of the OCR Match Option |
 |**splitTaxValue**: boolean | Value of the Split Tax |
 |**splitDiscountValue**: boolean | Value of the Discount Split |
 |**splitShippingValue**: boolean | Value of the Split Shipping |
@@ -176,6 +178,8 @@ td, th {
       "minimumOrder": "number (double)",
       "matchOptionId": "integer (int32)",
       "matchOptionValue": "string",
+      "ocrMatchOptionId": "integer (int32)",
+      "ocrMatchOptionValue": "string",
       "splitTaxValue": "boolean",
       "splitDiscountValue": "boolean",
       "splitShippingValue": "boolean"
@@ -210,6 +214,7 @@ Creates a new Vendor Facility for a specified active Location (All Locations) wi
 |**shipVia**: string | Way of Shipment |
 |**vendorXref**: string | Cross Reference of the Vendor | 
 |**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option. <br> **If not provided**: None.|
+|**ocrMatchOptionId**: integer *(int32)* | Unique Identifier of the OCR Match Option. <br> **If not provided**: None. |
 |**minimumOrder**: number *(double)* | Minimum Order |
 |**minimumOrderTypeId**: integer *(int32)* | Identifier of the Minimum Order Type. <br> **If not provided**: warning message. |
 |**discountValue**: number *(double)* | Value of the Discount |
@@ -252,6 +257,7 @@ Creates a new Vendor Facility for a specified active Location (All Locations) wi
   "shipVia": "string",
   "vendorXref": "string",
   "matchOptionId": "integer (int32)",
+  "ocrMatchOptionId": "integer (int32)",
   "minimumOrder": "number (double)",
   "minimumOrderTypeId": "integer (int32)",
   "discountValue": "number (double)",
@@ -396,6 +402,8 @@ Returns the details of the Vendor Facility specified by ID within a logged organ
 |**minimumOrder**: number *(double)* | Minimum Order |
 |**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option |
 |**matchOptionValue**: string | Value of the Match Option |
+|**ocrMatchOptionId**: integer *(int32)* | Unique Identifier of the OCR Match Option |
+|**ocrMatchOptionValue**: string | Value of the OCR Match Option |
 |**splitTaxValue**: boolean | Value of the Split Tax |
 |**splitDiscountValue**: boolean | Value of the Discount Split |
 |**splitShippingValue**: boolean | Value of the Split Shipping |
@@ -468,6 +476,8 @@ Returns the details of the Vendor Facility specified by ID within a logged organ
   "minimumOrder": "number (double)",
   "matchOptionId": "integer (int32)",
   "matchOptionValue": "string",
+  "ocrMatchOptionId": "integer (int32)",
+  "ocrMatchOptionValue": "string",
   "splitTaxValue": "boolean",
   "splitDiscountValue": "boolean",
   "splitShippingValue": "boolean"

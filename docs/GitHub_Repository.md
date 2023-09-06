@@ -1,6 +1,6 @@
 # GitHub Repository
 
-Our [GitHhub Repository](https://github.com/envi/Envi.SDK) сontains a source code of SDK and examples of how to use Envi OData public API. It consists of three projects:
+Our [GitHhub Repository](https://github.com/envi) сontains a source code of SDK and examples of how to use Envi OData public API. It consists of three projects:
 
  - **API.Common.Entities**–contains DTO classes (models) and enums that will be used by API and SDK in the nearest future.
  - **Envi.SDK**–contains generic helper classes representing different kinds of OData request or response messages. The **Program** class includes the following examples of API invocation:

@@ -58,8 +58,9 @@ nav:
     - VendorFacilities: VendorFacilities.md
     - VendorFaxConfigurations: VendorFaxConfigurations.md
     - Vendors: Vendors.md
-   
-  
+  - Itegrations:
+    - SSO Integrations: SSO_Integrations.md
+
 
 theme:
   name: material

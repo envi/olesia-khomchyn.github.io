@@ -9,3 +9,9 @@ Our [GitHhub Repository](https://github.com/envi) сontains a source code of SDK
     - Retrieving **Inventory Master Interface** data using API.
     - Using **Batch Request** (in case multiple requests are sent in a batch).
  - **Postman Collections**–contains available collections for testing HTTP requests in a quick and easy way.
+
+
+
+
+
+

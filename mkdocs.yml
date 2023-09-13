@@ -58,7 +58,7 @@ nav:
     - VendorFacilities: VendorFacilities.md
     - VendorFaxConfigurations: VendorFaxConfigurations.md
     - Vendors: Vendors.md
-  - Itegrations:
+  - Integrations:
     - SSO Integrations: SSO_Integrations.md
 
 

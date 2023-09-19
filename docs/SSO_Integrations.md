@@ -12,6 +12,4 @@
 |![image](img/pdf3.png) [SSO with any provider.pdf](static/SSO_with_any_provider.pdf){:download="SSO_with_any_provider"} |
 |![image](img/pdf3.png) [SSO with Okta.pdf](static/SSO_with_Okta.pdf){:download="SSO_with_Okta"} |
 |![image](img/link.png) [Link to SSO Test Form (For testing ADFS using WS-Trust Binding)](https://sso-demo.envi.net/)|
-|![image](img/link.png) [Link to SSO with Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/envimmis-tutorial)|
-|![image](img/link.png) [Link to Envi in Azure Marketplace](https://azuremarketplace.microsoft.com/en-in/marketplace/apps/aad.envimmis)|
 

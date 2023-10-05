@@ -1,4 +1,4 @@
-# MatchedInvoices
+F# MatchedInvoices
 
 ## Get the list of Matched Invoices
 
@@ -308,7 +308,7 @@ Returns the details of the Matched Invoice specified by ID.
 }
 ```
 
-## Get the list of matched invoice items for the specified matched invoice
+## Get the list of Matched Invoice Items for the specified Matched Invoice
 
 ### <span style="color: #F05D30">Path</span>
 GET /odata/MatchedInvoices({matchedInvoiceId})/matchedInvoiceItems

@@ -17,6 +17,12 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 6.0.1</span>
+
+[Purchase Orders](PurchaseOrders.md) now support the ```includeInactiveVendors``` optional parameter.
+
+Starting now, every time you submit a Requisition Fill, the system will notify you via Webhook.
+
 <span style="color: #E0592A">V. 5.9.5</span>
 
 The two new properties are added to the [Vendor Facilities](VendorFacilities.md) endpoints: ```ocrMatchOptionId``` and ```ocrMatchOptionValue```.

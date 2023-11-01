@@ -17,6 +17,7 @@ td, th {
 
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
+|**includeInactiveVendors** <br> boolean default: false <br> *in query* | Include inactive Vendors. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**$search**: string <br> *in query*  | Picks the value in all possible fields.|
 |**$filter**: string <br> *in query* | Filters the results, based on a Boolean condition. | 
@@ -226,6 +227,7 @@ Returns the details of the Purchase Order specified by ID.
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|
+|**includeInactiveVendors** <br> boolean default: false <br> *in query* | Include inactive Vendors.|
 |**purchaseOrderId**: string *(uuid)*  <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Enter the ID of the Purchase Order here. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|   
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* |Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication. |

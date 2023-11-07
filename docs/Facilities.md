@@ -248,7 +248,7 @@ Partially updates the details of the Facility specified by the Facility ID.
 |**capitalPOGlValidationMsg**: <br>string | Message for the Capital Purchase Order General Ledger |
 |**timeZoneId**: string *(uuid)* | Unique Identifier of the Time Zone |
 |**preferenceCardMatching**: <br> integer *(int32)* |  Matching of the Preference Card |
-|**memberID**: string | Unique Identifier of the Facility for external use |
+|**memberID**: string | Unique Identifier of the Facility for external use. <br> **Note**: The field requires special privileges to modify. |
 |**customField1**: string | Custom Field 1 |
 |**customField2**: string | Custom Field 2 |
 
@@ -309,7 +309,7 @@ Partially updates the details of the Facility specified by the Facility ID.
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
-|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Facility |
+|**facilityId**: string *(uuid)* <br> <span style="color: #F05D30">**required**</span> <br> *in path* | Unique Identifier of the Facility. |
 |**api-version**: string default: 1.0 <br> *in header*| The requested API version.|      
 |**Authorization**: string default: <br> Bearer access_token <br> *in header* | Specify the type of the token (bearer) and then insert the ```access_token```, which was obtained during authentication.|
 

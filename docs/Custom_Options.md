@@ -63,10 +63,35 @@ https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendorAddr
 
 ```
 
- - **```includeInactiveVendors```**–gets all inactive vendors and works with the following endpoint:
+ - **```includeInactiveVendors```**–gets all inactive vendors and works with the following endpoints:
     - [Vendor(s) within the Facility](Vendors.md#get-the-list-of-vendors)
+    - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+    - [Specified Vendor Address](VendorAddresses.md#get-the-specified-vendor-address)
+    - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+    - [Specified Vendor Contact](VendorContacts.md#get-the-specified-vendor-contact)
+    - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
+    - [Specified Vendor Email Configuration](VendorEmailConfigurations.md#get-the-specified-vendor-email-configuration)
+    - [Purchase Orders](PurchaseOrders.md#get-the-list-of-purchase-orders)
+    - [Specified Purchase Order](PurchaseOrders.md#get-the-specified-purchase-order)
 
 ``` json title="Example"
 https://api-demo.envi.net/odata/Vendors/GetVendorsInfo?includeInactiveVendors=true
 
 ```
+
+ - **```includeInactiveFacilities```**–gets all inactive Facilities and works with the following endpoints:
+    - [Vendor Addresses](VendorAddresses.md#get-the-list-of-vendor-addresses)
+    - [Specified Vendor Address](VendorAddresses.md#get-the-specified-vendor-address)
+    - [Vendor Contacts](VendorContacts.md#get-the-list-of-vendor-contacts)
+    - [Specified Vendor Contact](VendorContacts.md#get-the-specified-vendor-contact)
+    - [Vendor Email Configurations](VendorEmailConfigurations.md#get-the-list-of-vendor-email-configurations)
+    - [Specified Vendor Email Configuration](VendorEmailConfigurations.md#get-the-specified-vendor-email-configuration)
+
+
+``` json title="Example"
+https://api-demo.envi.net/odata/VendorContacts?includeInactiveVendors=true
+
+```
+
+
+

@@ -108,6 +108,8 @@ td, th {
 |**splitTaxValue**: boolean | Value of the Split Tax |
 |**splitDiscountValue**: boolean | Value of the Discount Split |
 |**splitShippingValue**: boolean | Value of the Split Shipping |
+|**takeDepartmentsIntoAccount**: boolean | Take Departments into account |
+|**taxableItemsOnly**: boolean | Take Taxable Items only into account |
 
 
 
@@ -182,13 +184,16 @@ td, th {
       "ocrMatchOptionValue": "string",
       "splitTaxValue": "boolean",
       "splitDiscountValue": "boolean",
-      "splitShippingValue": "boolean"
+      "splitShippingValue": "boolean",
+      "takeDepartmentsIntoAccount": "boolean",
+      "taxableItemsOnly": "boolean"
     }
   ],
   "nextPageLink": "string",
   "count": "integer (int64)"
 }
 ```
+
 
 ## Create a new Vendor Facility
 
@@ -215,6 +220,8 @@ Creates a new Vendor Facility for a specified active Location (All Locations) wi
 |**vendorXref**: string | Cross Reference of the Vendor | 
 |**matchOptionId**: integer *(int32)* | Unique Identifier of the Match Option. <br> **If not provided**: None.|
 |**ocrMatchOptionId**: integer *(int32)* | Unique Identifier of the OCR Match Option. <br> **If not provided**: None. |
+|**taxableItemsOnly**: boolean | Take Taxable Items only into account |
+|**takeDepartmentsIntoAccount**: boolean | Take Departments into account |
 |**minimumOrder**: number *(double)* | Minimum Order |
 |**minimumOrderTypeId**: integer *(int32)* | Identifier of the Minimum Order Type. <br> **If not provided**: warning message. |
 |**discountValue**: number *(double)* | Value of the Discount |
@@ -258,6 +265,8 @@ Creates a new Vendor Facility for a specified active Location (All Locations) wi
   "vendorXref": "string",
   "matchOptionId": "integer (int32)",
   "ocrMatchOptionId": "integer (int32)",
+  "taxableItemsOnly": "boolean",
+  "takeDepartmentsIntoAccount": "boolean",
   "minimumOrder": "number (double)",
   "minimumOrderTypeId": "integer (int32)",
   "discountValue": "number (double)",
@@ -407,6 +416,8 @@ Returns the details of the Vendor Facility specified by ID within a logged organ
 |**splitTaxValue**: boolean | Value of the Split Tax |
 |**splitDiscountValue**: boolean | Value of the Discount Split |
 |**splitShippingValue**: boolean | Value of the Split Shipping |
+|**takeDepartmentsIntoAccount**: boolean | Take Departments into account |
+|**taxableItemsOnly**: boolean | Take Taxable Items only into account |
 
 
 
@@ -480,7 +491,9 @@ Returns the details of the Vendor Facility specified by ID within a logged organ
   "ocrMatchOptionValue": "string",
   "splitTaxValue": "boolean",
   "splitDiscountValue": "boolean",
-  "splitShippingValue": "boolean"
+  "splitShippingValue": "boolean",
+  "takeDepartmentsIntoAccount": "boolean",
+  "taxableItemsOnly": "boolean"
 }
 ```
 

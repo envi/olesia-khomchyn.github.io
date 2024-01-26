@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 6.0.7</span>
+
+The [Vendor Facilities](VendorFacilities.md) endpoints now include the ```taxableItemsOnly``` and ```takeDepartmentsIntoAccount``` properties.
+
 <span style="color: #E0592A">V. 6.0.1</span>
 
 [Purchase Orders](PurchaseOrders.md) now support the ```includeInactiveVendors``` optional parameter.

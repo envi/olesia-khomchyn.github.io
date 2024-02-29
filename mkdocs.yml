@@ -61,6 +61,8 @@ nav:
     - Vendors: Vendors.md
   - Integrations:
     - SSO Integrations: SSO_Integrations.md
+    - IP Addresses and Domains: IP_Addresses_and_Domains.md
+
 
 theme:
   name: material

@@ -275,6 +275,7 @@ https://api-demo.envi.net/odata/Inventory?$filter=classificationName in ('MEDICA
 The **in** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
+ - [Classifications](Classifications.md)
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Activity](InventoryActivity.md#get-the-list-of-inventory-activities)
@@ -316,6 +317,7 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=unitCost gt 1.2345
 The **gt** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
+ - [Classifications](Classifications.md)
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
@@ -353,6 +355,7 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=lastUpdated ge YYYY-MM-DD
 The **ge** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
+ - [Classifications](Classifications.md)
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
@@ -389,6 +392,7 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=unitCost lt 1.2345
 The **lt** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
+ - [Classifications](Classifications.md)
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)
@@ -426,6 +430,7 @@ https://api-demo.envi.net/odata/PurchaseOrders?$filter=lastUpdated le YYYY-MM-DD
 The **le** operator is supported in the following lists:
 
  - [Addresses](Addresses.md#get-the-list-of-addresses)
+ - [Classifications](Classifications.md)
  - [Facilities](Facilities.md#get-the-list-of-facilities)
  - [Inventory](Inventory.md#get-the-list-of-inventory-items)
  - [Inventory Location extended](InventoryLocationsExtended.md#get-the-list-of-extended-inventory-location)

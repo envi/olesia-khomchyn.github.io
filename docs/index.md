@@ -17,6 +17,10 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 6.1.0</span>
+
+You can now use a new [Classification](Classifications.md#create-a-new-classification) endpoint to create a new Classification within a logged organization.
+
 <span style="color: #E0592A">V. 6.0.9</span>
 
 The two new [Classifications](Classifications.md) endpoints have been added. You can now retrieve the list of Classifications and the details of a specific Classification.

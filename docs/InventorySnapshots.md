@@ -154,7 +154,6 @@ Returns the list of items of the Inventory Snapshot specified by ID within a log
 |**400 Bad Request** | The limit for the ```$top``` query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit [here](Options_and_Limitations.md#top-and-skip). |
 |**401 Unauthorized**|Incorrect specified ```access_token``` or ```access_token``` got expired.|
 |**403 Forbidden**|User doesn’t have appropriate privileges.|
-|**404 Not Found** | Specified ID is absent in the system. |
 |**500 Internal Server Error**|Server encountered an unexpected condition that prevented it from fulfilling the request.|
 
 

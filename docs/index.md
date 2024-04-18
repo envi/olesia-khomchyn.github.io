@@ -17,6 +17,11 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+
+<span style="color: #E0592A">V. 6.1.3</span>
+
+The [Facilities](Facilities.md) endpoints now include the two additional properties: ```poContactInfoType``` and ```poContactInfo```.
+
 <span style="color: #E0592A">V. 6.1.0</span>
 
 You can now use a new [Classification](Classifications.md#create-a-new-classification) endpoint to create a new Classification within a logged organization.

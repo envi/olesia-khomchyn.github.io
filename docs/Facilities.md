@@ -108,6 +108,8 @@ td, th {
 |**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
 |**customField1**: string | Custom Field 1 |
 |**customField2**: string | Custom Field 2 |
+|**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
+|**poContactInfo**: string | PO Contact Info |
 
 
 
@@ -183,7 +185,9 @@ td, th {
       "capitalShippingCodeTemplate": "string",
       "capitalOffsetCodeTemplate": "string",
       "customField1": "string",
-      "customField2": "string"
+      "customField2": "string",
+      "poContactInfoType": "integer (int32)",
+      "poContactInfo": "string"
     }
   ],
   "nextPageLink": "string",
@@ -224,6 +228,7 @@ Partially updates the details of the Facility specified by the Facility ID.
 |**patientDisplayTemplate**: string | Template for displaying the Patient |
 |**poglCodeDisplayTemplate**: <br> string | Template for displaying the Purchase Order General Ledger Code |
 |**poDeptDisplayTemplate**: string | Template for displaying the Purchase Order Department |
+|**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
 |**activeStatus**: boolean | Is the Facility active or not? |
 |**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory items |
 |**apToleranceLevel**: number <br> *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
@@ -276,6 +281,7 @@ Partially updates the details of the Facility specified by the Facility ID.
   "patientDisplayTemplate": "string",
   "poglCodeDisplayTemplate": "string",
   "poDeptDisplayTemplate": "string",
+  "poContactInfoType": "integer (int32)",
   "activeStatus": "boolean",
   "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
   "apToleranceLevel": "number (double)",
@@ -422,6 +428,8 @@ Returns the details of the Facility specified by ID.
 |**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
 |**customField1**: string | Custom Field 1 |
 |**customField2**: string | Custom Field 2 |
+|**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
+|**poContactInfo**: string| PO Contact Info |
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML <br> Response Example (200 OK)"
@@ -494,7 +502,9 @@ Returns the details of the Facility specified by ID.
   "capitalShippingCodeTemplate": "string",
   "capitalOffsetCodeTemplate": "string",
   "customField1": "string",
-  "customField2": "string"
+  "customField2": "string",
+  "poContactInfoType": "integer (int32)",
+  "poContactInfo": "string"
 }
 ```
 

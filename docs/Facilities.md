@@ -110,7 +110,11 @@ td, th {
 |**customField2**: string | Custom Field 2 |
 |**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
 |**poContactInfo**: string | PO Contact Info |
-
+|**poContactName**: string | Name of the main contact point for the PO |
+|**poContactEmail**: string | Email of the main contact point for the PO |
+|**poContactPhone**: string | Phone of the main contact point for the PO |
+|**poContactPhoneExt**: string | Phone Extension of the main contact point for the PO |
+|**poContactFax**: string | Fax of the main contact point for the PO |
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML <br> Response Example (200 OK)"
@@ -187,7 +191,12 @@ td, th {
       "customField1": "string",
       "customField2": "string",
       "poContactInfoType": "integer (int32)",
-      "poContactInfo": "string"
+      "poContactInfo": "string",
+      "poContactName": "string",
+      "poContactEmail": "string",
+      "poContactPhone": "string",
+      "poContactPhoneExt": "string",
+      "poContactFax": "string"
     }
   ],
   "nextPageLink": "string",
@@ -229,6 +238,11 @@ Partially updates the details of the Facility specified by the Facility ID.
 |**poglCodeDisplayTemplate**: <br> string | Template for displaying the Purchase Order General Ledger Code |
 |**poDeptDisplayTemplate**: string | Template for displaying the Purchase Order Department |
 |**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
+|**poContactName**: string | Name of the main contact point for the PO |
+|**poContactEmail**: string | Email of the main contact point for the PO |
+|**poContactPhone**: string | Phone of the main contact point for the PO |
+|**poContactPhoneExt**: string | Phone Extension of the main contact point for the PO |
+|**poContactFax**: string | Fax of the main contact point for the PO |
 |**activeStatus**: boolean | Is the Facility active or not? |
 |**inventoryGroupId**: string *(uuid)* | Unique Identifier of the Group that contains related Inventory items |
 |**apToleranceLevel**: number <br> *(double)* | Discrepancy between the original PO and the Invoice sent by the Vendor |
@@ -282,6 +296,11 @@ Partially updates the details of the Facility specified by the Facility ID.
   "poglCodeDisplayTemplate": "string",
   "poDeptDisplayTemplate": "string",
   "poContactInfoType": "integer (int32)",
+  "poContactName": "string",
+  "poContactEmail": "string",
+  "poContactPhone": "string",
+  "poContactPhoneExt": "string",
+  "poContactFax": "string",
   "activeStatus": "boolean",
   "inventoryGroupId": "00000000-0000-0000-0000-000000000000",
   "apToleranceLevel": "number (double)",
@@ -430,6 +449,11 @@ Returns the details of the Facility specified by ID.
 |**customField2**: string | Custom Field 2 |
 |**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
 |**poContactInfo**: string| PO Contact Info |
+|**poContactName**: string | Name of the main contact point for the PO |
+|**poContactEmail**: string | Email of the main contact point for the PO |
+|**poContactPhone**: string | Phone of the main contact point for the PO |
+|**poContactPhoneExt**: string | Phone Extension of the main contact point for the PO |
+|**poContactFax**: string | Fax of the main contact point for the PO |
 
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML <br> Response Example (200 OK)"
@@ -504,7 +528,12 @@ Returns the details of the Facility specified by ID.
   "customField1": "string",
   "customField2": "string",
   "poContactInfoType": "integer (int32)",
-  "poContactInfo": "string"
+  "poContactInfo": "string",
+  "poContactName": "string",
+  "poContactEmail": "string",
+  "poContactPhone": "string",
+  "poContactPhoneExt": "string",
+  "poContactFax": "string"
 }
 ```
 

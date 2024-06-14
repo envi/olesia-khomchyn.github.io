@@ -17,6 +17,9 @@ Stay up-to-date with the latest API features, improvements, and articles.
 
 [Subscribe to our newsletter](https://news.envi.net/Signup/dev-news){ .md-button .md-button--primary }
 
+<span style="color: #E0592A">V. 6.1.7</span>
+
+The following prorepties have been added to the [Facilities](Facilities.md) endpoints: ```poContactName```, ```poContactEmail```, ```poContactPhone```, ```poContactPhoneExt```, and ```poContactFax```.
 
 <span style="color: #E0592A">V. 6.1.3</span>
 

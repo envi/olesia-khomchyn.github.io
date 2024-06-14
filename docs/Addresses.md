@@ -61,7 +61,7 @@ td, th {
 |**contactEmail**: string | Email of the main contact point |
 |**phone**: string | Phone of main the contact point |
 |**phoneExt**: string | Phone Extension of the main contact point |
-|**fax**: string | Fax |
+|**fax**: string | Fax of the main contact point |
 |**isDefaultAddress**: *boolean* |Is the Address default or not?|
 |**activeStatus**: boolean | Is the Status of the Address active or not? |
 |**dateCreated**: string *(date-time)* | Date when the Address was created |
@@ -165,7 +165,7 @@ Returns details of the Address specified by ID.
 |**contactEmail**: string | Email of the main contact point |
 |**phone**: string | Phone of the main contact point |
 |**phoneExt**: string | Phone Extension of the main contact point |
-|**fax**: string | Fax |
+|**fax**: string | Fax of the main contact point |
 |**isDefaultAddress**: *boolean* |Is the Address default or not?|
 |**activeStatus**: boolean | Is the Status of the Address active or not? |
 |**dateCreated**: string *(date-time)* | Date when the Address was created |

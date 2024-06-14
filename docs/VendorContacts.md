@@ -55,7 +55,7 @@ td, th {
 |**emailAddress**: string | Email Address of the main contact point |
 |**phone**: string | Phone of the main contact point |
 |**phoneExt**: string | Phone Extension of the main contact point |
-|**fax**: string | Fax |
+|**fax**: string | Fax of the main contact point |
 |**isDefault**: boolean | Is the Vendor Contact default or not? |
 |**dateAdded**: string *(date-time)* | Date when the Vendor Contract was added |
 |**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Contact |
@@ -115,7 +115,7 @@ Creates a new Vendor Contact within a logged organization and a specified Vendor
 |**emailAddress**: string | Email Address of the main contact point |
 |**phone**: string | Phone of the main contact point |
 |**phoneExt**: string | Phone Extension of the main contact point |
-|**fax**: string | Fax |
+|**fax**: string | Fax of the main contact point |
 |**facilityId**: string *(uuid)* | Unique Identifier of the Facility |
 |**isDefault**: boolean | Is the Vendor Contact default or not? <br> If ```isDefault=true```, then other contacts for this particular Facility (including Master) with ```isDefault=true``` should be updated to false.|
 
@@ -195,7 +195,7 @@ Returns the details of the Vendor Contact specified by ID within a logged organi
 |**emailAddress**: string | Email Address of the main contact point |
 |**phone**: string | Phone of the main contact point |
 |**phoneExt**: string | Phone Extension of the main contact point |
-|**fax**: string | Fax |
+|**fax**: string | Fax of the main contact point |
 |**isDefault**: boolean | Is the Vendor Contact default or not? |
 |**dateAdded**: string *(date-time)* | Date when the Vendor Contract was added |
 |**addedBy**: string *(uuid)* | Unique Identifier of the user who added the Vendor Contact |

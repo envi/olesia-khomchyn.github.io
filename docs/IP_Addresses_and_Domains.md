@@ -6,7 +6,7 @@ Envi domains have the following IP Addresses:
 |:-----|:-------|:-------|
 |**envi.net** <br> **www.envi.net** | 52.11.102.76 <br> 34.209.86.40| Envi Outbound IP Addresses | 
 |**edi.envi.net**| 34.209.227.115 <br> 52.89.104.29 | Envi EDI IP Addresses |
-|**as2.envi.net** | 52.12.229.144 | Envi EDI IP Address (TLS 1.2)  |
+|**as2.envi.net** | 52.12.229.144 | Envi EDI IP Address |
 |**ftp.envi.net**| 35.162.132.226 | Envi FTP server allowing traffic from all IP Addresses |
 |**sftp.envi.net** | 52.10.202.132 | Envi FTP server only allowing traffic from whitelisted IP Addresses |
 |**mail.envi.net** | 54.240.62.193 | IP Address used for sending email |
@@ -19,3 +19,4 @@ Envi domains have the following IP Addresses:
     If you need to whitelist our applications, our advice is to whitelist the *envi.net domains and subdomains. This would make you independent of any changes that occur to our IP Addresses.
 
     To stay informed about any updates, [subscribe to our newsletter](https://news.envi.net/Signup/dev-news).
+

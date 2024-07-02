@@ -82,7 +82,7 @@ td, th {
 |**serialNo**: string | Unique Identifier assigned incrementally or sequentially to an Item to uniquely identify it |
 |**expirationDate**: string <br> *(date-time)* | Previously determined date after which Item should no longer be used |
 |**itemNotes**: string | Comments about the Item |
-|**lineNo**: integer *(int32)* | Number of the Line |
+|**lineNo**: integer *(int32)* | Number of the Line Item |
 |**usageOrdinalNo**: integer *(int32)* | Ordinal Number of the Usage |
 |**usageId**: string (uuid) | Unique Identifier of the Usage |
 |**usageNo**: string | Identification Number of the Location |
@@ -152,7 +152,7 @@ Adds new items to existing Usages within a logged organization.
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the Usage. <br> **If not provided**: 400 Bad Request. |
-|**lineItemNo**: string <br> *in formData* | Number of the Line Item. <br> It is generated automatically and recalculated within active Usage Line Items. <br> **If not provided**: Auto-populated.
+|**lineNo**: integer *(int32)* <br> *in formData* | Number of the Line Item. <br> It is generated automatically and recalculated within active Usage Line Items. <br> **If not provided**: Auto-populated.
 |**inventoryNo**: string <br> *in formData* | Identification code of the Inventory Item. <br> It is validated by Facility (Inventory Group). <br> **If not provided**: Empty. |
 |**inventoryDescription**: string <br> *in formData* | Description of the Inventory Item. <br> It is populated from the existing Inventory if it is mapped by the Inventory No and Inventory Locations values. <br> **If not provided**: Empty. |
 |**locationNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | Identification Number of the Location. <br> It is populated from ```locationNo``` if the specified Location exists within Usage Facility. <br> **If not provided**: Usage Default Location. |
@@ -170,7 +170,7 @@ Adds new items to existing Usages within a logged organization.
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example"
 {
   "usageId": "string(uuid)",
-  "lineItemNo": "string",
+  "lineNo": "integer (int32)",
   "inventoryNo": "string",
   "inventoryDescription": "string",
   "locationNo": "string",

@@ -817,7 +817,7 @@ Returns the paged list of the existing Inventory tracking settings within the In
 
 !!! note 
 
-    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
+    This endpoint does not support logical operators (**and**, **or**, **in**, **gt**, **ge**, **lt**, **le**) for data filtering.
     
 
 

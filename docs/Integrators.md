@@ -394,7 +394,7 @@ The data is retrieved successfully. ![image](img/Integrators_17.png)
 ## <span style="color: #F05D30">ODBC Powerpack</span> 
 
  - [ODBC Powerpack configuration](#odbc-powerpack-configuration)
- - [CData ODBC Driver for OData](#ocdata-odbc-driver-for-odata)
+ - [CData ODBC Driver for OData](#cdata-odbc-driver-for-odata)
 
 ### <span style="color: #F05D30">ODBC Powerpack configuration</span> 
 With the **ODBC Powerpack** tool, you can easily retrieve the data from Envi OData API and insert it into the MSSQL database. To do it:

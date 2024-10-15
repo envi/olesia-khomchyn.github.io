@@ -181,7 +181,7 @@ You can connect **MS Excel** with the [ODBC driver](Integrators.md#odbc-powerpac
 6. In the **SQL statement** dialog box, if needed, modify the query, and select **OK**. ![image](img/MS_Exel_15.png) 
 
 
-    Also, you can use the query example copied on the last step ([Integrators](Integrators.md#ocdata-odbc-driver-for-odata), step 14) of driver configuration. With this sample query, you can specify additional parameters different from the default driver configuration, such as modifying the endpoint address and using the same driver instance for different entities. The following options are available:
+    Also, you can use the query example copied on the last step ([Integrators](Integrators.md#cdata-odbc-driver-for-odata), step 14) of driver configuration. With this sample query, you can specify additional parameters different from the default driver configuration, such as modifying the endpoint address and using the same driver instance for different entities. The following options are available:
 
     ``` 
     WITH(
@@ -237,7 +237,7 @@ You can connect **Tableau** with the **ODBC driver** and retrieve the needed dat
  8. To refresh the data, select **Data** > **value (DATA.value)** > **Refresh**. ![image](img/MS_Exel_27.png) 
 
 ### <span style="color: #F05D30">Integration with Microsoft SQL Server with Tableau</span> 
-Except for the direct **ODBC driver** connection, you can also connect **Tableau** using **Linked Server** ([Integrators](Integrators.md#ocdata-odbc-driver-for-odata), step 20), which is already connected to the **ODBC driver**. For this, do the following:
+Except for the direct **ODBC driver** connection, you can also connect **Tableau** using **Linked Server** ([Integrators](Integrators.md#cdata-odbc-driver-for-odata), step 20), which is already connected to the **ODBC driver**. For this, do the following:
 
  1. In the **Tableau** app, create a **New** book. <br> ![image](img/MS_Exel_19.png) 
  2. On the **Data** tab, select the **Connect to Data** link. ![image](img/MS_Exel_20.png) 

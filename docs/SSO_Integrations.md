@@ -4,7 +4,6 @@
 |![image](img/pdf3.png) [Azure AD SCIM.pdf](static/Azure_AD_SCIM.pdf){:download="Azure AD SCIM"} |
 |![image](img/pdf3.png) [OneLogin SCIM.pdf](static/OneLogin_SCIM.pdf){:download="OneLogin SCIM"} |
 |![image](img/pdf3.png) [Okta SCIM.pdf](static/Okta_SCIM.pdf){:download="Okta SCIM"} |
-|![image](img/pdf3.png) [SSO with ADFS (Active Directory Federation Services).pdf](static/SSO_with_ADFS_(Active_Directory_Federation_Services).pdf){:download="SSO with ADFS (Active Directory Federation Services)"} |
 |![image](img/pdf3.png) [SSO with OneLogin (Manual Configuration)](static/SSO_with_OneLogin_(Manual_Configuration).pdf){:download="SSO with OneLogin (Manual Configuration)"} |
 |![image](img/pdf3.png) [SSO with OneLogin (OneLogin app Catalog).pdf](static/SSO_with_OneLogin_(OneLogin_app_Catalog).pdf){:download="SSO with OneLogin (OneLogin app Catalog)"} |
 |![image](img/pdf3.png) [SSO with ADFS 2019.pdf](static/SSO_with_ADFS_2019.pdf){:download="SSO_with_ADFS_2019"} |

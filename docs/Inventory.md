@@ -819,8 +819,6 @@ Returns the paged list of the existing Inventory tracking settings within the In
 
     This endpoint does not support logical operators (**and**, **or**, **in**, **gt**, **ge**, **lt**, **le**) for data filtering.
     
-
-
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       
 |-----:|:-------|
@@ -1083,7 +1081,7 @@ Returns the details of the Inventory tracking values within the Inventory, Facil
 
 !!! note 
 
-    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
+    This endpoint does not support logical operators (**and**, **or**, **in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 ### <span style="color: #F05D30">Request parameters</span>
 | <div style="width:200px">Parameter</div>|<div style="width:380px">Explanation</div>|                       

@@ -8,11 +8,6 @@ GET /odata/MatchedInvoiceItems
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing Matched Invoice Items within a logged organization. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-!!! note 
-
-    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
-
-
 ### <span style="color: #F05D30">Request parameters</span>
 <style>
 td, th {

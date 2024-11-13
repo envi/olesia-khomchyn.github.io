@@ -311,11 +311,6 @@ GET /odata/MatchedInvoices({matchedInvoiceId})/matchedInvoiceItems
 ### <span style="color: #F05D30">Description</span>
 Returns the paged list of the existing matched invoice items within a matched Invoice specified by ID. You can filter the results by the strict match using the ```$filter``` parameter–entity eq ‘string’. Or filter the results by the partial match using ```$filter```=contains parameter–contains(entity, ‘string’).
 
-!!! note 
-
-    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
-
-
 ### <span style="color: #F05D30">Request parameters</span>
 |  <div style="width:200px">Parameter</div>  |  <div style="width:380px">Explanation</div>  |                      
 |-----:|:-------|

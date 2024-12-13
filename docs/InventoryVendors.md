@@ -10,7 +10,7 @@ Returns the paged list of the existing cost history records within the Inventory
 
 !!! note 
 
-    This endpoint does not support logical operators (**in**, **gt**, **ge**, **lt**, **le**) for data filtering.
+    This endpoint does not support logical operators (**and**, **or**, **in**, **gt**, **ge**, **lt**, **le**) for data filtering.
 
 ### <span style="color: #F05D30">Request parameters</span>
 <style>

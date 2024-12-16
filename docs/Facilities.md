@@ -86,10 +86,10 @@ td, th {
 |**taxExpenseAmount**: number <br> *(double)* | Amount of the Tax Expense |
 |**facilityNoXref**: string | Cross Reference Number of the Facility |
 |**taxShipping**: boolean | Is the Shipping taxable or not? |
-|**poGlValidation**: string | Validation for the Purchase Order General Ledger |
-|**poGlValidationMsg**: string | Message for the Purchase Order General Ledger |
-|**capitalPOGlValidation**: string | Validation for the Capital Purchase Order General Ledger |
-|**capitalPOGlValidationMsg**: <br>string | Message for the Capital Purchase Order General Ledger |
+|**poInvoiceGlValidation**: string | Validation for the Purchase Order and Invoice General Ledger |
+|**poInvoiceGlValidationMsg**: string | Message for the Purchase Order and Invoice General Ledger |
+|**capitalPOInvoiceGlValidation**: string | Validation for the Capital Purchase Order and Invoice General Ledger |
+|**capitalPOInvoiceGlValidationMsg**: <br>string | Message for the Capital Purchase Order and Invoice General Ledger |
 |**timeZoneId**: string *(uuid)* | Unique Identifier of the Time Zone |
 |**timeZone**: string | Time Zone |
 |**preferenceCardMatching**: <br> integer *(int32)* |  Matching of the Preference Card |
@@ -168,10 +168,10 @@ td, th {
       "taxExpenseAmount": "number (double)",
       "facilityNoXref": "string",
       "taxShipping": "boolean",
-      "poGlValidation": "string",
-      "poGlValidationMsg": "string",
-      "capitalPOGlValidation": "string",
-      "capitalPOGlValidationMsg": "string",
+      "poInvoiceGlValidation": "string",
+      "poInvoiceGlValidationMsg": "string",
+      "capitalPOInvoiceGlValidation": "string",
+      "capitalPOInvoiceGlValidationMsg": "string",
       "timeZoneId": "00000000-0000-0000-0000-000000000000",
       "timeZone": "string",
       "preferenceCardMatching": "integer (int32)",
@@ -261,10 +261,10 @@ Partially updates the details of the Facility specified by the Facility ID.
 |**taxExpenseType**: integer *(int32)* | Type of the Tax Expense |
 |**facilityNoXref**: string | Cross Reference Number of the Facility |
 |**taxShipping**: boolean | Is the Shipping taxable or not? |
-|**poGlValidation**: string | Validation for the Purchase Order General Ledger |
-|**poGlValidationMsg**: string | Message for the Purchase Order General Ledger |
-|**capitalPOGlValidation**: string | Validation for the Capital Purchase Order General Ledger |
-|**capitalPOGlValidationMsg**: <br>string | Message for the Capital Purchase Order General Ledger |
+|**poInvoiceGlValidation**: string | Validation for the Purchase Order and Invoice General Ledger |
+|**poInvoiceGlValidationMsg**: string | Message for the Purchase Order and Invoice General Ledger |
+|**capitalPOInvoiceGlValidation**: string | Validation for the Capital Purchase Order and Invoice General Ledger |
+|**capitalPOInvoiceGlValidationMsg**: <br>string | Message for the Capital Purchase Order and Invoice General Ledger |
 |**timeZoneId**: string *(uuid)* | Unique Identifier of the Time Zone |
 |**preferenceCardMatching**: <br> integer *(int32)* |  Matching of the Preference Card |
 |**memberID**: string | Unique Identifier of the Facility for external use. <br> **Note**: The field requires special privileges to modify. |
@@ -319,10 +319,10 @@ Partially updates the details of the Facility specified by the Facility ID.
   "taxExpenseType": "integer (int32)",
   "facilityNoXref": "string",
   "taxShipping": "boolean",
-  "poGlValidation": "string",
-  "poGlValidationMsg": "string",
-  "capitalPOGlValidation": "string",
-  "capitalPOGlValidationMsg": "string",
+  "poInvoiceGlValidation": "string",
+  "poInvoiceGlValidationMsg": "string",
+  "capitalPOInvoiceGlValidation": "string",
+  "capitalPOInvoiceGlValidationMsg": "string",
   "timeZoneId": "00000000-0000-0000-0000-000000000000",
   "preferenceCardMatching": "integer (int32)",
   "memberID": "string",
@@ -425,10 +425,10 @@ Returns the details of the Facility specified by ID.
 |**taxExpenseAmount**: number <br> *(double)* | Amount of the Tax Expense |
 |**facilityNoXref**: string | Cross Reference Number of the Facility |
 |**taxShipping**: boolean | Is the Shipping taxable or not? |
-|**poGlValidation**: string | Validation for the Purchase Order General Ledger |
-|**poGlValidationMsg**: string | Message for the Purchase Order General Ledger |
-|**capitalPOGlValidation**: string | Validation for the Capital Purchase Order General Ledger |
-|**capitalPOGlValidationMsg**: <br>string | Message for the Capital Purchase Order General Ledger |
+|**poInvoiceGlValidation**: string | Validation for the Purchase Order and Invoice General Ledger |
+|**poInvoiceGlValidationMsg**: string | Message for the Purchase Order and Invoice General Ledger |
+|**capitalPOInvoiceGlValidation**: string | Validation for the Capital Purchase Order and Invoice General Ledger |
+|**capitalPOInvoiceGlValidationMsg**: <br>string | Message for the Capital Purchase Order and Invoice General Ledger |
 |**timeZoneId**: string *(uuid)* | Unique Identifier of the Time Zone |
 |**timeZone**: string | Time Zone |
 |**preferenceCardMatching**: <br> integer *(int32)* |  Matching of the Preference Card |
@@ -505,10 +505,10 @@ Returns the details of the Facility specified by ID.
   "taxExpenseAmount": "number (double)",
   "facilityNoXref": "string",
   "taxShipping": "boolean",
-  "poGlValidation": "string",
-  "poGlValidationMsg": "string",
-  "capitalPOGlValidation": "string",
-  "capitalPOGlValidationMsg": "string",
+  "poInvoiceGlValidation": "string",
+  "poInvoiceGlValidationMsg": "string",
+  "capitalPOInvoiceGlValidation": "string",
+  "capitalPOInvoiceGlValidationMsg": "string",
   "timeZoneId": "00000000-0000-0000-0000-000000000000",
   "timeZone": "string",
   "preferenceCardMatching": "integer (int32)",

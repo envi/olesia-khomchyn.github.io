@@ -1,0 +1,16 @@
+:root > * {
+  --md-code-hl-number-color: #D52A2A;
+  --md-code-hl-special-color:#DB1457;
+  --md-code-hl-function-color: #A846B9;
+  --md-code-hl-constant-color: #6E59D9;
+  --md-code-hl-keyword-color: #3F6EC6;
+  --md-code-hl-string-color: #E0592A;
+  --md-code-hl-name-color:  #36464E;
+  --md-code-hl-operator-color: #757575;
+  --md-code-hl-punctuation-color: #757575;
+  --md-code-hl-comment-color: #757575;
+  --md-code-hl-generic-color: #757575;
+  --md-code-hl-variable-color: #A846B9;
+
+}
+

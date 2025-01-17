@@ -86,7 +86,7 @@ td, th {
 |**lastUpdatedByName**: string | Name of the last user who updated the Receipt |
 |**receiptFillStatus**: boolean | Status of the Receipt Fill |
 |**receiptSourceId**: integer *(int32)* | Unique Identifier of the Receipt Source |
-|**receiptSource**: integer *(int32)* | Source of the Receipt |
+|**receiptSource**: string| Source of the Receipt |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
@@ -139,7 +139,7 @@ td, th {
       "lastUpdatedByName": "string",
       "receiptFillStatus": "boolean",
       "receiptSourceId": "integer (int32)",
-      "receiptSource": "integer (int32)"
+      "receiptSource": "string"
     }
   ],
   "nextPageLink": "string",
@@ -222,7 +222,7 @@ Returns the details of the Receipt specified by ID.
 |**lastUpdatedByName**: string | Name of the last user who updated the Receipt |
 |**receiptFillStatus**: boolean | Status of the Receipt Fill |
 |**receiptSourceId**: integer *(int32)* | Unique Identifier of the Receipt Source |
-|**receiptSource**: integer *(int32)* | Source of the Receipt |
+|**receiptSource**: string | Source of the Receipt |
 
 ``` json title="Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)"
 {
@@ -273,7 +273,7 @@ Returns the details of the Receipt specified by ID.
   "lastUpdatedByName": "string",
   "receiptFillStatus": "boolean",
   "receiptSourceId": "integer (int32)",
-  "receiptSource": "integer (int32)"
+  "receiptSource": "string"
 }
 ```
 

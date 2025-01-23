@@ -108,6 +108,8 @@ td, th {
 |**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
 |**customField1**: string | Custom Field 1 |
 |**customField2**: string | Custom Field 2 |
+|**customField3**: string | Custom Field 3 |
+|**customField4**: string | Custom Field 4 |
 |**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
 |**poContactInfo**: string | PO Contact Info |
 |**poContactName**: string | Name of the main contact point for the PO |
@@ -190,6 +192,8 @@ td, th {
       "capitalOffsetCodeTemplate": "string",
       "customField1": "string",
       "customField2": "string",
+      "customField3": "string",
+      "customField4": "string",
       "poContactInfoType": "integer (int32)",
       "poContactInfo": "string",
       "poContactName": "string",
@@ -270,6 +274,8 @@ Partially updates the details of the Facility specified by the Facility ID.
 |**memberID**: string | Unique Identifier of the Facility for external use. <br> **Note**: The field requires special privileges to modify. |
 |**customField1**: string | Custom Field 1 |
 |**customField2**: string | Custom Field 2 |
+|**customField3**: string | Custom Field 3 |
+|**customField4**: string | Custom Field 4 |
 
 
 ``` json title="Request Content-types: APPLICATION/JSON, APPLICATION/XML<br>Request Example"
@@ -327,7 +333,9 @@ Partially updates the details of the Facility specified by the Facility ID.
   "preferenceCardMatching": "integer (int32)",
   "memberID": "string",
   "customField1": "string",
-  "customField2": "string"
+  "customField2": "string",
+  "customField3": "string",
+  "customField4": "string",
 }
 ```
 
@@ -447,6 +455,8 @@ Returns the details of the Facility specified by ID.
 |**capitalOffsetCodeTemplate**: <br> string | Capital Offset Code Template |
 |**customField1**: string | Custom Field 1 |
 |**customField2**: string | Custom Field 2 |
+|**customField3**: string | Custom Field 3 |
+|**customField4**: string | Custom Field 4 |
 |**poContactInfoType**: integer <br> *(int32)* | Type of the PO Contact Info |
 |**poContactInfo**: string| PO Contact Info |
 |**poContactName**: string | Name of the main contact point for the PO |
@@ -527,6 +537,8 @@ Returns the details of the Facility specified by ID.
   "capitalOffsetCodeTemplate": "string",
   "customField1": "string",
   "customField2": "string",
+  "customField3": "string",
+  "customField4": "string",
   "poContactInfoType": "integer (int32)",
   "poContactInfo": "string",
   "poContactName": "string",

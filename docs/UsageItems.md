@@ -152,13 +152,13 @@ Adds new items to existing Usages within a logged organization.
 |  <div style="width:200px">Parameter</div>  |  <div style="width:420px">Explanation</div>  |                      
 |-----:|:-------|
 |**usageId**: string <br> <span style="color: #F05D30">**required**</span> <br>  *in formData* | Unique Identifier of the Usage. <br> **If not provided**: 400 Bad Request. |
-|**lineNo**: integer *(int32)* <br> *in formData* | Number of the Line Item. <br> It is generated automatically and recalculated within active Usage Line Items. <br> **If not provided**: Auto-populated.
+|**lineNo**: integer *(int32)* <br> *in formData* | Number of the Line Item. <br> It is generated automatically and recalculated within active Usage Line Items. <br> **If not provided** : Auto-populated. |
 |**inventoryNo**: string <br> *in formData* | Identification code of the Inventory Item. <br> It is validated by Facility (Inventory Group). <br> **If not provided**: Empty. |
 |**inventoryDescription**: string <br> *in formData* | Description of the Inventory Item. <br> It is populated from the existing Inventory if it is mapped by the Inventory No and Inventory Locations values. <br> **If not provided**: Empty. |
 |**locationNo**: string <br> <span style="color: #F05D30">**required**</span> <br> *in formData* | Identification Number of the Location. <br> It is populated from ```locationNo``` if the specified Location exists within Usage Facility. <br> **If not provided**: Usage Default Location. |
-|**vendorItemNo**: string <br> *in formData* | Code that is used by the Vendor for the Item identification. <br> It is matched with appropriate Inventory Vendor data. <br> **If not provided**: Empty. |
-|**manufacturerNo**: string <br> *in formData* | Number of the Manufacturer. <br> It is populated from Inventory Vendor if Item is matched by ```vendorItemNo```. <br> **If not provided**: ```none```. |
-|**manufacturerItemNo**: string <br> *in formData* | Item Number of the Manufacturer. <br> It is populated from Inventory Vendor if Item is matched by ```vendorItemNo```. <br> **If not provided**: Empty. |
+|**vendorItemNo**: string <br> *in formData* | Code that is used by the Vendor for the Item identification. <br> **If not provided**: Empty.|
+|**manufacturerNo**: string <br> *in formData* | Number of the Manufacturer. <br> It is populated from Inventory Vendor if Item is matched by ```vendorItemNo```. <br> **If not provided**: None.|
+|**manufacturerItemNo**: string <br> *in formData* | Item Number of the Manufacturer. <br> It is populated from Inventory Vendor if Item is matched by ```vendorItemNo```. <br> **If not provided**: Empty.|
 |**lotNo**: string <br> *in formData* | Identification Number assigned to a particular Quantity or Lot of material from a single Manufacturer. <br> It is populated from ```lotNo```. <br> **If not provided**: Empty. |
 |**serialNo**: string <br> *in formData* | Unique Identifier assigned incrementally or sequentially to an Item to uniquely identify it. <br> It is populated from ```serialNo``` . <br> **If not provided**: Empty. |
 |**expirationDate**: string <br> *in formData* | Previously determined date after which Item should no longer be used. <br> It is populated from ```expirationDate``` .<br> **If not provided**: Empty. |

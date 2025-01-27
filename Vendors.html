@@ -1,0 +1,2666 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="VendorFaxConfigurations.html">
+      
+      
+        <link rel="next" href="SSO_Integrations.html">
+      
+      
+      <link rel="icon" href="img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Vendors - Envi Developer Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vendors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Envi Developer Resources" class="md-header__button md-logo" aria-label="Envi Developer Resources" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Envi Developer Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vendors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  API Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="Authentication_POST.html" class="md-tabs__link">
+          
+  
+  API Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="SSO_Integrations.html" class="md-tabs__link">
+          
+  
+  Integrations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Envi Developer Resources" class="md-nav__button md-logo" aria-label="Envi Developer Resources" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Envi Developer Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Topics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            API Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Testing%20with%20Postman.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing with Postman
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Retrieving_Data.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retrieving Data Using cURL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Options_and_Limitations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Options and Limitations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Custom_Options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Metadata.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Metadata_Controlling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Controlling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Rate_Limiting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rate Limiting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="API_Versioning.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Envi_OData_Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Envi OData Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Envi_Use_Cases.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Envi Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="BI_Tool_Use_Cases.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bi Tool Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Integrators.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GitHub_Repository.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API Operations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API Operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Authentication_POST.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Addresses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AdjustmentItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AdjustmentItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AP_Batch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AP Batch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Facilities.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Facilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FuturePricing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FuturePricing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Inventory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryActivity.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryActivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocationsCostAndQuantity.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocationsCostAnd <br> Quantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocationsExtended.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocationsExtended
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventorySnapshotItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventorySnapshotItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventorySnapshots.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventorySnapshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryTrackings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryTrackings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryUOMs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryUOMs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryVendors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryVendors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Locations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Locations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Manufacturers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MatchedInvoiceItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MatchedInvoiceItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MatchedInvoices.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MatchedInvoices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PARAreaItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PARAreaItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PARAreas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PARAreas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="POConfirmationItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POConfirmationItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="POConfirmations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POConfirmations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchaseOrderItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchaseOrderItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchaseOrders.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchaseOrders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchasingUnits.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchasingUnits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ReceiptItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReceiptItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Receipts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Receipts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionFillItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionFillItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionFills.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionFills
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Requisitions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requisitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="UsageItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UsageItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="UsageProcedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UsageProcedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Usages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorAddresses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorAddresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorContacts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorContacts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorEmailConfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorEmailConfigurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorFacilities.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorFacilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorFaxConfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorFaxConfigurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vendors
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Vendors.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Vendors
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-list-of-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the list of Vendors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get the list of Vendors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-specified-vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the specified Vendor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get the specified Vendor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-list-of-vendors_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the list of Vendors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get the list of Vendors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-body_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SSO_Integrations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSO Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="IP_Addresses_and_Domains.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IP Addresses and Domains
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-list-of-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the list of Vendors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get the list of Vendors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-specified-vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the specified Vendor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get the specified Vendor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-list-of-vendors_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the list of Vendors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get the list of Vendors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-body_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vendors">Vendors</h1>
+<h2 id="get-the-list-of-vendors">Get the list of Vendors</h2>
+<h3 id="path"><span style="color: #F05D30">Path</span></h3>
+<p>GET /odata/Vendors</p>
+<h3 id="description"><span style="color: #F05D30">Description</span></h3>
+<p>Returns the paged list of existing Vendors within a logged organization. You can filter the results by the strict match using the <code>$filter</code> parameter–entity eq ‘string’. Or filter the results by the partial match using <code>$filter</code>=contains parameter–contains(entity, ‘string’).</p>
+<h3 id="request-parameters"><span style="color: #F05D30">Request parameters</span></h3>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Parameter</div></th>
+<th style="text-align: left;"><div style="width:380px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>api-version</strong>: string default: 1.0 <br> <em>in header</em></td>
+<td style="text-align: left;">The requested API version.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>$search</strong>: string <br> <em>in query</em></td>
+<td style="text-align: left;">Picks the value in all possible fields.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>$filter</strong>: string <br> <em>in query</em></td>
+<td style="text-align: left;">Filters the results, based on a Boolean condition.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>$orderby</strong>: string <br> <em>in query</em></td>
+<td style="text-align: left;">Sorts the results.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>$top</strong>: string  <br> <em>in query</em></td>
+<td style="text-align: left;">Returns only the first n results.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>$skip</strong>: string <br> <em>in query</em></td>
+<td style="text-align: left;">Skips the first n results.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>Authorization</strong>: string default: <br> Bearer access_token <br> <em>in header</em></td>
+<td style="text-align: left;">Specify the type of the token (bearer) and then insert the <code>access_token</code>, which was obtained during authentication.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses"><span style="color: #F05D30">Responses</span></h3>
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Response </div></th>
+<th style="text-align: left;"><div style="width:380px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>200 OK</strong></td>
+<td style="text-align: left;">OK</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>400 Bad Request</strong></td>
+<td style="text-align: left;">Incorrect input data or organization ID does not match with the organization ID user is logged in.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>400 Bad Request</strong></td>
+<td style="text-align: left;">The limit for the <code>$top</code> query has been exceeded. The value from the incoming request is 'N' (N is your value from the request). You can find the data on the current limit <a href="Options_and_Limitations.html#top-and-skip">here</a>.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>401 Unauthorized</strong></td>
+<td style="text-align: left;">Incorrect specified <code>access_token</code> or <code>access_token</code> got expired.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>403 Forbidden</strong></td>
+<td style="text-align: left;">User doesn’t have appropriate privileges.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>500 Internal Server Error</strong></td>
+<td style="text-align: left;">Server encountered an unexpected condition that prevented it from fulfilling the request.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties"><span style="color: #F05D30">Properties</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Property </div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>vendorId</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorNo</strong>: string</td>
+<td style="text-align: left;">Code of the Supplier who sells products</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorName</strong>: string</td>
+<td style="text-align: left;">Name of the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>organizationId</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the Organization</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>organizationNo</strong>: string</td>
+<td style="text-align: left;">Indentification Number of the Organization</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>organizationName</strong>: string</td>
+<td style="text-align: left;">Name of the Organization</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorNotes</strong>: string</td>
+<td style="text-align: left;">Comments concerning the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>dateAdded</strong>: string <em>(date-time)</em></td>
+<td style="text-align: left;">Date when the Vendor was added</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>addedBy</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the user who added the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>addedByName</strong>: string</td>
+<td style="text-align: left;">Name of the user who added the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdated</strong>: string <em>(date-time)</em></td>
+<td style="text-align: left;">Last Date when the Vendor was updated</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdatedBy</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the last user who updated the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdatedByName</strong>: string</td>
+<td style="text-align: left;">Name of the last user who updated the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>activeStatus</strong>: boolean</td>
+<td style="text-align: left;">Is the Vendor active or not?</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>url</strong>: string</td>
+<td style="text-align: left;">Uniform Resource Locator</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>systemVendorName</strong>: string</td>
+<td style="text-align: left;">Name of the System Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>ediVendorNo</strong>: string</td>
+<td style="text-align: left;">Code of the Supplier EDI who sells products</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;vendorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;vendorNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;vendorName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">&quot;organizationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">&quot;organizationNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">&quot;organizationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&quot;vendorNotes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;dateAdded&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string (date-time)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;addedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;addedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string (date-time)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="nt">&quot;lastUpdatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">&quot;lastUpdatedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">&quot;activeStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="nt">&quot;systemVendorName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">&quot;ediVendorNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="nt">&quot;nextPageLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer (int64)&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="get-the-specified-vendor">Get the specified Vendor</h2>
+<h3 id="path_1"><span style="color: #F05D30">Path</span></h3>
+<p>GET /odata/Vendors({vendorId})</p>
+<h3 id="description_1"><span style="color: #F05D30">Description</span></h3>
+<p>Returns the details of the Vendor specified by ID.</p>
+<h3 id="request-body"><span style="color: #F05D30">Request body</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Parameter</div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>vendorId</strong>: string <em>(uuid)</em> <br> <span style="color: #F05D30"><strong>required</strong></span> <br> <em>in path</em></td>
+<td style="text-align: left;">Enter the ID of the Vendor here.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>api-version</strong>: string default: 1.0 <br> <em>in header</em></td>
+<td style="text-align: left;">The requested API version.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>Authorization</strong>: string default: <br> Bearer access_token <br> <em>in header</em></td>
+<td style="text-align: left;">Specify the type of the token (bearer) and then insert the <code>access_token</code>, which was obtained during authentication.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses_1"><span style="color: #F05D30">Responses</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Response </div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>200 OK</strong></td>
+<td style="text-align: left;">OK</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>400 Bad Request</strong></td>
+<td style="text-align: left;">Incorrect input data or organization ID does not match with the organization ID user is logged in.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>401 Unauthorized</strong></td>
+<td style="text-align: left;">Incorrect specified <code>access_token</code> or <code>access_token</code> got expired.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>403 Forbidden</strong></td>
+<td style="text-align: left;">User doesn’t have appropriate privileges.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>404 Not Found</strong></td>
+<td style="text-align: left;">Specified ID is absent in the system.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>500 Internal Server Error</strong></td>
+<td style="text-align: left;">Server encountered an unexpected condition that prevented it from fulfilling the request.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_1"><span style="color: #F05D30">Properties</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Property </div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>vendorId</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorNo</strong>: string</td>
+<td style="text-align: left;">Code of the Supplier who sells products</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorName</strong>: string</td>
+<td style="text-align: left;">Name of the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>organizationId</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the Organization</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>organizationNo</strong>: string</td>
+<td style="text-align: left;">Indentification Number of the Organization</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>organizationName</strong>: string</td>
+<td style="text-align: left;">Name of the Organization</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorNotes</strong>: string</td>
+<td style="text-align: left;">Comments concerning the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>dateAdded</strong>: string <em>(date-time)</em></td>
+<td style="text-align: left;">Date when the Vendor was added</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>addedBy</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the user who added the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>addedByName</strong>: string</td>
+<td style="text-align: left;">Name of the user who added the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdated</strong>: string <em>(date-time)</em></td>
+<td style="text-align: left;">Last Date when the Vendor was updated</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdatedBy</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the last user who updated the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdatedByName</strong>: string</td>
+<td style="text-align: left;">Name of the last user who updated the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>activeStatus</strong>: boolean</td>
+<td style="text-align: left;">Is the Vendor active or not?</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>url</strong>: string</td>
+<td style="text-align: left;">Uniform Resource Locator</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>systemVendorName</strong>: string</td>
+<td style="text-align: left;">Name of the System Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>ediVendorNo</strong>: string</td>
+<td style="text-align: left;">Code of the Supplier EDI who sells products</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="nt">&quot;vendorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="nt">&quot;vendorNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">   </span><span class="nt">&quot;vendorName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">   </span><span class="nt">&quot;organizationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">   </span><span class="nt">&quot;organizationNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">   </span><span class="nt">&quot;organizationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">   </span><span class="nt">&quot;vendorNotes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">   </span><span class="nt">&quot;dateAdded&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string (date-time)&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">   </span><span class="nt">&quot;addedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">   </span><span class="nt">&quot;addedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">   </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string (date-time)&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span><span class="nt">&quot;lastUpdatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">   </span><span class="nt">&quot;lastUpdatedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">   </span><span class="nt">&quot;activeStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">   </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">   </span><span class="nt">&quot;systemVendorName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">   </span><span class="nt">&quot;ediVendorNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="get-the-list-of-vendors_1">Get the list of Vendors</h2>
+<h3 id="path_2"><span style="color: #F05D30">Path</span></h3>
+<p>POST /odata/Vendors/GetVendorsInfo(facilityId={facilityId})</p>
+<h3 id="description_2"><span style="color: #F05D30">Description</span></h3>
+<p>Returns the details of the predefined Vendor(s) within the Facility specified by ID.</p>
+<h3 id="request-body_1"><span style="color: #F05D30">Request body</span></h3>
+<p>Enter the value of the vendor(s) from the existing template.</p>
+<h3 id="request-parameters_1"><span style="color: #F05D30">Request parameters</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Parameter</div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>facilityId</strong>: string <em>(uuid)</em> <br> <span style="color: #F05D30"><strong>required</strong></span> <br> <em>in path</em></td>
+<td style="text-align: left;">Enter the ID of the Facility.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>api-version</strong>: string default: 1.0 <br> <em>in header</em></td>
+<td style="text-align: left;">The requested API version.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>Authorization</strong>: string default: <br> Bearer access_token <br> <em>in header</em></td>
+<td style="text-align: left;">Specify the type of the token (bearer) and then insert the <code>access_token</code>, which was obtained during authentication.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Request Content-types: APPLICATION/JSON, APPLICATION/XML <br> Request Example</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="responses_2"><span style="color: #F05D30">Responses</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Response </div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>200 OK</strong></td>
+<td style="text-align: left;">OK</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>400 Bad Request</strong></td>
+<td style="text-align: left;">Incorrect input data or organization ID does not match with the organization ID user is logged in.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>401 Unauthorized</strong></td>
+<td style="text-align: left;">Incorrect specified <code>access_token</code> or <code>access_token</code> got expired.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>403 Forbidden</strong></td>
+<td style="text-align: left;">User doesn’t have appropriate privileges.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>500 Internal Server Error</strong></td>
+<td style="text-align: left;">Server encountered an unexpected condition that prevented it from fulfilling the request.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_2"><span style="color: #F05D30">Properties</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><div style="width:200px">Property </div></th>
+<th style="text-align: left;"><div style="width:420px">Explanation</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>vendorId</strong>: string <em>(uuid)</em></td>
+<td style="text-align: left;">Unique Identifier of the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorName</strong>: string</td>
+<td style="text-align: left;">Name of the Vendor</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>vendorNo</strong>: string</td>
+<td style="text-align: left;">Code of the Supplier who sells products</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>address1</strong>: string</td>
+<td style="text-align: left;">The first Address for shipping or billing purposes</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>address2</strong>: string</td>
+<td style="text-align: left;">The second Address for shipping or billing purposes</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>city</strong>: string</td>
+<td style="text-align: left;">City</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>state</strong>: string</td>
+<td style="text-align: left;">State</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>zip</strong>: string</td>
+<td style="text-align: left;">Zip</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>country</strong>: string</td>
+<td style="text-align: left;">Country</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>url</strong>: string</td>
+<td style="text-align: left;">Uniform Resource Locator</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>accountNumber</strong>: string</td>
+<td style="text-align: left;">Number of the Vendor Account</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>activeStatus</strong>: boolean</td>
+<td style="text-align: left;">Is the Vendor active or not?</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>lastUpdated</strong>: string <em>(date-time)</em></td>
+<td style="text-align: left;">Last Date when the Vendor was updated</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>leadTime</strong>: integer <em>(int32)</em></td>
+<td style="text-align: left;">Allowed Time for the Completion</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Response Content-types: APPLICATION/JSON, APPLICATION/XML<br>Response example (200 OK)</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;vendorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;vendorName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;vendorNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;address1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&quot;address2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">&quot;zip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nt">&quot;accountNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">&quot;activeStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string (date-time)&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nt">&quot;leadTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer (int32)&quot;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">]</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>

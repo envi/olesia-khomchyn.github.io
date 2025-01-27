@@ -1,0 +1,1998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="Metadata.html">
+      
+      
+        <link rel="next" href="Rate_Limiting.html">
+      
+      
+      <link rel="icon" href="img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Metadata Controlling - Envi Developer Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#none" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Envi Developer Resources" class="md-header__button md-logo" aria-label="Envi Developer Resources" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Envi Developer Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metadata Controlling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  API Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Authentication_POST.html" class="md-tabs__link">
+          
+  
+  API Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="SSO_Integrations.html" class="md-tabs__link">
+          
+  
+  Integrations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Envi Developer Resources" class="md-nav__button md-logo" aria-label="Envi Developer Resources" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Envi Developer Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API Topics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            API Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Testing%20with%20Postman.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing with Postman
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Retrieving_Data.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retrieving Data Using cURL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Options_and_Limitations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Options and Limitations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Custom_Options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Metadata.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Metadata Controlling
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Metadata_Controlling.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Controlling
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#none" class="md-nav__link">
+    <span class="md-ellipsis">
+      none
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full" class="md-nav__link">
+    <span class="md-ellipsis">
+      full
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Rate_Limiting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rate Limiting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="API_Versioning.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Envi_OData_Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Envi OData Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Envi_Use_Cases.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Envi Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="BI_Tool_Use_Cases.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bi Tool Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Integrators.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GitHub_Repository.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Operations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API Operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Authentication_POST.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Addresses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AdjustmentItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AdjustmentItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AP_Batch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AP Batch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Facilities.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Facilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FuturePricing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FuturePricing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Inventory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryActivity.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryActivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocationsCostAndQuantity.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocationsCostAnd <br> Quantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocationsExtended.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocationsExtended
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventorySnapshotItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventorySnapshotItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventorySnapshots.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventorySnapshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryTrackings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryTrackings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryUOMs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryUOMs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryVendors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryVendors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Locations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Locations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Manufacturers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MatchedInvoiceItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MatchedInvoiceItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MatchedInvoices.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MatchedInvoices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PARAreaItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PARAreaItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PARAreas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PARAreas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="POConfirmationItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POConfirmationItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="POConfirmations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POConfirmations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchaseOrderItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchaseOrderItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchaseOrders.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchaseOrders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchasingUnits.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchasingUnits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ReceiptItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReceiptItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Receipts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Receipts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionFillItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionFillItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionFills.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionFills
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Requisitions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requisitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="UsageItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UsageItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="UsageProcedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UsageProcedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Usages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorAddresses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorAddresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorContacts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorContacts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorEmailConfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorEmailConfigurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorFacilities.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorFacilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorFaxConfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorFaxConfigurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Vendors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vendors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SSO_Integrations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSO Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="IP_Addresses_and_Domains.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IP Addresses and Domains
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#none" class="md-nav__link">
+    <span class="md-ellipsis">
+      none
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full" class="md-nav__link">
+    <span class="md-ellipsis">
+      full
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Metadata Controlling</h1>
+
+<p>In general, there are three levels of metadata specification: <code>none</code>, <code>minimal</code>, and <code>full</code>. The <code>default</code> metadata level is minimal, so the service removes metadata information from the payload wherever possible.</p>
+<p>Taking into account your need for the application, you can request the needed amount of metadata information included in the payload.</p>
+<p>If you want to specify the amount of included metadata information in the response, use the<code>format</code> query option of an OData request as a part of the URL with the specified <code>odata.metadata</code> parameter. For example, to specify the <code>none</code> level, which means no metadata at all, the URL should look like the following:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://&lt;HOSTNAME&gt;/&lt;resource&gt;?$format=application/json;odata.metadata=none
+</code></pre></div>
+(for example, <strong>&lt;HOSTNAME&gt;</strong> = api-demo.envi.net)</p>
+<p>The example shows that the <code>$format</code> option should also include the expected content type of the response (in this case <code>application/json</code>).</p>
+<h2 id="none"><span style="color: #F05D30">none</span></h2>
+<p>If you do not need metadata information, use <code>odata.metadata=none</code>. It means that the service omits metadata information other than <code>odata.nextLink</code> and <code>odata.count</code>. The following example shows the request/response for the case based on the Inventory module:</p>
+<p><div class="highlight"><span class="filename">Request Example</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://&lt;HOSTNAME&gt;/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=none
+</code></pre></div>
+(for example, <strong>&lt;HOSTNAME&gt;</strong> = api-demo.envi.net)</p>
+<div class="highlight"><span class="filename">Response Example</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">       </span><span class="nt">&quot;inventoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4311192f-c46f-4655-8d51-fc2f49aabf78&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">       </span><span class="nt">&quot;organizationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05e36af1-0676-4216-aa3f-aa1ba787aaec&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">       </span><span class="nt">&quot;organizationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; Test Org&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;88212fc1-7698-40b3-8642-edd4ff793fcd&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">       </span><span class="nt">&quot;inventoryNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;152439785&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item Master&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">       </span><span class="nt">&quot;inventoryDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inventory Description&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">       </span><span class="nt">&quot;inventoryDescription2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inventory Description 2&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">       </span><span class="nt">&quot;stockUOM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EA&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">       </span><span class="nt">&quot;arBillingCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;225-749-325&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">       </span><span class="nt">&quot;hcpcsCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">       </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some notes&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">       </span><span class="nt">&quot;dateAdded&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015-01-13T16:52:57.233-06:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">       </span><span class="nt">&quot;addedId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;185393e0-9113-4343-8d70-921bd4bed453&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">       </span><span class="nt">&quot;addedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;employee@domain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">       </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-11-16T18:10:39.723-06:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74d636e2-2dc5-402e-a12e-2722f5286adc&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;employee2@domain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">       </span><span class="nt">&quot;activeStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">       </span><span class="nt">&quot;unspsc&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">       </span><span class="nt">&quot;isLatex&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">       </span><span class="nt">&quot;classificationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b01be311-d138-4abd-a4b4-05740ce5cbcf&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">       </span><span class="nt">&quot;classificationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gloves&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">       </span><span class="nt">&quot;classification2Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7f97e363-5e33-4448-93bd-b7decdf093ac&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">       </span><span class="nt">&quot;classification2Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;classification2&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">       </span><span class="nt">&quot;defaultExpenseLedgerNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5243&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">       </span><span class="nt">&quot;defaultAssetLedgerNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;85469&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">       </span><span class="nt">&quot;periopCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;31c05c5e-6d2c-4763-bc40-e5078440b33e&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">       </span><span class="nt">&quot;periopCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equipment&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">       </span><span class="nt">&quot;itemType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">       </span><span class="nt">&quot;billable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">       </span><span class="nt">&quot;systemTypeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">       </span><span class="nt">&quot;systemType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Standard&quot;</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="minimal"><span style="color: #F05D30">minimal</span></h2>
+<p>If you want to save on network bandwidth size but still need some metadata for correct response processing, the format query option should contain odata.metadata=minimal. It means that the service removes metadata information from the payload wherever possible. This is a default value for the odata.metadata parameter and will be assumed if no other values are specified. The response contains the following common annotation:</p>
+<p><div class="highlight"><span class="filename">Request Example</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://&lt;HOSTNAME&gt;/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=minimal
+</code></pre></div>
+<strong>OR</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://&lt;HOSTNAME&gt;/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)  
+</code></pre></div>
+(for example, <strong>&lt;HOSTNAME&gt;</strong> = api-demo.envi.net)</p>
+<div class="highlight"><span class="filename">Response Example</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">       </span><span class="nt">&quot;@odata.context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https:///odata/$metadata#Inventory/$entity&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">       </span><span class="nt">&quot;inventoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4311192f-c46f-4655-8d51-fc2f49aabf78&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">       </span><span class="nt">&quot;organizationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05e36af1-0676-4216-aa3f-aa1ba787aaec&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">       </span><span class="nt">&quot;organizationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; Test Org&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;88212fc1-7698-40b3-8642-edd4ff793fcd&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">       </span><span class="nt">&quot;inventoryNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;152439785&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item Master&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">       </span><span class="nt">&quot;inventoryDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inventory Description&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">       </span><span class="nt">&quot;inventoryDescription2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inventory Description 2&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">       </span><span class="nt">&quot;stockUOM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EA&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">       </span><span class="nt">&quot;arBillingCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;225-749-325&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">       </span><span class="nt">&quot;hcpcsCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">       </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some notes&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">       </span><span class="nt">&quot;dateAdded&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015-01-13T16:52:57.233-06:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">       </span><span class="nt">&quot;addedId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;185393e0-9113-4343-8d70-921bd4bed453&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">       </span><span class="nt">&quot;addedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;employee@domain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">       </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-11-16T18:10:39.723-06:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74d636e2-2dc5-402e-a12e-2722f5286adc&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;employee2@domain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">       </span><span class="nt">&quot;activeStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">       </span><span class="nt">&quot;unspsc&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">       </span><span class="nt">&quot;isLatex&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">       </span><span class="nt">&quot;classificationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b01be311-d138-4abd-a4b4-05740ce5cbcf&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">       </span><span class="nt">&quot;classificationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gloves&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">       </span><span class="nt">&quot;classification2Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7f97e363-5e33-4448-93bd-b7decdf093ac&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">       </span><span class="nt">&quot;classification2Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;classification2&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">       </span><span class="nt">&quot;defaultExpenseLedgerNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5243&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">       </span><span class="nt">&quot;defaultAssetLedgerNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;85469&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">       </span><span class="nt">&quot;periopCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;31c05c5e-6d2c-4763-bc40-e5078440b33e&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">       </span><span class="nt">&quot;periopCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equipment&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">       </span><span class="nt">&quot;itemType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">       </span><span class="nt">&quot;billable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">       </span><span class="nt">&quot;systemTypeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">       </span><span class="nt">&quot;systemType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Standard&quot;</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="full"><span style="color: #F05D30">full</span></h2>
+<p>If you need full metadata information, you should use odata.metadata=full. It directs the service to inline the metadata information that normally would be computed from metadata expressions in the payload. The response contains a lot of additional annotation, including information about fields type and related navigation links:</p>
+<p><div class="highlight"><span class="filename">Request Example</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://&lt;HOSTNAME&gt;/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)?$format=application/json;odata.metadata=full
+</code></pre></div>
+(for example, <strong>&lt;HOSTNAME&gt;</strong> = api-demo.envi.net)</p>
+<div class="highlight"><span class="filename">Response Example</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">       </span><span class="nt">&quot;@odata.context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/$metadata#Inventory/$entity&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">       </span><span class="nt">&quot;@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Api.Common.Entities.Inventory.DTO.Inventory&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">       </span><span class="nt">&quot;@odata.id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">       </span><span class="nt">&quot;@odata.editLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">       </span><span class="nt">&quot;inventoryId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">       </span><span class="nt">&quot;inventoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4311192f-c46f-4655-8d51-fc2f49aabf78&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">       </span><span class="nt">&quot;organizationId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">       </span><span class="nt">&quot;organizationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05e36af1-0676-4216-aa3f-aa1ba787aaec&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">       </span><span class="nt">&quot;organizationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test Org&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;88212fc1-7698-40b3-8642-edd4ff793fcd&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">       </span><span class="nt">&quot;inventoryNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;152439785&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">       </span><span class="nt">&quot;inventoryGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item Master&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">       </span><span class="nt">&quot;inventoryDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inventory Description&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">       </span><span class="nt">&quot;inventoryDescription2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inventory Description 2&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">       </span><span class="nt">&quot;stockUOM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EA&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">       </span><span class="nt">&quot;arBillingCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;225-749-325&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">       </span><span class="nt">&quot;hcpcsCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">       </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some notes&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">       </span><span class="nt">&quot;dateAdded@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#DateTimeOffset&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">       </span><span class="nt">&quot;dateAdded&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015-01-13T16:52:57.233-06:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">       </span><span class="nt">&quot;addedId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">       </span><span class="nt">&quot;addedId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;185393e0-9113-4343-8d70-921bd4bed453&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">       </span><span class="nt">&quot;addedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;employee@domain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">       </span><span class="nt">&quot;lastUpdated@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#DateTimeOffset&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">       </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-11-16T18:10:39.723-06:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedBy@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74d636e2-2dc5-402e-a12e-2722f5286adc&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">       </span><span class="nt">&quot;lastUpdatedByName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;employee2@domain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">       </span><span class="nt">&quot;activeStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">       </span><span class="nt">&quot;unspsc&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">       </span><span class="nt">&quot;isLatex&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">       </span><span class="nt">&quot;classificationId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">       </span><span class="nt">&quot;classificationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b01be311-d138-4abd-a4b4-05740ce5cbcf&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">       </span><span class="nt">&quot;classificationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gloves&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">       </span><span class="nt">&quot;classification2Id@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">       </span><span class="nt">&quot;classification2Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7f97e363-5e33-4448-93bd-b7decdf093ac&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">       </span><span class="nt">&quot;classification2Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;classification2&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="w">       </span><span class="nt">&quot;defaultExpenseLedgerNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5243&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">       </span><span class="nt">&quot;defaultAssetLedgerNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;85469&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="w">       </span><span class="nt">&quot;periopCategoryId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Guid&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="w">       </span><span class="nt">&quot;periopCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;31c05c5e-6d2c-4763-bc40-e5078440b33e&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="w">       </span><span class="nt">&quot;periopCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Equipment&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">       </span><span class="nt">&quot;itemType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="w">       </span><span class="nt">&quot;billable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">       </span><span class="nt">&quot;systemTypeId@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#Byte&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="w">       </span><span class="nt">&quot;systemTypeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">       </span><span class="nt">&quot;systemType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Standard&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="w">       </span><span class="nt">&quot;poHistoryItems@odata.associationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/poHistoryItems/$ref&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="w">       </span><span class="nt">&quot;poHistoryItems@odata.navigationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/poHistoryItems&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="w">       </span><span class="nt">&quot;futurePricing@odata.associationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/futurePricing/$ref&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="w">       </span><span class="nt">&quot;futurePricing@odata.navigationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/futurePricing&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="w">       </span><span class="nt">&quot;inventoryLocations@odata.associationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryLocations/$ref&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="w">       </span><span class="nt">&quot;inventoryLocations@odata.navigationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryLocations&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="w">       </span><span class="nt">&quot;inventoryUOMs@odata.associationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryUOMs/$ref&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="w">       </span><span class="nt">&quot;inventoryUOMs@odata.navigationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryUOMs&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="w">       </span><span class="nt">&quot;inventoryVendors@odata.associationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryVendors/$ref&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="w">       </span><span class="nt">&quot;inventoryVendors@odata.navigationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryVendors&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="w">       </span><span class="nt">&quot;inventoryTrackings@odata.associationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryTrackings/$ref&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="w">       </span><span class="nt">&quot;inventoryTrackings@odata.navigationLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/inventoryTrackings&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="w">       </span><span class="nt">&quot;#Default.ManagePurchasing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="w">           </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagePurchasing&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="w">           </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net.com/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/Default.ManagePurchasing&quot;</span>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="w">       </span><span class="nt">&quot;#Default.inventoryTrackingValues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inventoryTrackingValues&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a><span class="w">           </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api-demo.envi.net/odata/Inventory(4311192f-c46f-4655-8d51-fc2f49aabf78)/Default.inventoryTrackingValues(facilityId=@facilityId,trackingType=@trackingType)&quot;</span>
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>

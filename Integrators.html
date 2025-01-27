@@ -1,0 +1,2571 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="BI_Tool_Use_Cases.html">
+      
+      
+        <link rel="next" href="GitHub_Repository.html">
+      
+      
+      <link rel="icon" href="img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Integrators - Envi Developer Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ssis-powerpack" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Envi Developer Resources" class="md-header__button md-logo" aria-label="Envi Developer Resources" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Envi Developer Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrators
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  API Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Authentication_POST.html" class="md-tabs__link">
+          
+  
+  API Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="SSO_Integrations.html" class="md-tabs__link">
+          
+  
+  Integrations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Envi Developer Resources" class="md-nav__button md-logo" aria-label="Envi Developer Resources" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Envi Developer Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API Topics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            API Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Testing%20with%20Postman.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing with Postman
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Retrieving_Data.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retrieving Data Using cURL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Options_and_Limitations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Options and Limitations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Custom_Options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Metadata.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Metadata_Controlling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Controlling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Rate_Limiting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rate Limiting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="API_Versioning.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Envi_OData_Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Envi OData Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Envi_Use_Cases.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Envi Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="BI_Tool_Use_Cases.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bi Tool Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Integrators
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Integrators.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Integrators
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ssis-powerpack" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSIS Powerpack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSIS Powerpack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-json-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create JSON Source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-database-schema-in-ms-sql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build database schema in MS SQL Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-ssis-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test SSIS Package
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odbc-powerpack" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC Powerpack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ODBC Powerpack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#odbc-powerpack-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC Powerpack configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdata-odbc-driver-for-odata" class="md-nav__link">
+    <span class="md-ellipsis">
+      CData ODBC Driver for OData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GitHub_Repository.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Operations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API Operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Authentication_POST.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Addresses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AdjustmentItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AdjustmentItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AP_Batch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AP Batch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Facilities.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Facilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FuturePricing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FuturePricing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Inventory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryActivity.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryActivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocationsCostAndQuantity.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocationsCostAnd <br> Quantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryLocationsExtended.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryLocationsExtended
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventorySnapshotItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventorySnapshotItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventorySnapshots.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventorySnapshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryTrackings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryTrackings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryUOMs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryUOMs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="InventoryVendors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InventoryVendors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Locations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Locations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Manufacturers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MatchedInvoiceItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MatchedInvoiceItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MatchedInvoices.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MatchedInvoices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PARAreaItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PARAreaItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PARAreas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PARAreas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="POConfirmationItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POConfirmationItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="POConfirmations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POConfirmations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchaseOrderItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchaseOrderItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchaseOrders.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchaseOrders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PurchasingUnits.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PurchasingUnits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ReceiptItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReceiptItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Receipts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Receipts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionFillItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionFillItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionFills.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionFills
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RequisitionItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RequisitionItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Requisitions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requisitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="UsageItems.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UsageItems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="UsageProcedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UsageProcedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Usages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorAddresses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorAddresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorContacts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorContacts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorEmailConfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorEmailConfigurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorFacilities.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorFacilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VendorFaxConfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VendorFaxConfigurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Vendors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vendors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SSO_Integrations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSO Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="IP_Addresses_and_Domains.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IP Addresses and Domains
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ssis-powerpack" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSIS Powerpack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSIS Powerpack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-json-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create JSON Source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-database-schema-in-ms-sql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build database schema in MS SQL Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-ssis-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test SSIS Package
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odbc-powerpack" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC Powerpack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ODBC Powerpack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#odbc-powerpack-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC Powerpack configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdata-odbc-driver-for-odata" class="md-nav__link">
+    <span class="md-ellipsis">
+      CData ODBC Driver for OData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Integrators</h1>
+
+<p>If you want to integrate Envi API into your SQL Server Data Tools and retrieve the needed data easily, you can use the following applications:</p>
+<ul>
+<li><a href="#ssis-powerpack">SSIS Powerpack</a></li>
+<li><a href="#odbc-powerpack">ODBC Powerpack</a></li>
+</ul>
+<p>Before working with integrators, please see the following requirements and installation:</p>
+<p><strong>For SSIS Powerpack</strong></p>
+<ul>
+<li>.NET Framework 3.5</li>
+<li>SSISPowerPackSetup_64bit</li>
+<li><a href="https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017">SSDT</a> (SSDT-Setup-ENU) for Analysis Services, Integration Services, or Reporting Services projects</li>
+</ul>
+<p><strong>For Linked Server</strong></p>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">SQLServer2017-SSEI-Expr</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017">Microsoft SQL Server Management Studio (SSMS-Setup-ENU)</a></li>
+</ul>
+<h2 id="ssis-powerpack"><span style="color: #F05D30">SSIS Powerpack</span></h2>
+<p>With the <strong>SSIS Powerpack</strong> tool, you can easily retrieve data from Envi OData API and insert into the MSSQL database. To do it:</p>
+<ul>
+<li><a href="#create-json-source">Create JSON Source</a></li>
+<li><a href="#build-database-schema-in-ms-sql-server">Build database schema in MS SQL Server</a></li>
+<li><a href="#test-ssis-package">Test SSIS Package</a></li>
+</ul>
+<h3 id="create-json-source"><span style="color: #F05D30">Create JSON Source</span></h3>
+<ol>
+<li>Download and install <a href="https://zappysys.com/products/ssis-powerpack/">SSIS ZappySys PowerPack</a>.</li>
+<li>
+<p>After installation, open <a href="https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017">Microsoft SQL Server Data Tool for Visual Studio (SSDT)</a> and  create a new <strong>Integration Services Project</strong>. For this, on the <strong>File</strong> tab, select <strong>New Project</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select a location where to save the project and name it. <img alt="image" src="img/Integrators_1.png" /></p>
+</div>
+</li>
+<li>
+<p>Add <strong>Data Flow Task</strong>. For this, drag the <strong>ZS JSON Source (REST API or File)</strong> to the board. <img alt="image" src="img/Integrators_2.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can rename the task easily (for example, <strong>API to MSSQL</strong>). For this, just select the record.</p>
+</div>
+</li>
+<li>
+<p>Double-click the <strong>Data Flow Task</strong> to see the <strong>DataFlow Design</strong> dashboard.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also, you can select the <strong>Data Flow</strong> tab for this.</p>
+</div>
+</li>
+<li>
+<p>Drag the <strong>ZS JSON Source (REST API or File)</strong> to the board from the <strong>SSIS</strong> toolbox. <img alt="image" src="img/Integrators_3.png" /></p>
+</li>
+<li>
+<p>Double-click <strong>JSON Source (REST API or File)</strong> for the following configuration:</p>
+<ol>
+<li>
+<p>Enter the needed <strong>Path</strong> or <strong>Web URL</strong>, then add the appropriate query parameters:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://&lt;HOSTNAME&gt;/odata/&lt;ENDPOINT&gt;$&lt;QUERY&gt;
+</code></pre></div>
+(for example, <strong>&lt;HOSTNAME&gt;</strong> = api-demo.envi.net). </p>
+<p><img alt="image" src="img/Integrators_4.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight"><pre><span></span><code>You can use the following examples to retrieve the needed data:
+</code></pre></div>
+<p><div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Inventory items URL: https://api-demo.envi.net/odata/Inventory?$filter=classification2Name eq &#39;1&#39;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Facilities URL: https://api-demo.envi.net/odata/Facilities
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Vendors URL: https:// api-demo.envi.net/odata/Vendors
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Disputed Invoices URL: https:// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq &#39;Disputed&#39;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Pending Batches:  https:// api-demo.envi.net/odata/Batches?$filter=batchStatus eq &#39;Pending&#39;
+</code></pre></div>
+    Before adding new data flows to the existing one, disable previous items. For this, right-click the <strong>Data Flow Task</strong> and select <strong>Disable</strong>. After that, you’ll see the following result: <img alt="image" src="img/Integrators_5.png" /></p>
+</div>
+</li>
+<li>
+<p>Select the <strong>Use Credentials</strong> checkbox. Then, from the dropdown menu, select the <strong>New ZS-OAuth Connection</strong> option. <img alt="image" src="img/Integrators_6.png" /></p>
+</li>
+</ol>
+</li>
+<li>
+<p>After selecting the <strong>New ZS-OAuth</strong> option, the <strong>OAuth</strong> dialog box is shown. Perform the following settings:</p>
+<ol>
+<li>From the <strong>OAuth Provider</strong> dropdown menu, select the <strong>Custom</strong> option.</li>
+<li>From the <strong>OAuth Version</strong> dropdown menu, select the <strong>OAuth2</strong> option.</li>
+<li>From the <strong>OAuth Grant Type</strong> dropdown menu, select the <strong>Password Grant</strong> option.</li>
+<li>Enter <strong>Client ID</strong>, <strong>User Name</strong>, and <strong>Password</strong>.</li>
+<li>Enter <strong>Access Token URL</strong> (for example, <code>api-demo.envi.net/oauth2/token</code>). <br> <img alt="image" src="img/Integrators_8.png" /></li>
+<li>
+<p>Go to the <strong>OAuth2 Grand Options</strong> tab, select the ellipsis (<strong>…</strong>) button, and provide a refresh token file path.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The file name extension should be <strong>.txt</strong>. The file should be empty.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Place the file in a separate and non-shared folder.</p>
+</div>
+</li>
+<li>
+<p>Select <strong>Test Connection</strong>, then <strong>OK</strong>. <img alt="image" src="img/Integrators_7.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to sign in to an organization that is not your default one, go to the <strong>Advanced</strong> tab of the <strong>OAuth settings</strong>, then in the <strong>Extra Attributes for /token Request</strong> field, specify the <strong>ID</strong> of the needed organization as an additional parameter with the <strong>organizationId</strong> value: <img alt="image" src="img/Integrators_9.png" /></p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>On the <strong>Filter Options</strong> tab, select the <strong>Select Filter</strong> button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure that <strong>OAuth 2</strong> is preselected.</p>
+</div>
+<p><img alt="image" src="img/Integrators_10.png" /></p>
+</li>
+<li>
+<p>Select the <strong>value</strong> filter path, then select <strong>OK</strong>. <img alt="image" src="img/Integrators_11.png" /></p>
+</li>
+<li>Then, you will see the <strong>Metadata Scan Options</strong> dialog box. There, select <strong>OK</strong>. <img alt="image" src="img/Integrators_12.png" /></li>
+<li>In the <strong>JSON Source (REST API or File)</strong> dialog box, select the <strong>Pagination</strong> tab.</li>
+<li>From the <strong>Next Link/Cursor Expression</strong> field, select the ellipsis (<strong>…</strong>) button. <img alt="image" src="img/Integrators_13.png" /></li>
+<li>Select <strong>@odata.nextLink</strong>, then select <strong>OK</strong>. <img alt="image" src="img/Integrators_14.png" /></li>
+<li>
+<p>In the <strong>JSON Source (REST API or File)</strong> dialog box, go to the <strong>Columns</strong> section and then select the needed fields. Select <strong>OK</strong>. <img alt="image" src="img/Integrators_15.png" /> <br> </p>
+<details class="example">
+<summary>Facility Columns</summary>
+<p><img alt="image" src="img/Integrators_18.png" /></p>
+</details>
+<details class="example">
+<summary>Vendor Columns</summary>
+<p><img alt="image" src="img/Integrators_19.png" /></p>
+</details>
+<details class="example">
+<summary>Disputed Matched Invoice Columns</summary>
+<p><img alt="image" src="img/Integrators_21.png" /></p>
+</details>
+<details class="example">
+<summary>Pending Batches Columns</summary>
+<p><img alt="image" src="img/Integrators_20.png" /></p>
+</details>
+</li>
+</ol>
+<p>The <strong>JSON Source</strong> setup is completed. Go to the <strong>JSON Source (REST API or File)</strong> dialog box, then in the <strong>Settings</strong> section, select <strong>Preview</strong> to view the retrieved data. <img alt="image" src="img/Integrators_16.png" /></p>
+<p>The data is retrieved successfully. <img alt="image" src="img/Integrators_17.png" /></p>
+<h3 id="build-database-schema-in-ms-sql-server"><span style="color: #F05D30">Build database schema in MS SQL Server</span></h3>
+<ol>
+<li>
+<p>In <strong>MS SQL Studio</strong>, create a needed table.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For this, create a new database or add the table to the existing one. <a href="https://wiki.melissadata.com/?title=FAQ%3ASSIS%3AData_Type_Conversions">Column data types</a> should be taken from the 14th step of the previous section.</p>
+</div>
+<details class="example">
+<summary>Inventory Table</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CREATE TABLE [dbo].[Inventory](
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>[inventoryId] [nvarchar](144) NOT NULL,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>[organizationId] [nvarchar](144) NOT NULL,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>[organizationName] [nvarchar](255) NULL,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>[inventoryGroupId] [nvarchar](144) NULL,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>[inventoryNo] [nvarchar](255) NULL,
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>[inventoryGroupName] [nvarchar](255) NULL,
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>[inventoryDescription] [nvarchar](320) NULL,
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>[inventoryDescription2] [nvarchar](255) NULL,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>[stockUOM] [nvarchar](50) NULL,
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>[arBillingCode] [nvarchar](80) NULL,
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>[hcpcsCode] [nvarchar](80) NULL,
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>[notes] [nvarchar](255) NULL,
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>[dateAdded] [datetime2](7) NULL,
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>[addedId] [nvarchar](144) NULL,
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>[addedByName] [nvarchar](255) NULL,
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>[lastUpdated] [datetime2](7) NULL,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>[lastUpdatedBy] [nvarchar](144) NULL,
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>[lastUpdatedByName] [nvarchar](100) NULL,
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>[activeStatus] [bit] NULL,
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>[unspscCode] [nvarchar](80) NULL,
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>[isLatex] [bit] NULL,
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>[classificationId] [nvarchar](144) NULL,
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>[classificationName] [nvarchar](100) NULL,
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>[classification2Id] [nvarchar](144) NULL,
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>[classification2Name] [nvarchar](100) NULL,
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>[defaultExpenseLedgerNo] [nvarchar](100) NULL,
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>[defaultAssetLedgerNo] [nvarchar](100) NULL,
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>[periopCategoryId] [nvarchar](144) NULL,
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>[periopItemCategory] [nvarchar](100) NULL,
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>[systemTypeId] [int] NULL,
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>[systemType] [nvarchar](100) NULL,
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>[defaultIsBillable] [bit] NULL
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>) ON [PRIMARY]
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>GO
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Facility Table</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>CREATE TABLE [dbo].[Facilities](
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[facilityId] [nvarchar](144) NOT NULL,
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>[organizationId] [nvarchar](144) NULL,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>[organizationNo] [nvarchar](36) NULL,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>[organizationName] [nvarchar](72) NULL,
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>[facilityName] [nvarchar](96) NULL,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>[facilityNo] [nvarchar](156) NULL,
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>[address1] [nvarchar](255) NULL,
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>[address2] [nvarchar](255) NULL,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>[city] [nvarchar](76) NULL,
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>[state] [nvarchar](80) NULL,
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>[zip] [nvarchar](40) NULL,
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>[country] [nvarchar](80) NULL,
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>[taxExpenseCodeTemplate] [nvarchar](255) NULL,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>[taxAccrualCodeTemplate] [nvarchar](255) NULL,
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>[discountCodeTemp] [nvarchar](84) NULL,
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>[shippingCodeTemplate] [nvarchar](255) NULL,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>[offsetCodeTemplate] [nvarchar](1020) NULL,
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>[patientDisplayTemplate] [nvarchar](255) NULL,
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>[poglCodeDisplayTemplate] [nvarchar](80) NULL,
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>[poDeptDisplayTemplate] [nvarchar](80) NULL,
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>[activeStatus] [bit] NULL,
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>[inventoryGroupId] [nvarchar](144) NULL,
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>[inventoryGroupNo] [nvarchar](44) NULL,
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>[inventoryGroupName] [nvarchar](56) NULL,
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>[apToleranceLevel] [decimal](18, 4) NULL,
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>[apToleranceLevelType] [tinyint] NULL,
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>[apToleranceLevelTypeValue] [nvarchar](255) NULL,
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>[apToleranceLevel2] [decimal](18, 4) NULL,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>[apToleranceLevel2Type] [tinyint] NULL,
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>[apToleranceLevel2TypeValue] [nvarchar](255) NULL,
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>[apFreeFormedToleranceLevel] [decimal](18, 4) NULL,
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>[apFreeFormedToleranceLevelType] [tinyint] NULL,
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>[apFreeFormedToleranceLevelTypeValue] [nvarchar](255) NULL,
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>[apFreeFormedToleranceLevel2] [decimal](18, 4) NULL,
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>[apFreeFormedToleranceLevel2Type] [tinyint] NULL,
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>[apFreeFormedToleranceLevel2TypeValue] [nvarchar](255) NULL,
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>[apOffsetTolerance] [decimal](18, 4) NULL,
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>[apOffsetToleranceType] [tinyint] NULL,
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>[apOffsetToleranceTypeValue] [nvarchar](4) NULL,
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>[taxType] [tinyint] NULL,
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>[taxTypeValue] [nvarchar](4) NULL,
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>[taxAmount] [decimal](18, 4) NULL,
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>[taxExpenseType] [tinyint] NULL,
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>[taxExpenseTypeValue] [nvarchar](4) NULL,
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>[taxExpenseAmount] [tinyint] NULL,
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>[facilityNoXref] [nvarchar](255) NULL,
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>[taxShipping] [bit] NULL,
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>[poGlValidation] [nvarchar](255) NULL,
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>[poGlValidationMsg] [nvarchar](255) NULL,
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>[capitalPOGlValidation] [nvarchar](80) NULL,
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>[capitalPOGlValidationMsg] [nvarchar](255) NULL,
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>[timeZoneId] [nvarchar](144) NULL,
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>[timeZone] [nvarchar](255) NULL,
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>[preferenceCardMatching] [tinyint] NULL,
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>[preferenceCardMatchingValue] [nvarchar](52) NULL,
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>[dateCreated] [datetime2](7) NULL,
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>[createdBy] [nvarchar](144) NULL,
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>[createdByName] [nvarchar](100) NULL,
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>[lastUpdated] [datetime2](7) NULL,
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>[lastUpdatedBy] [nvarchar](144) NULL,
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>[lastUpdatedByName] [nvarchar](88) NULL
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>[memberID] [nvarchar](144) NULL, 
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>[capitalTaxExpenseCodeTemplate] [nvarchar](255) NULL,
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>[capitalTaxAccrualCodeTemplate] [nvarchar](255) NULL, 
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>[capitalDiscountCodeTemplate] [nvarchar](255) NULL,  
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>[capitalShippingCodeTemplate] [nvarchar](255) NULL, 
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>[capitalOffsetCodeTemplate] [nvarchar](255) NULL, 
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>) ON [PRIMARY]
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>GO
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Vendor Table</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CREATE TABLE [dbo].[Vendors](
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[vendorId] [nvarchar](144) NOT NULL,
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>[vendorNo] [nvarchar](144) NULL,
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>[vendorName] [nvarchar](152) NULL,
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>[organizationId] [nvarchar](144) NULL,
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>[organizationNo] [nvarchar](36) NULL,
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>[organizationName] [nvarchar](72) NULL,
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>[vendorNotes] [nvarchar](596) NULL,
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>[dateAdded] [datetime2](7) NULL,
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>[addedBy] [nvarchar](144) NULL,
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>[addedByName] [nvarchar](108) NULL,
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>[lastUpdated] [datetime2](7) NULL,
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>[lastUpdatedBy] [nvarchar](144) NULL,
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>[lastUpdatedByName] [nvarchar](88) NULL,
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>[activeStatus] [bit] NULL,
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>[url] [nvarchar](255) NULL,
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>[systemVendorName] [nvarchar](176) NULL,
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>[ediVendorNo] [nvarchar](108) NULL
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>) ON [PRIMARY]
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>GO
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Disputed Matched Invoice Table</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CREATE TABLE [dbo].[MatchedInvoices](
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[apMatchedInvoiceId] [nvarchar](144) NOT NULL,
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>[purchaseOrderId] [nvarchar](144) NULL,
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>[purchaseOrderNo] [nvarchar](48) NULL,
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>[sequenceNo] [nvarchar](80) NULL,
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>[poType] [nvarchar](36) NULL,
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>[facilityId] [nvarchar](144) NULL,
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>[facilityNo] [nvarchar](44) NULL,
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>[facilityName] [nvarchar](80) NULL,
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>[locationId] [nvarchar](144) NULL,
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>[locationNo] [nvarchar](68) NULL,
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>[locationName] [nvarchar](72) NULL,
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>[vendorId] [nvarchar](144) NULL,
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>[vendorNo] [nvarchar](144) NULL,
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>[vendorName] [nvarchar](152) NULL,
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>[invoiceNo] [nvarchar](88) NULL,
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>[matchedInvoiceStatusId] [bit] NULL,
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>[matchedInvoiceStatus] [nvarchar](32) NULL,
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>[vendorRemitToId] [nvarchar](144) NULL,
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>[remitToNo] [nvarchar](92) NULL,
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>[remitToDescription] [nvarchar](216) NULL,
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>[remitToVendorNo] [nvarchar](80) NULL,
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>[creditCardIDId] [nvarchar](144) NULL,
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>[creditCardID] [nvarchar](80) NULL,
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>[creditCardIDDescription] [nvarchar](92) NULL,
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>[reference] [nvarchar](80) NULL,
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>[notes] [nvarchar](1020) NULL,
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>[invoiceDate] [datetime2](7) NULL,
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>[invoiceDueDate] [datetime2](7) NULL,
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>[trackingCode] [nvarchar](1020) NULL,
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>[invoiceValidationTotal] [nvarchar](80) NULL,
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>[cerNoId] [nvarchar](1020) NULL,
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>[cerNo] [nvarchar](1020) NULL,
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>[cerNoDescription] [nvarchar](1020) NULL,
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>[discountAmount] [decimal](18, 4) NULL,
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>[taxAmount] [decimal](18, 4) NULL,
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>[shippingAmount] [decimal](18, 4) NULL,
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>[taxExpenseGLCode] [nvarchar](84) NULL,
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>[taxAccrualGLCode] [nvarchar](100) NULL,
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>[discountGLCode] [nvarchar](88) NULL,
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>[taxExpenseAmount] [decimal](18, 4) NULL,
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>[apBatchId] [nvarchar](1020) NULL,
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>[apBatchNo] [nvarchar](1020) NULL,
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>[taxCode] [nvarchar](80) NULL,
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>[receivedInvoiceId] [nvarchar](144) NULL,
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>[offset] [decimal](18, 4) NULL,
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>[offsetGLCode] [nvarchar](1020) NULL,
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>[createdBy] [nvarchar](144) NULL,
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>[createdByUserName] [nvarchar](108) NULL,
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>[dateCreated] [datetime2](7) NULL,
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>[lastUpdated] [datetime2](7) NULL,
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>[lastUpdatedBy] [nvarchar](144) NULL,
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>[lastUpdatedByUserName] [nvarchar](96) NULL,
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>[dateSubmitted] [datetime2](7) NULL,
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>[submittedBy] [nvarchar](144) NULL,
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>[submittedByUserName] [nvarchar](108) NULL
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>) ON [PRIMARY]
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>GO  
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Pending Batches Table</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CREATE TABLE [dbo].[Batches](
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[apBatchId] [nvarchar](144) NOT NULL,
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>[batchNo] [nvarchar](44) NULL,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>[reference] [nvarchar](80) NULL,
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>[batchStatusId] [tinyint] NULL,
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>[batchStatus] [nvarchar](28) NULL,
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>[batchTotal] [decimal](18, 4) NULL,
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>[invoiceCount] [tinyint] NULL,
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>[isScheduledExporting] [bit] NULL,
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>[lastExportDate] [nvarchar](80) NULL,
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>[dateCreated] [datetime2](7) NULL,
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>[createdBy] [nvarchar](144) NULL,
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>[createdByUserName] [nvarchar](108) NULL,
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>[lastUpdated] [datetime2](7) NULL,
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>[lastUpdatedBy] [nvarchar](144) NULL,
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>[lastUpdatedByUserName] [nvarchar](100) NULL
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>) ON [PRIMARY]
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>GO
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Add <strong>OLE DB Destination</strong> to the <strong>Data Flow Task</strong>. For this, drag <strong>Ole DB Destination</strong> to the board.<img alt="image" src="img/Integrators_22.png" />  </p>
+</li>
+<li>Double-click <strong>Ole DB Destination</strong> for further configuration and select the <strong>New</strong> button. <img alt="image" src="img/Integrators_23.png" />  </li>
+<li>Once you see the following message, select <strong>Yes</strong>.  <img alt="image" src="img/Integrators_24.png" />  </li>
+<li>In <strong>Configure OLE DB Connection Manager</strong>, select <strong>New</strong>.  <img alt="image" src="img/Integrators_25.png" />  </li>
+<li>
+<p>In the <strong>Connection Manager</strong> dialog box, perform the following steps:</p>
+<ol>
+<li>Add <strong>Server Name</strong>.</li>
+<li>Specify the type of <strong>Authentication</strong>.</li>
+<li>Enter credentials.</li>
+<li>Select or enter a database name.</li>
+<li>Select <strong>Test Connection</strong>.</li>
+<li>Select <strong>OK</strong>. <img alt="image" src="img/Integrators_26.png" />  </li>
+</ol>
+</li>
+<li>
+<p>Select <strong>OLE DB connection manager</strong>, then select the table from the dropdown list and select <strong>OK</strong>.  <img alt="image" src="img/Integrators_27.png" /> </p>
+</li>
+<li>Connect items using the arrow. For this, select <strong>Json Source (REST API or File)</strong> and select the <strong>arrow</strong>. <br> <img alt="image" src="img/Integrators_28.png" /> </li>
+<li>Double-click <strong>OLE DB Destination</strong>. In <strong>OLE DB Destination Editor</strong>, go to the <strong>Mapping</strong> section to verify connections, and select <strong>OK</strong>. <img alt="image" src="img/Integrators_29.png" /> </li>
+</ol>
+<h3 id="test-ssis-package"><span style="color: #F05D30">Test SSIS Package</span></h3>
+<ol>
+<li>To test the <strong>SSIS Package</strong>, select <strong>Start</strong>. <img alt="image" src="img/Integrators_30.png" /> </li>
+<li>After processing, you’ll see the successful solution result.<br>
+<img alt="image" src="img/Integrators_31.png" /> </li>
+<li>Go to the <strong>MS SQL Server</strong>. Here, the successful test record will be shown. <img alt="image" src="img/Integrators_32.png" /> </li>
+</ol>
+<h2 id="odbc-powerpack"><span style="color: #F05D30">ODBC Powerpack</span></h2>
+<ul>
+<li><a href="#odbc-powerpack-configuration">ODBC Powerpack configuration</a></li>
+<li><a href="#cdata-odbc-driver-for-odata">CData ODBC Driver for OData</a></li>
+</ul>
+<h3 id="odbc-powerpack-configuration"><span style="color: #F05D30">ODBC Powerpack configuration</span></h3>
+<p>With the <strong>ODBC Powerpack</strong> tool, you can easily retrieve the data from Envi OData API and insert it into the MSSQL database. To do it:</p>
+<ol>
+<li>Download and install <a href="https://zappysys.com/products/odbc-powerpack/">ODBC PowerPack</a>.</li>
+<li>After installation, open the <strong>ZappySys</strong> data gateway configuration manager. Go to the <strong>Users</strong> tab and select <strong>Add</strong> to add a new user. <img alt="image" src="img/Integrators_33.png" /> </li>
+<li>Enter credentials, then select the <strong>Is Administrator</strong> checkbox and select <strong>OK</strong>. <img alt="image" src="img/Integrators_34.png" /> </li>
+<li>In the <strong>Administrative Tools</strong> folder, select <strong>ODBC Data Source Administrator (64-bit)</strong>. Then, go to the <strong>System DNS</strong> tab and <strong>Add</strong> a new data source. <img alt="image" src="img/Integrators_35.png" /> </li>
+<li>Select the <strong>ZappySys JSON Driver</strong> value, then select <strong>Finish</strong>. In the <strong>ODBC Data Source Administrator (64-bit)</strong> dialog box, select <strong>OK</strong>. <img alt="image" src="img/Integrators_36.png" /> </li>
+<li>In <strong>Zappysys Data Gateway Configuration Manager</strong>, select <strong>Add</strong> to add a new data source. <img alt="image" src="img/Integrators_37.png" /> </li>
+<li>Create <strong>Datasource Name</strong> and <strong>Connector Type</strong>, then select <strong>OK</strong>. <img alt="image" src="img/Integrators_38.png" /> </li>
+<li>In the <strong>Settings</strong> column, select <strong>Edit</strong>. <img alt="image" src="img/Integrators_39.png" /> </li>
+<li>Insert the needed URL with a query parameter, select <strong>OAuth Connection Type</strong> and <strong>GET HTTP Request Method</strong>. Then, <strong>Click to Configure</strong> OAuth Connection Type.
+<img alt="image" src="img/Integrators_40.png" /> </li>
+<li>
+<p>In the <strong>OAuth settings</strong> dialog box, perform the following steps: </p>
+<ol>
+<li>From the <strong>OAuth Provider</strong> dropdown menu, select the <strong>Custom</strong> option.</li>
+<li>From the <strong>OAuth Version</strong> dropdown menu, select the <strong>OAuth2</strong> option.</li>
+<li>From the <strong>OAuth Grant Type</strong> dropdown menu, select the <strong>Password Grant</strong> option.</li>
+<li>Enter <strong>Client ID</strong>, <strong>User Name</strong>, and <strong>Password</strong>.</li>
+<li>Enter <strong>Access Token URL</strong> (for example, <code>api-demo.envi.net/oauth2/token</code>).</li>
+<li>
+<p>Select <strong>OK</strong>. <br> <img alt="image" src="img/Integrators_41.png" /> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to sign in to an organization that is not your default one, go to the <strong>Advanced</strong> tab of <strong>OAuth settings</strong>, and then in the <strong>Extra Attributes for /token Request</strong> field, specify the <strong>ID</strong> of the needed organization as an additional parameter with the <strong>organizationId</strong> value:<img alt="image" src="img/Integrators_42.png" /> </p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>If you need to modify pagination, go to the <strong>Pagination</strong> tab. <img alt="image" src="img/Integrators_43.png" /> </p>
+</li>
+<li>Select the <strong>Select Filter</strong> button, then select the <strong>value</strong> filter path. <img alt="image" src="img/Integrators_44.png" /> </li>
+<li>Test the <strong>Connection</strong>.</li>
+<li>
+<p>Go to the <strong>Preview</strong> tab, then select the <strong>value</strong> from the dropdown list. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Copy the query if you need it for setting up the <strong>MS Excel</strong> and <strong>Power BI</strong> tools.</p>
+</div>
+<p><img alt="image" src="img/Integrators_45.png" /> </p>
+</li>
+<li>
+<p>Correct fields if needed and click <strong>Preview Data</strong>. <img alt="image" src="img/Integrators_46.png" /> </p>
+</li>
+<li>Go to the <strong>Code Generator</strong> tab, then copy the query to <strong>MS SQL Management Studio</strong> and select <strong>OK</strong>. <img alt="image" src="img/Integrators_47.png" /> </li>
+<li>In the <strong>Users</strong> column, select <strong>Edit</strong>. <img alt="image" src="img/Integrators_48.png" /> </li>
+<li>Add a previously created user to the data source, and then select <strong>Full access</strong>. <img alt="image" src="img/Integrators_49.png" /> </li>
+<li>Go to the <strong>General</strong> tab, edit <strong>Port</strong> if needed or use a default value. Select <strong>Save</strong>. <img alt="image" src="img/Integrators_50.png" /> </li>
+<li>Go to <strong>MS SQL Management Studio</strong>. Here, create a new <strong>Linked Server</strong>. <img alt="image" src="img/Integrators_51.png" /> </li>
+<li>Edit parameters.<img alt="image" src="img/Integrators_52.png" /> </li>
+<li>Go to the <strong>Security</strong> tab, enter credentials and select <strong>OK</strong>. <img alt="image" src="img/Integrators_53.png" /> </li>
+<li>
+<p>Write the query. <img alt="image" src="img/Integrators_54.png" /> </p>
+<p>Use the following fields for Inventory items data:</p>
+<details class="example">
+<summary>Inventory Item Fields</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>USE [Database]
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>GO
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>-- SELECT * INTO inventory_odbc FROM OPENQUERY([INVENTORY]
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>INSERT INTO [TSQL2012].[dbo].[Inventory]
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>SELECT * FROM OPENQUERY([INVENTORY], &#39;SELECT
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>&quot;inventoryId&quot;,
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>&quot;organizationId&quot;,
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>&quot;organizationName&quot;,
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>&quot;inventoryGroupId&quot;,
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>&quot;inventoryNo&quot;,
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>&quot;inventoryGroupName&quot;,
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>&quot;inventoryDescription&quot;,
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>&quot;inventoryDescription2&quot;,
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>&quot;stockUOM&quot;,
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>&quot;arBillingCode&quot;,
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>&quot;hcpcsCode&quot;,
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>&quot;notes&quot;,
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>&quot;dateAdded&quot;,
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>&quot;addedId&quot;,
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>&quot;addedByName&quot;,
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>&quot;lastUpdated&quot;,
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>&quot;lastUpdatedBy&quot;,
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>&quot;lastUpdatedByName&quot;,
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>&quot;activeStatus&quot;,
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>&quot;unspscCode&quot;,
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>&quot;isLatex&quot;,
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>&quot;classificationId&quot;,
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>&quot;classificationName&quot;,
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>&quot;classification2Id&quot;,
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>&quot;classification2Name&quot;,
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>&quot;defaultExpenseLedgerNo&quot;,
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>&quot;defaultAssetLedgerNo&quot;,
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>&quot;periopCategoryId&quot;,
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>&quot;periopItemCategory&quot;,
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>&quot;systemTypeId&quot;,
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>&quot;systemType&quot;,
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>&quot;defaultIsBillable&quot;
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>FROM &quot;value&quot;
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>&#39;)
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Load data into the table. <br> <img alt="image" src="img/Integrators_55.png" /> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can write the query in the following way: <img alt="image" src="img/Integrators_56.png" /> </p>
+</div>
+</li>
+<li>
+<p>You’ll see the following notification on the <strong>Messages</strong> tab. <br> <img alt="image" src="img/Integrators_57.png" /> </p>
+</li>
+<li>
+<p>The <strong>Results</strong> tab will be the following: <img alt="image" src="img/Integrators_58.png" /> </p>
+<p>For each new endpoint, add a new data source. The configuration flow is the same for every endpoint. <br> <img alt="image" src="img/Integrators_59.png" /> </p>
+<p>You can use the following examples of URLs for the <strong>Settings</strong> of the data source:</p>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">Facili</span><span class="kc">t</span><span class="err">ies</span><span class="w"> </span><span class="err">URL</span><span class="p">:</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api-demo.envi.net/odata/Facilities</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="err">Ve</span><span class="kc">n</span><span class="err">dors</span><span class="w"> </span><span class="err">URL</span><span class="p">:</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">// api-demo.envi.net/odata/Vendors</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="err">Dispu</span><span class="kc">te</span><span class="err">d</span><span class="w"> </span><span class="err">Ma</span><span class="kc">t</span><span class="err">ched</span><span class="w"> </span><span class="err">I</span><span class="kc">n</span><span class="err">voices</span><span class="w"> </span><span class="err">URL</span><span class="p">:</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">// api-demo.envi.net/odata/MatchedInvoices?$filter=matchedInvoiceStatus eq &#39;Disputed&#39;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="err">Pe</span><span class="kc">n</span><span class="err">di</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">Ba</span><span class="kc">t</span><span class="err">ches</span><span class="w"> </span><span class="err">URL</span><span class="p">:</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">// api-demo.envi.net/odata/Batches?$filter=batchStatus eq &#39;Pending&#39;</span>
+</code></pre></div>
+<p>For example, you can use the following fields to retrieve Matched Invoice data:</p>
+<details class="example">
+<summary>Matched Invoice Fields</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>USE [Database]
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>GO
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>SELECT * FROM OPENQUERY([MATCHEDINVOICES]
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>, &#39;SELECT
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>&quot;apMatchedInvoiceId&quot;,
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>&quot;purchaseOrderId&quot;,
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>&quot;purchaseOrderNo&quot;,
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>&quot;sequenceNo&quot;,
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>&quot;poType&quot;,
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>&quot;facilityId&quot;,
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>&quot;facilityNo&quot;,
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>&quot;facilityName&quot;,
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>&quot;locationId&quot;,
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>&quot;locationNo&quot;,
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>&quot;locationName&quot;,
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>&quot;vendorId&quot;,
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>&quot;vendorNo&quot;,
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>&quot;vendorName&quot;,
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>&quot;invoiceNo&quot;,
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>&quot;matchedInvoiceStatusId&quot;,
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>&quot;matchedInvoiceStatus&quot;,
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>&quot;vendorRemitToId&quot;,
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>&quot;remitToNo&quot;,
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>&quot;remitToDescription&quot;,
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>&quot;remitToVendorNo&quot;,
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>&quot;creditCardIDId&quot;,
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>&quot;creditCardID&quot;,
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>&quot;creditCardIDDescription&quot;,
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>&quot;reference&quot;,
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>&quot;notes&quot;,
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>&quot;invoiceDate&quot;,
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>&quot;invoiceDueDate&quot;,
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>&quot;trackingCode&quot;,
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>&quot;invoiceValidationTotal&quot;,
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>&quot;cerNoId&quot;,
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>&quot;cerNo&quot;,
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>&quot;cerNoDescription&quot;,
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>&quot;discountAmount&quot;,
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>&quot;taxAmount&quot;,
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>&quot;shippingAmount&quot;,
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>&quot;taxExpenseGLCode&quot;,
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>&quot;taxAccrualGLCode&quot;,
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>&quot;discountGLCode&quot;,
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>&quot;taxExpenseAmount&quot;,
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>&quot;apBatchId&quot;,
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>&quot;apBatchNo&quot;,
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>&quot;taxCode&quot;,
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>&quot;receivedInvoiceId&quot;,
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>&quot;offset&quot;,
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>&quot;offsetGLCode&quot;,
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>&quot;createdBy&quot;,
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>&quot;createdByUserName&quot;,
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>&quot;dateCreated&quot;,
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>&quot;lastUpdated&quot;,
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>&quot;lastUpdatedBy&quot;,
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>&quot;lastUpdatedByUserName&quot;,
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>&quot;submittedBy&quot;,
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>&quot;submittedByUserName&quot;
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>FROM &quot;value&quot;&#39;)
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>-- with filter
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>SELECT * FROM OPENQUERY([MATCHEDINVOICES]
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>, &#39;SELECT *
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>FROM &quot;value&quot;
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>WHERE &quot;facilityNo&quot; = &quot;08&quot;&#39;)
+</code></pre></div>
+</details>
+</li>
+</ol>
+<p>As a result, you’ll see the following page: <img alt="image" src="img/Integrators_60.png" /> </p>
+<h3 id="cdata-odbc-driver-for-odata"><span style="color: #F05D30">CData ODBC Driver for OData</span></h3>
+<p>With the <strong>CData ODBC Driver</strong>, you can easily retrieve the data from Envi OData API and insert it into the MSSQL database. To do it:</p>
+<ol>
+<li>Download <a href="https://www.cdata.com/drivers/odata/download/">OData ODBC Driver</a>.</li>
+<li>Install and run <strong>ODataODBCDriver.exe</strong>.</li>
+<li>On the <strong>Choose Components</strong> page, make sure the <strong>SQL Gateway</strong> checkbox is selected, and then select <strong>Next</strong>. <br> <img alt="image" src="img/Integrators_61.png" /> </li>
+<li>Go to <strong>Control Panel</strong> &gt; <strong>All Control Panel Items</strong> &gt; <strong>Administrative Tools</strong> &gt; <strong>ODBC Data Source Administrator (64 bit)</strong>, and then select <strong>Add</strong>. <img alt="image" src="img/Integrators_62.png" /> </li>
+<li>Select the <strong>CData ODBC Driver for OData</strong> driver, then select <strong>Finish</strong>. <img alt="image" src="img/Integrators_63.png" /> </li>
+<li>In the <strong>DSN Configuration</strong> dialog box, enter the <strong>Data Source Name</strong> and the following connection properties: <strong>URL</strong>, <strong>User</strong>, <strong>Password</strong>, <strong>OAuth Version</strong>, <strong>OAuth Access Token URL</strong>, <strong>OAuth Refresh Token URL</strong>, <strong>OAuth Grand Type</strong>, <strong>Initiate OAuth</strong>, and <strong>OAuth Client ID</strong>. <img alt="image" src="img/Integrators_64.png" /> </li>
+<li>Select <strong>Test Connection</strong>. Then, you will see the notification about the successful connection.</li>
+<li>Run <strong>CDATA SQL Gateway</strong>. <br><img alt="image" src="img/Integrators_65.png" /> </li>
+<li>Go to the <strong>Services</strong> tab, and then select <strong>Add</strong>. <img alt="image" src="img/Integrators_66.png" /> </li>
+<li>Specify the following settings, and then select OK:<ol>
+<li>Enter <strong>Service Name</strong>.</li>
+<li>Select <strong>Data Source</strong>.</li>
+<li>Enter the <strong>Port</strong> value. <br> <img alt="image" src="img/Integrators_67.png" /> </li>
+</ol>
+</li>
+<li>Go to the <strong>Users</strong> tab, then select <strong>Add</strong>. <img alt="image" src="img/Integrators_68.png" /> </li>
+<li>In the <strong>Edit User</strong> window, specify the following settings, and select <strong>OK</strong>:<ol>
+<li><strong>User</strong>: type your username.</li>
+<li><strong>Password</strong>: type your password.</li>
+<li><strong>Privilege Settings</strong>: next to CDATA, select <strong>Full</strong>. <img alt="image" src="img/Integrators_69.png" /> </li>
+</ol>
+</li>
+<li>Select <strong>Save Changes</strong>, then <strong>Star</strong>t. <img alt="image" src="img/Integrators_70.png" /> </li>
+<li>After the <strong>Service CDATA</strong> process has started, run it as a <strong>Window Service</strong>. <img alt="image" src="img/Integrators_71.png" /> </li>
+<li>Go to <strong>Microsoft SQL Server Management Studio</strong>. Here, right-click the <strong>Linked Servers</strong> folder and select <strong>New Linked Server</strong>. <img alt="image" src="img/Integrators_72.png" /> </li>
+<li>Specify the following settings:<ol>
+<li><strong>Linked Server</strong>: name of the server</li>
+<li><strong>Provider</strong>: SQL Server Native Client 11.0</li>
+<li><strong>Data Source</strong>: localhost.1450</li>
+<li><strong>Catalog</strong>: CDATA for Linked Server <br> <img alt="image" src="img/Integrators_73.png" /> </li>
+</ol>
+</li>
+<li>Go to the <strong>Security</strong> tab. Here, do the following:<ol>
+<li>Select <strong>Be made using this security</strong>.</li>
+<li>Fill in the <strong>Remote login</strong> and <strong>With password</strong> fields.</li>
+<li>Select <strong>OK</strong>. <br> <img alt="image" src="img/Integrators_74.png" /> </li>
+</ol>
+</li>
+<li>Right-click a needed table, then select <strong>Script Table as</strong> &gt; <strong>Select To</strong> &gt; <strong>New Query Editor Window</strong>. <img alt="image" src="img/Integrators_76.png" /> 
+    As a result, you’ll see the following table: <img alt="image" src="img/Integrators_77.png" /> </li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>
